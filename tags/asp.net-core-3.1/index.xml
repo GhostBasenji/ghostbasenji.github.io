@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ASP.NET Core 3.1 on </title>
+    <link>/tags/asp.net-core-3.1/</link>
+    <description>Recent content in ASP.NET Core 3.1 on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 03 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/asp.net-core-3.1/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Структура проекта ASP.NET Core 3.1 Web Application</title>
+      <link>/post/asp-net-core-31-ii/</link>
+      <pubDate>Sat, 03 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/asp-net-core-31-ii/</guid>
+      
+        <description>&lt;p&gt;В этой статье мы узнаем о структуре проекта веб-приложения ASP.NET Core 3.1.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Создаем наше первое приложение ASP.NET Core 3.1 в Visual Studio 2019</title>
+      <link>/post/asp-net-core-31-i/</link>
+      <pubDate>Thu, 01 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/asp-net-core-31-i/</guid>
+      
+        <description>&lt;p&gt;В данной статье мы познакомимся с основами ASP.NET Core 3.1, а также создадим наше первое приложение для учебных целей с помощью Visual Studio 2019.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

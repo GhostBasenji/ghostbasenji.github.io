@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Windows 10 on </title>
+    <link>/tags/windows-10/</link>
+    <description>Recent content in Windows 10 on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 20 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/windows-10/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Установка PostgreSQL 12 на Windows 10</title>
+      <link>/post/ustanovka-postgresql-na-windows-10/</link>
+      <pubDate>Thu, 20 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/ustanovka-postgresql-na-windows-10/</guid>
+      
+        <description>&lt;p&gt;В этой статье мы рассмотрим, как установить PostgreSQL 12 на Windows 10.
+Кроме того, также установим и настроим pgAdmin 4, который является стандартным и бесплатным графическим инструментом управления СУБД PostgreSQL, который можно использовать для написания SQL-запросов, разработки процедур, функций, а также для администрирования PostgreSQL.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

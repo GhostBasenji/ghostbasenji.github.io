@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>XAML on </title>
+    <link>/tags/xaml/</link>
+    <description>Recent content in XAML on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 10 Oct 2019 00:00:00 +0000</lastBuildDate><atom:link href="/tags/xaml/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Основы работы с WPF DataGrid. Часть 6. - Шаблон данных [Data Template]</title>
+      <link>/post/wpf-datagrid-part-vii/</link>
+      <pubDate>Thu, 10 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/wpf-datagrid-part-vii/</guid>
+      
+        <description>&lt;p&gt;В этой статье описывается, как используется шаблон данных [data template] в DataGrid.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Основы работы с WPF DataGrid. Часть 5.2. - Столбцы компонента DataGrid</title>
+      <link>/post/wpf-datagrid-part-vi/</link>
+      <pubDate>Sat, 05 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/wpf-datagrid-part-vi/</guid>
+      
+        <description>&lt;p&gt;В данной статье серии “Основы работы с WPF DataGrid” рассматриваются некоторые расширенные функции столбцов DataGrid.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Основы работы с WPF DataGrid. Часть 5. - Столбцы компонента DataGrid</title>
+      <link>/post/wpf-datagrid-part-v/</link>
+      <pubDate>Tue, 01 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/wpf-datagrid-part-v/</guid>
+      
+        <description>&lt;p&gt;В пятой статье серии «Основы работы с WPF DataGrid» мы будем рассматривать работу со столбцами DataGrid и со свойствами столбцов.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Основы работы с WPF DataGrid. Часть 4. - Строки компонента DataGrid</title>
+      <link>/post/wpf-datagrid-part-iv/</link>
+      <pubDate>Sun, 15 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/wpf-datagrid-part-iv/</guid>
+      
+        <description>&lt;p&gt;В четвертой статье описывается работа с заголовком и видимостью строк, а также рассматриваются внешний вид и некоторые другие свойства.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Основы работы с WPF DataGrid. Часть 3. - Заголовок компонента DataGrid</title>
+      <link>/post/wpf-datagrid-part-iii/</link>
+      <pubDate>Wed, 11 Sep 2019 16:02:40 +0000</pubDate>
+      
+      <guid>/post/wpf-datagrid-part-iii/</guid>
+      
+        <description>&lt;p&gt;В третьей части «Основы работы с WPF DataGrid» рассматриваются видимость заголовка [&lt;strong&gt;header&lt;/strong&gt;] компонента DataGrid и внешний вид заголовка столбцов.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Основы работы с WPF DataGrid. Часть 2. - Layout и Border</title>
+      <link>/post/wpf-datagrid-part-ii/</link>
+      <pubDate>Tue, 10 Sep 2019 16:02:40 +0000</pubDate>
+      
+      <guid>/post/wpf-datagrid-part-ii/</guid>
+      
+        <description>&lt;p&gt;Во второй части данной серии мы рассмотрим разметку и границы компонента DataGrid. Свойства, рассматриваемые в этой статье, &amp;ndash; margin, width, height и border.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

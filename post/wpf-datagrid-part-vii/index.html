@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html
+  dir="ltr"
+  lang="en"
+  data-theme="light"
+><head>
+  <title>
+    Ghost Basenji
+      |
+      Основы работы с WPF DataGrid. Часть 6. - Шаблон данных [Data Template]
+
+
+    
+
+  </title>
+
+  
+  <meta charset="utf-8" /><meta name="generator" content="Hugo 0.81.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta
+    name="description"
+    content="
+      Notes of a novice programmer
+
+
+    "
+  />
+  
+  
+  
+  <link
+    rel="stylesheet"
+    href="/css/main.min.80d28e7af4108ef1e90dd5bd674a29a35aee71942fd29980eefa7e36e3710afc.css"
+    integrity="sha256-gNKOevQQjvHpDdW9Z0opo1rucZQv0pmA7vp&#43;NuNxCvw="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.f798cbda9aaa38f89eb38be6414bd082cfd71a6780375cbf67b6d2fb2b96491e.css"
+    integrity="sha256-95jL2pqqOPies4vmQUvQgs/XGmeAN1y/Z7bS&#43;yuWSR4="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous"
+  />
+  
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+  <link rel="canonical" href="/post/wpf-datagrid-part-vii/" />
+
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.2a2cd9614b7d007dfbb75e8da19e3a0fa872ceab53c6d000c00b7a0c89b85bfc.js"
+    integrity="sha256-KizZYUt9AH37t16NoZ46D6hyzqtTxtAAwAt6DIm4W/w="
+    crossorigin="anonymous"
+  ></script>
+
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Основы работы с WPF DataGrid. Часть 6. - Шаблон данных [Data Template]"/>
+<meta name="twitter:description" content="В этой статье описывается, как используется шаблон данных [data template] в DataGrid."/>
+
+
+
+  
+</head>
+<body>
+    <header><div
+  class="page-top 
+    .
+
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+  </a>
+  <nav>
+    <ul class="nav__list" id="navMenu">
+      <div class="nav__links">
+        
+        
+          
+          <li>
+            <a
+              
+              href="/"
+              
+              title=""
+              >Home</a
+            >
+          </li>
+
+        
+          
+          <li>
+            <a
+              
+              href="/post/"
+              
+              title=""
+              >Архив</a
+            >
+          </li>
+
+        
+          
+          <li>
+            <a
+              
+              href="/myprojects/"
+              
+              title=""
+              >Мои проекты</a
+            >
+          </li>
+
+        
+          
+          <li>
+            <a
+              
+              href="/about/"
+              
+              title=""
+              >About</a
+            >
+          </li>
+
+        
+        
+      </div>
+      <li>
+        
+      </li>
+    </ul>
+  </nav>
+</div>
+</header>
+    <div class="wrapper">
+      <aside><div
+  class="sidebar
+    .
+
+  "
+>
+  <div class="sidebar__content">
+    <div class="logo-title">
+      <div class="title">
+        <img src="/images/profile.png" alt="profile picture" />
+        <h3 title=""><a href="/">I&#39;m Ghost Basenji</a></h3>
+        <div class="description">
+          <p>Notes of a novice programmer</p>
+        </div>
+      </div>
+    </div>
+    <ul class="social-links">
+      
+        <li>
+          <a href="https://t.me/ghostbasenji" rel="me" aria-label="telegram">
+            <i class="fab fa-telegram fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      
+        <li>
+          <a href="mailto:petr.and.vic@gmail.com" rel="me" aria-label="e-mail">
+            <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      
+    </ul>
+  </div><footer class="footer footer--sidebar">
+  <div class="by_farbox">
+    <ul class="footer__list">
+      <li class="footer__item">
+        &copy;
+        
+          GhostBasenji 2019-2021
+
+        
+      </li>
+      
+    </ul>
+  </div>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.71100d84fab0ad794b8399a66ac810700cc78d703f715dc10af4d7ba7b761362.js"
+    integrity="sha256-cRANhPqwrXlLg5mmasgQcAzHjXA/cV3BCvTXunt2E2I="
+    crossorigin="anonymous"
+  ></script></div>
+</aside>
+      <main>
+        <div class="autopagerize_page_element">
+          <div class="content">
+  <div
+    class="post 
+      .
+
+    "
+  >
+    <div class="post-content">
+      
+      <div class="post-title">
+        <h1>Основы работы с WPF DataGrid. Часть 6. - Шаблон данных [Data Template]</h1>
+        
+          <div class="info">
+            <em class="fas fa-calendar-day"></em>
+            <span class="date"
+              >
+                Thu, Oct 10, 2019
+
+
+              </span
+            >
+            
+
+        
+      </div><p>В этой статье описывается, как используется шаблон данных [data template] в DataGrid.</p>
+<h3 id="шаблон-данных">Шаблон данных</h3>
+<p>Компонент DataGrid не только отображает данные в формате строки и столбца, но также может использоваться для отображения данных в шаблонном формате. Шаблон используется для отображения данных строки, сгруппированных в шаблон. Шаблон данных можно определить как XAML или как ресурс. Представим себе, что нам нужно отобразить 50 полей в DataGrid, но строка может отображать до 10 столбцов. Итак, как отобразим больше столбцов? Для этого нам поможет <strong>DataTemplate</strong>.
+Если посмотрим на рис. 13, то увидим, что строка DataGrid содержит 5 столбцов, но 3 дополнительных столбцов отображаются как часть шаблона данных.</p>
+<p><img src="https://i.postimg.cc/pT2TG0mf/gb0023.jpg" alt="Рис. 18."></p>
+<h3 id="свойство-rowdetailstemplate">Свойство RowDetailsTemplate</h3>
+<p>Свойство <strong>RowDetailsTemplate</strong> представляет DataTemplate, который используется для отображения сведений о строке. События LoadingRowDetails и UnloadingRowDetails используются для загрузки и выгрузки шаблона данных или внесения изменений.
+Значение DataTemplate задается как RowDetailsTemplate компонента DataGrid. DataTemplate определяет визуальное представление всех элементов XAML строки.
+В листинге 34 показано, как задать свойство RowDetailsTemplate объекта DataGrid.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;DataGrid</span> <span style="color:#50fa7b">x:Name=</span><span style="color:#f1fa8c">&#34;WPFdataGrid&#34;</span>                  
+&lt;DataGrid.RowDetailsTemplate<span style="color:#ff79c6">&gt;</span>
+                      <span style="color:#ff79c6">&lt;DataTemplate&gt;</span>
+                      <span style="color:#ff79c6">&lt;/DataTemplate&gt;</span>
+              <span style="color:#ff79c6">&lt;/DataGrid.RowDetailsTemplate&gt;</span>
+<span style="color:#ff79c6">&lt;/DataGrid&gt;</span>
+</code></pre></div><p>Листинг 34.</p>
+<p>Ранее мы определили класс Author. А теперь давайте добавим еще 3 свойства в класс Author – City, Country и Years. Новый класс приведен в листинге 35.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs">    <span style="color:#ff79c6">public</span> <span style="color:#ff79c6">class</span> <span style="color:#50fa7b">Author</span>
+    {
+        <span style="color:#ff79c6">public</span> <span style="color:#8be9fd">int</span> ID { <span style="color:#ff79c6">get</span>; <span style="color:#ff79c6">set</span>; }
+        <span style="color:#ff79c6">public</span> <span style="color:#8be9fd">string</span> Name { <span style="color:#ff79c6">get</span>; <span style="color:#ff79c6">set</span>; }
+        <span style="color:#ff79c6">public</span> <span style="color:#8be9fd">string</span> BookTitle { <span style="color:#ff79c6">get</span>; <span style="color:#ff79c6">set</span>; }
+        <span style="color:#ff79c6">public</span> <span style="color:#8be9fd">bool</span> SciFi { <span style="color:#ff79c6">get</span>; <span style="color:#ff79c6">set</span>; }
+        <span style="color:#ff79c6">public</span> <span style="color:#8be9fd">string</span> City { <span style="color:#ff79c6">get</span>; <span style="color:#ff79c6">set</span>; }
+        <span style="color:#ff79c6">public</span> <span style="color:#8be9fd">string</span> Country { <span style="color:#ff79c6">get</span>; <span style="color:#ff79c6">set</span>; }
+        <span style="color:#ff79c6">public</span> DateTime Years { <span style="color:#ff79c6">get</span>; <span style="color:#ff79c6">set</span>; }
+    }
+</code></pre></div><p>Листинг 35.</p>
+<p>Листинг 36 отображает новый XAML компонента DataGrid со значением DataTemplate.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">    <span style="color:#ff79c6">&lt;Grid</span> <span style="color:#50fa7b">x:Name=</span><span style="color:#f1fa8c">&#34;Window&#34;</span> <span style="color:#50fa7b">Loaded=</span><span style="color:#f1fa8c">&#34;Window_Loaded&#34;</span><span style="color:#ff79c6">&gt;</span>
+        <span style="color:#ff79c6">&lt;DataGrid</span> <span style="color:#50fa7b">x:Name=</span><span style="color:#f1fa8c">&#34;WPFdataGrid&#34;</span> <span style="color:#50fa7b">Margin=</span><span style="color:#f1fa8c">&#34;0&#34;</span> 
+        <span style="color:#50fa7b">AutoGenerateColumns=</span><span style="color:#f1fa8c">&#34;False&#34;</span><span style="color:#ff79c6">&gt;</span>
+
+            <span style="color:#ff79c6">&lt;DataGrid.Columns&gt;</span>
+                <span style="color:#ff79c6">&lt;DataGridTextColumn</span> <span style="color:#50fa7b">Binding=</span><span style="color:#f1fa8c">&#34;{Binding ID}&#34;</span> <span style="color:#50fa7b">Header=</span><span style="color:#f1fa8c">&#34;ИД Автора&#34;</span> <span style="color:#50fa7b">IsReadOnly=</span><span style="color:#f1fa8c">&#34;True&#34;</span><span style="color:#ff79c6">/&gt;</span>
+                <span style="color:#ff79c6">&lt;DataGridTextColumn</span> <span style="color:#50fa7b">Binding=</span><span style="color:#f1fa8c">&#34;{Binding Name}&#34;</span> <span style="color:#50fa7b">Header=</span><span style="color:#f1fa8c">&#34;Автор&#34;</span> <span style="color:#50fa7b">Width=</span><span style="color:#f1fa8c">&#34;140&#34;</span><span style="color:#ff79c6">&gt;</span>
+                    <span style="color:#ff79c6">&lt;DataGridTextColumn.ElementStyle&gt;</span>
+                        <span style="color:#ff79c6">&lt;Style</span> <span style="color:#50fa7b">TargetType=</span><span style="color:#f1fa8c">&#34;TextBlock&#34;</span><span style="color:#ff79c6">&gt;</span>
+                            <span style="color:#ff79c6">&lt;Setter</span> <span style="color:#50fa7b">Property=</span><span style="color:#f1fa8c">&#34;TextWrapping&#34;</span> <span style="color:#50fa7b">Value=</span><span style="color:#f1fa8c">&#34;Wrap&#34;</span><span style="color:#ff79c6">/&gt;</span>
+                        <span style="color:#ff79c6">&lt;/Style&gt;</span>
+                    <span style="color:#ff79c6">&lt;/DataGridTextColumn.ElementStyle&gt;</span>
+                    <span style="color:#ff79c6">&lt;DataGridTextColumn.EditingElementStyle&gt;</span>
+                        <span style="color:#ff79c6">&lt;Style</span> <span style="color:#50fa7b">TargetType=</span><span style="color:#f1fa8c">&#34;TextBox&#34;</span><span style="color:#ff79c6">&gt;</span>
+                            <span style="color:#ff79c6">&lt;Setter</span> <span style="color:#50fa7b">Property=</span><span style="color:#f1fa8c">&#34;Foreground&#34;</span> <span style="color:#50fa7b">Value=</span><span style="color:#f1fa8c">&#34;Blue&#34;</span><span style="color:#ff79c6">/&gt;</span>
+                        <span style="color:#ff79c6">&lt;/Style&gt;</span>
+                    <span style="color:#ff79c6">&lt;/DataGridTextColumn.EditingElementStyle&gt;</span>
+                <span style="color:#ff79c6">&lt;/DataGridTextColumn&gt;</span>
+
+                <span style="color:#ff79c6">&lt;DataGridTemplateColumn</span> <span style="color:#50fa7b">Header=</span><span style="color:#f1fa8c">&#34;Год&#34;</span> <span style="color:#50fa7b">Width=</span><span style="color:#f1fa8c">&#34;80&#34;</span><span style="color:#ff79c6">&gt;</span>
+                    <span style="color:#ff79c6">&lt;DataGridTemplateColumn.CellTemplate&gt;</span>
+                        <span style="color:#ff79c6">&lt;DataTemplate&gt;</span>
+                            <span style="color:#ff79c6">&lt;TextBlock</span> <span style="color:#50fa7b">Text=</span><span style="color:#f1fa8c">&#34;{Binding Years}&#34;</span> <span style="color:#50fa7b">Margin=</span><span style="color:#f1fa8c">&#34;4&#34;</span><span style="color:#ff79c6">/&gt;</span>
+                        <span style="color:#ff79c6">&lt;/DataTemplate&gt;</span>
+                    <span style="color:#ff79c6">&lt;/DataGridTemplateColumn.CellTemplate&gt;</span>
+                    <span style="color:#ff79c6">&lt;DataGridTemplateColumn.CellEditingTemplate&gt;</span>
+                        <span style="color:#ff79c6">&lt;DataTemplate&gt;</span>
+                            <span style="color:#ff79c6">&lt;DatePicker</span> <span style="color:#50fa7b">SelectedDate=</span><span style="color:#f1fa8c">&#34;{Binding Years, Mode=TwoWay}&#34;</span><span style="color:#ff79c6">/&gt;</span>
+                        <span style="color:#ff79c6">&lt;/DataTemplate&gt;</span>
+                    <span style="color:#ff79c6">&lt;/DataGridTemplateColumn.CellEditingTemplate&gt;</span>
+                <span style="color:#ff79c6">&lt;/DataGridTemplateColumn&gt;</span>
+
+                <span style="color:#ff79c6">&lt;DataGridTextColumn</span> <span style="color:#50fa7b">Header=</span><span style="color:#f1fa8c">&#34;Произведение&#34;</span> <span style="color:#50fa7b">Width=</span><span style="color:#f1fa8c">&#34;240&#34;</span> <span style="color:#50fa7b">Binding=</span><span style="color:#f1fa8c">&#34;{Binding BookTitle}&#34;</span><span style="color:#ff79c6">&gt;</span>
+                    <span style="color:#ff79c6">&lt;DataGridTextColumn.ElementStyle&gt;</span>
+                        <span style="color:#ff79c6">&lt;Style</span> <span style="color:#50fa7b">TargetType=</span><span style="color:#f1fa8c">&#34;TextBlock&#34;</span><span style="color:#ff79c6">&gt;</span>
+                            <span style="color:#ff79c6">&lt;Setter</span> <span style="color:#50fa7b">Property=</span><span style="color:#f1fa8c">&#34;TextWrapping&#34;</span> <span style="color:#50fa7b">Value=</span><span style="color:#f1fa8c">&#34;Wrap&#34;</span><span style="color:#ff79c6">/&gt;</span>
+                        <span style="color:#ff79c6">&lt;/Style&gt;</span>
+                    <span style="color:#ff79c6">&lt;/DataGridTextColumn.ElementStyle&gt;</span>
+                    <span style="color:#ff79c6">&lt;DataGridTextColumn.EditingElementStyle&gt;</span>
+                        <span style="color:#ff79c6">&lt;Style</span> <span style="color:#50fa7b">TargetType=</span><span style="color:#f1fa8c">&#34;TextBox&#34;</span><span style="color:#ff79c6">&gt;</span>
+                            <span style="color:#ff79c6">&lt;Setter</span> <span style="color:#50fa7b">Property=</span><span style="color:#f1fa8c">&#34;Foreground&#34;</span> <span style="color:#50fa7b">Value=</span><span style="color:#f1fa8c">&#34;Blue&#34;</span><span style="color:#ff79c6">/&gt;</span>
+                        <span style="color:#ff79c6">&lt;/Style&gt;</span>
+                    <span style="color:#ff79c6">&lt;/DataGridTextColumn.EditingElementStyle&gt;</span>
+                <span style="color:#ff79c6">&lt;/DataGridTextColumn&gt;</span>
+                <span style="color:#ff79c6">&lt;DataGridCheckBoxColumn</span> <span style="color:#50fa7b">Header=</span><span style="color:#f1fa8c">&#34;Sci-Fi&#34;</span> <span style="color:#50fa7b">Binding=</span><span style="color:#f1fa8c">&#34;{Binding SciFi}&#34;</span> <span style="color:#50fa7b">IsThreeState=</span><span style="color:#f1fa8c">&#34;True&#34;</span><span style="color:#ff79c6">/&gt;</span>
+            <span style="color:#ff79c6">&lt;/DataGrid.Columns&gt;</span>
+
+            <span style="color:#ff79c6">&lt;DataGrid.RowDetailsTemplate&gt;</span>
+                <span style="color:#ff79c6">&lt;DataTemplate&gt;</span>
+                    <span style="color:#ff79c6">&lt;Border</span> <span style="color:#50fa7b">BorderThickness=</span><span style="color:#f1fa8c">&#34;0&#34;</span> <span style="color:#50fa7b">Background=</span><span style="color:#f1fa8c">&#34;Beige&#34;</span> <span style="color:#50fa7b">Padding=</span><span style="color:#f1fa8c">&#34;10&#34;</span><span style="color:#ff79c6">&gt;</span>
+                        <span style="color:#ff79c6">&lt;Grid</span> <span style="color:#50fa7b">Margin=</span><span style="color:#f1fa8c">&#34;5, 0, 0, 0&#34;</span> <span style="color:#50fa7b">MinWidth=</span><span style="color:#f1fa8c">&#34;650&#34;</span> <span style="color:#50fa7b">HorizontalAlignment=</span><span style="color:#f1fa8c">&#34;Left&#34;</span><span style="color:#ff79c6">&gt;</span>
+                            <span style="color:#ff79c6">&lt;Grid.ColumnDefinitions&gt;</span>
+                                <span style="color:#ff79c6">&lt;ColumnDefinition</span> <span style="color:#50fa7b">Width=</span><span style="color:#f1fa8c">&#34;125&#34;</span><span style="color:#ff79c6">&gt;&lt;/ColumnDefinition&gt;</span>
+                                <span style="color:#ff79c6">&lt;ColumnDefinition</span> <span style="color:#50fa7b">Width=</span><span style="color:#f1fa8c">&#34;*&#34;</span><span style="color:#ff79c6">&gt;&lt;/ColumnDefinition&gt;</span>
+                                <span style="color:#ff79c6">&lt;ColumnDefinition</span> <span style="color:#50fa7b">Width=</span><span style="color:#f1fa8c">&#34;125&#34;</span><span style="color:#ff79c6">&gt;&lt;/ColumnDefinition&gt;</span>
+                                <span style="color:#ff79c6">&lt;ColumnDefinition</span> <span style="color:#50fa7b">Width=</span><span style="color:#f1fa8c">&#34;*&#34;</span><span style="color:#ff79c6">&gt;&lt;/ColumnDefinition&gt;</span>
+                            <span style="color:#ff79c6">&lt;/Grid.ColumnDefinitions&gt;</span>
+                            <span style="color:#ff79c6">&lt;Grid.RowDefinitions&gt;</span>
+                                <span style="color:#ff79c6">&lt;RowDefinition</span> <span style="color:#50fa7b">Height=</span><span style="color:#f1fa8c">&#34;Auto&#34;</span><span style="color:#ff79c6">&gt;&lt;/RowDefinition&gt;</span>
+                                <span style="color:#ff79c6">&lt;RowDefinition</span> <span style="color:#50fa7b">Height=</span><span style="color:#f1fa8c">&#34;Auto&#34;</span><span style="color:#ff79c6">&gt;&lt;/RowDefinition&gt;</span>
+                                <span style="color:#ff79c6">&lt;RowDefinition</span> <span style="color:#50fa7b">Height=</span><span style="color:#f1fa8c">&#34;Auto&#34;</span><span style="color:#ff79c6">&gt;&lt;/RowDefinition&gt;</span>
+                                <span style="color:#ff79c6">&lt;RowDefinition</span> <span style="color:#50fa7b">Height=</span><span style="color:#f1fa8c">&#34;Auto&#34;</span><span style="color:#ff79c6">&gt;&lt;/RowDefinition&gt;</span>
+                            <span style="color:#ff79c6">&lt;/Grid.RowDefinitions&gt;</span>
+
+                            <span style="color:#ff79c6">&lt;TextBlock</span> <span style="color:#50fa7b">Text=</span><span style="color:#f1fa8c">&#34;Город&#34;</span> <span style="color:#50fa7b">Margin=</span><span style="color:#f1fa8c">&#34;10, 0, 0, 0&#34;</span> <span style="color:#50fa7b">Grid.Row=</span><span style="color:#f1fa8c">&#34;0&#34;</span> <span style="color:#50fa7b">Grid.Column=</span><span style="color:#f1fa8c">&#34;0&#34;</span> <span style="color:#50fa7b">VerticalAlignment=</span><span style="color:#f1fa8c">&#34;Center&#34;</span> <span style="color:#50fa7b">HorizontalAlignment=</span><span style="color:#f1fa8c">&#34;Left&#34;</span><span style="color:#ff79c6">/&gt;</span>
+                            <span style="color:#ff79c6">&lt;TextBlock</span> <span style="color:#50fa7b">Margin=</span><span style="color:#f1fa8c">&#34;3&#34;</span> <span style="color:#50fa7b">Grid.Row=</span><span style="color:#f1fa8c">&#34;0&#34;</span> <span style="color:#50fa7b">Grid.Column=</span><span style="color:#f1fa8c">&#34;1&#34;</span> <span style="color:#50fa7b">Text=</span><span style="color:#f1fa8c">&#34;{Binding Path=City}&#34;</span> <span style="color:#50fa7b">MaxHeight=</span><span style="color:#f1fa8c">&#34;35&#34;</span><span style="color:#ff79c6">/&gt;</span>
+                            <span style="color:#ff79c6">&lt;TextBlock</span> <span style="color:#50fa7b">Text=</span><span style="color:#f1fa8c">&#34;Страна&#34;</span> <span style="color:#50fa7b">Margin=</span><span style="color:#f1fa8c">&#34;10, 0, 0, 0&#34;</span> <span style="color:#50fa7b">Grid.Row=</span><span style="color:#f1fa8c">&#34;1&#34;</span> <span style="color:#50fa7b">Grid.Column=</span><span style="color:#f1fa8c">&#34;0&#34;</span> <span style="color:#50fa7b">VerticalAlignment=</span><span style="color:#f1fa8c">&#34;Center&#34;</span> <span style="color:#50fa7b">HorizontalAlignment=</span><span style="color:#f1fa8c">&#34;Left&#34;</span><span style="color:#ff79c6">/&gt;</span>
+                            <span style="color:#ff79c6">&lt;TextBlock</span> <span style="color:#50fa7b">Margin=</span><span style="color:#f1fa8c">&#34;3&#34;</span> <span style="color:#50fa7b">Grid.Row=</span><span style="color:#f1fa8c">&#34;1&#34;</span> <span style="color:#50fa7b">Grid.Column=</span><span style="color:#f1fa8c">&#34;1&#34;</span> <span style="color:#50fa7b">Text=</span><span style="color:#f1fa8c">&#34;{Binding Path=Country}&#34;</span> <span style="color:#50fa7b">MaxHeight=</span><span style="color:#f1fa8c">&#34;35&#34;</span><span style="color:#ff79c6">/&gt;</span>
+                        <span style="color:#ff79c6">&lt;/Grid&gt;</span>
+                    <span style="color:#ff79c6">&lt;/Border&gt;</span>
+                <span style="color:#ff79c6">&lt;/DataTemplate&gt;</span>
+            <span style="color:#ff79c6">&lt;/DataGrid.RowDetailsTemplate&gt;</span>
+        <span style="color:#ff79c6">&lt;/DataGrid&gt;</span>
+    <span style="color:#ff79c6">&lt;/Grid&gt;</span>
+<span style="color:#ff79c6">&lt;/Window&gt;</span>
+</code></pre></div><p>Листинг 36.</p>
+<p>В листинге 37 приведена новая коллекция AuthorCollection с обновленными объектами Author.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs">    <span style="color:#ff79c6">public</span> <span style="color:#ff79c6">class</span> <span style="color:#50fa7b">AuthorCollection</span> : CollectionBase
+    {
+        <span style="color:#ff79c6">public</span> List&lt;Author&gt; LoadAuthors()
+        {
+            List&lt;Author&gt; authors = <span style="color:#ff79c6">new</span> List&lt;Author&gt;();
+            authors.Add(<span style="color:#ff79c6">new</span> Author()
+            {
+                ID = <span style="color:#bd93f9">101</span>,
+                Name = <span style="color:#f1fa8c">&#34;А.С. Пушкин&#34;</span>,
+                BookTitle = <span style="color:#f1fa8c">&#34;Капитанская дочка&#34;</span>,
+                SciFi = <span style="color:#ff79c6">false</span>,
+                Years = <span style="color:#ff79c6">new</span> DateTime(<span style="color:#bd93f9">1836</span>, <span style="color:#bd93f9">01</span>, <span style="color:#bd93f9">03</span>),
+                City = <span style="color:#f1fa8c">&#34;Москва&#34;</span>,
+                Country = <span style="color:#f1fa8c">&#34;Россия&#34;</span>
+            });
+            authors.Add(<span style="color:#ff79c6">new</span> Author()
+            {
+                ID = <span style="color:#bd93f9">201</span>,
+                Name = <span style="color:#f1fa8c">&#34;Роберт Хайнлайн&#34;</span>,
+                BookTitle = <span style="color:#f1fa8c">&#34;Пасынки Вселенной&#34;</span>,
+                SciFi = <span style="color:#ff79c6">true</span>,
+                Years = <span style="color:#ff79c6">new</span> DateTime(<span style="color:#bd93f9">1941</span>, <span style="color:#bd93f9">5</span>, <span style="color:#bd93f9">13</span>),
+                City = <span style="color:#f1fa8c">&#34;Батлер, штат Миссури&#34;</span>,
+                Country = <span style="color:#f1fa8c">&#34;США&#34;</span>
+            });
+            authors.Add(<span style="color:#ff79c6">new</span> Author()
+            {
+                ID = <span style="color:#bd93f9">244</span>,
+                Name = <span style="color:#f1fa8c">&#34;Клиффорд Саймак&#34;</span>,
+                BookTitle = <span style="color:#f1fa8c">&#34;Заповедник гоблинов&#34;</span>,
+                SciFi = <span style="color:#ff79c6">true</span>,
+                Years = <span style="color:#ff79c6">new</span> DateTime(<span style="color:#bd93f9">1968</span>, <span style="color:#bd93f9">9</span>, <span style="color:#bd93f9">21</span>),
+                City = <span style="color:#f1fa8c">&#34;Милвилл, штат Висконсин&#34;</span>,
+                Country = <span style="color:#f1fa8c">&#34;США&#34;</span>
+            });
+            <span style="color:#ff79c6">return</span> authors;
+        }
+    }
+</code></pre></div><p>Листинг 37.</p>
+<p>Теперь запустим проект. Щелкнуть по строке, то увидим, что дополнительные свойства Author отобразятся под строкой.</p>
+<p><img src="https://i.postimg.cc/pT2TG0mf/gb0023.jpg" alt="Рис. 18."></p>
+<h3 id="получение-выделенных-элементов">Получение выделенных элементов</h3>
+<p>Свойство SelectedItems возвращает все выделенные элементы в DataGrid. Каждый выделенный элемент представляет собой объект, привязанный к строке. Например, в нашем случае объект Author и его свойства привязаны к строкам DataGrid.
+В листинге 38 код использует свойство DataGrid.SelectedItems и отображает ряд выделенных элементов, а затем отображает значения столбца Name выделенных элементов.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs">            AuthorCollection authors = <span style="color:#ff79c6">new</span> AuthorCollection();
+            WPFdataGrid.ItemsSource = authors.LoadAuthors();
+
+            <span style="color:#8be9fd">var</span> AuthorInfo = <span style="color:#ff79c6">new</span> System.Text.StringBuilder();
+            MessageBox.Show(WPFdataGrid.SelectedItems.Count.ToString() + <span style="color:#f1fa8c">&#34;Элементы выделены.&#34;</span>);
+            <span style="color:#ff79c6">foreach</span> (Author author <span style="color:#ff79c6">in</span> WPFdataGrid.SelectedItems)
+            {
+                AuthorInfo.AppendLine(author.Name);
+            }
+            MessageBox.Show(AuthorInfo.ToString());
+</code></pre></div><p>Листинг 38.</p></div>
+    <div class="post-footer">
+      <div class="info">
+        
+
+        
+          <span class="separator"><a class="tag" href="/tags/wpf/">WPF</a><a class="tag" href="/tags/xaml/">XAML</a><a class="tag" href="/tags/wpf-datagrid/">WPF DataGrid</a></span>
+
+
+
+
+        
+      </div>
+    </div>
+
+    
+  </div>
+
+
+          </div>
+        </div>
+      </main>
+    </div><footer class="footer footer--base">
+  <div class="by_farbox">
+    <ul class="footer__list">
+      <li class="footer__item">
+        &copy;
+        
+          GhostBasenji 2019-2021
+
+        
+      </li>
+      
+    </ul>
+  </div>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.71100d84fab0ad794b8399a66ac810700cc78d703f715dc10af4d7ba7b761362.js"
+    integrity="sha256-cRANhPqwrXlLg5mmasgQcAzHjXA/cV3BCvTXunt2E2I="
+    crossorigin="anonymous"
+  ></script></body>
+</html>

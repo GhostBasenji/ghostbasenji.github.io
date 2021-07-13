@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on </title>
+    <link>/tags/</link>
+    <description>Recent content in Tags on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 03 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ASP.NET Core</title>
+      <link>/tags/asp.net-core/</link>
+      <pubDate>Sat, 03 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/asp.net-core/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>ASP.NET Core 3.1</title>
+      <link>/tags/asp.net-core-3.1/</link>
+      <pubDate>Sat, 03 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/asp.net-core-3.1/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Go</title>
+      <link>/tags/go/</link>
+      <pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/go/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Golang</title>
+      <link>/tags/golang/</link>
+      <pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/golang/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>VS Code</title>
+      <link>/tags/vs-code/</link>
+      <pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/vs-code/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>PostgreSQL</title>
+      <link>/tags/postgresql/</link>
+      <pubDate>Thu, 20 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/postgresql/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>SQL</title>
+      <link>/tags/sql/</link>
+      <pubDate>Thu, 20 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/sql/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Windows 10</title>
+      <link>/tags/windows-10/</link>
+      <pubDate>Thu, 20 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/windows-10/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Database Project</title>
+      <link>/tags/database-project/</link>
+      <pubDate>Sun, 20 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/database-project/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>MS SQL</title>
+      <link>/tags/ms-sql/</link>
+      <pubDate>Sun, 20 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/ms-sql/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Visual Studio 2019</title>
+      <link>/tags/visual-studio-2019/</link>
+      <pubDate>Sun, 20 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/visual-studio-2019/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Базы данных</title>
+      <link>/tags/%D0%B1%D0%B0%D0%B7%D1%8B-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85/</link>
+      <pubDate>Sun, 20 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/%D0%B1%D0%B0%D0%B7%D1%8B-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Разработка проектов БД</title>
+      <link>/tags/%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%BE%D0%B2-%D0%B1%D0%B4/</link>
+      <pubDate>Sun, 20 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%BE%D0%B2-%D0%B1%D0%B4/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>.NET 4.5</title>
+      <link>/tags/.net-4.5/</link>
+      <pubDate>Tue, 15 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/.net-4.5/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>C#</title>
+      <link>/tags/c#/</link>
+      <pubDate>Tue, 15 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/c#/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>dotnet</title>
+      <link>/tags/dotnet/</link>
+      <pubDate>Tue, 15 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/dotnet/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Self-hosting</title>
+      <link>/tags/self-hosting/</link>
+      <pubDate>Tue, 15 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/self-hosting/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>WCF</title>
+      <link>/tags/wcf/</link>
+      <pubDate>Tue, 15 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/wcf/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>WPF</title>
+      <link>/tags/wpf/</link>
+      <pubDate>Thu, 10 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/wpf/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>WPF DataGrid</title>
+      <link>/tags/wpf-datagrid/</link>
+      <pubDate>Thu, 10 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/wpf-datagrid/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>XAML</title>
+      <link>/tags/xaml/</link>
+      <pubDate>Thu, 10 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/xaml/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>/tags/python/</link>
+      <pubDate>Fri, 20 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/python/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>На заметку</title>
+      <link>/tags/%D0%BD%D0%B0-%D0%B7%D0%B0%D0%BC%D0%B5%D1%82%D0%BA%D1%83/</link>
+      <pubDate>Wed, 04 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/%D0%BD%D0%B0-%D0%B7%D0%B0%D0%BC%D0%B5%D1%82%D0%BA%D1%83/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>

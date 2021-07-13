@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html
+  dir="ltr"
+  lang="en"
+  data-theme="light"
+><head>
+  <title>
+    Ghost Basenji
+      |
+      Создаем проект базы данных в Visual Studio 2019
+
+
+    
+
+  </title>
+
+  
+  <meta charset="utf-8" /><meta name="generator" content="Hugo 0.81.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta
+    name="description"
+    content="
+      Notes of a novice programmer
+
+
+    "
+  />
+  
+  
+  
+  <link
+    rel="stylesheet"
+    href="/css/main.min.80d28e7af4108ef1e90dd5bd674a29a35aee71942fd29980eefa7e36e3710afc.css"
+    integrity="sha256-gNKOevQQjvHpDdW9Z0opo1rucZQv0pmA7vp&#43;NuNxCvw="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.f798cbda9aaa38f89eb38be6414bd082cfd71a6780375cbf67b6d2fb2b96491e.css"
+    integrity="sha256-95jL2pqqOPies4vmQUvQgs/XGmeAN1y/Z7bS&#43;yuWSR4="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous"
+  />
+  
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+  <link rel="canonical" href="/post/sozdaem-proekt-db-v-visual-studio-2019/" />
+
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.2a2cd9614b7d007dfbb75e8da19e3a0fa872ceab53c6d000c00b7a0c89b85bfc.js"
+    integrity="sha256-KizZYUt9AH37t16NoZ46D6hyzqtTxtAAwAt6DIm4W/w="
+    crossorigin="anonymous"
+  ></script>
+
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Создаем проект базы данных в Visual Studio 2019"/>
+<meta name="twitter:description" content="В настоящее время базы данных (БД) являются проблемой для разработчиков, и это одна из самых сложных задач в любом проекте ПО для управления изменениями БД и синхронизации этих изменений.
+Для решения этой проблемы в Visual Studio имеются проекты баз данных SQL. Можно с легкостью разрабатывать, управлять, сравнивать и развертывать изменения базы данных с помощью Visual Studio."/>
+
+
+
+  
+</head>
+<body>
+    <header><div
+  class="page-top 
+    .
+
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+  </a>
+  <nav>
+    <ul class="nav__list" id="navMenu">
+      <div class="nav__links">
+        
+        
+          
+          <li>
+            <a
+              
+              href="/"
+              
+              title=""
+              >Home</a
+            >
+          </li>
+
+        
+          
+          <li>
+            <a
+              
+              href="/post/"
+              
+              title=""
+              >Архив</a
+            >
+          </li>
+
+        
+          
+          <li>
+            <a
+              
+              href="/myprojects/"
+              
+              title=""
+              >Мои проекты</a
+            >
+          </li>
+
+        
+          
+          <li>
+            <a
+              
+              href="/about/"
+              
+              title=""
+              >About</a
+            >
+          </li>
+
+        
+        
+      </div>
+      <li>
+        
+      </li>
+    </ul>
+  </nav>
+</div>
+</header>
+    <div class="wrapper">
+      <aside><div
+  class="sidebar
+    .
+
+  "
+>
+  <div class="sidebar__content">
+    <div class="logo-title">
+      <div class="title">
+        <img src="/images/profile.png" alt="profile picture" />
+        <h3 title=""><a href="/">I&#39;m Ghost Basenji</a></h3>
+        <div class="description">
+          <p>Notes of a novice programmer</p>
+        </div>
+      </div>
+    </div>
+    <ul class="social-links">
+      
+        <li>
+          <a href="https://t.me/ghostbasenji" rel="me" aria-label="telegram">
+            <i class="fab fa-telegram fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      
+        <li>
+          <a href="mailto:petr.and.vic@gmail.com" rel="me" aria-label="e-mail">
+            <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      
+    </ul>
+  </div><footer class="footer footer--sidebar">
+  <div class="by_farbox">
+    <ul class="footer__list">
+      <li class="footer__item">
+        &copy;
+        
+          GhostBasenji 2019-2021
+
+        
+      </li>
+      
+    </ul>
+  </div>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.71100d84fab0ad794b8399a66ac810700cc78d703f715dc10af4d7ba7b761362.js"
+    integrity="sha256-cRANhPqwrXlLg5mmasgQcAzHjXA/cV3BCvTXunt2E2I="
+    crossorigin="anonymous"
+  ></script></div>
+</aside>
+      <main>
+        <div class="autopagerize_page_element">
+          <div class="content">
+  <div
+    class="post 
+      .
+
+    "
+  >
+    <div class="post-content">
+      
+      <div class="post-title">
+        <h1>Создаем проект базы данных в Visual Studio 2019</h1>
+        
+          <div class="info">
+            <em class="fas fa-calendar-day"></em>
+            <span class="date"
+              >
+                Thu, Oct 17, 2019
+
+
+              </span
+            >
+            
+
+        
+      </div><p>В настоящее время базы данных (БД) являются проблемой для разработчиков, и это одна из самых сложных задач в любом проекте ПО для управления изменениями БД и синхронизации этих изменений.
+Для решения этой проблемы в Visual Studio имеются проекты баз данных SQL. Можно с легкостью разрабатывать, управлять, сравнивать и развертывать изменения базы данных с помощью Visual Studio.</p>
+<p>А также можем отслеживать изменения всех объектов БД через систему контроля версий.
+Visual Studio Database Project предоставляет гибкие возможности для создания нового проекта базы данных из существующей БД с помощью нажатия на кнопку или возможность создания проекта базы данных с нуля.</p>
+<h3 id="итак-поехали">Итак, поехали</h3>
+<p>Запускаем Visual Studio 2019, выбираем Create a new project, потом выбираем SQL Server Database Project.</p>
+<p><img src="https://i.postimg.cc/tT98RPR0/gb0045.jpg" alt=""></p>
+<p>Введем название базы данных и выберем место расположения файла.</p>
+<p><img src="https://i.postimg.cc/Y98Zv9jv/gb0046.jpg" alt=""></p>
+<p>После чего щелкаем по кнопке Create.
+А теперь правой кнопкой мыши щелкаем по проекту SampleDB и из появившейся меню выбираем Add &gt; Table.</p>
+<p><img src="https://i.postimg.cc/VkMhj4dQ/gb0047.jpg" alt=""></p>
+<p>Присваиваем имя таблице – “Student” и щелкаем по кнопке Add.</p>
+<p><img src="https://i.postimg.cc/d31XrYT4/gb0048.jpg" alt=""></p>
+<p>После того, как добавили таблицу, появится окно конструктора таблицы. Здесь мы можем добавлять столбцы с типом данных.</p>
+<p><img src="https://i.postimg.cc/N0kPnM6d/gb0049.jpg" alt=""></p>
+<p>Добавим несколько столбцов в эту таблицу. Мы увидим, что сгенерируется скрипт в нижней части окна и сохраняется схема таблицы.</p>
+<p><img src="https://i.postimg.cc/MTZrJStq/gb0050.jpg" alt=""></p>
+<h3 id="теперь-пора-опубликовать-базу-данных-в-sql-server">Теперь пора опубликовать базу данных в SQL Server</h3>
+<p>Щелкаем правой кнопкой мыши в окне Solution Explorer по проекту базы данных. В появившемся меню выбираем Properties.
+В параметрах проекта выбираем версию SQL Server.</p>
+<p><img src="https://i.postimg.cc/qMWYhWBx/gb0051.jpg" alt=""></p>
+<p>Кроме того, мы можем изменять подключение по умолчанию на вкладке <strong>Debug</strong> Щелкаем по кнопке <strong>Edit</strong>.</p>
+<p><img src="https://i.postimg.cc/CKgQJDqZ/gb0052.jpg" alt=""></p>
+<p>Изменяем свойства соединения в соответствии с параметрами ПК. Введем имя сервера, имя пользователя, пароль и выберем базу данных. Потом щелкаем по кнопке OK. Если есть проверка подлинности Windows, то не нужно указывать имя пользователя и пароль. Нам нужно только имя сервера и база данных.</p>
+<p><img src="https://i.postimg.cc/nVRNZC65/gb0053.jpg" alt=""></p>
+<p>Не забываем сохранять все изменения.
+А теперь щелкаем правой кнопкой мыши на проекте БД и выбираем <strong>Publish…</strong> Редактируем настройки <strong>Target Database</strong>.</p>
+<p><img src="https://i.postimg.cc/RhDYTD79/gb0054.jpg" alt=""></p>
+<p>Введем свойства подключения, такие как – если это проверка подлинности SQL Server, то указываем имя сервера, имя пользователя, пароль и выбираем базу; а если это аутентификация Windows, то указываем имя сервера и базу данных.</p>
+<p><img src="https://i.postimg.cc/281M5CY5/gb0055.jpg" alt=""></p>
+<p><img src="https://i.postimg.cc/8cjKsmqY/gb0056.jpg" alt=""></p>
+<p>После чего мы жмем на кнопку Publish. Немного подождем, пока БД не будет опубликована.</p>
+<p><img src="https://i.postimg.cc/zBd2JcPW/gb0057.jpg" alt=""></p>
+<p>Теперь запускаем SQL Server Management Studio и проверяем, есть ли база данных SampleDB или нет.</p>
+<p><img src="https://i.postimg.cc/Zn2fNym5/gb0058.jpg" alt=""></p>
+<h3 id="вывод">Вывод</h3>
+<p>В этой статье мы узнали, как создать проект базы данных в Visual Studio 2019 и публиковать ту же БД в SQL Server 2017.</p>
+<p>Переведен и переработан <a href="https://www.c-sharpcorner.com/article/create-database-project-in-visual-studio-2015/">оригинал</a></p></div>
+    <div class="post-footer">
+      <div class="info">
+        
+
+        
+          <span class="separator"><a class="tag" href="/tags/ms-sql/">MS SQL</a><a class="tag" href="/tags/visual-studio-2019/">Visual Studio 2019</a><a class="tag" href="/tags/%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%BE%D0%B2-%D0%B1%D0%B4/">Разработка проектов БД</a><a class="tag" href="/tags/database-project/">Database Project</a><a class="tag" href="/tags/%D0%B1%D0%B0%D0%B7%D1%8B-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85/">Базы данных</a></span>
+
+
+
+
+        
+      </div>
+    </div>
+
+    
+  </div>
+
+
+          </div>
+        </div>
+      </main>
+    </div><footer class="footer footer--base">
+  <div class="by_farbox">
+    <ul class="footer__list">
+      <li class="footer__item">
+        &copy;
+        
+          GhostBasenji 2019-2021
+
+        
+      </li>
+      
+    </ul>
+  </div>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.71100d84fab0ad794b8399a66ac810700cc78d703f715dc10af4d7ba7b761362.js"
+    integrity="sha256-cRANhPqwrXlLg5mmasgQcAzHjXA/cV3BCvTXunt2E2I="
+    crossorigin="anonymous"
+  ></script></body>
+</html>

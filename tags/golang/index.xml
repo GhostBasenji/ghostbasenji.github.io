@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Golang on </title>
+    <link>/tags/golang/</link>
+    <description>Recent content in Golang on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 27 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Настраиваем VS Code для работы с Go в Windows</title>
+      <link>/post/configuring-vs-code-to-work-golang-in-windows/</link>
+      <pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/configuring-vs-code-to-work-golang-in-windows/</guid>
+      
+        <description>&lt;p&gt;В этой статье рассмотрим, как мы могли бы установить компилятор Go в Windows. Кроме того, как настроить редактор Visual Studio Code для работы с Go.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

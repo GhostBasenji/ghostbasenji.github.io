@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html
+  dir="ltr"
+  lang="en"
+  data-theme="light"
+><head>
+  <title>
+    Ghost Basenji
+      |
+      Установка PostgreSQL 12 на Windows 10
+
+
+    
+
+  </title>
+
+  
+  <meta charset="utf-8" /><meta name="generator" content="Hugo 0.81.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta
+    name="description"
+    content="
+      Notes of a novice programmer
+
+
+    "
+  />
+  
+  
+  
+  <link
+    rel="stylesheet"
+    href="/css/main.min.80d28e7af4108ef1e90dd5bd674a29a35aee71942fd29980eefa7e36e3710afc.css"
+    integrity="sha256-gNKOevQQjvHpDdW9Z0opo1rucZQv0pmA7vp&#43;NuNxCvw="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.f798cbda9aaa38f89eb38be6414bd082cfd71a6780375cbf67b6d2fb2b96491e.css"
+    integrity="sha256-95jL2pqqOPies4vmQUvQgs/XGmeAN1y/Z7bS&#43;yuWSR4="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous"
+  />
+  
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+  <link rel="canonical" href="/post/ustanovka-postgresql-na-windows-10/" />
+
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.2a2cd9614b7d007dfbb75e8da19e3a0fa872ceab53c6d000c00b7a0c89b85bfc.js"
+    integrity="sha256-KizZYUt9AH37t16NoZ46D6hyzqtTxtAAwAt6DIm4W/w="
+    crossorigin="anonymous"
+  ></script>
+
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Установка PostgreSQL 12 на Windows 10"/>
+<meta name="twitter:description" content="В этой статье мы рассмотрим, как установить PostgreSQL 12 на Windows 10.
+Кроме того, также установим и настроим pgAdmin 4, который является стандартным и бесплатным графическим инструментом управления СУБД PostgreSQL, который можно использовать для написания SQL-запросов, разработки процедур, функций, а также для администрирования PostgreSQL."/>
+
+
+
+  
+</head>
+<body>
+    <header><div
+  class="page-top 
+    .
+
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+  </a>
+  <nav>
+    <ul class="nav__list" id="navMenu">
+      <div class="nav__links">
+        
+        
+          
+          <li>
+            <a
+              
+              href="/"
+              
+              title=""
+              >Home</a
+            >
+          </li>
+
+        
+          
+          <li>
+            <a
+              
+              href="/post/"
+              
+              title=""
+              >Архив</a
+            >
+          </li>
+
+        
+          
+          <li>
+            <a
+              
+              href="/myprojects/"
+              
+              title=""
+              >Мои проекты</a
+            >
+          </li>
+
+        
+          
+          <li>
+            <a
+              
+              href="/about/"
+              
+              title=""
+              >About</a
+            >
+          </li>
+
+        
+        
+      </div>
+      <li>
+        
+      </li>
+    </ul>
+  </nav>
+</div>
+</header>
+    <div class="wrapper">
+      <aside><div
+  class="sidebar
+    .
+
+  "
+>
+  <div class="sidebar__content">
+    <div class="logo-title">
+      <div class="title">
+        <img src="/images/profile.png" alt="profile picture" />
+        <h3 title=""><a href="/">I&#39;m Ghost Basenji</a></h3>
+        <div class="description">
+          <p>Notes of a novice programmer</p>
+        </div>
+      </div>
+    </div>
+    <ul class="social-links">
+      
+        <li>
+          <a href="https://t.me/ghostbasenji" rel="me" aria-label="telegram">
+            <i class="fab fa-telegram fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      
+        <li>
+          <a href="mailto:petr.and.vic@gmail.com" rel="me" aria-label="e-mail">
+            <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      
+    </ul>
+  </div><footer class="footer footer--sidebar">
+  <div class="by_farbox">
+    <ul class="footer__list">
+      <li class="footer__item">
+        &copy;
+        
+          GhostBasenji 2019-2021
+
+        
+      </li>
+      
+    </ul>
+  </div>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.71100d84fab0ad794b8399a66ac810700cc78d703f715dc10af4d7ba7b761362.js"
+    integrity="sha256-cRANhPqwrXlLg5mmasgQcAzHjXA/cV3BCvTXunt2E2I="
+    crossorigin="anonymous"
+  ></script></div>
+</aside>
+      <main>
+        <div class="autopagerize_page_element">
+          <div class="content">
+  <div
+    class="post 
+      .
+
+    "
+  >
+    <div class="post-content">
+      
+      <div class="post-title">
+        <h1>Установка PostgreSQL 12 на Windows 10</h1>
+        
+          <div class="info">
+            <em class="fas fa-calendar-day"></em>
+            <span class="date"
+              >
+                Thu, Aug 20, 2020
+
+
+              </span
+            >
+            
+
+        
+      </div><p>В этой статье мы рассмотрим, как установить PostgreSQL 12 на Windows 10.
+Кроме того, также установим и настроим pgAdmin 4, который является стандартным и бесплатным графическим инструментом управления СУБД PostgreSQL, который можно использовать для написания SQL-запросов, разработки процедур, функций, а также для администрирования PostgreSQL.</p>
+<h2 id="что-такое-postgresql">Что такое PostgreSQL?</h2>
+<p><strong>PostgreSQL</strong>  – это бесплатная объектно-реляционная система управления базами данных (СУБД). PostgreSQL реализован для множеств ОС, таких как: BSD, Linux, macOS, Solaris и Windows.
+PostgreSQL использует язык PL/pgSQL</p>
+<h3 id="plpgsql--процедурное-расширение-языка-sql-разработанное-и-используемое-в-субд-postgresql">PL/pgSQL – процедурное расширение языка SQL, разработанное и используемое в СУБД PostgreSQL.</h3>
+<p><strong>Язык PL/pgSQL</strong> спроектирован для создания функций, триггеров, а также для добавления управляющих структур в язык SQL, и для помощи нам в выполнении сложных вычислений.
+PostgreSQL – одна из самых популярных СУБД.
+На момент написания этой статьи мы будем устанавливать самую последнюю версию PostgreSQL 12.</p>
+<h3 id="системные-требования-для-установки-postgresql-12-в-windows">Системные требования для установки PostgreSQL 12 в Windows</h3>
+<p>PostgreSQL 12 не может быть установлен на всех версиях Windows, в частности, официально поддерживаются следующие версии и только 64-разрядные:</p>
+<ul>
+<li>Windows Server 2012 R2;</li>
+<li>Windows Server 2016;</li>
+<li>Windows Server 2019</li>
+</ul>
+<p>Как видим, в официальном списке нет Windows 10, но установка в этой системе пройдет гладко, как и последующее функционирование PostgreSQL.</p>
+<p>Кроме того, существуют и другие требования:</p>
+<ul>
+<li>Процессор с частотой не менее 1 ГГц;</li>
+<li>2 Гб оперативной памяти;</li>
+<li>Не менее 512 Мб свободного дискового пространства (рекомендуется больше для установки дополнительных компонентов);</li>
+<li>Также рекомендуется установить все обновления ОС Windows.</li>
+</ul>
+<h2 id="установка-postgresql-12-и-pgadmin-4-на-windows-10">Установка PostgreSQL 12 и pgAdmin 4 на Windows 10</h2>
+<p>Итак, давайте перейдем к процессу установки и рассмотрим все этапы, которые необходимо выполнить, чтобы установить PostgreSQL 12 и pgAdmin 4 на Windows 10.</p>
+<h3 id="step-1-загрузка-инсталлятора-для-windows">Step 1. Загрузка инсталлятора для Windows</h3>
+<p>Как ранее уже говорилось, PostgreSQL реализован для многих платформ, но т.к. будем устанавливать PostgreSQL на Windows, нам потребуется соответствующий установщик Windows. Конечно, можно скачать этот дистрибутив с официального веб-сайта PostgreSQL, вот <a href="https://www.postgresql.org/download/windows/">страница загрузки</a>. После перехода на страницу нам нужно нажать на ссылку “Download the installer”, в результате чего попадаем на сайт EnterpriseDB, который делает графические дистрибутивы PostgreSQL для многих платформ, включая Windows, поэтому можем сразу перейти <a href="https://www.enterprisedb.com/downloads/postgres-postgresql-downloads">на этот сайт</a>.
+Здесь нам предоставлен выбор версии и платформы PostgreSQL, в моем случае я выбираю PostgreSQL 12 и Windows x86-64.
+В итоге мы загрузили файл <strong>postgresql-12.3-2-windows-x64.exe</strong> размером 194Мб (Версия 12.3-2 доступна на момент написания статьи).</p>
+<h3 id="step-2-запускаем-установщик-postgresql">Step 2. Запускаем установщик PostgreSQL</h3>
+<p>Теперь, чтобы начать установку, нам нужно запустить загруженный файл (установка PostgreSQL требует прав администратора).
+После запуска откроется экран приветствия, щелкаем по кнопке Next.</p>
+<h3 id="step-3-указываем-каталог-для-установки-postgresql-12">Step 3. Указываем каталог для установки PostgreSQL 12</h3>
+<p>Далее, при необходимости, мы можем указать путь к каталогу, в который мы хотим установить PostgreSQL 12, но мы можем оставить его по умолчанию. Щелкаем по кнопке Next.</p>
+<p><img src="https://i.postimg.cc/CK5kvJT4/01.png" alt=""></p>
+<h3 id="step-4-выбираем-компоненты-для-установки">Step 4. Выбираем компоненты для установки</h3>
+<p>Выбираем компоненты, которые нам нужно установить. Для этого мы отмечаем флажками те компоненты, которые нам нужны, и убеждаемся, что нам нужны PostgreSQL Server и pgAdmin 4.
+Утилиты командной строки и Stack Builder можно установить самостоятельно, т.е. не надо их ставить. Нажимаем Next.</p>
+<p><img src="https://i.postimg.cc/26BvY65b/02.png" alt=""></p>
+<h3 id="step-5-указываем-каталог-для-хранения-файлов-базы-данных">Step 5. Указываем каталог для хранения файлов базы данных</h3>
+<p>На данном этапе мы указываем каталог, в котором по умолчанию будут располагаться файлы БД.
+Примечание. В случае тестовой установки, например, для обучения, можно оставить это по умолчанию, но “боевые” БД всегда должны храниться в отдельном месте, поэтому, если планируется использовать сервер PostgreSQL для каких-то других целей, лучше указать отдельный диск.
+Щелкаем по кнопке Next.</p>
+<p><img src="https://i.postimg.cc/SKP8H8mb/03.png" alt=""></p>
+<h3 id="step-6-назначаем-пароль-для-пользователя-postgres">Step 6. Назначаем пароль для пользователя Postgres</h3>
+<p>Далее нам нужно задать пароль для пользователя Postgres – это администратор сервера PostgreSQL с максимальными правами.
+Вводим и подтверждаем пароль.</p>
+<p><img src="https://i.postimg.cc/15S6xy1X/04.png" alt=""></p>
+<h3 id="step-7-определяем-порта-для-экземпляра-postgresql">Step 7. Определяем порта для экземпляра PostgreSQL</h3>
+<p>На этом этапе при необходимости можем изменить порт, на котором будет работать сервер PostgreSQL. Если у нас нет такой необходимости, то оставляем его по умолчанию.</p>
+<p><img src="https://i.postimg.cc/4ykcxgK8/05.png" alt=""></p>
+<h3 id="step-8-указываем-кодировку-данных-в-базе">Step 8. Указываем кодировку данных в базе</h3>
+<p>Здесь мы можем задать конкретную кодировку данных в БД. Для этого нам нужно выбрать что-то из выпадающего списка.
+Однако мы можем оставить все по умолчанию, а именно Default locale, нажав на кнопку Next.</p>
+<p><img src="https://i.postimg.cc/NF6HyzmQ/06.png" alt=""></p>
+<h3 id="step-9-проверяем-параметры-установки-postgresql">Step 9. Проверяем параметры установки PostgreSQL</h3>
+<p>Вот и все готово к установке. На этом этапе мы проверяем введенные ранее параметры и, если все правильно, то нажимаем Next.</p>
+<p><img src="https://i.postimg.cc/Z57yy3Bv/07.png" alt=""></p>
+<h3 id="step-10-запускаем-процесс-установки">Step 10. Запускаем процесс установки</h3>
+<p>Далее мы увидим еще одно дополнительное окно, в котором мы должны нажать на кнопку Next, чтобы начать процесс установки PostgreSQL на нашем компьютере.</p>
+<p><img src="https://i.postimg.cc/dQrdSLXg/08.png" alt=""></p>
+<p>Установка началась, и она продлится буквально одну минуту.</p>
+<p><img src="https://i.postimg.cc/Hksyx3xC/09.png" alt=""></p>
+<h3 id="step-11-завершаем-процесс-установки">Step 11. Завершаем процесс установки</h3>
+<p>Когда появится окно сообщения “Completing the PostgreSQL Setup Wizard”, то это значит, что установка PostgreSQL 12 и pgAdmin 4 завершена.
+Щелкаем по кнопке Finish.</p>
+<p><img src="https://i.postimg.cc/4N1csjX5/10.png" alt=""></p>
+<h2 id="запуск-и-настройка-pgadmin-4">Запуск и настройка pgAdmin 4</h2>
+<p>PostgreSQL 12 и pgAdmin 4 мы установили, а теперь давайте запустим pgAdmin 4, подключимся к серверу и настроим рабочую среду pgAdmin.
+Чтобы запустить pgAdmin 4, переходим в меню Start &gt; PostgreSQL 12 &gt; pgAdmin 4.</p>
+<h3 id="подключение-к-серверу-postgresql-12">Подключение к серверу PostgreSQL 12</h3>
+<p><strong>pgAdmin 4</strong> имеет веб-интерфейс, поэтому в результате мы должны запустить свой браузер и открыть приложение pgAdmin 4.
+При первом запуске pgAdmin 4 увидим окно “Set Master Password”, в котором мы должны задать “master password”. Этого можно не делать, но если сохраняем пароль пользователя (флажок “Save password”), например, чтобы при каждом подключении не нужно вводить пароль, то настоятельно рекомендуется придумать и ввести дополнительный пароль. Это делается один раз.
+Введем пароль и щелкаем по кнопке OK.</p>
+<p><img src="https://i.postimg.cc/zf4bxrkJ/11.png" alt=""></p>
+<p>Чтобы подключиться к недавно установленному локальному серверу PostgreSQL, в браузере сервера нажимаем на Servers &gt; PostgreSQL 12. Откроется окно “Connect to Server”, в котором мы введем пароль пользователя postgres, т.е. тот же пароль, который мы создали во время установки Postgres. После того, как ввели пароль, ставим галочку на “Save Password” для сохранения пароля, и при каждом запуске приложения уже не нужно вводить (благодаря функции “master password” все пароли, сохраненные таким образом, будут дополнительно зашифрованы).</p>
+<p><img src="https://i.postimg.cc/Y9g4VsXQ/12.png" alt=""></p>
+<p>В результате чего мы подключимся к локальному серверу PostgreSQL 12 и увидим все объекты, которые находятся на этом сервере.</p>
+<p><img src="https://i.postimg.cc/D0TWKPDH/13.png" alt=""></p>
+<h3 id="пример-написания-sql-запроса-в-query-tool">Пример написания SQL-запроса в Query Tool</h3>
+<p>Чтобы убедиться, что наш сервер PostgreSQL работает, давайте напишем простой запрос SELECT, который покажет нам версию сервера PostgreSQL.
+Для написания запросов SQL в pgAdmin воспользуемся Query Tool. Мы его запустим с помощью значка на панели или из меню Tools.
+После того, как открыли Query Tool, напишем следующее предложение:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#ff79c6">SELECT</span> <span style="color:#ff79c6">VERSION</span> ()
+</code></pre></div><p>Этот запрос покажет версию PostgreSQL. Как мы видим, все работает.</p>
+<p><img src="https://i.postimg.cc/VNJ096nG/14.png" alt=""></p></div>
+    <div class="post-footer">
+      <div class="info">
+        
+
+        
+          <span class="separator"><a class="tag" href="/tags/postgresql/">PostgreSQL</a><a class="tag" href="/tags/sql/">SQL</a><a class="tag" href="/tags/windows-10/">Windows 10</a></span>
+
+
+
+
+        
+      </div>
+    </div>
+
+    
+  </div>
+
+
+          </div>
+        </div>
+      </main>
+    </div><footer class="footer footer--base">
+  <div class="by_farbox">
+    <ul class="footer__list">
+      <li class="footer__item">
+        &copy;
+        
+          GhostBasenji 2019-2021
+
+        
+      </li>
+      
+    </ul>
+  </div>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.71100d84fab0ad794b8399a66ac810700cc78d703f715dc10af4d7ba7b761362.js"
+    integrity="sha256-cRANhPqwrXlLg5mmasgQcAzHjXA/cV3BCvTXunt2E2I="
+    crossorigin="anonymous"
+  ></script></body>
+</html>

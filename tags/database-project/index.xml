@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Database Project on </title>
+    <link>/tags/database-project/</link>
+    <description>Recent content in Database Project on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 20 Oct 2019 00:00:00 +0000</lastBuildDate><atom:link href="/tags/database-project/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Создаем проект базы данных из существующей БД SQL</title>
+      <link>/post/sozdaem-proekt-bazyi-dannyih-iz-suschestvuyuschey-bd-sql/</link>
+      <pubDate>Sun, 20 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/sozdaem-proekt-bazyi-dannyih-iz-suschestvuyuschey-bd-sql/</guid>
+      
+        <description>&lt;p&gt;В этом посте мы увидим, как создается проект базы данных из существующей базы данных SQL. Мы изменим проект, добавив таблицу в проект и исходные данные через скрипт post deployment. Позже мы развернем этот проект на сервере SQL в качестве новой БД.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Создаем проект базы данных в Visual Studio 2019</title>
+      <link>/post/sozdaem-proekt-db-v-visual-studio-2019/</link>
+      <pubDate>Thu, 17 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/sozdaem-proekt-db-v-visual-studio-2019/</guid>
+      
+        <description>&lt;p&gt;В настоящее время базы данных (БД) являются проблемой для разработчиков, и это одна из самых сложных задач в любом проекте ПО для управления изменениями БД и синхронизации этих изменений.
+Для решения этой проблемы в Visual Studio имеются проекты баз данных SQL. Можно с легкостью разрабатывать, управлять, сравнивать и развертывать изменения базы данных с помощью Visual Studio.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html
+  dir="ltr"
+  lang="en"
+  data-theme="light"
+><head>
+  <title>
+    Ghost Basenji
+      |
+      Создание и размещение WCF-службы – Self-Hosting
+
+
+    
+
+  </title>
+
+  
+  <meta charset="utf-8" /><meta name="generator" content="Hugo 0.81.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta
+    name="description"
+    content="
+      Notes of a novice programmer
+
+
+    "
+  />
+  
+  
+  
+  <link
+    rel="stylesheet"
+    href="/css/main.min.80d28e7af4108ef1e90dd5bd674a29a35aee71942fd29980eefa7e36e3710afc.css"
+    integrity="sha256-gNKOevQQjvHpDdW9Z0opo1rucZQv0pmA7vp&#43;NuNxCvw="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.f798cbda9aaa38f89eb38be6414bd082cfd71a6780375cbf67b6d2fb2b96491e.css"
+    integrity="sha256-95jL2pqqOPies4vmQUvQgs/XGmeAN1y/Z7bS&#43;yuWSR4="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous"
+  />
+  
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+  <link rel="canonical" href="/post/wcf-service-self-hosting/" />
+
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.2a2cd9614b7d007dfbb75e8da19e3a0fa872ceab53c6d000c00b7a0c89b85bfc.js"
+    integrity="sha256-KizZYUt9AH37t16NoZ46D6hyzqtTxtAAwAt6DIm4W/w="
+    crossorigin="anonymous"
+  ></script>
+
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Создание и размещение WCF-службы – Self-Hosting"/>
+<meta name="twitter:description" content="В данной статье рассматривается вариант использования службы WCF методом авто-размещения (Self-Hosting)."/>
+
+
+
+  
+</head>
+<body>
+    <header><div
+  class="page-top 
+    .
+
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+  </a>
+  <nav>
+    <ul class="nav__list" id="navMenu">
+      <div class="nav__links">
+        
+        
+          
+          <li>
+            <a
+              
+              href="/"
+              
+              title=""
+              >Home</a
+            >
+          </li>
+
+        
+          
+          <li>
+            <a
+              
+              href="/post/"
+              
+              title=""
+              >Архив</a
+            >
+          </li>
+
+        
+          
+          <li>
+            <a
+              
+              href="/myprojects/"
+              
+              title=""
+              >Мои проекты</a
+            >
+          </li>
+
+        
+          
+          <li>
+            <a
+              
+              href="/about/"
+              
+              title=""
+              >About</a
+            >
+          </li>
+
+        
+        
+      </div>
+      <li>
+        
+      </li>
+    </ul>
+  </nav>
+</div>
+</header>
+    <div class="wrapper">
+      <aside><div
+  class="sidebar
+    .
+
+  "
+>
+  <div class="sidebar__content">
+    <div class="logo-title">
+      <div class="title">
+        <img src="/images/profile.png" alt="profile picture" />
+        <h3 title=""><a href="/">I&#39;m Ghost Basenji</a></h3>
+        <div class="description">
+          <p>Notes of a novice programmer</p>
+        </div>
+      </div>
+    </div>
+    <ul class="social-links">
+      
+        <li>
+          <a href="https://t.me/ghostbasenji" rel="me" aria-label="telegram">
+            <i class="fab fa-telegram fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      
+        <li>
+          <a href="mailto:petr.and.vic@gmail.com" rel="me" aria-label="e-mail">
+            <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      
+    </ul>
+  </div><footer class="footer footer--sidebar">
+  <div class="by_farbox">
+    <ul class="footer__list">
+      <li class="footer__item">
+        &copy;
+        
+          GhostBasenji 2019-2021
+
+        
+      </li>
+      
+    </ul>
+  </div>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.71100d84fab0ad794b8399a66ac810700cc78d703f715dc10af4d7ba7b761362.js"
+    integrity="sha256-cRANhPqwrXlLg5mmasgQcAzHjXA/cV3BCvTXunt2E2I="
+    crossorigin="anonymous"
+  ></script></div>
+</aside>
+      <main>
+        <div class="autopagerize_page_element">
+          <div class="content">
+  <div
+    class="post 
+      .
+
+    "
+  >
+    <div class="post-content">
+      
+      <div class="post-title">
+        <h1>Создание и размещение WCF-службы – Self-Hosting</h1>
+        
+          <div class="info">
+            <em class="fas fa-calendar-day"></em>
+            <span class="date"
+              >
+                Tue, Oct 15, 2019
+
+
+              </span
+            >
+            
+
+        
+      </div><p>В данной статье рассматривается вариант использования службы WCF методом авто-размещения (Self-Hosting).</p>
+<h2 id="основная-часть">Основная часть</h2>
+<p>Наше простейшее приложение будет производить арифметические операции над простейшими числами.
+План действий:</p>
+<ol>
+<li>Создание WCF-службы.</li>
+<li>Создание консольного приложения для произведения арифметических операций.</li>
+</ol>
+<h3 id="часть-1-создание-wcf-службы">Часть 1. Создание WCF-службы</h3>
+<ol>
+<li>Запускаем Visual Studio 2019. Потом выбираем <strong>Create a new project</strong>.</li>
+<li>В появившемся окне выбираем WCF Service Application и даем название проекту “SelfHosting”.</li>
+</ol>
+<p><img src="https://i.postimg.cc/kgZF6rBT/gb0024.jpg" alt="Рис. 1"></p>
+<p><img src="https://i.postimg.cc/85LHgykt/gb0025.jpg" alt="Рис. 2"></p>
+<ol start="3">
+<li>Открываем файл IService1.cs и удаляем существующие детали <strong>DataContract</strong>, потом добавляем новый класс <em>ExceptionMessage</em> в DataContract для показа сведения об исключении.</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#50fa7b">[DataContract]</span>
+<span style="color:#ff79c6">public</span> <span style="color:#ff79c6">class</span> <span style="color:#50fa7b">ExceptionMessage</span>
+{
+    <span style="color:#ff79c6">private</span> <span style="color:#8be9fd">string</span> infoExceptionMessage;
+    <span style="color:#ff79c6">public</span> ExceptionMessage(<span style="color:#8be9fd">string</span> Message)
+    {
+        <span style="color:#ff79c6">this</span>.infoExceptionMessage = Message;
+    }
+<span style="color:#50fa7b">    [DataMember]</span>
+    <span style="color:#ff79c6">public</span> <span style="color:#8be9fd">string</span> errorMessageOfAction
+    {
+        <span style="color:#ff79c6">get</span> { <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">this</span>.infoExceptionMessage; }
+        <span style="color:#ff79c6">set</span> { <span style="color:#ff79c6">this</span>.infoExceptionMessage = <span style="color:#ff79c6">value</span>; }
+    }
+}
+</code></pre></div><ol start="4">
+<li>Удаляем все перечисленное <em>OperationContract</em> в интерфейсе IService1, потом добавляем новый <em>OperationContracts</em> с <strong>FaultContract</strong> для выполнения арифметических операций.</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#50fa7b">[ServiceContract]</span>
+<span style="color:#ff79c6">public</span> <span style="color:#ff79c6">interface</span> IService1
+{
+<span style="color:#50fa7b">    [OperationContract]</span>
+<span style="color:#50fa7b">    [FaultContract(typeof(ExceptionMessage))]</span>
+    <span style="color:#8be9fd">int</span> Addition(<span style="color:#8be9fd">int</span> number1, <span style="color:#8be9fd">int</span> number2);
+<span style="color:#50fa7b">
+</span><span style="color:#50fa7b">    [OperationContract]</span>
+<span style="color:#50fa7b">    [FaultContract(typeof(ExceptionMessage))]</span>
+    <span style="color:#8be9fd">int</span> Subtraction(<span style="color:#8be9fd">int</span> number1, <span style="color:#8be9fd">int</span> number2);
+<span style="color:#50fa7b">
+</span><span style="color:#50fa7b">    [OperationContract]</span>
+<span style="color:#50fa7b">    [FaultContract(typeof(ExceptionMessage))]</span>
+    <span style="color:#8be9fd">int</span> Multiplication(<span style="color:#8be9fd">int</span> number1, <span style="color:#8be9fd">int</span> number2);
+<span style="color:#50fa7b">        
+</span><span style="color:#50fa7b">    [OperationContract]</span>
+<span style="color:#50fa7b">    [FaultContract(typeof(ExceptionMessage))]</span>
+    <span style="color:#8be9fd">int</span> Division(<span style="color:#8be9fd">int</span> number1, <span style="color:#8be9fd">int</span> number2);
+}
+</code></pre></div><ol start="5">
+<li>Разворачиваем файл Service1.svc и открываем файл Service1.svc.cs. Удаляем все функции, находящиеся в классе Service1. Там же будем реализовать нижеперечисленные методы интерфейса.</li>
+</ol>
+<ul>
+<li>Метод <strong>Addition()</strong>:</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#ff79c6">public</span> <span style="color:#8be9fd">int</span> Addition(<span style="color:#8be9fd">int</span> number1, <span style="color:#8be9fd">int</span> number2)
+{
+    <span style="color:#ff79c6">try</span>
+    {
+        <span style="color:#ff79c6">return</span> number1 + number2;
+    }
+    <span style="color:#ff79c6">catch</span> (Exception exception)
+    {
+        <span style="color:#ff79c6">throw</span> <span style="color:#ff79c6">new</span> FaultException&lt;ExceptionMessage&gt;(<span style="color:#ff79c6">new</span> ExceptionMessage(exception.Message));
+    }
+}
+</code></pre></div><ul>
+<li>Метод <strong>Subtraction()</strong>:</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#ff79c6">public</span> <span style="color:#8be9fd">int</span> Subtraction(<span style="color:#8be9fd">int</span> number1, <span style="color:#8be9fd">int</span> number2)
+{
+    <span style="color:#ff79c6">try</span>
+    {
+        <span style="color:#ff79c6">if</span> (number1 &gt; number2)
+        {
+            <span style="color:#ff79c6">return</span> number1 - number2;
+        }
+        <span style="color:#ff79c6">else</span>
+        {
+            <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span>;
+        }
+    }
+    <span style="color:#ff79c6">catch</span> (Exception exception)
+    {
+        <span style="color:#ff79c6">throw</span> <span style="color:#ff79c6">new</span> FaultException&lt;ExceptionMessage&gt;(<span style="color:#ff79c6">new</span> ExceptionMessage(exception.Message));
+    }
+}
+</code></pre></div><ul>
+<li>Метод <strong>Multiplication()</strong>:</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#ff79c6">public</span> <span style="color:#8be9fd">int</span> Multiplication(<span style="color:#8be9fd">int</span> number1, <span style="color:#8be9fd">int</span> number2)
+{
+    <span style="color:#ff79c6">try</span>
+    {
+        <span style="color:#ff79c6">return</span> number1 * number2;
+    }
+    <span style="color:#ff79c6">catch</span> (Exception exception)
+    {
+        <span style="color:#ff79c6">throw</span> <span style="color:#ff79c6">new</span> FaultException&lt;ExceptionMessage&gt;(<span style="color:#ff79c6">new</span> ExceptionMessage(exception.Message));
+    }
+}
+</code></pre></div><ul>
+<li>Метод <strong>Division()</strong>:</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#ff79c6">public</span> <span style="color:#8be9fd">int</span> Division(<span style="color:#8be9fd">int</span> number1, <span style="color:#8be9fd">int</span> number2)
+{
+    <span style="color:#ff79c6">try</span>
+    {
+        <span style="color:#ff79c6">if</span> (number2 != <span style="color:#bd93f9">0</span>)
+        {
+            <span style="color:#ff79c6">return</span> number1 / number2;
+        }
+        <span style="color:#ff79c6">else</span>
+        {
+            <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">1</span>;
+        }
+    }
+    <span style="color:#ff79c6">catch</span> (Exception exception)
+    {
+        <span style="color:#ff79c6">throw</span> <span style="color:#ff79c6">new</span> FaultException&lt;ExceptionMessage&gt;(<span style="color:#ff79c6">new</span> ExceptionMessage(exception.Message));
+    }
+}
+</code></pre></div><ol start="6">
+<li>Итак, мы создали службу WCF для Self-Hosting. А теперь построим ее с помощью команды Build Solution.</li>
+</ol>
+<h3 id="часть-2-создание-консольного-приложения">Часть 2. Создание консольного приложения</h3>
+<ol>
+<li>Правой кнопкой мыши щелкаем по Solution и из меню выбираем Add &gt; New Project…</li>
+<li>Выбираем консольное приложение и создаем его.</li>
+<li>Добавляем ссылку на “SelfHostingTest” и на сборку “System.ServiceModel”.</li>
+<li>Правой кнопкой мыши щелкаем на файле <strong>“App.config”</strong> консольного приложения, после чего выбираем <strong>“Edit WCF Configuration”</strong>.</li>
+<li>Перед нами появится окно конфигурации служб.</li>
+</ol>
+<p><img src="https://i.postimg.cc/nrkGCCDm/gb0026.jpg" alt="Рис. 3"></p>
+<ol start="6">
+<li>Выбираем папку <strong>“Services”</strong>, потом щелкаем в правой стороне на ссылку <strong>“Create a New Service…”</strong>. Щелкаем по кнопке “Browse…”, после чего заходим в папку bin проекта SelfHostingTest. Выбираем <strong>SelfHosting.dll</strong> и щелкаем по кнопке Open.</li>
+</ol>
+<p><img src="https://i.postimg.cc/MpXmpZKc/gb0027.jpg" alt="Рис. 4"></p>
+<p>В следующем окне выбираем нашу службу. Снова щелкаем по кнопке Open</p>
+<p><img src="https://i.postimg.cc/FFgZPnBK/gb0028.jpg" alt="Рис. 5"></p>
+<p>Вот и все, мы определили тип службы.</p>
+<p><img src="https://i.postimg.cc/fyZvzxJZ/gb0029.jpg" alt="Рис. 6"></p>
+<ol start="7">
+<li>Щелкаем по кнопке Next, следующее окно попросит предоставить контракт службы. Оставляем все по умолчанию.</li>
+</ol>
+<p><img src="https://i.postimg.cc/SNgG4YqF/gb0030.jpg" alt="Рис. 7"></p>
+<ol start="8">
+<li>Снова щелкаем по кнопке Next. Следующее окно попросит выбрать тип связи. В нашем примере мы выберем “TCP”.</li>
+</ol>
+<p><img src="https://i.postimg.cc/vmV75Pnb/gb0031.jpg" alt="Рис. 8"></p>
+<ol start="9">
+<li>Щелкаем по кнопке Next. Следующее окно спросит про адрес конечной точки (endpoint address). Напишем относительный адрес службы SelfHosting.</li>
+</ol>
+<p><img src="https://i.postimg.cc/MK6YgbCm/gb0032.jpg" alt="Рис. 9"></p>
+<ol start="10">
+<li>Снова щелкаем по кнопке Next. Следующее окно покажет список выбранных настроек.</li>
+</ol>
+<p><img src="https://i.postimg.cc/rm21jSGW/gb0033.jpg" alt="Рис. 10"></p>
+<ol start="11">
+<li>Щелкаем по кнопке Finish. В результате чего появится наша служба.</li>
+</ol>
+<p><img src="https://i.postimg.cc/Jn3b2GKF/gb0034.jpg" alt="Рис. 11"></p>
+<ol start="12">
+<li>Теперь нам нужно развернуть нашу службу и выбрать <strong>“Host”</strong>.</li>
+</ol>
+<p><img src="https://i.postimg.cc/FzD0h8Mg/gb0035.jpg" alt="Рис. 12"></p>
+<ol start="13">
+<li>Здесь добавляем два базовых адреса: один для оконечной точки службы, а другой – для обмена метаданными. Добавляем базовый адрес, нажимая на кнопку New…</li>
+</ol>
+<p><img src="https://i.postimg.cc/rs8SXMPw/gb0036.jpg" alt="Рис. 13"></p>
+<ol start="14">
+<li>Чтобы включить обмен метаданными, для этого нужно включить службу поведения. С помощью которой клиенты могут создавать прокси-классы. Разворачиваем “Advanced”, потом выбираем папку “Service Behavior”. В правой части окна щелкаем по ссылке <strong>“New Service Behavior Configuration”</strong>.</li>
+</ol>
+<p><img src="https://i.postimg.cc/9XpdPwDR/gb0037.jpg" alt="Рис. 14"></p>
+<ol start="15">
+<li>Меняем имя поведения службы на <strong>“SelfHostingBehavior”</strong>.</li>
+</ol>
+<p><img src="https://i.postimg.cc/65pdM6ZH/gb0038.jpg" alt="Рис. 15"></p>
+<ol start="16">
+<li>Нам нужно добавить новое поведение службы для обмена метаданными. Для этого выбираем <strong>“SelfHostingBehavior”</strong>, потом щелкаем по кнопке “Add…”, и выбираем из списка <strong>“ServiceMetadata”</strong>.</li>
+</ol>
+<p><img src="https://i.postimg.cc/QM15FFLM/gb0039.jpg" alt="Рис. 16"></p>
+<ol start="17">
+<li>Потом щелкаем по <strong>“serviceMetadata”</strong>, чтобы установить свойство <strong>“HttpGetEnable”</strong> с False на True.</li>
+</ol>
+<p><img src="https://i.postimg.cc/3xPmrgc6/gb0040.jpg" alt="Рис. 17"></p>
+<ol start="18">
+<li>А теперь нам нужно настроить это новое поведение для нашей службы. Для этого щелкаем по нашей службе “SelfHostingTest”, и устанавливаем свойство “Behavior Configuration” в “SelfHostingBehavior”.</li>
+</ol>
+<p><img src="https://i.postimg.cc/Jn8XZRm5/gb0041.jpg" alt="Рис. 18"></p>
+<ol start="19">
+<li>
+<p>Щелкаем на File в главном меню, и сохраняем все это. Потом закрываем это окно. После чего появится окно сообщения с вопросом, хотим ли сохранить все изменения. На что мы отвечаем утвердительно.</p>
+</li>
+<li>
+<p>После чего проверим файл App.config на наличие внесенных изменений.</p>
+</li>
+</ol>
+<p><img src="https://i.postimg.cc/Y9xWxTCK/gb0042.jpg" alt="Рис. 19"></p>
+<ol start="21">
+<li>Открываем файл Program.cs консольного приложения и добавляем нижеприведенные коды.</li>
+</ol>
+<ul>
+<li>Подключаем следующие операторы using.</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#ff79c6">using</span> SelfHosting;
+<span style="color:#ff79c6">using</span> System.ServiceModel;
+</code></pre></div><ul>
+<li>Добавляем новую функцию <strong>WCFServiceConsume()</strong></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#ff79c6">public</span> <span style="color:#ff79c6">static</span> <span style="color:#ff79c6">void</span> WCFServiceConsume()
+{
+    <span style="color:#ff79c6">try</span>
+        {
+            Console.WriteLine(<span style="color:#f1fa8c">&#34;Self-Hosting a WCF Service in Console Application\n&#34;</span>);
+            Console.WriteLine(<span style="color:#f1fa8c">&#34;-------------------------------------------------\n&#34;</span>);
+            Console.WriteLine(<span style="color:#f1fa8c">&#34;Enter first integer number : &#34;</span>);
+            <span style="color:#8be9fd">int</span> number1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine(<span style="color:#f1fa8c">&#34;Enter second integer number : &#34;</span>);
+            <span style="color:#8be9fd">int</span> number2 = Convert.ToInt32(Console.ReadLine());
+            SelfHostingTest.Service1 wcfService = <span style="color:#ff79c6">new</span> SelfHostingTest.Service1();
+
+            <span style="color:#ff79c6">try</span>
+            {
+                <span style="color:#8be9fd">int</span> addition = wcfService.Addition(number1, number2);
+                Console.WriteLine(<span style="color:#f1fa8c">&#34;Addition Result : &#34;</span> + addition);
+            }
+            <span style="color:#ff79c6">catch</span> (FaultException&lt;ExceptionMessage&gt; exceptionFromService)
+            {
+                Console.WriteLine(<span style="color:#f1fa8c">&#34;Addition Service Error : &#34;</span> + exceptionFromService.Detail.errorMessageOfAction);
+            }
+
+            <span style="color:#ff79c6">try</span>
+            {
+                <span style="color:#8be9fd">int</span> subtraction = wcfService.Subtraction(number1, number2);
+                Console.WriteLine(<span style="color:#f1fa8c">&#34;Subtraction Result : &#34;</span> + subtraction);
+            }
+            <span style="color:#ff79c6">catch</span> (FaultException&lt;ExceptionMessage&gt; exceptionFromService)
+            {
+                Console.WriteLine(<span style="color:#f1fa8c">&#34;Subtraction Service Error : &#34;</span> + exceptionFromService.Detail.errorMessageOfAction);
+            }
+
+            <span style="color:#ff79c6">try</span>
+               {
+                <span style="color:#8be9fd">int</span> multiplication = wcfService.Multiplication(number1, number2);
+                Console.WriteLine(<span style="color:#f1fa8c">&#34;Multiplication Result : &#34;</span> + multiplication);
+            }
+            <span style="color:#ff79c6">catch</span> (FaultException&lt;ExceptionMessage&gt; exceptionFromService)
+            {
+                Console.WriteLine(<span style="color:#f1fa8c">&#34;Multiplication Service Error : &#34;</span> + exceptionFromService.Detail.errorMessageOfAction);
+            }
+
+            <span style="color:#ff79c6">try</span>
+            {
+                <span style="color:#8be9fd">int</span> division = wcfService.Division(number1, number2);
+                Console.WriteLine(<span style="color:#f1fa8c">&#34;Division Result : &#34;</span> + division);
+            }
+            <span style="color:#ff79c6">catch</span> (FaultException&lt;ExceptionMessage&gt; exceptionFromService)
+            {
+                Console.WriteLine(<span style="color:#f1fa8c">&#34;Division Service Error : &#34;</span> + exceptionFromService.Detail.errorMessageOfAction);
+            }
+            Console.WriteLine(<span style="color:#f1fa8c">&#34;*********************************\n&#34;</span>);
+        }
+    <span style="color:#ff79c6">catch</span> (Exception exception)
+    {
+        Console.WriteLine(exception.Message);
+    }
+    <span style="color:#ff79c6">finally</span>
+    {
+        ConsoleClose();
+    }
+}
+</code></pre></div><ul>
+<li>Добавляем новую функцию <strong>ConsoleClose()</strong></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#ff79c6">public</span> <span style="color:#ff79c6">static</span> <span style="color:#ff79c6">void</span> ConsoleClose()
+{
+    Console.WriteLine(<span style="color:#f1fa8c">&#34;Are you sure to close the application? (1/0)\n&#34;</span>);
+    <span style="color:#8be9fd">string</span> close = Console.ReadLine();
+    <span style="color:#ff79c6">if</span> (close == <span style="color:#f1fa8c">&#34;1&#34;</span>)
+    {
+        Console.Clear();
+        WCFServiceConsume();
+    }
+}
+</code></pre></div><ul>
+<li>Вызываем функцию WCFServiceConsume() в методе <strong>Main</strong></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#ff79c6">static</span> <span style="color:#ff79c6">void</span> Main(<span style="color:#8be9fd">string</span>[] args)
+{
+    WCFServiceConsume();
+}
+</code></pre></div><ol start="22">
+<li>
+<p>Назначаем Консольное приложение в качестве первого запускаемого проекта. Для этого щелкаем правой кнопкой мыши на проект <strong>SelfHostingConsole</strong>, потом выбираем из контекстного меню Set as StartUp Project.</p>
+</li>
+<li>
+<p>Запускаем приложение.</p>
+</li>
+</ol>
+<h3 id="тестируем-приложение">Тестируем приложение</h3>
+<ul>
+<li>Успешное выполнение</li>
+</ul>
+<p><img src="https://i.postimg.cc/kXYWzrF7/gb0043.jpg" alt="Рис. 20"></p>
+<ul>
+<li>Обработка ошибок</li>
+</ul>
+<p><img src="https://i.postimg.cc/L8qjMyNL/gb0044.jpg" alt="Рис. 21"></p>
+<p><a href="https://github.com/GhostBasenji/SampleSelfHosting/archive/master.zip"><strong>Скачать пример приложения</strong></a></p></div>
+    <div class="post-footer">
+      <div class="info">
+        
+
+        
+          <span class="separator"><a class="tag" href="/tags/c%23/">C#</a><a class="tag" href="/tags/wcf/">WCF</a><a class="tag" href="/tags/self-hosting/">Self-hosting</a><a class="tag" href="/tags/visual-studio-2019/">Visual Studio 2019</a><a class="tag" href="/tags/%2enet-4%2e5/">.NET 4.5</a><a class="tag" href="/tags/dotnet/">dotnet</a></span>
+
+
+
+
+        
+      </div>
+    </div>
+
+    
+  </div>
+
+
+          </div>
+        </div>
+      </main>
+    </div><footer class="footer footer--base">
+  <div class="by_farbox">
+    <ul class="footer__list">
+      <li class="footer__item">
+        &copy;
+        
+          GhostBasenji 2019-2021
+
+        
+      </li>
+      
+    </ul>
+  </div>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.71100d84fab0ad794b8399a66ac810700cc78d703f715dc10af4d7ba7b761362.js"
+    integrity="sha256-cRANhPqwrXlLg5mmasgQcAzHjXA/cV3BCvTXunt2E2I="
+    crossorigin="anonymous"
+  ></script></body>
+</html>

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html
+  dir="ltr"
+  lang="en"
+  data-theme="light"
+><head>
+  <title>
+    Ghost Basenji
+      |
+      Настраиваем VS Code для работы с Go в Windows
+
+
+    
+
+  </title>
+
+  
+  <meta charset="utf-8" /><meta name="generator" content="Hugo 0.81.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta
+    name="description"
+    content="
+      Notes of a novice programmer
+
+
+    "
+  />
+  
+  
+  
+  <link
+    rel="stylesheet"
+    href="/css/main.min.80d28e7af4108ef1e90dd5bd674a29a35aee71942fd29980eefa7e36e3710afc.css"
+    integrity="sha256-gNKOevQQjvHpDdW9Z0opo1rucZQv0pmA7vp&#43;NuNxCvw="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.f798cbda9aaa38f89eb38be6414bd082cfd71a6780375cbf67b6d2fb2b96491e.css"
+    integrity="sha256-95jL2pqqOPies4vmQUvQgs/XGmeAN1y/Z7bS&#43;yuWSR4="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous"
+  />
+  
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+  <link rel="canonical" href="/post/configuring-vs-code-to-work-golang-in-windows/" />
+
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.2a2cd9614b7d007dfbb75e8da19e3a0fa872ceab53c6d000c00b7a0c89b85bfc.js"
+    integrity="sha256-KizZYUt9AH37t16NoZ46D6hyzqtTxtAAwAt6DIm4W/w="
+    crossorigin="anonymous"
+  ></script>
+
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Настраиваем VS Code для работы с Go в Windows"/>
+<meta name="twitter:description" content="В этой статье рассмотрим, как мы могли бы установить компилятор Go в Windows. Кроме того, как настроить редактор Visual Studio Code для работы с Go."/>
+
+
+
+  
+</head>
+<body>
+    <header><div
+  class="page-top 
+    .
+
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+  </a>
+  <nav>
+    <ul class="nav__list" id="navMenu">
+      <div class="nav__links">
+        
+        
+          
+          <li>
+            <a
+              
+              href="/"
+              
+              title=""
+              >Home</a
+            >
+          </li>
+
+        
+          
+          <li>
+            <a
+              
+              href="/post/"
+              
+              title=""
+              >Архив</a
+            >
+          </li>
+
+        
+          
+          <li>
+            <a
+              
+              href="/myprojects/"
+              
+              title=""
+              >Мои проекты</a
+            >
+          </li>
+
+        
+          
+          <li>
+            <a
+              
+              href="/about/"
+              
+              title=""
+              >About</a
+            >
+          </li>
+
+        
+        
+      </div>
+      <li>
+        
+      </li>
+    </ul>
+  </nav>
+</div>
+</header>
+    <div class="wrapper">
+      <aside><div
+  class="sidebar
+    .
+
+  "
+>
+  <div class="sidebar__content">
+    <div class="logo-title">
+      <div class="title">
+        <img src="/images/profile.png" alt="profile picture" />
+        <h3 title=""><a href="/">I&#39;m Ghost Basenji</a></h3>
+        <div class="description">
+          <p>Notes of a novice programmer</p>
+        </div>
+      </div>
+    </div>
+    <ul class="social-links">
+      
+        <li>
+          <a href="https://t.me/ghostbasenji" rel="me" aria-label="telegram">
+            <i class="fab fa-telegram fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      
+        <li>
+          <a href="mailto:petr.and.vic@gmail.com" rel="me" aria-label="e-mail">
+            <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      
+    </ul>
+  </div><footer class="footer footer--sidebar">
+  <div class="by_farbox">
+    <ul class="footer__list">
+      <li class="footer__item">
+        &copy;
+        
+          GhostBasenji 2019-2021
+
+        
+      </li>
+      
+    </ul>
+  </div>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.71100d84fab0ad794b8399a66ac810700cc78d703f715dc10af4d7ba7b761362.js"
+    integrity="sha256-cRANhPqwrXlLg5mmasgQcAzHjXA/cV3BCvTXunt2E2I="
+    crossorigin="anonymous"
+  ></script></div>
+</aside>
+      <main>
+        <div class="autopagerize_page_element">
+          <div class="content">
+  <div
+    class="post 
+      .
+
+    "
+  >
+    <div class="post-content">
+      
+      <div class="post-title">
+        <h1>Настраиваем VS Code для работы с Go в Windows</h1>
+        
+          <div class="info">
+            <em class="fas fa-calendar-day"></em>
+            <span class="date"
+              >
+                Sat, Feb 27, 2021
+
+
+              </span
+            >
+            
+
+        
+      </div><p>В этой статье рассмотрим, как мы могли бы установить компилятор Go в Windows. Кроме того, как настроить редактор Visual Studio Code для работы с Go.</p>
+<p>Давайте начнем с установки Go.</p>
+<h2 id="установка-go">Установка Go</h2>
+<p>Первое, что нам нужно сделать, это перейти на оф.сайт Golang и оттуда <a href="https://golang.org/dl/">загрузить инсталлятор Go для Windows</a>, после чего запускаем установку.
+После завершения установки открываем терминал и выполним следующую команду:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">    &gt; go version    
+    &gt; go version go1.16 windows/amd64
+</code></pre></div><h2 id="добавление-переменной-среды-gopath">Добавление переменной среды GOPATH</h2>
+<p>GOPATH – это переменная среды, которая используется для указания корня рабочего пространства Go. По умолчанию, в Windows рабочее пространство Go находится по адресу %USERPROFILE%/go.
+Для конфигурации GOPATH выполняем следующие действия:</p>
+<ul>
+<li>Создаем новую папку по адресу “D:\go-work”.</li>
+<li>Открываем диалоговое окно Run, нажав Win+R, и вводим sysdm.cpl в поле этого диалогового окна. После чего нажимаем на кнопку OK.</li>
+</ul>
+<p><img src="https://i.postimg.cc/fLy2xtNg/15.png" alt="" title=" "></p>
+<ul>
+<li>Перед нами появится окно System Properties. Нажимаем на кнопку Environment Variables в нижней части этого диалогового окна.</li>
+</ul>
+<p><img src="https://i.postimg.cc/gJ7M4zcc/16.png" alt="" title=" "></p>
+<ul>
+<li>Теперь в диалоговом окне Environment Manager нажимаем на кнопку New… в разделе System Variables.</li>
+</ul>
+<p><img src="https://i.postimg.cc/J0Bp2ftN/17.png" alt="" title=" "></p>
+<ul>
+<li>Задаем GOPATH в качестве имени и D:\go-work как его значение, и нажимаем на кнопку OK.</li>
+</ul>
+<p><img src="https://i.postimg.cc/mZzR4hHw/18.png" alt="" title=" "></p>
+<p>Это сконфигурирует GOPATH для компьютера.</p>
+<p>Чтобы проверить, правильно ли настроен GOPATH, откроем диалоговое окно Run, нажав Win+R, введем %GOPATH% и нажмем кнопку OK. Если это приведет нас к каталогу D:\go-work, то это значит, что конфигурация прошла успешно.</p>
+<h2 id="установка-поддержки-языка-go-в-visual-studio-code">Установка поддержки языка Go в Visual Studio Code</h2>
+<p>Visual Studio Code – это легковесный редактор кода с открытым исходным кодом от Microsoft, который поставляется в комплекте с поддержкой TypeScript, JavaScript и Node.js. Однако можно легко получить поддержку языка Go, установив удобное расширение.
+Запускаем редактор и открываем менеджер расширений, нажав Ctrl+Shift+X.
+В менеджере расширений введем в поисковое поле Go и нажимаем Enter.
+В результатах поиска мы находим расширение Go от Go Team at Google. Нажимаем на кнопку Install и дадим процессу установки завершить свою работу.</p>
+<p><img src="https://i.postimg.cc/jqpTSK6r/19.png" alt="" title=" "></p>
+<p>После того, как закончится процесс установки, открываем палитру команд, нажав Ctrl+Shift+P, и выполняем Go: Install/Update Tools.</p>
+<p><img src="https://i.postimg.cc/w38w8wsS/20.png" alt="" title=" "></p>
+<p>Это даст нам список инструментов, которых нам нужно установить.</p>
+<p><img src="https://i.postimg.cc/sD5rB8KG/21.png" alt="" title=" "></p>
+<p>Устанавливаем все, что указано в раскрывающемся списке.
+После того, как все необходимое установили, давайте напишем код. Создаем новый файл hello.go в редакторе vscode и добавляем нижеприведенный код программы “hello world”.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#ff79c6">package</span> main
+
+<span style="color:#ff79c6">import</span> <span style="color:#f1fa8c">&#34;fmt&#34;</span>
+
+<span style="color:#8be9fd;font-style:italic">func</span> <span style="color:#50fa7b">main</span>() {    
+    fmt.<span style="color:#50fa7b">Println</span>(<span style="color:#f1fa8c">&#34;Hello world...&#34;</span>)    
+}
+</code></pre></div><p>А теперь давайте протестируем функцию автозаполнения, удалив PrintIn(“Hello World&hellip;”) и нажав Ctrl+Space после fmt.</p>
+<p><img src="https://i.postimg.cc/9QVjypN8/22.png" alt="" title=" "></p>
+<p>А теперь попробуем запустить программу с помощью следующей команды в терминале.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">    $ go run hello.go
+    hello world...  
+</code></pre></div><p>Вот и все.</p></div>
+    <div class="post-footer">
+      <div class="info">
+        
+
+        
+          <span class="separator"><a class="tag" href="/tags/go/">Go</a><a class="tag" href="/tags/vs-code/">VS Code</a><a class="tag" href="/tags/golang/">Golang</a></span>
+
+
+
+
+        
+      </div>
+    </div>
+
+    
+  </div>
+
+
+          </div>
+        </div>
+      </main>
+    </div><footer class="footer footer--base">
+  <div class="by_farbox">
+    <ul class="footer__list">
+      <li class="footer__item">
+        &copy;
+        
+          GhostBasenji 2019-2021
+
+        
+      </li>
+      
+    </ul>
+  </div>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.71100d84fab0ad794b8399a66ac810700cc78d703f715dc10af4d7ba7b761362.js"
+    integrity="sha256-cRANhPqwrXlLg5mmasgQcAzHjXA/cV3BCvTXunt2E2I="
+    crossorigin="anonymous"
+  ></script></body>
+</html>

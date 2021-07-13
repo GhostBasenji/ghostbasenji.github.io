@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html
+  dir="ltr"
+  lang="en"
+  data-theme="light"
+><head>
+  <title>
+    Ghost Basenji
+      |
+      Создаем проект базы данных из существующей БД SQL
+
+
+    
+
+  </title>
+
+  
+  <meta charset="utf-8" /><meta name="generator" content="Hugo 0.81.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta
+    name="description"
+    content="
+      Notes of a novice programmer
+
+
+    "
+  />
+  
+  
+  
+  <link
+    rel="stylesheet"
+    href="/css/main.min.80d28e7af4108ef1e90dd5bd674a29a35aee71942fd29980eefa7e36e3710afc.css"
+    integrity="sha256-gNKOevQQjvHpDdW9Z0opo1rucZQv0pmA7vp&#43;NuNxCvw="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.f798cbda9aaa38f89eb38be6414bd082cfd71a6780375cbf67b6d2fb2b96491e.css"
+    integrity="sha256-95jL2pqqOPies4vmQUvQgs/XGmeAN1y/Z7bS&#43;yuWSR4="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous"
+  />
+  
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+  <link rel="canonical" href="/post/sozdaem-proekt-bazyi-dannyih-iz-suschestvuyuschey-bd-sql/" />
+
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.2a2cd9614b7d007dfbb75e8da19e3a0fa872ceab53c6d000c00b7a0c89b85bfc.js"
+    integrity="sha256-KizZYUt9AH37t16NoZ46D6hyzqtTxtAAwAt6DIm4W/w="
+    crossorigin="anonymous"
+  ></script>
+
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Создаем проект базы данных из существующей БД SQL"/>
+<meta name="twitter:description" content="В этом посте мы увидим, как создается проект базы данных из существующей базы данных SQL. Мы изменим проект, добавив таблицу в проект и исходные данные через скрипт post deployment. Позже мы развернем этот проект на сервере SQL в качестве новой БД."/>
+
+
+
+  
+</head>
+<body>
+    <header><div
+  class="page-top 
+    .
+
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+  </a>
+  <nav>
+    <ul class="nav__list" id="navMenu">
+      <div class="nav__links">
+        
+        
+          
+          <li>
+            <a
+              
+              href="/"
+              
+              title=""
+              >Home</a
+            >
+          </li>
+
+        
+          
+          <li>
+            <a
+              
+              href="/post/"
+              
+              title=""
+              >Архив</a
+            >
+          </li>
+
+        
+          
+          <li>
+            <a
+              
+              href="/myprojects/"
+              
+              title=""
+              >Мои проекты</a
+            >
+          </li>
+
+        
+          
+          <li>
+            <a
+              
+              href="/about/"
+              
+              title=""
+              >About</a
+            >
+          </li>
+
+        
+        
+      </div>
+      <li>
+        
+      </li>
+    </ul>
+  </nav>
+</div>
+</header>
+    <div class="wrapper">
+      <aside><div
+  class="sidebar
+    .
+
+  "
+>
+  <div class="sidebar__content">
+    <div class="logo-title">
+      <div class="title">
+        <img src="/images/profile.png" alt="profile picture" />
+        <h3 title=""><a href="/">I&#39;m Ghost Basenji</a></h3>
+        <div class="description">
+          <p>Notes of a novice programmer</p>
+        </div>
+      </div>
+    </div>
+    <ul class="social-links">
+      
+        <li>
+          <a href="https://t.me/ghostbasenji" rel="me" aria-label="telegram">
+            <i class="fab fa-telegram fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      
+        <li>
+          <a href="mailto:petr.and.vic@gmail.com" rel="me" aria-label="e-mail">
+            <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      
+    </ul>
+  </div><footer class="footer footer--sidebar">
+  <div class="by_farbox">
+    <ul class="footer__list">
+      <li class="footer__item">
+        &copy;
+        
+          GhostBasenji 2019-2021
+
+        
+      </li>
+      
+    </ul>
+  </div>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.71100d84fab0ad794b8399a66ac810700cc78d703f715dc10af4d7ba7b761362.js"
+    integrity="sha256-cRANhPqwrXlLg5mmasgQcAzHjXA/cV3BCvTXunt2E2I="
+    crossorigin="anonymous"
+  ></script></div>
+</aside>
+      <main>
+        <div class="autopagerize_page_element">
+          <div class="content">
+  <div
+    class="post 
+      .
+
+    "
+  >
+    <div class="post-content">
+      
+      <div class="post-title">
+        <h1>Создаем проект базы данных из существующей БД SQL</h1>
+        
+          <div class="info">
+            <em class="fas fa-calendar-day"></em>
+            <span class="date"
+              >
+                Sun, Oct 20, 2019
+
+
+              </span
+            >
+            
+
+        
+      </div><p>В этом посте мы увидим, как создается проект базы данных из существующей базы данных SQL. Мы изменим проект, добавив таблицу в проект и исходные данные через скрипт post deployment. Позже мы развернем этот проект на сервере SQL в качестве новой БД.</p>
+<h3 id="введение">Введение</h3>
+<p>В настоящее время многие проекты строятся с непрерывной интеграцией и конвейером непрерывной доставки для создания и развертывания приложения в облаке или на локальном сервере. Легко выполнять CI/CD с проектами баз данных.  Работая в большой команде, сложно отслеживать изменения в одной и той же БД с несколькими изменениями от разных объектов. Каждый раз необходимо вручную обновлять локальную БД, когда другие пользователи вносят какие-либо изменения в свои объекты базы данных в том же приложении. В такой ситуации можно использовать проект БД с любым из распространенных инструментов репозитория, таких как TFS или GitHub, чтобы отслеживать все изменения в БД. Мы увидим, как создается проект базы данных из существующей базы данных, и как добавляется новая таблица в этот проект. Мы добавим некоторые исходные данные в новую таблицу, чтобы они автоматически добавлялись в новую базу данных во время развертывания проекта базы данных.</p>
+<h3 id="что-нужно">Что нужно?</h3>
+<ul>
+<li>Visual Studio 2019</li>
+<li>SQL Server 2017
+Мы будем использовать пример БД Northwind для создания проекта базы данных.</li>
+</ul>
+<h4 id="этап-1-добавление-бд-в-visual-studio">Этап 1. Добавление БД в Visual Studio</h4>
+<p>Запускаем Visual Studio, выбираем SQL Server Object Explorer из меню View. Добавляем новый сервер, щелкая по узлу SQL Server правой кнопкой мыши.</p>
+<p><img src="https://i.postimg.cc/8C1jD7kX/gb0059.jpg" alt=""></p>
+<p>Выбираем сервер из списка и предоставляем учетные данные. А также выбираем базу данных для проекта.</p>
+<p><img src="https://i.postimg.cc/NMnM1b6Z/gb0060.jpg" alt=""></p>
+<p>В данном уроке я выбрал свой локальный сервер BASENJI и базу данных “ Northwind”. А также оставил по умолчанию проверку подлинности Windows для подключения к серверу. Если выбрать проверку подлинности SQL Server, то нужно верно указать свои имя пользователя и пароль. После того, как выбрали базу данных из списка, нажимаем кнопку “Connect”, чтобы продолжить работу. Теперь мы можем увидеть добавленный сервер в обозревателе SQL Server Object Explorer.</p>
+<p><img src="https://i.postimg.cc/d04D0JLs/gb0061.jpg" alt=""></p>
+<p>Правой кнопкой щелкаем по базе данных и выбираем из меню “Create New Project…”.</p>
+<p><img src="https://i.postimg.cc/bJrrD4tQ/gb0062.jpg" alt=""></p>
+<p>Выбираем допустимое имя и местоположение для проекта, потом нажимаем на кнопку “Start”. А также можем выбрать опцию разрешения на импорт, чтобы получить все разрешения, связанные с базой данных, если это необходимо.</p>
+<p><img src="https://i.postimg.cc/T2yjB44L/gb0063.jpg" alt=""></p>
+<p>Это займет некоторое время, чтобы создать все объекты базы данных. Нажимаем кнопку “Finish” для завершения процесса.</p>
+<p><img src="https://i.postimg.cc/PfBbHQg6/gb0064.jpg" alt=""></p>
+<p>Проект базы данных создается в указанной папке. Мы можем открыть проект и посмотреть его структуру.
+Проект содержит все объекты БД в связанных папках. Здесь у нас есть таблицы, хранимые процедуры и представления только в проекте. Все объекты имеют отдельные файлы скриптов sql. Если у нас есть несколько схем, то эти объекты будут созданы под соответствующим именем папки. Итак, у нас есть все объекты по схеме dbo. Следовательно, эти объекты создаются в папке dbo.</p>
+<p><img src="https://i.postimg.cc/cC8JTYTC/gb0065.jpg" alt=""></p>
+<h4 id="этап-2-создание-новой-таблицы-table-внутри-проекта">Этап 2. Создание новой таблицы (Table) внутри проекта</h4>
+<p>Правой кнопкой мыши щелкаем по папке “Tables” и выбираем Add &gt; New Item… Мы можем увидеть различные типы объектов в списке. Выбираем тип Table из списка и даем ему имя “Company”. Потом щелкаем по кнопке Add для продолжения.</p>
+<p><img src="https://i.postimg.cc/nMbhWzwk/gb0066.jpg" alt=""></p>
+<p>Мы можем определить необходимые имена полей и типы для таблицы и щелкаем по кнопке Save на панели инструментов, чтобы сохранить таблицу.</p>
+<p><img src="https://i.postimg.cc/Jz8bD44Z/gb0067.jpg" alt=""></p>
+<p>Мы можем создавать столько объектов, сколько захотим. В данном уроке мы создали только одну дополнительную таблицу.
+Мы можем создать скрипт post deployment, чтобы загрузить данные в новую таблицу при развертывании базы данных на сервер.
+Щелкаем правой кнопкой мыши на проект и выбираем из контекстного меню Add &gt; New Item… Выбираем User Scripts, а потом “Post-Deployment Script” из списка объектов. Мы можем указать допустимое имя файла скрипта.</p>
+<p><img src="https://i.postimg.cc/9QByG5rS/gb0068.jpg" alt=""></p>
+<p>Мы напишем запрос INSERT, чтобы добавить новую запись в таблицу Company. А также проверим наличие предыдущих записей в этой таблице. Таким образом, если снова опубликуем базу данных на том же сервере, то она не будет дублировать ту же запись.</p>
+<p><img src="https://i.postimg.cc/m2CYgFRT/gb0069.jpg" alt=""></p>
+<h4 id="этап-3-публикация-проекта-базы-данных-на-sql-server">Этап 3. Публикация проекта базы данных на SQL Server</h4>
+<p>Правой кнопкой мыши щелкаем на проект и выбираем “Publish…”.
+Появится окно “Publish Database”, в котором мы вносим изменения так, как показано ниже.</p>
+<p><img src="https://i.postimg.cc/cJ4wh93J/gb0070.jpg" alt=""></p>
+<p>После того, как все это сделали, мы щелкаем по кнопке “Publish”, чтобы развернуть базу данных на сервере.
+Ниже мы видим статус публикации в окне, как показано ниже.</p>
+<p><img src="https://i.postimg.cc/YSngs6Nz/gb0071.jpg" alt=""></p>
+<p>Если во время развертывания произошла какая-то ошибка, то мы можем щелкнуть по ссылке “View Results”, чтобы получить точные сведения об этой ошибке.
+Мы можем посмотреть только что созданную таблицу и запись в обозревателе объектов. Открываем экземпляр SQL Server из SSMS или Visual Studio.</p>
+<p><img src="https://i.postimg.cc/TwKmMKCM/gb0072.jpg" alt=""></p>
+<p>Мы можем изменять объекты в проекте базы данных в соответствии с нашими требованиями и снова разворачивать их в той же БД. Это не повлияет на существующие данные в БД. Мы можем легко добавлять или удалять столбец в/из таблицы или изменять хранимую процедуру с помощью проекта БД. Если идет работа с большой командой над одним приложением, то легко работать совместно, используя проект базы данных.</p>
+<h3 id="вывод">Вывод</h3>
+<p>В данном уроке мы узнали, как создать проект базы данных из существующей БД SQL и добавлять в проект новую таблицу. А также добавили исходные данные в таблицу внутри скрипта post-deployment. Успешно опубликовали проект базы данных на локальном сервере SQL. Как уже ранее упоминалось, проекты баз данных очень полезны для работы в большой команде, и их легко выполнять с помощью непрерывной интеграции и непрерывных конвейеров доставки. Это позволит уменьшить головную боль разработчикам SQL для поддержания скриптов обновления во всем приложении. Несколько человек могут работать с одним объектом базы данных и очень легко отслеживать изменения.</p>
+<p>Переведен и переработан <a href="https://www.c-sharpcorner.com/article/create-a-database-project-from-existing-sql-database/">оригинал</a></p></div>
+    <div class="post-footer">
+      <div class="info">
+        
+
+        
+          <span class="separator"><a class="tag" href="/tags/ms-sql/">MS SQL</a><a class="tag" href="/tags/visual-studio-2019/">Visual Studio 2019</a><a class="tag" href="/tags/%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%BE%D0%B2-%D0%B1%D0%B4/">Разработка проектов БД</a><a class="tag" href="/tags/database-project/">Database Project</a><a class="tag" href="/tags/%D0%B1%D0%B0%D0%B7%D1%8B-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85/">Базы данных</a></span>
+
+
+
+
+        
+      </div>
+    </div>
+
+    
+  </div>
+
+
+          </div>
+        </div>
+      </main>
+    </div><footer class="footer footer--base">
+  <div class="by_farbox">
+    <ul class="footer__list">
+      <li class="footer__item">
+        &copy;
+        
+          GhostBasenji 2019-2021
+
+        
+      </li>
+      
+    </ul>
+  </div>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.71100d84fab0ad794b8399a66ac810700cc78d703f715dc10af4d7ba7b761362.js"
+    integrity="sha256-cRANhPqwrXlLg5mmasgQcAzHjXA/cV3BCvTXunt2E2I="
+    crossorigin="anonymous"
+  ></script></body>
+</html>

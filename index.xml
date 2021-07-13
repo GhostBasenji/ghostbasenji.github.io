@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title></title>
+    <link>/</link>
+    <description>Recent content on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 03 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Структура проекта ASP.NET Core 3.1 Web Application</title>
+      <link>/post/asp-net-core-31-ii/</link>
+      <pubDate>Sat, 03 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/asp-net-core-31-ii/</guid>
+      
+        <description>&lt;p&gt;В этой статье мы узнаем о структуре проекта веб-приложения ASP.NET Core 3.1.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Создаем наше первое приложение ASP.NET Core 3.1 в Visual Studio 2019</title>
+      <link>/post/asp-net-core-31-i/</link>
+      <pubDate>Thu, 01 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/asp-net-core-31-i/</guid>
+      
+        <description>&lt;p&gt;В данной статье мы познакомимся с основами ASP.NET Core 3.1, а также создадим наше первое приложение для учебных целей с помощью Visual Studio 2019.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Настраиваем VS Code для работы с Go в Windows</title>
+      <link>/post/configuring-vs-code-to-work-golang-in-windows/</link>
+      <pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/configuring-vs-code-to-work-golang-in-windows/</guid>
+      
+        <description>&lt;p&gt;В этой статье рассмотрим, как мы могли бы установить компилятор Go в Windows. Кроме того, как настроить редактор Visual Studio Code для работы с Go.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Установка PostgreSQL 12 на Windows 10</title>
+      <link>/post/ustanovka-postgresql-na-windows-10/</link>
+      <pubDate>Thu, 20 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/ustanovka-postgresql-na-windows-10/</guid>
+      
+        <description>&lt;p&gt;В этой статье мы рассмотрим, как установить PostgreSQL 12 на Windows 10.
+Кроме того, также установим и настроим pgAdmin 4, который является стандартным и бесплатным графическим инструментом управления СУБД PostgreSQL, который можно использовать для написания SQL-запросов, разработки процедур, функций, а также для администрирования PostgreSQL.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Создаем проект базы данных из существующей БД SQL</title>
+      <link>/post/sozdaem-proekt-bazyi-dannyih-iz-suschestvuyuschey-bd-sql/</link>
+      <pubDate>Sun, 20 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/sozdaem-proekt-bazyi-dannyih-iz-suschestvuyuschey-bd-sql/</guid>
+      
+        <description>&lt;p&gt;В этом посте мы увидим, как создается проект базы данных из существующей базы данных SQL. Мы изменим проект, добавив таблицу в проект и исходные данные через скрипт post deployment. Позже мы развернем этот проект на сервере SQL в качестве новой БД.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Создаем проект базы данных в Visual Studio 2019</title>
+      <link>/post/sozdaem-proekt-db-v-visual-studio-2019/</link>
+      <pubDate>Thu, 17 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/sozdaem-proekt-db-v-visual-studio-2019/</guid>
+      
+        <description>&lt;p&gt;В настоящее время базы данных (БД) являются проблемой для разработчиков, и это одна из самых сложных задач в любом проекте ПО для управления изменениями БД и синхронизации этих изменений.
+Для решения этой проблемы в Visual Studio имеются проекты баз данных SQL. Можно с легкостью разрабатывать, управлять, сравнивать и развертывать изменения базы данных с помощью Visual Studio.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Создание и размещение WCF-службы – Self-Hosting</title>
+      <link>/post/wcf-service-self-hosting/</link>
+      <pubDate>Tue, 15 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/wcf-service-self-hosting/</guid>
+      
+        <description>&lt;p&gt;В данной статье рассматривается вариант использования службы WCF методом авто-размещения (Self-Hosting).&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Основы работы с WPF DataGrid. Часть 6. - Шаблон данных [Data Template]</title>
+      <link>/post/wpf-datagrid-part-vii/</link>
+      <pubDate>Thu, 10 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/wpf-datagrid-part-vii/</guid>
+      
+        <description>&lt;p&gt;В этой статье описывается, как используется шаблон данных [data template] в DataGrid.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Основы работы с WPF DataGrid. Часть 5.2. - Столбцы компонента DataGrid</title>
+      <link>/post/wpf-datagrid-part-vi/</link>
+      <pubDate>Sat, 05 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/wpf-datagrid-part-vi/</guid>
+      
+        <description>&lt;p&gt;В данной статье серии “Основы работы с WPF DataGrid” рассматриваются некоторые расширенные функции столбцов DataGrid.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Основы работы с WPF DataGrid. Часть 5. - Столбцы компонента DataGrid</title>
+      <link>/post/wpf-datagrid-part-v/</link>
+      <pubDate>Tue, 01 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/wpf-datagrid-part-v/</guid>
+      
+        <description>&lt;p&gt;В пятой статье серии «Основы работы с WPF DataGrid» мы будем рассматривать работу со столбцами DataGrid и со свойствами столбцов.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Изучаем Python – Создаем первую программу Python в VS Code</title>
+      <link>/post/izuchaem-python-create-first-application-in-vs-code/</link>
+      <pubDate>Fri, 20 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/izuchaem-python-create-first-application-in-vs-code/</guid>
+      
+        <description>&lt;p&gt;В данной статье узнаем, как создается наша первая базовая программа “Hello World” с использованием Visual Studio Code.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Основы работы с WPF DataGrid. Часть 4. - Строки компонента DataGrid</title>
+      <link>/post/wpf-datagrid-part-iv/</link>
+      <pubDate>Sun, 15 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/wpf-datagrid-part-iv/</guid>
+      
+        <description>&lt;p&gt;В четвертой статье описывается работа с заголовком и видимостью строк, а также рассматриваются внешний вид и некоторые другие свойства.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Основы работы с WPF DataGrid. Часть 3. - Заголовок компонента DataGrid</title>
+      <link>/post/wpf-datagrid-part-iii/</link>
+      <pubDate>Wed, 11 Sep 2019 16:02:40 +0000</pubDate>
+      
+      <guid>/post/wpf-datagrid-part-iii/</guid>
+      
+        <description>&lt;p&gt;В третьей части «Основы работы с WPF DataGrid» рассматриваются видимость заголовка [&lt;strong&gt;header&lt;/strong&gt;] компонента DataGrid и внешний вид заголовка столбцов.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Основы работы с WPF DataGrid. Часть 2. - Layout и Border</title>
+      <link>/post/wpf-datagrid-part-ii/</link>
+      <pubDate>Tue, 10 Sep 2019 16:02:40 +0000</pubDate>
+      
+      <guid>/post/wpf-datagrid-part-ii/</guid>
+      
+        <description>&lt;p&gt;Во второй части данной серии мы рассмотрим разметку и границы компонента DataGrid. Свойства, рассматриваемые в этой статье, &amp;ndash; margin, width, height и border.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Основы работы с WPF DataGrid. Часть 1. - Введение</title>
+      <link>/post/wpf-datagrid-part-i/</link>
+      <pubDate>Sat, 07 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/wpf-datagrid-part-i/</guid>
+      
+        <description>&lt;p&gt;Этой статьей я начинаю свою серию статей “Осваиваем WPF DataGrid”, в которой мы рассмотрим, как работать с элементом управления WPF DataGrid и его функциональность. В этой серии мы узнаем, как использовать элемент управления WPF DataGrid в реальных приложениях.&lt;/p&gt;
+&lt;p&gt;WPF DataGrid – один из наиболее широко используемых элементов управления (далее для краткости компонент). Компонент DataGrid отображает данные в формате таблицы, а также позволяет добавлять, обновлять, удалять, фильтровать и сортировать данные, отображаемые в DataGrid.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Роли и обязанности SQL-разработчика</title>
+      <link>/post/sql-developer-roles-and-responsibilities/</link>
+      <pubDate>Wed, 04 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/sql-developer-roles-and-responsibilities/</guid>
+      
+        <description>&lt;p&gt;В данной статье рассматриваются некоторые ключевые роли и обязанности SQL-разработчика. Это пригодится тем, кто хочет стать экспертом по базам данных (MS SQL Server).&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/about/</guid>
+      
+        <description>В процессе заполнения, так как я пока не разобрался, что именно сюда писать.
+А еще, самое главное. Этот сайт находится в процессе развития.
+Как видишь, я тут начал записывать именно то, что меня интересует. Итак, я недавно начал учить языки программирования C#, Python, Go. В дальнейшем планирую учить Dart.</description>
+      
+    </item>
+    
+    <item>
+      <title>Мои проекты</title>
+      <link>/myprojects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/myprojects/</guid>
+      
+        <description>Здесь буду выкладывать ссылки на репозитории своих пет-проектов. А также описания пет-проектов. ))</description>
+      
+    </item>
+    
+  </channel>
+</rss>

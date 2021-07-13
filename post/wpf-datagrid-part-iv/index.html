@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html
+  dir="ltr"
+  lang="en"
+  data-theme="light"
+><head>
+  <title>
+    Ghost Basenji
+      |
+      Основы работы с WPF DataGrid. Часть 4. - Строки компонента DataGrid
+
+
+    
+
+  </title>
+
+  
+  <meta charset="utf-8" /><meta name="generator" content="Hugo 0.81.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta
+    name="description"
+    content="
+      Notes of a novice programmer
+
+
+    "
+  />
+  
+  
+  
+  <link
+    rel="stylesheet"
+    href="/css/main.min.80d28e7af4108ef1e90dd5bd674a29a35aee71942fd29980eefa7e36e3710afc.css"
+    integrity="sha256-gNKOevQQjvHpDdW9Z0opo1rucZQv0pmA7vp&#43;NuNxCvw="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.f798cbda9aaa38f89eb38be6414bd082cfd71a6780375cbf67b6d2fb2b96491e.css"
+    integrity="sha256-95jL2pqqOPies4vmQUvQgs/XGmeAN1y/Z7bS&#43;yuWSR4="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous"
+  />
+  
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+  <link rel="canonical" href="/post/wpf-datagrid-part-iv/" />
+
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.2a2cd9614b7d007dfbb75e8da19e3a0fa872ceab53c6d000c00b7a0c89b85bfc.js"
+    integrity="sha256-KizZYUt9AH37t16NoZ46D6hyzqtTxtAAwAt6DIm4W/w="
+    crossorigin="anonymous"
+  ></script>
+
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Основы работы с WPF DataGrid. Часть 4. - Строки компонента DataGrid"/>
+<meta name="twitter:description" content="В четвертой статье описывается работа с заголовком и видимостью строк, а также рассматриваются внешний вид и некоторые другие свойства."/>
+
+
+
+  
+</head>
+<body>
+    <header><div
+  class="page-top 
+    .
+
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+  </a>
+  <nav>
+    <ul class="nav__list" id="navMenu">
+      <div class="nav__links">
+        
+        
+          
+          <li>
+            <a
+              
+              href="/"
+              
+              title=""
+              >Home</a
+            >
+          </li>
+
+        
+          
+          <li>
+            <a
+              
+              href="/post/"
+              
+              title=""
+              >Архив</a
+            >
+          </li>
+
+        
+          
+          <li>
+            <a
+              
+              href="/myprojects/"
+              
+              title=""
+              >Мои проекты</a
+            >
+          </li>
+
+        
+          
+          <li>
+            <a
+              
+              href="/about/"
+              
+              title=""
+              >About</a
+            >
+          </li>
+
+        
+        
+      </div>
+      <li>
+        
+      </li>
+    </ul>
+  </nav>
+</div>
+</header>
+    <div class="wrapper">
+      <aside><div
+  class="sidebar
+    .
+
+  "
+>
+  <div class="sidebar__content">
+    <div class="logo-title">
+      <div class="title">
+        <img src="/images/profile.png" alt="profile picture" />
+        <h3 title=""><a href="/">I&#39;m Ghost Basenji</a></h3>
+        <div class="description">
+          <p>Notes of a novice programmer</p>
+        </div>
+      </div>
+    </div>
+    <ul class="social-links">
+      
+        <li>
+          <a href="https://t.me/ghostbasenji" rel="me" aria-label="telegram">
+            <i class="fab fa-telegram fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      
+        <li>
+          <a href="mailto:petr.and.vic@gmail.com" rel="me" aria-label="e-mail">
+            <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      
+    </ul>
+  </div><footer class="footer footer--sidebar">
+  <div class="by_farbox">
+    <ul class="footer__list">
+      <li class="footer__item">
+        &copy;
+        
+          GhostBasenji 2019-2021
+
+        
+      </li>
+      
+    </ul>
+  </div>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.71100d84fab0ad794b8399a66ac810700cc78d703f715dc10af4d7ba7b761362.js"
+    integrity="sha256-cRANhPqwrXlLg5mmasgQcAzHjXA/cV3BCvTXunt2E2I="
+    crossorigin="anonymous"
+  ></script></div>
+</aside>
+      <main>
+        <div class="autopagerize_page_element">
+          <div class="content">
+  <div
+    class="post 
+      .
+
+    "
+  >
+    <div class="post-content">
+      
+      <div class="post-title">
+        <h1>Основы работы с WPF DataGrid. Часть 4. - Строки компонента DataGrid</h1>
+        
+          <div class="info">
+            <em class="fas fa-calendar-day"></em>
+            <span class="date"
+              >
+                Sun, Sep 15, 2019
+
+
+              </span
+            >
+            
+
+        
+      </div><p>В четвертой статье описывается работа с заголовком и видимостью строк, а также рассматриваются внешний вид и некоторые другие свойства.</p>
+<h3 id="свойство-rowheaderwidth">Свойство RowHeaderWidth</h3>
+<p>DataGrid – это набор строк и столбцов, каждая строка и каждый столбец могут иметь заголовок. Этот заголовок можно использовать для отображения текста, например, заголовков строк и столбцов.
+Свойство <strong>RowHeaderWidth</strong> используется для задания ширины заголовка строк.</p>
+<p>Код в листинге 15 задает значение 50 в свойстве RowHeaderWidth.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;DataGrid</span> <span style="color:#50fa7b">x:Name=</span><span style="color:#f1fa8c">&#34;WPFdataGrid&#34;</span> <span style="color:#50fa7b">Margin=</span><span style="color:#f1fa8c">&#34;0&#34;</span>
+        <span style="color:#50fa7b">AutoGenerateColumns=</span><span style="color:#f1fa8c">&#34;True&#34;</span>
+        <span style="color:#50fa7b">SelectionUnit=</span><span style="color:#f1fa8c">&#34;Cell&#34;</span>
+        <span style="color:#50fa7b">RowHeaderWidth=</span><span style="color:#f1fa8c">&#34;50&#34;</span>
+        <span style="color:#ff79c6">&gt;</span>
+<span style="color:#ff79c6">&lt;/DataGrid&gt;</span>
+</code></pre></div><p>Листинг 15.</p>
+<p>Ниже видим результат написания одной строки:</p>
+<p><img src="https://i.postimg.cc/pTY5rYyZ/gb0008.jpg" alt="Рис. 8"></p>
+<h3 id="свойство-gridlinesvisibility">Свойство GridLinesVisibility</h3>
+<p>Мы можем показать или скрыть линии таблицы DataGrid, используя свойство <strong>GridLinesVisibility</strong>. Данное свойство имеет 4 значения: All, Horizontal, None и Vertical. Если хотим отобразить и горизонтальные, и вертикальные линии, задаем значение All свойству GridLinesVisibility. Значение None скрывает горизонтальные и вертикальные линии, а значения Horizontal и Vertical отображают только горизонтальные и вертикальные линии соответственно.</p>
+<p><img src="https://i.postimg.cc/Y0rGWGWw/gb0009.jpg" alt="Рис. 9. Листинг 16"></p>
+<p>Код в листинге 17 скрывает линии столбцов компонента DataGrid.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;DataGrid</span> <span style="color:#50fa7b">x:Name=</span><span style="color:#f1fa8c">&#34;WPFdataGrid&#34;</span> <span style="color:#50fa7b">Margin=</span><span style="color:#f1fa8c">&#34;0&#34;</span>
+          <span style="color:#50fa7b">AutoGenerateColumns=</span><span style="color:#f1fa8c">&#34;True&#34;</span>
+          <span style="color:#50fa7b">SelectionUnit=</span><span style="color:#f1fa8c">&#34;Cell&#34;</span>
+          <span style="color:#50fa7b">RowHeaderWidth=</span><span style="color:#f1fa8c">&#34;50&#34;</span>
+          <span style="color:#50fa7b">AlternatingRowBackground=</span><span style="color:#f1fa8c">&#34;LightGreen&#34;</span>
+          <span style="color:#50fa7b">GridLinesVisibility=</span><span style="color:#f1fa8c">&#34;Horizontal&#34;</span><span style="color:#ff79c6">&gt;</span>
+<span style="color:#ff79c6">&lt;/DataGrid&gt;</span>
+</code></pre></div><p>Листинг 17.</p>
+<p>Результат данного кода:</p>
+<p><img src="https://i.postimg.cc/qRdCpZBq/gb0010.jpg" alt="Рис. 10"></p>
+<h3 id="свойство-alternatingrowbackground">Свойство AlternatingRowBackground</h3>
+<p>Свойство <strong>AlternatingRowBackground</strong> используется для задания и получения цвета фона каждой альтернативной строки в DataGrid.
+Код в листинге 18 задает значение цвета LightGreen свойству AlternatingRowBackground.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;DataGrid</span> <span style="color:#50fa7b">x:Name=</span><span style="color:#f1fa8c">&#34;WPFdataGrid&#34;</span> <span style="color:#50fa7b">Margin=</span><span style="color:#f1fa8c">&#34;0&#34;</span>
+          <span style="color:#50fa7b">AutoGenerateColumns=</span><span style="color:#f1fa8c">&#34;True&#34;</span>
+          <span style="color:#50fa7b">SelectionUnit=</span><span style="color:#f1fa8c">&#34;Cell&#34;</span>
+          <span style="color:#50fa7b">RowHeaderWidth=</span><span style="color:#f1fa8c">&#34;50&#34;</span>
+          <span style="color:#50fa7b">AlternatingRowBackground=</span><span style="color:#f1fa8c">&#34;LightGreen&#34;</span>
+          <span style="color:#50fa7b">GridLinesVisibility=</span><span style="color:#f1fa8c">&#34;Horizontal&#34;</span><span style="color:#ff79c6">&gt;</span>
+<span style="color:#ff79c6">&lt;/DataGrid&gt;</span>
+</code></pre></div><p>Листинг 18.</p>
+<p><img src="https://i.postimg.cc/pL4F6LgD/gb0011.jpg" alt="Рис. 11"></p>
+<h3 id="свойства-selectionmode-и-selectionunit">Свойства SelectionMode и SelectionUnit</h3>
+<p>Свойства <strong>SelectionMode</strong> и <strong>SelectionUnit</strong> используются для определения поведения выделения для компонента DataGrid. Свойство SelectionMode указывает, как выделяются строки и ячейки в DataGrid. У SelectionMode есть 2 значения:</p>
+<ul>
+<li><strong>Extended</strong>. Несколько элементов могут быть выделены одновременно.</li>
+<li><strong>Single</strong>. Только один элемент может быть выделен за один раз.</li>
+</ul>
+<p>Свойство SelectionUnit указывает, могут ли выделены строки, ячейки или оба в DataGrid. Это свойство имеет три значения:</p>
+<ul>
+<li><strong>Cell</strong>. Выделяются только ячейки. Щелчок по заголовку строки или столбца ничего не производит.</li>
+<li><strong>CellOrRowHeader</strong>. Ячейки или строки выделяются. При нажатии на ячейку выделяется только ячейка. При нажатии на заголовок строки выделяется строка полностью.</li>
+<li><strong>FullRow</strong>. Щелчок по ячейку или заголовок строки выделяет всю строку.</li>
+</ul>
+<p>Код в листинге 19 задает значения Cell и Extended свойствам SelectionUnit и SelectionMode соответственно.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;DataGrid</span> <span style="color:#50fa7b">x:Name=</span><span style="color:#f1fa8c">&#34;WPFdataGrid&#34;</span> <span style="color:#50fa7b">Margin=</span><span style="color:#f1fa8c">&#34;0&#34;</span>
+          <span style="color:#50fa7b">AutoGenerateColumns=</span><span style="color:#f1fa8c">&#34;True&#34;</span>
+          <span style="color:#50fa7b">RowHeaderWidth=</span><span style="color:#f1fa8c">&#34;50&#34;</span>
+          <span style="color:#50fa7b">AlternatingRowBackground=</span><span style="color:#f1fa8c">&#34;LightGreen&#34;</span>
+          <span style="color:#50fa7b">GridLinesVisibility=</span><span style="color:#f1fa8c">&#34;All&#34;</span>
+          <span style="color:#50fa7b">ColumnWidth=</span><span style="color:#f1fa8c">&#34;*&#34;</span>
+          <span style="color:#50fa7b">SelectionUnit=</span><span style="color:#f1fa8c">&#34;Cell&#34;</span>
+          <span style="color:#50fa7b">SelectionMode=</span><span style="color:#f1fa8c">&#34;Extended&#34;</span><span style="color:#ff79c6">&gt;</span>
+<span style="color:#ff79c6">&lt;/DataGrid&gt;</span>
+</code></pre></div><p>Листинг 19.</p>
+<p>Ниже видим результат нашего кода. Если нажать на несколько ячеек, удерживая клавишу Ctrl, то увидим, что будет выделено несколько ячеек.</p>
+<p><img src="https://i.postimg.cc/PqDwskj0/gb0012.jpg" alt="Рис. 12"></p>
+<h3 id="свойства-canuserresizerow-и-canuserresizecolumns">Свойства CanUserResizeRow и CanUserResizeColumns</h3>
+<p>По умолчанию DataGrid разрешает пользователям изменять размеры столбцов и строк. Но мы можем ограничить пользователей в возможностях изменять размеры строк и столбцов в DataGrid.
+Свойство <strong>CanUserResizeRows</strong> используется для указания того, могут ли пользователи изменять размер строки. Свойство <strong>CanUserResizeColumns</strong> – могут ли пользователи изменять размер столбцов.</p>
+<p>Код в листинге 20 ограничивает пользователей в возможностях изменять размеры строк и столбцов в DataGrid.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;DataGrid</span> <span style="color:#50fa7b">x:Name=</span><span style="color:#f1fa8c">&#34;WPFdataGrid&#34;</span> <span style="color:#50fa7b">Margin=</span><span style="color:#f1fa8c">&#34;0&#34;</span> 
+          <span style="color:#50fa7b">AutoGenerateColumns=</span><span style="color:#f1fa8c">&#34;True&#34;</span>
+          <span style="color:#50fa7b">RowHeaderWidth=</span><span style="color:#f1fa8c">&#34;50&#34;</span>
+          <span style="color:#50fa7b">AlternatingRowBackground=</span><span style="color:#f1fa8c">&#34;LightGreen&#34;</span>
+          <span style="color:#50fa7b">GridLinesVisibility=</span><span style="color:#f1fa8c">&#34;All&#34;</span>
+          <span style="color:#50fa7b">ColumnWidth=</span><span style="color:#f1fa8c">&#34;*&#34;</span>
+          <span style="color:#50fa7b">SelectionUnit=</span><span style="color:#f1fa8c">&#34;Cell&#34;</span>
+          <span style="color:#50fa7b">SelectionMode=</span><span style="color:#f1fa8c">&#34;Extended&#34;</span>
+          <span style="color:#50fa7b">CanUserResizeColumns=</span><span style="color:#f1fa8c">&#34;False&#34;</span>
+          <span style="color:#50fa7b">CanUserResizeRows=</span><span style="color:#f1fa8c">&#34;False&#34;</span><span style="color:#ff79c6">&gt;</span>
+<span style="color:#ff79c6">&lt;/DataGrid&gt;</span>
+</code></pre></div><p>Листинг 20.</p>
+<h3 id="свойство-rowstyle">Свойство RowStyle</h3>
+<p>Свойство <strong>RowStyle</strong> используется для стилизации всех строк DataGrid.
+Код в листинге 21 создает стиль и задает свойство DataGrid.RowStyle.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;DataGrid</span> <span style="color:#50fa7b">x:Name=</span><span style="color:#f1fa8c">&#34;WPFdataGrid&#34;</span> <span style="color:#50fa7b">Margin=</span><span style="color:#f1fa8c">&#34;0, 0, 0, 0&#34;</span> 
+          <span style="color:#50fa7b">VerticalAlignment=</span><span style="color:#f1fa8c">&#34;Top&#34;</span> <span style="color:#50fa7b">HorizontalAlignment=</span><span style="color:#f1fa8c">&#34;Stretch&#34;</span>
+          <span style="color:#50fa7b">HorizontalContentAlignment=</span><span style="color:#f1fa8c">&#34;Stretch&#34;</span>
+          <span style="color:#50fa7b">Height=</span><span style="color:#f1fa8c">&#34;270&#34;</span>
+          <span style="color:#50fa7b">AutoGenerateColumns=</span><span style="color:#f1fa8c">&#34;True&#34;</span>
+          <span style="color:#50fa7b">ColumnWidth=</span><span style="color:#f1fa8c">&#34;*&#34;</span>
+          <span style="color:#ff79c6">&gt;</span>
+  <span style="color:#ff79c6">&lt;DataGrid.RowStyle&gt;</span>
+      <span style="color:#ff79c6">&lt;Style</span> <span style="color:#50fa7b">TargetType=</span><span style="color:#f1fa8c">&#34;DataGridRow&#34;</span><span style="color:#ff79c6">&gt;</span>
+        <span style="color:#ff79c6">&lt;Setter</span> <span style="color:#50fa7b">Property=</span><span style="color:#f1fa8c">&#34;Background&#34;</span> <span style="color:#50fa7b">Value=</span><span style="color:#f1fa8c">&#34;LightGreen&#34;</span> <span style="color:#ff79c6">/&gt;</span>
+          <span style="color:#ff79c6">&lt;Style.Triggers&gt;</span>
+            <span style="color:#ff79c6">&lt;Trigger</span> <span style="color:#50fa7b">Property=</span><span style="color:#f1fa8c">&#34;IsMouseOver&#34;</span> <span style="color:#50fa7b">Value=</span><span style="color:#f1fa8c">&#34;True&#34;</span><span style="color:#ff79c6">&gt;</span>
+            <span style="color:#ff79c6">&lt;Setter</span> <span style="color:#50fa7b">Property=</span><span style="color:#f1fa8c">&#34;Background&#34;</span> <span style="color:#50fa7b">Value=</span><span style="color:#f1fa8c">&#34;Green&#34;</span><span style="color:#ff79c6">/&gt;</span>
+            <span style="color:#ff79c6">&lt;Setter</span> <span style="color:#50fa7b">Property=</span><span style="color:#f1fa8c">&#34;Foreground&#34;</span> <span style="color:#50fa7b">Value=</span><span style="color:#f1fa8c">&#34;White&#34;</span><span style="color:#ff79c6">/&gt;</span>
+          <span style="color:#ff79c6">&lt;/Trigger&gt;</span>
+        <span style="color:#ff79c6">&lt;/Style.Triggers&gt;</span>
+      <span style="color:#ff79c6">&lt;/Style&gt;</span>
+  <span style="color:#ff79c6">&lt;/DataGrid.RowStyle&gt;</span>
+<span style="color:#ff79c6">&lt;/DataGrid&gt;</span>
+</code></pre></div><p>Листинг 21.</p></div>
+    <div class="post-footer">
+      <div class="info">
+        
+
+        
+          <span class="separator"><a class="tag" href="/tags/wpf/">WPF</a><a class="tag" href="/tags/xaml/">XAML</a><a class="tag" href="/tags/wpf-datagrid/">WPF DataGrid</a></span>
+
+
+
+
+        
+      </div>
+    </div>
+
+    
+  </div>
+
+
+          </div>
+        </div>
+      </main>
+    </div><footer class="footer footer--base">
+  <div class="by_farbox">
+    <ul class="footer__list">
+      <li class="footer__item">
+        &copy;
+        
+          GhostBasenji 2019-2021
+
+        
+      </li>
+      
+    </ul>
+  </div>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.71100d84fab0ad794b8399a66ac810700cc78d703f715dc10af4d7ba7b761362.js"
+    integrity="sha256-cRANhPqwrXlLg5mmasgQcAzHjXA/cV3BCvTXunt2E2I="
+    crossorigin="anonymous"
+  ></script></body>
+</html>
