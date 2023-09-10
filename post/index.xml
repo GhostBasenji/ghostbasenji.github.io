@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on </title>
+    <link>/post/</link>
+    <description>Recent content in Posts on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru</language>
+    <lastBuildDate>Thu, 27 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Работаем с GitHub Desktop</title>
+      <link>/post/github-desktop/</link>
+      <pubDate>Thu, 27 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/post/github-desktop/</guid>
+      
+        <description>&lt;p&gt;В этой статье осваиваем GitHub Desktop на практике, а именно:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Установка и аутентификация GitHub Desktop&lt;/li&gt;
+&lt;li&gt;Создание репозитория Git&lt;/li&gt;
+&lt;li&gt;Добавление в репозиторий новый или существующий проект&lt;/li&gt;
+&lt;/ul&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>HTML5 и CSS3. Часть 1: Пишем наш первый код</title>
+      <link>/post/html-css-part-1/</link>
+      <pubDate>Tue, 25 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/post/html-css-part-1/</guid>
+      
+        <description>&lt;p&gt;Начинаем учиться работать с HTML и CSS, не заблудившись по пути.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Avalonia UI в Ubuntu. Улучшение UI</title>
+      <link>/post/avalonia-v-ubuntu-uluchenie-ui/</link>
+      <pubDate>Fri, 21 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/post/avalonia-v-ubuntu-uluchenie-ui/</guid>
+      
+        <description>&lt;p&gt;Эта глава серии по Avalonia, в которой мы фокусируемся на улучшение внешнего вида пользовательского интерфейса.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Avalonia UI в Ubuntu. Взаимодействие с элементами управления</title>
+      <link>/post/avalonia-v-ubuntu-vzaimodeystvie-ui/</link>
+      <pubDate>Mon, 17 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/post/avalonia-v-ubuntu-vzaimodeystvie-ui/</guid>
+      
+        <description>&lt;p&gt;Итак, вышел второй пост из серии “Avalonia UI в Ubuntu”. В этом посте узнаем, как взаимодействовать с элементами управления (Controls), продолжая использовать наше приложение, созданное в &lt;a href=&#34;https://ghostbasenji.github.io/post/avalonia-v-ubuntu-nachalo/&#34;&gt;предыдущем посте&lt;/a&gt;.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Avalonia UI в Ubuntu. Начало работы</title>
+      <link>/post/avalonia-v-ubuntu-nachalo/</link>
+      <pubDate>Thu, 13 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/post/avalonia-v-ubuntu-nachalo/</guid>
+      
+        <description>&lt;p&gt;В этом уроке мы узнаем, как установить шаблоны Avalonia, и создадим первое приложение Avalonia в Ubuntu.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Эпизод 2. Код фронтенда и код бекэнда</title>
+      <link>/post/2-frontend-code-backend-code/</link>
+      <pubDate>Sun, 09 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2-frontend-code-backend-code/</guid>
+      
+        <description>&lt;p&gt;Приложение Electron – это два приложения в одном. Есть приложение-фронтенд, управляющее внешним видом, и бекенд-приложение, управляющее серверной частью, и они взаимодействуют как две отдельные программы.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Эпизод 1. Создание приложения Electron</title>
+      <link>/post/1-sozdanie-electron-app/</link>
+      <pubDate>Fri, 07 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/post/1-sozdanie-electron-app/</guid>
+      
+        <description>&lt;p&gt;Первой записью мы начинаем серию эпизодов осваивания Electron.
+Здесь впервые запускаем наше приложение Electron.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Устанавливаем .NET Core в Ubuntu 22.04</title>
+      <link>/post/install-dotnetcore-ubuntu/</link>
+      <pubDate>Mon, 03 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/post/install-dotnetcore-ubuntu/</guid>
+      
+        <description>&lt;p&gt;В этом уроке рассматривается процесс установки .NET Core на Ubuntu 22.04 LTS.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

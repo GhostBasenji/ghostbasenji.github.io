@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html
+  dir="ltr"
+  lang="en"
+  data-theme="light"
+><head>
+  <title>
+    Ghost Basenji
+      |
+      Avalonia UI в Ubuntu. Начало работы
+
+
+    
+
+  </title>
+
+  
+  <meta charset="utf-8" /><meta name="generator" content="Hugo 0.112.5"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta
+    name="description"
+    content="
+      Notes of a novice programmer
+
+
+    "
+  />
+  
+  
+  
+  <link
+    rel="stylesheet"
+    href="/css/main.min.deaabf2252003a406691dbf5f79852b7bcb4538e1f3c92348e14f631279e8c5f.css"
+    integrity="sha256-3qq/IlIAOkBmkdv195hSt7y0U44fPJI0jhT2MSeejF8="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.f798cbda9aaa38f89eb38be6414bd082cfd71a6780375cbf67b6d2fb2b96491e.css"
+    integrity="sha256-95jL2pqqOPies4vmQUvQgs/XGmeAN1y/Z7bS&#43;yuWSR4="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous"
+  />
+  
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+  <link rel="canonical" href="/post/avalonia-v-ubuntu-nachalo/" />
+
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.d0408165d31a17f17bba83038bf54e86121f85021bdf936382e636f0f77a952f.js"
+    integrity="sha256-0ECBZdMaF/F7uoMDi/VOhhIfhQIb35NjguY28Pd6lS8="
+    crossorigin="anonymous"
+  ></script>
+
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Avalonia UI в Ubuntu. Начало работы"/>
+<meta name="twitter:description" content="В этом уроке мы узнаем, как установить шаблоны Avalonia, и создадим первое приложение Avalonia в Ubuntu."/>
+
+
+
+  
+
+
+  
+  
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "post",
+        "name": "Avalonia UI в Ubuntu. Начало работы",
+        "headline": "Avalonia UI в Ubuntu. Начало работы",
+        "alternativeHeadline": "",
+        "description": "
+      
+        \u003cp\u003eВ этом уроке мы узнаем, как установить шаблоны Avalonia, и создадим первое приложение Avalonia в Ubuntu.\u003c\/p\u003e
+
+
+      
+
+
+    ",
+        "inLanguage": "ru",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "\/post\/avalonia-v-ubuntu-nachalo\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "Ghost Basenji"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "Ghost Basenji"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "Ghost Basenji"
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": "Ghost Basenji"
+        },
+        "copyrightYear" : "2023",
+        "dateCreated": "2023-04-13T00:00:00.00Z",
+        "datePublished": "2023-04-13T00:00:00.00Z",
+        "dateModified": "2023-04-13T00:00:00.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "Ghost Basenji",
+            "url": "/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "\/favicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+      ]
+
+    ,
+        "url" : "\/post\/avalonia-v-ubuntu-nachalo\/",
+        "wordCount" : "182",
+        "genre" : [ ],
+        "keywords" : [ 
+      
+      "Avalonia"
+
+    
+      
+        ,
+
+      
+      "Ubuntu"
+
+    
+      
+        ,
+
+      
+      "dotnet"
+
+    
+      
+        ,
+
+      
+      "UI"
+
+    ]
+    }
+  </script>
+
+
+
+</head>
+<body>
+    <header><div
+  class="page-top 
+    .
+
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+  </a>
+  <nav>
+    <ul class="nav__list" id="navMenu">
+      <div class="nav__links">
+        
+        
+          
+          <li>
+            <a
+              
+              href="/"
+              
+              title=""
+              >Главная</a
+            >
+          </li>
+
+        
+          
+          <li>
+            <a
+              
+              href="/post/"
+              
+              title=""
+              >Статьи</a
+            >
+          </li>
+
+        
+          
+          <li>
+            <a
+              
+              href="/myprojects/"
+              
+              title=""
+              >Мои проекты</a
+            >
+          </li>
+
+        
+          
+          <li>
+            <a
+              
+              href="/about/"
+              
+              title=""
+              >About</a
+            >
+          </li>
+
+        
+        
+      </div>
+      <li>
+        
+      </li>
+    </ul>
+  </nav>
+</div>
+</header>
+    <div class="wrapper">
+      <aside><div
+  class="sidebar
+    .
+
+  "
+>
+  <div class="sidebar__content">
+    <div class="logo-title">
+      <div class="title">
+        <img src="/images/profile.png" alt="profile picture" />
+        <h3 title=""><a href="/">I&#39;m Ghost Basenji</a></h3>
+        <div class="description">
+          <p>Notes of a novice programmer</p>
+        </div>
+      </div>
+    </div>
+    <ul class="social-links">
+      
+        <li>
+          <a href="https://t.me/ghostbasenji" rel="me" aria-label="telegram">
+            <i class="fab fa-telegram fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      
+        <li>
+          <a href="mailto:petr.and.vic@gmail.com" rel="me" aria-label="e-mail">
+            <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      
+    </ul>
+  </div><footer class="footer footer--sidebar">
+  <div class="by_farbox">
+    <ul class="footer__list">
+      <li class="footer__item">
+        &copy;
+        
+          GhostBasenji 2023
+
+        
+      </li>
+      
+    </ul>
+  </div>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.44288fd315b6cda68c1f4743caad56535c0f81a5b5a672f385e82b3896575c1d.js"
+    integrity="sha256-RCiP0xW2zaaMH0dDyq1WU1wPgaW1pnLzhegrOJZXXB0="
+    crossorigin="anonymous"
+  ></script></div>
+</aside>
+      <main>
+        <div class="autopagerize_page_element">
+          <div class="content">
+  <div
+    class="post 
+      .
+
+    "
+  >
+    <div class="post-content">
+      
+      <div class="post-title">
+        <h1>Avalonia UI в Ubuntu. Начало работы</h1>
+        
+          <div class="info">
+            <em class="fas fa-calendar-day"></em>
+            <span class="date"
+              >
+                13/04/2023
+
+
+              </span
+            >
+            
+          </div>
+
+        
+      </div><p>В этом уроке мы узнаем, как установить шаблоны Avalonia, и создадим первое приложение Avalonia в Ubuntu.</p>
+<h3 id="установка-avalonia">Установка Avalonia</h3>
+<p>Итак, мы установим шаблоны Avalonia [Avalonia Templates], чтобы команда <strong>dotnet new</strong> могла использовать их при создании новых приложений.</p>
+<p>Для этого мы напишем и запустим следующую команду:</p>
+<div class="highlight"><pre tabindex="0" style="color:#fab387;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>dotnet new install Avalonia.Templates
+</span></span></code></pre></div><p>После чего мы проверим, есть Avalonia у нас или нет:</p>
+<div class="highlight"><pre tabindex="0" style="color:#fab387;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>dotnet new list
+</span></span></code></pre></div><p>Выведет нам в терминале список установленных шаблонов Avalonia</p>
+<h3 id="создание-приложения-avalonia">Создание приложения Avalonia</h3>
+<p>Среди установленных шаблонов Avalonia два шаблона представляют для нас интерес, а именно:</p>
+<ul>
+<li>avalonia.app – базовое приложение Avalonia</li>
+<li>avalonia.mvvm – приложение, в котором используется паттерн Model-View-ViewModel с ReactiveUI</li>
+</ul>
+<p>Чтобы создать новое приложение, нам нужно выполнить следующую команду:</p>
+<div class="highlight"><pre tabindex="0" style="color:#fab387;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>dotnet new avalonia.app -o MyApp
+</span></span></code></pre></div><p>где <strong>MyApp</strong> - имя проекта, который мы создаем, а <strong>-o</strong> означает путь до папки с проектом.</p>
+<p><img src="https://i.postimg.cc/25FzWN4C/005.png" alt=""></p>
+<p>Запуск приложения Avalonia
+Чтобы запустить приложение, мы переходим в папку MyApp</p>
+<div class="highlight"><pre tabindex="0" style="color:#fab387;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="font-style:italic">cd</span> MyApp
+</span></span></code></pre></div><p>и запускаем приложение, написав следующую команду</p>
+<div class="highlight"><pre tabindex="0" style="color:#fab387;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>dotnet run
+</span></span></code></pre></div><p>Перед нами появится базовое пустое приложение:</p>
+<p><img src="https://i.postimg.cc/zf1z3GHd/006.png" alt=""></p>
+<p><strong>Примечание.</strong> Для верности нужно указать версию фреймворка, например, написав параметр:</p>
+<div class="highlight"><pre tabindex="0" style="color:#fab387;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>dotnet new avalonia.app -o MyApp -f net7.0
+</span></span></code></pre></div><p>В следующих статьях мы продолжим изучение фреймворка UI Avalonia.</p></div>
+    <div class="post-footer">
+      <div class="info">
+        
+
+        
+          <span class="separator"><a class="tag" href="/tags/avalonia/">Avalonia</a><a class="tag" href="/tags/ubuntu/">Ubuntu</a><a class="tag" href="/tags/dotnet/">dotnet</a><a class="tag" href="/tags/ui/">UI</a></span>
+
+
+
+
+        
+      </div>
+    </div>
+
+    
+  </div>
+
+
+          </div>
+        </div>
+      </main>
+    </div><footer class="footer footer--base">
+  <div class="by_farbox">
+    <ul class="footer__list">
+      <li class="footer__item">
+        &copy;
+        
+          GhostBasenji 2023
+
+        
+      </li>
+      
+    </ul>
+  </div>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.44288fd315b6cda68c1f4743caad56535c0f81a5b5a672f385e82b3896575c1d.js"
+    integrity="sha256-RCiP0xW2zaaMH0dDyq1WU1wPgaW1pnLzhegrOJZXXB0="
+    crossorigin="anonymous"
+  ></script></body>
+</html>

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html
+  dir="ltr"
+  lang="en"
+  data-theme="light"
+><head>
+  <title>
+    Ghost Basenji
+      |
+      Avalonia UI в Ubuntu. Улучшение UI
+
+
+    
+
+  </title>
+
+  
+  <meta charset="utf-8" /><meta name="generator" content="Hugo 0.112.5"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta
+    name="description"
+    content="
+      Notes of a novice programmer
+
+
+    "
+  />
+  
+  
+  
+  <link
+    rel="stylesheet"
+    href="/css/main.min.deaabf2252003a406691dbf5f79852b7bcb4538e1f3c92348e14f631279e8c5f.css"
+    integrity="sha256-3qq/IlIAOkBmkdv195hSt7y0U44fPJI0jhT2MSeejF8="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.f798cbda9aaa38f89eb38be6414bd082cfd71a6780375cbf67b6d2fb2b96491e.css"
+    integrity="sha256-95jL2pqqOPies4vmQUvQgs/XGmeAN1y/Z7bS&#43;yuWSR4="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous"
+  />
+  
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+  <link rel="canonical" href="/post/avalonia-v-ubuntu-uluchenie-ui/" />
+
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.d0408165d31a17f17bba83038bf54e86121f85021bdf936382e636f0f77a952f.js"
+    integrity="sha256-0ECBZdMaF/F7uoMDi/VOhhIfhQIb35NjguY28Pd6lS8="
+    crossorigin="anonymous"
+  ></script>
+
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Avalonia UI в Ubuntu. Улучшение UI"/>
+<meta name="twitter:description" content="Эта глава серии по Avalonia, в которой мы фокусируемся на улучшение внешнего вида пользовательского интерфейса."/>
+
+
+
+  
+
+
+  
+  
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "post",
+        "name": "Avalonia UI в Ubuntu. Улучшение UI",
+        "headline": "Avalonia UI в Ubuntu. Улучшение UI",
+        "alternativeHeadline": "",
+        "description": "
+      
+        \u003cp\u003eЭта глава серии по Avalonia, в которой мы фокусируемся на улучшение внешнего вида пользовательского интерфейса.\u003c\/p\u003e
+
+
+      
+
+
+    ",
+        "inLanguage": "ru",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "\/post\/avalonia-v-ubuntu-uluchenie-ui\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "Ghost Basenji"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "Ghost Basenji"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "Ghost Basenji"
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": "Ghost Basenji"
+        },
+        "copyrightYear" : "2023",
+        "dateCreated": "2023-04-21T00:00:00.00Z",
+        "datePublished": "2023-04-21T00:00:00.00Z",
+        "dateModified": "2023-04-21T00:00:00.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "Ghost Basenji",
+            "url": "/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "\/favicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+      ]
+
+    ,
+        "url" : "\/post\/avalonia-v-ubuntu-uluchenie-ui\/",
+        "wordCount" : "332",
+        "genre" : [ ],
+        "keywords" : [ 
+      
+      "Avalonia"
+
+    
+      
+        ,
+
+      
+      "Ubuntu"
+
+    
+      
+        ,
+
+      
+      "dotnet"
+
+    
+      
+        ,
+
+      
+      "UI"
+
+    ]
+    }
+  </script>
+
+
+
+</head>
+<body>
+    <header><div
+  class="page-top 
+    .
+
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+  </a>
+  <nav>
+    <ul class="nav__list" id="navMenu">
+      <div class="nav__links">
+        
+        
+          
+          <li>
+            <a
+              
+              href="/"
+              
+              title=""
+              >Главная</a
+            >
+          </li>
+
+        
+          
+          <li>
+            <a
+              
+              href="/post/"
+              
+              title=""
+              >Статьи</a
+            >
+          </li>
+
+        
+          
+          <li>
+            <a
+              
+              href="/myprojects/"
+              
+              title=""
+              >Мои проекты</a
+            >
+          </li>
+
+        
+          
+          <li>
+            <a
+              
+              href="/about/"
+              
+              title=""
+              >About</a
+            >
+          </li>
+
+        
+        
+      </div>
+      <li>
+        
+      </li>
+    </ul>
+  </nav>
+</div>
+</header>
+    <div class="wrapper">
+      <aside><div
+  class="sidebar
+    .
+
+  "
+>
+  <div class="sidebar__content">
+    <div class="logo-title">
+      <div class="title">
+        <img src="/images/profile.png" alt="profile picture" />
+        <h3 title=""><a href="/">I&#39;m Ghost Basenji</a></h3>
+        <div class="description">
+          <p>Notes of a novice programmer</p>
+        </div>
+      </div>
+    </div>
+    <ul class="social-links">
+      
+        <li>
+          <a href="https://t.me/ghostbasenji" rel="me" aria-label="telegram">
+            <i class="fab fa-telegram fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      
+        <li>
+          <a href="mailto:petr.and.vic@gmail.com" rel="me" aria-label="e-mail">
+            <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      
+    </ul>
+  </div><footer class="footer footer--sidebar">
+  <div class="by_farbox">
+    <ul class="footer__list">
+      <li class="footer__item">
+        &copy;
+        
+          GhostBasenji 2023
+
+        
+      </li>
+      
+    </ul>
+  </div>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.44288fd315b6cda68c1f4743caad56535c0f81a5b5a672f385e82b3896575c1d.js"
+    integrity="sha256-RCiP0xW2zaaMH0dDyq1WU1wPgaW1pnLzhegrOJZXXB0="
+    crossorigin="anonymous"
+  ></script></div>
+</aside>
+      <main>
+        <div class="autopagerize_page_element">
+          <div class="content">
+  <div
+    class="post 
+      .
+
+    "
+  >
+    <div class="post-content">
+      
+      <div class="post-title">
+        <h1>Avalonia UI в Ubuntu. Улучшение UI</h1>
+        
+          <div class="info">
+            <em class="fas fa-calendar-day"></em>
+            <span class="date"
+              >
+                21/04/2023
+
+
+              </span
+            >
+            
+          </div>
+
+        
+      </div><p>Эта глава серии по Avalonia, в которой мы фокусируемся на улучшение внешнего вида пользовательского интерфейса.</p>
+<p>Текущее приложение работает, но у него есть некоторые незначительные недостатки. Размер окна по умолчанию довольно большой по сравнению с другими элементами, в нем много неиспользуемого пространства, а элементы управления расположены слишком близко друг к другу. Так что мы собираемся устранить эти минусы.</p>
+<p><img src="https://i.postimg.cc/rFknbcGS/009.png" alt=""></p>
+<h3 id="фиксация-размера-окон">Фиксация размера окон</h3>
+<p>Если открыть файл <em><strong>MainWindow.xaml</strong></em>, то первое инстинктивное изменение изменит следующие атрибуты, но, к сожалению, они используются только дизайнером Visual Studio, поэтому у них есть префикс <strong>d</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#fab387;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>d:DesignWidth=&#34;800&#34; d:DesignHeight=&#34;450&#34;
+</span></span></code></pre></div><p>Правильный способ изменить размеры окна – это добавить атрибуты <strong>Width</strong> и <strong>Height</strong> с числовым значением, которые представляют его размер в пикселях.</p>
+<div class="highlight"><pre tabindex="0" style="color:#fab387;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#cba6f7">&lt;Window</span> <span style="color:#f38ba8">...</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f38ba8">...</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f9e2af">Width=</span><span style="color:#a6e3a1">&#34;300&#34;</span> <span style="color:#f9e2af">Height=</span><span style="color:#a6e3a1">&#34;200&#34;</span><span style="color:#cba6f7">&gt;</span>
+</span></span></code></pre></div><p><img src="https://i.postimg.cc/NGTCpLXs/010.png" alt=""></p>
+<p>Как выше видно, новые размеры окна лучше соответствуют его назначению. Далее мы соберемся добавить немного пространства между элементами элементами управления.</p>
+<h3 id="добавление-немного-пространства">Добавление немного пространства</h3>
+<p>Если читатель имел дело с CSS, то, вероятно, знаком с понятиями <em><strong>Margin</strong></em> и <em><strong>Padding</strong></em>, которые в основном представляют собой пространство, которое мы можем добавить за пределами элементами управления (margins) или внутри его границ (paddings).</p>
+<p>Команда Avalonia подготовила отличное объяснение для них в следующей записи документации <a href="https://docs.avaloniaui.net/docs/layout/alignment-margins-and-padding">Avalonia Docs: выравнивание, поля и отступы</a>.</p>
+<p>Эти свойства <strong>Margin</strong> и <strong>Padding</strong> необходимо добавить в окно (<strong>Window</strong>), контейнер (<strong>Container</strong>) или к элементу управления (<strong>Control</strong>). Синтаксис из следующего примера также применим и к Margin.</p>
+<div class="highlight"><pre tabindex="0" style="color:#fab387;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#cba6f7">&lt;Window</span> <span style="color:#f9e2af">Padding=</span><span style="color:#a6e3a1">&#34;10&#34;</span><span style="color:#cba6f7">&gt;</span>
+</span></span><span style="display:flex;"><span>Все стороны имеют одинаковые отступы
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#cba6f7">&lt;Window</span> <span style="color:#f9e2af">Padding=</span><span style="color:#a6e3a1">&#34;10, 10&#34;</span><span style="color:#cba6f7">&gt;</span>
+</span></span><span style="display:flex;"><span>Представляет как <span style="color:#cba6f7">&lt;Window</span> <span style="color:#f9e2af">Padding=</span><span style="color:#a6e3a1">&#34;left-right, top-bottom&#34;</span><span style="color:#cba6f7">&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#cba6f7">&lt;Window</span> <span style="color:#f9e2af">Padding=</span><span style="color:#a6e3a1">&#34;10, 10, 10, 10&#34;</span><span style="color:#cba6f7">&gt;</span>
+</span></span><span style="display:flex;"><span>Представляет как <span style="color:#cba6f7">&lt;Window</span> <span style="color:#f9e2af">Padding=</span><span style="color:#a6e3a1">&#34;left, top, right, bottom&#34;</span><span style="color:#cba6f7">&gt;</span>
+</span></span></code></pre></div><p><strong>Примечание.</strong> Учитываем, что не все элементы управления могут иметь свойства Padding/Margin.</p>
+<p>Для нашего примера мы добавим следующие свойства <strong>Padding: 10</strong> к Window и <strong>Margin: 0, 0, 0, 10</strong> к первой метке, текстовому полю и кнопке.</p>
+<div class="highlight"><pre tabindex="0" style="color:#fab387;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#cba6f7">&lt;Window</span> <span style="color:#f9e2af">xmlns=</span><span style="color:#a6e3a1">&#34;https://github.com/avaloniaui&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f9e2af">xmlns:x=</span><span style="color:#a6e3a1">&#34;http://schemas.microsoft.com/winfx/2006/xaml&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f9e2af">xmlns:d=</span><span style="color:#a6e3a1">&#34;http://schemas.microsoft.com/expression/blend/2008&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f9e2af">xmlns:mc=</span><span style="color:#a6e3a1">&#34;http://schemas.openxmlformats.org/markup-compatibility/2006&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f9e2af">mc:Ignorable=</span><span style="color:#a6e3a1">&#34;d&#34;</span> <span style="color:#f9e2af">d:DesignWidth=</span><span style="color:#a6e3a1">&#34;800&#34;</span> <span style="color:#f9e2af">d:DesignHeight=</span><span style="color:#a6e3a1">&#34;450&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f9e2af">x:Class=</span><span style="color:#a6e3a1">&#34;MyApp.MainWindow&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f9e2af">Title=</span><span style="color:#a6e3a1">&#34;MyApp&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f9e2af">Width=</span><span style="color:#a6e3a1">&#34;300&#34;</span> <span style="color:#f9e2af">Height=</span><span style="color:#a6e3a1">&#34;200&#34;</span> <span style="color:#f9e2af">Padding=</span><span style="color:#a6e3a1">&#34;10&#34;</span><span style="color:#cba6f7">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#cba6f7">&lt;StackPanel</span> <span style="color:#f9e2af">Orientation=</span><span style="color:#a6e3a1">&#34;Vertical&#34;</span> <span style="color:#cba6f7">&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#cba6f7">&lt;TextBlock</span> <span style="color:#f9e2af">Name=</span><span style="color:#a6e3a1">&#34;NameLabel&#34;</span> <span style="color:#f9e2af">Margin=</span><span style="color:#a6e3a1">&#34;0,0,0,10&#34;</span><span style="color:#cba6f7">&gt;</span>What is your name?<span style="color:#cba6f7">&lt;/TextBlock&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#cba6f7">&lt;TextBox</span> <span style="color:#f9e2af">Name=</span><span style="color:#a6e3a1">&#34;NameTextBox&#34;</span> <span style="color:#f9e2af">Margin=</span><span style="color:#a6e3a1">&#34;0,0,0,10&#34;</span><span style="color:#cba6f7">&gt;&lt;/TextBox&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#cba6f7">&lt;Button</span> <span style="color:#f9e2af">Name=</span><span style="color:#a6e3a1">&#34;GreetButton&#34;</span> <span style="color:#f9e2af">Margin=</span><span style="color:#a6e3a1">&#34;0,0,0,10&#34;</span> <span style="color:#f9e2af">Click=</span><span style="color:#a6e3a1">&#34;GreetButton_Click&#34;</span><span style="color:#cba6f7">&gt;</span>Say Hello!<span style="color:#cba6f7">&lt;/Button&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#cba6f7">&lt;TextBlock</span> <span style="color:#f9e2af">Name=</span><span style="color:#a6e3a1">&#34;MessageLabel&#34;</span><span style="color:#cba6f7">&gt;&lt;/TextBlock&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#cba6f7">&lt;/StackPanel&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#cba6f7">&lt;/Window&gt;</span>
+</span></span></code></pre></div><p>А теперь запустим наше приложение, чтобы насладиться полученным результатом.</p>
+<p><img src="https://i.postimg.cc/gjvMJBpX/011.png" alt=""></p>
+<p>Как мы видим теперь, есть некоторое пространство, которое улучшает разборчивость и удобство использования.</p></div>
+    <div class="post-footer">
+      <div class="info">
+        
+
+        
+          <span class="separator"><a class="tag" href="/tags/avalonia/">Avalonia</a><a class="tag" href="/tags/ubuntu/">Ubuntu</a><a class="tag" href="/tags/dotnet/">dotnet</a><a class="tag" href="/tags/ui/">UI</a></span>
+
+
+
+
+        
+      </div>
+    </div>
+
+    
+  </div>
+
+
+          </div>
+        </div>
+      </main>
+    </div><footer class="footer footer--base">
+  <div class="by_farbox">
+    <ul class="footer__list">
+      <li class="footer__item">
+        &copy;
+        
+          GhostBasenji 2023
+
+        
+      </li>
+      
+    </ul>
+  </div>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.44288fd315b6cda68c1f4743caad56535c0f81a5b5a672f385e82b3896575c1d.js"
+    integrity="sha256-RCiP0xW2zaaMH0dDyq1WU1wPgaW1pnLzhegrOJZXXB0="
+    crossorigin="anonymous"
+  ></script></body>
+</html>

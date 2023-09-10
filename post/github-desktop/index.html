@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html
+  dir="ltr"
+  lang="en"
+  data-theme="light"
+><head>
+  <title>
+    Ghost Basenji
+      |
+      Работаем с GitHub Desktop
+
+
+    
+
+  </title>
+
+  
+  <meta charset="utf-8" /><meta name="generator" content="Hugo 0.112.5"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta
+    name="description"
+    content="
+      Notes of a novice programmer
+
+
+    "
+  />
+  
+  
+  
+  <link
+    rel="stylesheet"
+    href="/css/main.min.deaabf2252003a406691dbf5f79852b7bcb4538e1f3c92348e14f631279e8c5f.css"
+    integrity="sha256-3qq/IlIAOkBmkdv195hSt7y0U44fPJI0jhT2MSeejF8="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.f798cbda9aaa38f89eb38be6414bd082cfd71a6780375cbf67b6d2fb2b96491e.css"
+    integrity="sha256-95jL2pqqOPies4vmQUvQgs/XGmeAN1y/Z7bS&#43;yuWSR4="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous"
+  />
+  
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+  <link rel="canonical" href="/post/github-desktop/" />
+
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.d0408165d31a17f17bba83038bf54e86121f85021bdf936382e636f0f77a952f.js"
+    integrity="sha256-0ECBZdMaF/F7uoMDi/VOhhIfhQIb35NjguY28Pd6lS8="
+    crossorigin="anonymous"
+  ></script>
+
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Работаем с GitHub Desktop"/>
+<meta name="twitter:description" content="В этой статье осваиваем GitHub Desktop на практике, а именно:
+
+Установка и аутентификация GitHub Desktop
+Создание репозитория Git
+Добавление в репозиторий новый или существующий проект
+"/>
+
+
+
+  
+
+
+  
+  
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "post",
+        "name": "Работаем с GitHub Desktop",
+        "headline": "Работаем с GitHub Desktop",
+        "alternativeHeadline": "",
+        "description": "
+      
+        \u003cp\u003eВ этой статье осваиваем GitHub Desktop на практике, а именно:\u003c\/p\u003e\n\u003cul\u003e\n\u003cli\u003eУстановка и аутентификация GitHub Desktop\u003c\/li\u003e\n\u003cli\u003eСоздание репозитория Git\u003c\/li\u003e\n\u003cli\u003eДобавление в репозиторий новый или существующий проект\u003c\/li\u003e\n\u003c\/ul\u003e
+
+
+      
+
+
+    ",
+        "inLanguage": "ru",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "\/post\/github-desktop\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "Ghost Basenji"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "Ghost Basenji"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "Ghost Basenji"
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": "Ghost Basenji"
+        },
+        "copyrightYear" : "2023",
+        "dateCreated": "2023-04-27T00:00:00.00Z",
+        "datePublished": "2023-04-27T00:00:00.00Z",
+        "dateModified": "2023-04-27T00:00:00.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "Ghost Basenji",
+            "url": "/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "\/favicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+      ]
+
+    ,
+        "url" : "\/post\/github-desktop\/",
+        "wordCount" : "728",
+        "genre" : [ ],
+        "keywords" : [ 
+      
+      "GitHub Desktop"
+
+    
+      
+        ,
+
+      
+      "git"
+
+    ]
+    }
+  </script>
+
+
+
+</head>
+<body>
+    <header><div
+  class="page-top 
+    .
+
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+  </a>
+  <nav>
+    <ul class="nav__list" id="navMenu">
+      <div class="nav__links">
+        
+        
+          
+          <li>
+            <a
+              
+              href="/"
+              
+              title=""
+              >Главная</a
+            >
+          </li>
+
+        
+          
+          <li>
+            <a
+              
+              href="/post/"
+              
+              title=""
+              >Статьи</a
+            >
+          </li>
+
+        
+          
+          <li>
+            <a
+              
+              href="/myprojects/"
+              
+              title=""
+              >Мои проекты</a
+            >
+          </li>
+
+        
+          
+          <li>
+            <a
+              
+              href="/about/"
+              
+              title=""
+              >About</a
+            >
+          </li>
+
+        
+        
+      </div>
+      <li>
+        
+      </li>
+    </ul>
+  </nav>
+</div>
+</header>
+    <div class="wrapper">
+      <aside><div
+  class="sidebar
+    .
+
+  "
+>
+  <div class="sidebar__content">
+    <div class="logo-title">
+      <div class="title">
+        <img src="/images/profile.png" alt="profile picture" />
+        <h3 title=""><a href="/">I&#39;m Ghost Basenji</a></h3>
+        <div class="description">
+          <p>Notes of a novice programmer</p>
+        </div>
+      </div>
+    </div>
+    <ul class="social-links">
+      
+        <li>
+          <a href="https://t.me/ghostbasenji" rel="me" aria-label="telegram">
+            <i class="fab fa-telegram fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      
+        <li>
+          <a href="mailto:petr.and.vic@gmail.com" rel="me" aria-label="e-mail">
+            <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      
+    </ul>
+  </div><footer class="footer footer--sidebar">
+  <div class="by_farbox">
+    <ul class="footer__list">
+      <li class="footer__item">
+        &copy;
+        
+          GhostBasenji 2023
+
+        
+      </li>
+      
+    </ul>
+  </div>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.44288fd315b6cda68c1f4743caad56535c0f81a5b5a672f385e82b3896575c1d.js"
+    integrity="sha256-RCiP0xW2zaaMH0dDyq1WU1wPgaW1pnLzhegrOJZXXB0="
+    crossorigin="anonymous"
+  ></script></div>
+</aside>
+      <main>
+        <div class="autopagerize_page_element">
+          <div class="content">
+  <div
+    class="post 
+      .
+
+    "
+  >
+    <div class="post-content">
+      
+      <div class="post-title">
+        <h1>Работаем с GitHub Desktop</h1>
+        
+          <div class="info">
+            <em class="fas fa-calendar-day"></em>
+            <span class="date"
+              >
+                27/04/2023
+
+
+              </span
+            >
+            
+          </div>
+
+        
+      </div><p>В этой статье осваиваем GitHub Desktop на практике, а именно:</p>
+<ul>
+<li>Установка и аутентификация GitHub Desktop</li>
+<li>Создание репозитория Git</li>
+<li>Добавление в репозиторий новый или существующий проект</li>
+</ul>
+<h3 id="установка-и-аутентификация-github-desktop">Установка и аутентификация GitHub Desktop</h3>
+<p>Скачаем и установим <a href="https://desktop.github.com/">GitHub Desktop</a>. Запускам приложение и авторизируемся (по идее у нас уже есть аккаунт на GitHub, но если нет, то создаем его).</p>
+<p>Можно безопасно пройти аутентификацию с помощью своей учетной записи и получить доступ к ресурсам из GitHub Desktop.
+Открываем GitHub Desktop. Щелкаем по <strong>File</strong> &gt; <strong>Options…</strong>, как показано ниже.</p>
+<p><img src="https://i.postimg.cc/CMBDPQ3D/020.png" alt=""></p>
+<p><img src="https://i.postimg.cc/dDcJ41zW/021.png" alt=""></p>
+<p>Вот как мы можем аутентифицироваться и подключаться к GitHub в GitHub Desktop.</p>
+<h3 id="создание-репозитория-git-на-github">Создание репозитория Git на GitHub</h3>
+<p>В этом разделе мы научимся создавать новые репозитории Git на GitHub с помощью GitHub Desktop.
+Щелкаем по File в GitHub Desktop, как показано ниже.</p>
+<p><img src="https://i.postimg.cc/kgctR3Sr/022.png" alt=""></p>
+<p>Мы получаем возможность создать новый репозиторий. Кроме того, есть и другие варианты, такие как добавление локального репозитория, клонирование репозитория.</p>
+<p>Итак, мы выбираем <strong>New repository…</strong>. После чего перед нами появится окно со следующими вариантами создания репозитория Git.</p>
+<p><img src="https://i.postimg.cc/wjHmBT7c/023.png" alt=""></p>
+<p>Теперь рассмотрим следующие поля и введем соответственно им данные.</p>
+<ul>
+<li><strong>Name</strong>. Имя git-репозитория. В нашем случае имя – demoGithub.</li>
+<li><strong>Description</strong>. Тут дается описание репозитория.</li>
+<li><strong>Local path</strong>. Выбирается локальный путь для репозитория, в котором будет храниться фактический проект локально.</li>
+<li><strong>Initialize this repository with a README</strong>. Создается файл README. Рекомендуется добавлять этот файл для каждого проекта, т.к. можно быстро получить подробную информацию о проекте, изменениях и версиях.</li>
+<li><strong>Git ignore</strong>. Добавляет файл <em><strong>.gitignore</strong></em>, в котором указывается список определенных лишних файлов, которых нужно игнорировать или не добавлять в репозиторий. В выпадающем списке выбирается шаблон .gitignore определенного языка того или иного проекта.</li>
+</ul>
+<p><img src="https://i.postimg.cc/SNc9qzNx/024.png" alt=""></p>
+<ul>
+<li><strong>License</strong>. В выпадающем списке выбирается лицензия для репозитрия. Тут мы будем по умолчанию выбираем лицензию MIT.</li>
+</ul>
+<p><img src="https://i.postimg.cc/66kZDhKP/025.png" alt=""></p>
+<p>После того, как ввели значения, мы щелкаем по кнопке <strong>Create repository</strong>. Мы увидим, что в GitHub Desktop создался репозиторий.</p>
+<p><img src="https://i.postimg.cc/1z3VpC08/026.png" alt=""></p>
+<p>Мы можем увидеть следующие вещи:</p>
+<ol>
+<li>Текущий репозиторий demoGithub</li>
+<li>Текущая ветка – main</li>
+<li>Публикация своего репозитория на GitHub</li>
+<li>Опция коммита</li>
+</ol>
+<p>Мы начнем с публикации репозитория, нажав на него, как показано ниже.</p>
+<p><img src="https://i.postimg.cc/q7DhQsQj/027.png" alt=""></p>
+<p>После того, как нажали на Publish repository, перед нами появится окно со следующими опциями.</p>
+<p><img src="https://i.postimg.cc/9M44kDnV/028.png" alt=""></p>
+<p>У нас есть возможность выбрать GitHub.com или Enterprise. Мы выбираем бесплатный GitHub.com. Заполняем следующие поля.</p>
+<ul>
+<li><strong>Name</strong>. Это название git-репозитория в GitHub.com</li>
+<li><strong>Description</strong>. Описание репозитория.</li>
+<li><strong>Keep this code private</strong>. Если установить галочку, то git-репозиторий становится приватным, в противном случае – публичный. В данном случае я снимаю галочку, чтобы сделать репозиторий открытым.</li>
+</ul>
+<p>Как только щелкнем по <strong>Publish repository</strong>, репозиторий будет создан на GitHub.</p>
+<p><img src="https://i.postimg.cc/d3rhqzFx/029.png" alt=""></p>
+<p>Итак, мы успешно создали git-репозиторий и отправили его на GitHub с помощью GitHub Desktop.</p>
+<h3 id="добавление-новый-или-существующий-проект-в-репозиторий">Добавление новый или существующий проект в репозиторий</h3>
+<p>Это легко. Мы можем создать новый проект или добавить существующий проект в наш локальный репозиторий, как показано ниже</p>
+<p><img src="https://i.postimg.cc/L41YBZP3/030.png" alt=""></p>
+<p>Затем откроется папка локального репозитория.</p>
+<p><img src="https://i.postimg.cc/DZtW379G/031.png" alt=""></p>
+<p>В связи с этим мы создадим новый проект в том же месте – этим самым мы можем добавить проект в репозиторий GitHub. Давайте создадим проект ASP.NET Core в Visual Studio, как показано ниже.</p>
+<p><img src="https://i.postimg.cc/YqB4XqfK/032.png" alt="">
+<img src="https://i.postimg.cc/5N5XDdnH/033.png" alt=""></p>
+<p>Итак, мы успешно создали наш учебный проект.</p>
+<p><img src="https://i.postimg.cc/zGJyrtcx/034.png" alt=""></p>
+<p>После того, как мы создали проект, заходим в GitHub Desktop. В нем увидим все файлы нашего учебного проекта в списке изменений GitHub Desktop.</p>
+<p><img src="https://i.postimg.cc/cJzCfs4z/035.png" alt=""></p>
+<p>Теперь мы можем добавить комментарий к изменениям и нажать на кнопку <strong>Commit</strong>.</p>
+<p><img src="https://i.postimg.cc/V6b6R3Jk/036.png" alt=""></p>
+<p>Мы коммитируем все как есть. Однако, если захотим, то можем снять галочки с файлов или папок, с которыми мы хотим отменить изменения.</p>
+<p>После того, как закоммитили, мы увидим окно, в котором нужно отправить коммиты на удаленный репозиторий в GitHub.</p>
+<p><img src="https://i.postimg.cc/VNv5SS1M/037.png" alt=""></p>
+<p>Мы видим, что 1 коммит ожидает отправки на GitHub. До сих пор мы коммитили изменения только в локальный репозиторий. А теперь пора отправлять коммиты в удаленный репозиторий.</p>
+<p>Мы щелкаем по кнопке <strong>Push Origin</strong>, чтобы отправить проект на GitHub Online. Сразу после нажатия по кнопке GitHub Desktop начнет перемещать все коммиты на удаленный репозиторий.</p>
+<p><img src="https://i.postimg.cc/52n6N5cb/038.png" alt=""></p>
+<p>Мы добавили проект на GitHub и закоммитили его. Мы можем увидеть этот проект на сайте GitHub.</p>
+<p><img src="https://i.postimg.cc/HnDLPBM4/039.png" alt=""></p>
+<p>Итак, мы успешно создали локальный git-репозиторий, добавили проект в этот репозиторий, потом запушили на сайт GitHub с помощью GitHub Desktop.</p>
+<p>Аналогично, мы можем добавлять существующие проекты в git-репозиторий на Github, как мы делали для нового проекта. Мы можем скопировать проект в этот репозиторий и проверить изменения в GitHub Desktop.</p>
+<h3 id="вносим-и-коммитим-изменения-в-проект">Вносим и коммитим изменения в проект</h3>
+<p>Давай внесем некоторые изменения в файлы проекта и закоммитим их с помощью GitHub Desktop. Итак, мы просто немного изменим страницу index проекта, а в GitHub Desktop мы мгновенно увидим список изменений.</p>
+<p><img src="https://i.postimg.cc/c1wC8GqD/040.png" alt=""></p>
+<p>Далее коммитим эти изменения и пушим в удаленный репозиторий. После чего заходим на сайт GitHub и видим, что изменения зафиксированы:</p>
+<p><img src="https://i.postimg.cc/T1VP8gq8/041.png" alt=""></p></div>
+    <div class="post-footer">
+      <div class="info">
+        
+
+        
+          <span class="separator"><a class="tag" href="/tags/github-desktop/">GitHub Desktop</a><a class="tag" href="/tags/git/">git</a></span>
+
+
+
+
+        
+      </div>
+    </div>
+
+    
+  </div>
+
+
+          </div>
+        </div>
+      </main>
+    </div><footer class="footer footer--base">
+  <div class="by_farbox">
+    <ul class="footer__list">
+      <li class="footer__item">
+        &copy;
+        
+          GhostBasenji 2023
+
+        
+      </li>
+      
+    </ul>
+  </div>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.44288fd315b6cda68c1f4743caad56535c0f81a5b5a672f385e82b3896575c1d.js"
+    integrity="sha256-RCiP0xW2zaaMH0dDyq1WU1wPgaW1pnLzhegrOJZXXB0="
+    crossorigin="anonymous"
+  ></script></body>
+</html>

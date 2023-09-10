@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>.Net Core on </title>
+    <link>/tags/.net-core/</link>
+    <description>Recent content in .Net Core on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru</language>
+    <lastBuildDate>Mon, 03 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/.net-core/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Устанавливаем .NET Core в Ubuntu 22.04</title>
+      <link>/post/install-dotnetcore-ubuntu/</link>
+      <pubDate>Mon, 03 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/post/install-dotnetcore-ubuntu/</guid>
+      
+        <description>&lt;p&gt;В этом уроке рассматривается процесс установки .NET Core на Ubuntu 22.04 LTS.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

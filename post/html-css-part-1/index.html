@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html
+  dir="ltr"
+  lang="en"
+  data-theme="light"
+><head>
+  <title>
+    Ghost Basenji
+      |
+      HTML5 и CSS3. Часть 1: Пишем наш первый код
+
+
+    
+
+  </title>
+
+  
+  <meta charset="utf-8" /><meta name="generator" content="Hugo 0.112.5"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta
+    name="description"
+    content="
+      Notes of a novice programmer
+
+
+    "
+  />
+  
+  
+  
+  <link
+    rel="stylesheet"
+    href="/css/main.min.deaabf2252003a406691dbf5f79852b7bcb4538e1f3c92348e14f631279e8c5f.css"
+    integrity="sha256-3qq/IlIAOkBmkdv195hSt7y0U44fPJI0jhT2MSeejF8="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.f798cbda9aaa38f89eb38be6414bd082cfd71a6780375cbf67b6d2fb2b96491e.css"
+    integrity="sha256-95jL2pqqOPies4vmQUvQgs/XGmeAN1y/Z7bS&#43;yuWSR4="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous"
+  />
+  
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+  <link rel="canonical" href="/post/html-css-part-1/" />
+
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.d0408165d31a17f17bba83038bf54e86121f85021bdf936382e636f0f77a952f.js"
+    integrity="sha256-0ECBZdMaF/F7uoMDi/VOhhIfhQIb35NjguY28Pd6lS8="
+    crossorigin="anonymous"
+  ></script>
+
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="HTML5 и CSS3. Часть 1: Пишем наш первый код"/>
+<meta name="twitter:description" content="Начинаем учиться работать с HTML и CSS, не заблудившись по пути."/>
+
+
+
+  
+
+
+  
+  
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "post",
+        "name": "HTML5 и CSS3. Часть 1: Пишем наш первый код",
+        "headline": "HTML5 и CSS3. Часть 1: Пишем наш первый код",
+        "alternativeHeadline": "",
+        "description": "
+      
+        \u003cp\u003eНачинаем учиться работать с HTML и CSS, не заблудившись по пути.\u003c\/p\u003e
+
+
+      
+
+
+    ",
+        "inLanguage": "ru",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "\/post\/html-css-part-1\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "Ghost Basenji"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "Ghost Basenji"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "Ghost Basenji"
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": "Ghost Basenji"
+        },
+        "copyrightYear" : "2023",
+        "dateCreated": "2023-04-25T00:00:00.00Z",
+        "datePublished": "2023-04-25T00:00:00.00Z",
+        "dateModified": "2023-04-25T00:00:00.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "Ghost Basenji",
+            "url": "/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "\/favicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+      ]
+
+    ,
+        "url" : "\/post\/html-css-part-1\/",
+        "wordCount" : "2169",
+        "genre" : [ ],
+        "keywords" : [ 
+      
+      "HTML5"
+
+    
+      
+        ,
+
+      
+      "CSS3"
+
+    ]
+    }
+  </script>
+
+
+
+</head>
+<body>
+    <header><div
+  class="page-top 
+    .
+
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+  </a>
+  <nav>
+    <ul class="nav__list" id="navMenu">
+      <div class="nav__links">
+        
+        
+          
+          <li>
+            <a
+              
+              href="/"
+              
+              title=""
+              >Главная</a
+            >
+          </li>
+
+        
+          
+          <li>
+            <a
+              
+              href="/post/"
+              
+              title=""
+              >Статьи</a
+            >
+          </li>
+
+        
+          
+          <li>
+            <a
+              
+              href="/myprojects/"
+              
+              title=""
+              >Мои проекты</a
+            >
+          </li>
+
+        
+          
+          <li>
+            <a
+              
+              href="/about/"
+              
+              title=""
+              >About</a
+            >
+          </li>
+
+        
+        
+      </div>
+      <li>
+        
+      </li>
+    </ul>
+  </nav>
+</div>
+</header>
+    <div class="wrapper">
+      <aside><div
+  class="sidebar
+    .
+
+  "
+>
+  <div class="sidebar__content">
+    <div class="logo-title">
+      <div class="title">
+        <img src="/images/profile.png" alt="profile picture" />
+        <h3 title=""><a href="/">I&#39;m Ghost Basenji</a></h3>
+        <div class="description">
+          <p>Notes of a novice programmer</p>
+        </div>
+      </div>
+    </div>
+    <ul class="social-links">
+      
+        <li>
+          <a href="https://t.me/ghostbasenji" rel="me" aria-label="telegram">
+            <i class="fab fa-telegram fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      
+        <li>
+          <a href="mailto:petr.and.vic@gmail.com" rel="me" aria-label="e-mail">
+            <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      
+    </ul>
+  </div><footer class="footer footer--sidebar">
+  <div class="by_farbox">
+    <ul class="footer__list">
+      <li class="footer__item">
+        &copy;
+        
+          GhostBasenji 2023
+
+        
+      </li>
+      
+    </ul>
+  </div>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.44288fd315b6cda68c1f4743caad56535c0f81a5b5a672f385e82b3896575c1d.js"
+    integrity="sha256-RCiP0xW2zaaMH0dDyq1WU1wPgaW1pnLzhegrOJZXXB0="
+    crossorigin="anonymous"
+  ></script></div>
+</aside>
+      <main>
+        <div class="autopagerize_page_element">
+          <div class="content">
+  <div
+    class="post 
+      .
+
+    "
+  >
+    <div class="post-content">
+      
+      <div class="post-title">
+        <h1>HTML5 и CSS3. Часть 1: Пишем наш первый код</h1>
+        
+          <div class="info">
+            <em class="fas fa-calendar-day"></em>
+            <span class="date"
+              >
+                25/04/2023
+
+
+              </span
+            >
+            
+          </div>
+
+        
+      </div><p>Начинаем учиться работать с HTML и CSS, не заблудившись по пути.</p>
+<h3 id="основа">Основа</h3>
+<p>Давайте начнем с самого начала. <strong>HTML</strong> (Hyper-Text Markup Language, язык гипертекстовой разметки) технически не является языком программирования. Вместо этого он начинался как способ отображения текста, изображений и других типов данных. Со временем был разработан и дополнен стандарт, чтобы расширить возможности HTML. Эти изменения привели к серьезному пересмотру спецификации HTML. Последней спецификацией, которая была выпущена консорциумом W3C, является HTML5.</p>
+<p>А теперь пройдемся по основам CSS, а потом сразу перейдем к делу.</p>
+<p><strong>CSS</strong> (Cascading Style Sheets, Каскадные таблицы стилей) – это способ изменять внешний вид HTML-страницы. На самом деле, CSS необязательно применять только к HTML, но это, безусловно, его основное применение. Так же, как и HTML, CSS прошел через множество итераций. Также, как и спецификация HTML, спецификация CSS поддерживается W3C.</p>
+<p>CSS был разработан для того, чтобы отделить дизайн от контента. Контент помещается в HTML, а CSS придает этому контенту привлекательный вид. Благодаря такому разделению мы можем легко изменять внешний вид своего сайта без необходимости изменять структуру или контент.</p>
+<h3 id="итак-поехали">Итак, поехали</h3>
+<p>Вот и все, мы закончили с введением и теперь готовы занять руки. Итак, наш план прогресса таков:</p>
+<ol>
+<li>Создание базовой веб-страницы Hello World.</li>
+<li>Деконструкция веб-страницы для идентификации все ее части.</li>
+</ol>
+<p>Это послужит нам началом. Оттуда мы к разметке HTML, а затем добавим наш первый CSS и посмотрим, как все это начинается что-то меняться.
+Среда разработки – это очень личная вещь. У каждого человека есть свое собственное представление о том, какая IDE лучше. HTML и CSS не нуждаются в компиляции (как это делают C# и другие языки). Это действительно открывает перед нами возможности выбора редактора, который мы можем использовать. Это означает, что даже Notepad является допустимым редактором для HTML и CSS. В этом уроке будем использовать VS Code от Microsoft.</p>
+<h3 id="создание-страницы-hello-world">Создание страницы Hello World</h3>
+<p>Готовы создать нашу первую веб-страницу? Давай сделаем это. Запускаем VS Code. Создаем новый файл через главное меню <strong>File</strong> &gt; <strong>New File…</strong> В появившемся окошке создания файла напишем <strong>index.html</strong>.</p>
+<p><img src="https://i.postimg.cc/zBv26LVD/012.png" alt=""></p>
+<p>Мы выбрали имя index.html потому что веб-серверы ищут определенные имена файлов в качестве точки входа на веб-сайт. Как правило, они ищут index.html или default.html. Так что, стандартное имя точки входа - index.html. Когда мы называем страницу index.html, эта страница станет страницей по умолчанию, которая будет загружена, если явно не указана ни одна страница. Это означает, что index.html будет нашей домашней страницей.</p>
+<p>После того, как мы создали нашу страницу, по умолчанию она содержит следующий HTML-код:</p>
+<div class="highlight"><pre tabindex="0" style="color:#fab387;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#89b4fa;font-style:italic">&lt;!DOCTYPE html&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#cdd6f4">&lt;</span><span style="color:#cba6f7">html</span> <span style="color:#f9e2af">lang</span><span style="color:#89dceb">=</span><span style="color:#a6e3a1">&#34;en&#34;</span><span style="color:#cdd6f4">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#cdd6f4">&lt;</span><span style="color:#cba6f7">head</span><span style="color:#cdd6f4">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#cdd6f4">&lt;</span><span style="color:#cba6f7">meta</span> <span style="color:#f9e2af">charset</span><span style="color:#89dceb">=</span><span style="color:#a6e3a1">&#34;UTF-8&#34;</span><span style="color:#cdd6f4">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#cdd6f4">&lt;</span><span style="color:#cba6f7">meta</span> <span style="color:#f9e2af">name</span><span style="color:#89dceb">=</span><span style="color:#a6e3a1">&#34;viewport&#34;</span> <span style="color:#f9e2af">content</span><span style="color:#89dceb">=</span><span style="color:#a6e3a1">&#34;width=device-width, initial-scale=1.0&#34;</span><span style="color:#cdd6f4">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#cdd6f4">&lt;</span><span style="color:#cba6f7">title</span><span style="color:#cdd6f4">&gt;</span>Document<span style="color:#cdd6f4">&lt;/</span><span style="color:#cba6f7">title</span><span style="color:#cdd6f4">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#cdd6f4">&lt;/</span><span style="color:#cba6f7">head</span><span style="color:#cdd6f4">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#cdd6f4">&lt;</span><span style="color:#cba6f7">body</span><span style="color:#cdd6f4">&gt;</span>
+</span></span><span style="display:flex;"><span>   
+</span></span><span style="display:flex;"><span><span style="color:#cdd6f4">&lt;/</span><span style="color:#cba6f7">body</span><span style="color:#cdd6f4">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#cdd6f4">&lt;/</span><span style="color:#cba6f7">html</span><span style="color:#cdd6f4">&gt;</span>
+</span></span></code></pre></div><p>Это базовый каркас веб-страницы. Мы потом вернемся и проанализируем, что означает каждая строка, но давайте сначала сосредоточимся на одном разделе: <strong>body</strong>. HTML состоит в основном из “тегов”. Большинство тегов имеют открывающий и закрывающий теги. Например, <em><strong><!-- raw HTML omitted --></strong></em> – это тег. Его закрывающий тег – <em><strong><!-- raw HTML omitted --></strong></em>. Обращаем внимание на слэш перед <strong>body</strong>. Всякий раз, когда видим этот слэш перед именем тега, то мы знаем, что это закрывающий тег. Когда мы сталкиваемся с парой тегов, подобной body, все, что находится между открывающим и закрывающим тегами, находится внутри этого тега. Это означает, что если поместим что-то между тегами body, это что-то будет в теле нашей страницы.</p>
+<p>В нашем случае мы хотим стать веб-разработчиками, поэтому давайте поместим что-нибудь в тело нашей HTML-страницы. Введем “Hello World!” (без кавычек) между открывающим и закрывающим тегами <strong>body</strong>, например так:</p>
+<div class="highlight"><pre tabindex="0" style="color:#fab387;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#cdd6f4">&lt;</span><span style="color:#cba6f7">body</span><span style="color:#cdd6f4">&gt;</span>
+</span></span><span style="display:flex;"><span>   Hello World
+</span></span><span style="display:flex;"><span><span style="color:#cdd6f4">&lt;/</span><span style="color:#cba6f7">body</span><span style="color:#cdd6f4">&gt;</span>
+</span></span></code></pre></div><p>Вот и все. Теперь сохраним страницу, а потом запустим ее, нажав Ctrl+F5. Перед нами появится страница:</p>
+<p><img src="https://i.postimg.cc/7LmQK1PQ/013.png" alt="">
+Не очень зрелищно, но это только начало. Поздравляем, мы только что создали нашу первую веб-страницу.</p>
+<h3 id="анализ-базовой-веб-страницы">Анализ базовой веб-страницы</h3>
+<p>Теперь вернемся назад и рассмотрим эту HTML-разметку более подробно:</p>
+<div class="highlight"><pre tabindex="0" style="color:#fab387;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#89b4fa;font-style:italic">&lt;!DOCTYPE html&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#cdd6f4">&lt;</span><span style="color:#cba6f7">html</span> <span style="color:#f9e2af">lang</span><span style="color:#89dceb">=</span><span style="color:#a6e3a1">&#34;en&#34;</span><span style="color:#cdd6f4">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#cdd6f4">&lt;</span><span style="color:#cba6f7">head</span><span style="color:#cdd6f4">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#cdd6f4">&lt;</span><span style="color:#cba6f7">meta</span> <span style="color:#f9e2af">charset</span><span style="color:#89dceb">=</span><span style="color:#a6e3a1">&#34;UTF-8&#34;</span><span style="color:#cdd6f4">&gt;</span>
+</span></span><span style="display:flex;"><span>    	<span style="color:#cdd6f4">&lt;</span><span style="color:#cba6f7">meta</span> <span style="color:#f9e2af">name</span><span style="color:#89dceb">=</span><span style="color:#a6e3a1">&#34;viewport&#34;</span> <span style="color:#f9e2af">content</span><span style="color:#89dceb">=</span><span style="color:#a6e3a1">&#34;width=device-width, initial-scale=1.0&#34;</span><span style="color:#cdd6f4">&gt;</span>
+</span></span><span style="display:flex;"><span>    	<span style="color:#cdd6f4">&lt;</span><span style="color:#cba6f7">title</span><span style="color:#cdd6f4">&gt;</span>Document<span style="color:#cdd6f4">&lt;/</span><span style="color:#cba6f7">title</span><span style="color:#cdd6f4">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#cdd6f4">&lt;/</span><span style="color:#cba6f7">head</span><span style="color:#cdd6f4">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#cdd6f4">&lt;</span><span style="color:#cba6f7">body</span><span style="color:#cdd6f4">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#cdd6f4">&lt;/</span><span style="color:#cba6f7">body</span><span style="color:#cdd6f4">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#cdd6f4">&lt;/</span><span style="color:#cba6f7">html</span><span style="color:#cdd6f4">&gt;</span>
+</span></span></code></pre></div><p>Первая строка – это специальная директива, называемая DocType. Эта директива сообщает браузере, на основе какой спецификации HTML была создана эта страница. Как уже ранее говорилось, мы работаем с HTML5. По мере изменения спецификации менялись и теги, и их использование. Чтобы новая спецификация не портила существующие страницы, был использован DocType для определения того, какая спецификация использовалась для создания страницы. На самом деле DocType больше не используется для этого. Теперь мы включаем его просто для того, чтобы указать, что это страница соответствует последним стандартам. Если не укажем DocType, то страница будет некорректно показываться в браузере, потому что браузер использует самую старую спецификацию, какая есть у него для отображения нашей страницы. Суть здесь в том, что нам необходимо включать эту строку, но вообще не нужно ее изменять.</p>
+<p>Далее идет тег <strong>html</strong>. Этот тег интересен тем, что также знакомимся с атрибутом. Атрибут каким-либо образом расширяет тег или работает с ним. В нашем случае этот тег указывает, что основным языком для всего, что находится между тегами <strong>html</strong>, является английский. Сам тег <strong>html</strong> обертывает весь документ целиком. У нас не должно быть никаких тегов (кроме DocType) вне тегов <strong>html</strong>.</p>
+<p>Потом идет тег <strong>head</strong>. Воспримем раздел <strong>head</strong> как заголовок электронного письма. Он содержит всю информацию о странице. Большинство элементов в разделе <strong>head</strong> необязательны, но заголовок обязателен. Это поднимает еще один момент, который мы начинаем понимать: теги могут быть вложены друг в друга. Единственное, за чем нужно следить, – это за тем, чтобы мы закрывали свои теги в правильном порядке. Например, нам нужно закрыть тег <em><strong>title</strong></em> прежде, чем закроем тег <em><strong>head</strong></em>.</p>
+<p>Следующий тег, который мы видим, – это мета-тег. Это интересно по нескольким причинам. Во-первых, у него есть атрибут (кодировка). Далее, у него нет закрывающего тега. Давайте начнем с самого начала. Мета-теги обычно представляют собой информацию о странице. Эти теги не видны пользователю. Вместо этого они используются браузерами, веб-серверами и другими машинными считывателями для получения информации о странице. В нашем случае мы сообщаем браузеру, что эта страница использует utf-8 (Unicode) в качестве набора символов. Это широко используемый набор символов, который может работать с большинством языков. Другие мета-теги могут содержать описание сайта, автора и т.д. По умолчанию он тут включен.</p>
+<p>Далее видим тег <strong>viewport</strong>. Он отвечает за область на экране устройства, которая видна пользователю без прокрутки экрана. Представьте страницу, которая нормально отображается на экране ноутбука. Буквы, значки и прочие элементы находятся в оптимальном размере, удобно читать текст. Если не задать тег <strong>viewport</strong>, то наша страница на экране смартфона окажется совсем неудобной для чтения. Читателю придется двигать изображения и текст влево и вправо, вниз и вверх. Первый параметр – <strong>Width</strong> – дает команду браузеру адаптировать по ширине устройства страницу. Масштабирование ширины страницы определяется автоматически, если указано значение “<strong>device-width</strong>”. Также можно установить значение атрибута от 200 до 1000 пикселей. Следующий параметр – <strong>initial-scale</strong> – означает коэффициент масштабирования. Если указано значение “1”, разрешение CSS и устройства приравниваются друг к другу независимо от размера экрана. Можно указать любое значение параметра от 0.1 до 10.</p>
+<p>Теперь у мета-тега нет закрывающего тега. Но все равно этот тег самозакрывается, так как в случае с мета-тегами никогда не должно быть истинного закрывающего тега. В HTML5 технически поддерживается отсутствие закрывающего тега для некоторых тегов. Однако раньше, когда элемент не имел закрывающего тега, его обозначали слэшом в конце. HTML5 прекрасно работает с элементами, которые имеют слэш в конце. Это означает, что обычно это предпочтительный метод обработки тегов, у которых нет закрывающих тегов.</p>
+<p>Раздел <strong>title</strong> внутри тега <em><strong>head</strong></em> – это то место, где мы размещаем заголовок страницы. Title – это то, что отображается в строке заголовка или заголовке вкладки в веб-браузере. Например, если модифицируем наш <em><strong>title</strong></em> следующим образом:</p>
+<div class="highlight"><pre tabindex="0" style="color:#fab387;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#cdd6f4">&lt;</span><span style="color:#cba6f7">title</span><span style="color:#cdd6f4">&gt;</span>Наш первый веб-сайт<span style="color:#cdd6f4">&lt;/</span><span style="color:#cba6f7">title</span><span style="color:#cdd6f4">&gt;</span>
+</span></span></code></pre></div><p>Наша веб-страница теперь будет выглядеть так (обращаем внимание на разницу в названии вкладки вверху):</p>
+<p><img src="https://i.postimg.cc/NMnCcgH6/014.png" alt=""></p>
+<p>На этом мы завершаем наш обзор разметки по умолчанию. Подводим итог – HTML состоит из тегов. Большинство тегов имеют открывающий и закрывающий теги. Вложенные теги должны быть закрыты прежде, чем можно будет закрыть их родительский тег. Два основные раздела (или секции) – это <em><strong>head</strong></em> и <em><strong>body</strong></em>. Данные о странице обычно размещают в <em><strong>head</strong></em>, а данные страницы – в <em><strong>body</strong></em>.</p>
+<h3 id="другие-html-теги">Другие HTML-теги</h3>
+<p>Так как это вводная статья, поэтому не будем углубляться в HTML-теги. Однако, когда мы только начинаем, есть несколько тегов, которые мы должны знать, как их использовать.</p>
+<h4 id="теги-заголовков">Теги заголовков</h4>
+<p>Теги <strong>headers</strong> (теги заголовков) позволяют определить структуру нашей веб-страницы. Всего существует шесть различных тегов заголовков (от h1 до h6). Каждый из них указывает уровень заголовка (h1 – самый высокий и, как правило, самый большой, а h6 – самый маленький и, как правило, наименьший). Чтобы продемонстрировать это, давайте изменим нашу страницу, чтобы иметь общий заголовок и пару заголовков разделов, например:</p>
+<div class="highlight"><pre tabindex="0" style="color:#fab387;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#cdd6f4">&lt;</span><span style="color:#cba6f7">body</span><span style="color:#cdd6f4">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#cdd6f4">&lt;</span><span style="color:#cba6f7">h1</span><span style="color:#cdd6f4">&gt;</span>Простая домашняя страница<span style="color:#cdd6f4">&lt;/</span><span style="color:#cba6f7">h1</span><span style="color:#cdd6f4">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#cdd6f4">&lt;</span><span style="color:#cba6f7">h2</span><span style="color:#cdd6f4">&gt;</span>Раздел 1<span style="color:#cdd6f4">&lt;/</span><span style="color:#cba6f7">h2</span><span style="color:#cdd6f4">&gt;</span>
+</span></span><span style="display:flex;"><span>    Hello World
+</span></span><span style="display:flex;"><span>    <span style="color:#cdd6f4">&lt;</span><span style="color:#cba6f7">h2</span><span style="color:#cdd6f4">&gt;</span>Раздел 2<span style="color:#cdd6f4">&lt;/</span><span style="color:#cba6f7">h2</span><span style="color:#cdd6f4">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#cdd6f4">&lt;/</span><span style="color:#cba6f7">body</span><span style="color:#cdd6f4">&gt;</span>
+</span></span></code></pre></div><p>Так как “Hello World” – это просто контент, а не заголовок, поэтому оставляем его вне тега <em><strong>header</strong></em>. Итак, все это разбивает документ на разделы следующим образом:</p>
+<p><img src="https://i.postimg.cc/Bt9hjMNt/015.png" alt=""></p>
+<p>Обращаем внимание на разницу в размерах шрифтов. Эти значения являются по умолчанию для HTML.</p>
+<h4 id="теги-абзацев">Теги абзацев</h4>
+<p>Когда у нас есть обычный текст, который хотим отобразить на веб-страницы, стандартное место для его размещения – внутри тега абзаца, например:</p>
+<!-- raw HTML omitted -->
+<p>Тег <strong>paragraph</strong> (тег абзаца) объединяет текст и (обычно) ставит разрыв строки после текста. Таким образом, если бы мы изменили разметку следующим образом:</p>
+<div class="highlight"><pre tabindex="0" style="color:#fab387;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#cdd6f4">&lt;</span><span style="color:#cba6f7">p</span><span style="color:#cdd6f4">&gt;</span>Hello World<span style="color:#cdd6f4">&lt;/</span><span style="color:#cba6f7">p</span><span style="color:#cdd6f4">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#cdd6f4">&lt;</span><span style="color:#cba6f7">p</span><span style="color:#cdd6f4">&gt;</span>Как твои дела?<span style="color:#cdd6f4">&lt;/</span><span style="color:#cba6f7">p</span><span style="color:#cdd6f4">&gt;</span>
+</span></span></code></pre></div><p>То это будет выглядеть так:</p>
+<p><img src="https://i.postimg.cc/NfRtpn3J/016.png" alt="">
+[005]</p>
+<h3 id="основы-css">Основы CSS</h3>
+<p>Теперь давайте посмотрим, зачем надо использовать CSS. Прямо сейчас наша веб-страница очень проста. Это черно-белое и все такое прочее. CSS - это то, что мы меняем все это, в том числе и внешний вид веб-страницы. Начнем с добавления нового файла. На этот раз создадим файл с именем <em>styles.css</em>.</p>
+<p>После того, как создали новый файл CSS, теперь напишем следующий код (файл по умолчанию начинается с этих слов):</p>
+<div class="highlight"><pre tabindex="0" style="color:#fab387;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#cba6f7">body</span> <span style="color:#cdd6f4">{</span>
+</span></span><span style="display:flex;"><span><span style="color:#cdd6f4">}</span>
+</span></span></code></pre></div><p>Сейчас самое подходящее время для обсудить, что делает CSS. CSS каким-то образом изменяет части нашего HTML. Например, он может изменить шрифт определенного раздела, изменить цвет фона другого раздела или добавить дополнительное пространство вокруг определенных тегов. Итак, это означает, что правило CSS состоит из двух частей: затрагиваемый элемент и то, что хотим изменить в этом элементе. Глядя на вышеприведенный CSS, увидим <em><strong>body</strong></em>. Это выглядит знакомо. Это правило CSS влияет на текст нашей HTML-страницы. Теперь обычно у нас было бы что-то внутри фигурных скобок (то, что нужно изменить), но на данный момент наше правило пусто. Почему бы нам не изменить это, а потом посмотреть, что произойдет. Давай изменим шрифт для основной части (и всего, что внутри нее) на “Comic Sans MS”:</p>
+<div class="highlight"><pre tabindex="0" style="color:#fab387;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#cba6f7">body</span> <span style="color:#cdd6f4">{</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#cba6f7">font-family</span><span style="color:#cdd6f4">:</span> <span style="color:#a6e3a1">&#39;Comic Sans MS&#39;</span><span style="color:#cdd6f4">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#cdd6f4">}</span>
+</span></span></code></pre></div><p>При обновлении страницы ничего не меняется. Почему? Вспоминаем, что когда веб-сервер запускает сайт, он запускает index.html по умолчанию. Это то, что он делает (это то, что хотим). Однако он не знает, нужно ли включать наш CSS-файл. Нам нужно добавить наш CSS-файл в качестве ресурса в нашу страницу index. Мы делаем это, связываясь с ним следующим образом:</p>
+<div class="highlight"><pre tabindex="0" style="color:#fab387;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#cdd6f4">&lt;</span><span style="color:#cba6f7">head</span><span style="color:#cdd6f4">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#cdd6f4">&lt;</span><span style="color:#cba6f7">meta</span> <span style="color:#f9e2af">charset</span><span style="color:#89dceb">=</span><span style="color:#a6e3a1">&#34;utf-8&#34;</span> <span style="color:#cdd6f4">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#cdd6f4">&lt;</span><span style="color:#cba6f7">title</span><span style="color:#cdd6f4">&gt;</span>Наш первый веб-сайт<span style="color:#cdd6f4">&lt;/</span><span style="color:#cba6f7">title</span><span style="color:#cdd6f4">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#cdd6f4">&lt;</span><span style="color:#cba6f7">link</span> <span style="color:#f9e2af">rel</span><span style="color:#89dceb">=</span><span style="color:#a6e3a1">&#34;stylesheet&#34;</span> <span style="color:#f9e2af">type</span><span style="color:#89dceb">=</span><span style="color:#a6e3a1">&#34;text/css&#34;</span> <span style="color:#f9e2af">href</span><span style="color:#89dceb">=</span><span style="color:#a6e3a1">&#34;styles.css&#34;</span> <span style="color:#cdd6f4">/&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#cdd6f4">&lt;/</span><span style="color:#cba6f7">head</span><span style="color:#cdd6f4">&gt;</span>
+</span></span></code></pre></div><p>Обращаем внимание на тег <strong>link</strong> на четвертой строке. Именно здесь регистрируем наш CSS-файл. Итак, у этого тега есть несколько атрибутов. Первый атрибут – <strong>rel</strong> – определяет взаимосвязь между двумя документами. В этом случае говорим, что styles.css – это таблица стилей, которую мы используем в этой веб-странице. Далее следует тип документов. Мы указываем <em><strong>“text/css”</strong></em>, чтобы указать, что это документ CSS. Наконец, <strong>href</strong> – это путь к нашему CSS-файлу. В нашем случае, поскольку два файла находятся на одном уровне (то есть находятся в одной папке), мы можем просто указать имя файла, не указывая путь. Это также может быть полный URL-адрес, указывающий на внешний сайт. Например, если наша таблица стилей хранилась где-то еще в Интернете.</p>
+<p>Теперь, когда обновим страницу, мы получим интересный результат:</p>
+<p><img src="https://i.postimg.cc/CM3YC0Qn/017.png" alt=""></p>
+<p>Итак, это основы CSS. Мы определяем, какой тег задействовать, а потом внутри фигурных скобок указываем, что нужно изменить в шаблоне “элемент - двоеточие - значение” (пример: font-family: ‘Comic Sans MS’). Однако это поднимает вопрос о том, что мы бы сделали, если захотим изменить только один раздел. Например, что, если мы захотим внести изменения в абзац “Hello World!”, но не трогая абзац “Как твои дела?”? Вот тут и вступают в игру атрибуты. В HTML можно добавить атрибут <strong>id</strong> к любому тегу, чтобы однозначно идентифицировать его, например:</p>
+<div class="highlight"><pre tabindex="0" style="color:#fab387;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#cdd6f4">&lt;</span><span style="color:#cba6f7">p</span> <span style="color:#f9e2af">id</span><span style="color:#89dceb">=</span><span style="color:#a6e3a1">&#34;intro&#34;</span><span style="color:#cdd6f4">&gt;</span>Hello World<span style="color:#cdd6f4">&lt;/</span><span style="color:#cba6f7">p</span><span style="color:#cdd6f4">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#cdd6f4">&lt;</span><span style="color:#cba6f7">p</span><span style="color:#cdd6f4">&gt;</span>Как твои дела?<span style="color:#cdd6f4">&lt;/</span><span style="color:#cba6f7">p</span><span style="color:#cdd6f4">&gt;</span>
+</span></span></code></pre></div><p>Затем мы можем настроить таргетинг только на этот первый абзац, используя CSS следующим образом:</p>
+<div class="highlight"><pre tabindex="0" style="color:#fab387;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#cdd6f4">#</span><span style="color:#f9e2af">intro</span> <span style="color:#cdd6f4">{</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#cba6f7">font-weight</span><span style="color:#cdd6f4">:</span> <span style="color:#cba6f7;font-style:italic">bold</span><span style="color:#cdd6f4">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#cdd6f4">}</span>
+</span></span></code></pre></div><p>Обращаем внимание на то, что знак # указывает на тег <strong>id</strong>. Теперь запустим страницу, чтобы увидеть изменения:</p>
+<p><img src="https://i.postimg.cc/dQkwT34K/018.png" alt=""></p>
+<p>Теги <strong>id</strong> хороши, но у них есть недостаток: их можно использовать только один раз. У нас не может быть двух тегов с одинаковым атрибутом <strong>id</strong>. Именно атрибут <strong>class</strong> значительно упрощает задачу. Атрибут <strong>class</strong> можно размещать более чем в одном теге. Например, если бы нам нужно добавить третий абзац в нашу страницу, мы могли бы добавить атрибуты <strong>class</strong> к последним двум абзацам следующим образом:</p>
+<div class="highlight"><pre tabindex="0" style="color:#fab387;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#cdd6f4">&lt;</span><span style="color:#cba6f7">body</span><span style="color:#cdd6f4">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#cdd6f4">&lt;</span><span style="color:#cba6f7">h1</span><span style="color:#cdd6f4">&gt;</span>Простая домашняя страница<span style="color:#cdd6f4">&lt;/</span><span style="color:#cba6f7">h1</span><span style="color:#cdd6f4">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#cdd6f4">&lt;</span><span style="color:#cba6f7">h2</span><span style="color:#cdd6f4">&gt;</span>Раздел 1<span style="color:#cdd6f4">&lt;/</span><span style="color:#cba6f7">h2</span><span style="color:#cdd6f4">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#cdd6f4">&lt;</span><span style="color:#cba6f7">p</span> <span style="color:#f9e2af">id</span><span style="color:#89dceb">=</span><span style="color:#a6e3a1">&#34;intro&#34;</span><span style="color:#cdd6f4">&gt;</span>Hello World!<span style="color:#cdd6f4">&lt;/</span><span style="color:#cba6f7">p</span><span style="color:#cdd6f4">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#cdd6f4">&lt;</span><span style="color:#cba6f7">p</span> <span style="color:#f9e2af">class</span><span style="color:#89dceb">=</span><span style="color:#a6e3a1">&#34;sub-paragraph&#34;</span><span style="color:#cdd6f4">&gt;</span>Как твои дела?<span style="color:#cdd6f4">&lt;/</span><span style="color:#cba6f7">p</span><span style="color:#cdd6f4">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#cdd6f4">&lt;</span><span style="color:#cba6f7">p</span> <span style="color:#f9e2af">class</span><span style="color:#89dceb">=</span><span style="color:#a6e3a1">&#34;sub-paragraph&#34;</span><span style="color:#cdd6f4">&gt;</span>Очень хорошо.<span style="color:#cdd6f4">&lt;/</span><span style="color:#cba6f7">p</span><span style="color:#cdd6f4">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#cdd6f4">&lt;</span><span style="color:#cba6f7">h2</span><span style="color:#cdd6f4">&gt;</span>Раздел 2<span style="color:#cdd6f4">&lt;/</span><span style="color:#cba6f7">h2</span><span style="color:#cdd6f4">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#cdd6f4">&lt;/</span><span style="color:#cba6f7">body</span><span style="color:#cdd6f4">&gt;</span>
+</span></span></code></pre></div><p>Обращаем внимание, что последние два абзаца имеют класс под названием “<em><strong>sub-paragraph</strong></em>”. Теперь создадим правило CSS для этого следующим образом:</p>
+<div class="highlight"><pre tabindex="0" style="color:#fab387;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#cdd6f4">.</span><span style="color:#f9e2af">sub-paragraph</span> <span style="color:#cdd6f4">{</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#cba6f7">color</span><span style="color:#cdd6f4">:</span>  <span style="color:#cba6f7;font-style:italic">red</span><span style="color:#cdd6f4">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#cdd6f4">}</span>
+</span></span></code></pre></div><p>Обращаем внимание, что точка перед <em><strong>sub-paragraph</strong></em> указывает на то, что это имя класса. А теперь обновим страницу:</p>
+<p><img src="https://i.postimg.cc/VvbGs3q3/019.png" alt=""></p>
+<p>Существует множество различных элементов, которых мы можем модифицировать с помощью CSS. Хотя рассмотрение всех их выходит за рамки данной статьи, мы рассмотрим их более подробно в следующей статье.</p>
+<h3 id="заключение">Заключение</h3>
+<p>Вот и все. За короткий период времени мы прошли путь от нуля до настоящей веб-страницы, запущенной в веб-браузере. Конечно, это не так уж и много, но это только начало. Надеюсь, вы узнали что-то полезное и готовы еще глубже копнуть в следующей статье.</p></div>
+    <div class="post-footer">
+      <div class="info">
+        
+
+        
+          <span class="separator"><a class="tag" href="/tags/html5/">HTML5</a><a class="tag" href="/tags/css3/">CSS3</a></span>
+
+
+
+
+        
+      </div>
+    </div>
+
+    
+  </div>
+
+
+          </div>
+        </div>
+      </main>
+    </div><footer class="footer footer--base">
+  <div class="by_farbox">
+    <ul class="footer__list">
+      <li class="footer__item">
+        &copy;
+        
+          GhostBasenji 2023
+
+        
+      </li>
+      
+    </ul>
+  </div>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.44288fd315b6cda68c1f4743caad56535c0f81a5b5a672f385e82b3896575c1d.js"
+    integrity="sha256-RCiP0xW2zaaMH0dDyq1WU1wPgaW1pnLzhegrOJZXXB0="
+    crossorigin="anonymous"
+  ></script></body>
+</html>

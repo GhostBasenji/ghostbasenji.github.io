@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on </title>
+    <link>/tags/</link>
+    <description>Recent content in Tags on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru</language>
+    <lastBuildDate>Thu, 27 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>git</title>
+      <link>/tags/git/</link>
+      <pubDate>Thu, 27 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/git/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>GitHub Desktop</title>
+      <link>/tags/github-desktop/</link>
+      <pubDate>Thu, 27 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/github-desktop/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>CSS3</title>
+      <link>/tags/css3/</link>
+      <pubDate>Tue, 25 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/css3/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>HTML5</title>
+      <link>/tags/html5/</link>
+      <pubDate>Tue, 25 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/html5/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Avalonia</title>
+      <link>/tags/avalonia/</link>
+      <pubDate>Fri, 21 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/avalonia/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>dotnet</title>
+      <link>/tags/dotnet/</link>
+      <pubDate>Fri, 21 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/dotnet/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Ubuntu</title>
+      <link>/tags/ubuntu/</link>
+      <pubDate>Fri, 21 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/ubuntu/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>UI</title>
+      <link>/tags/ui/</link>
+      <pubDate>Fri, 21 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/ui/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Electron</title>
+      <link>/tags/electron/</link>
+      <pubDate>Sun, 09 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/electron/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>JavaScript</title>
+      <link>/tags/javascript/</link>
+      <pubDate>Sun, 09 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/javascript/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>VS Code</title>
+      <link>/tags/vs-code/</link>
+      <pubDate>Sun, 09 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/vs-code/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>.Net Core</title>
+      <link>/tags/.net-core/</link>
+      <pubDate>Mon, 03 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/.net-core/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Ubuntu 22.04</title>
+      <link>/tags/ubuntu-22.04/</link>
+      <pubDate>Mon, 03 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/ubuntu-22.04/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>

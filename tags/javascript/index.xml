@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JavaScript on </title>
+    <link>/tags/javascript/</link>
+    <description>Recent content in JavaScript on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru</language>
+    <lastBuildDate>Sun, 09 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Эпизод 2. Код фронтенда и код бекэнда</title>
+      <link>/post/2-frontend-code-backend-code/</link>
+      <pubDate>Sun, 09 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2-frontend-code-backend-code/</guid>
+      
+        <description>&lt;p&gt;Приложение Electron – это два приложения в одном. Есть приложение-фронтенд, управляющее внешним видом, и бекенд-приложение, управляющее серверной частью, и они взаимодействуют как две отдельные программы.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Эпизод 1. Создание приложения Electron</title>
+      <link>/post/1-sozdanie-electron-app/</link>
+      <pubDate>Fri, 07 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/post/1-sozdanie-electron-app/</guid>
+      
+        <description>&lt;p&gt;Первой записью мы начинаем серию эпизодов осваивания Electron.
+Здесь впервые запускаем наше приложение Electron.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

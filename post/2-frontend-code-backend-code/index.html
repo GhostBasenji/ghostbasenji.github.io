@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html
+  dir="ltr"
+  lang="en"
+  data-theme="light"
+><head>
+  <title>
+    Ghost Basenji
+      |
+      Эпизод 2. Код фронтенда и код бекэнда
+
+
+    
+
+  </title>
+
+  
+  <meta charset="utf-8" /><meta name="generator" content="Hugo 0.112.5"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta
+    name="description"
+    content="
+      Notes of a novice programmer
+
+
+    "
+  />
+  
+  
+  
+  <link
+    rel="stylesheet"
+    href="/css/main.min.deaabf2252003a406691dbf5f79852b7bcb4538e1f3c92348e14f631279e8c5f.css"
+    integrity="sha256-3qq/IlIAOkBmkdv195hSt7y0U44fPJI0jhT2MSeejF8="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.f798cbda9aaa38f89eb38be6414bd082cfd71a6780375cbf67b6d2fb2b96491e.css"
+    integrity="sha256-95jL2pqqOPies4vmQUvQgs/XGmeAN1y/Z7bS&#43;yuWSR4="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous"
+  />
+  
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+  <link rel="canonical" href="/post/2-frontend-code-backend-code/" />
+
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.d0408165d31a17f17bba83038bf54e86121f85021bdf936382e636f0f77a952f.js"
+    integrity="sha256-0ECBZdMaF/F7uoMDi/VOhhIfhQIb35NjguY28Pd6lS8="
+    crossorigin="anonymous"
+  ></script>
+
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Эпизод 2. Код фронтенда и код бекэнда"/>
+<meta name="twitter:description" content="Приложение Electron – это два приложения в одном. Есть приложение-фронтенд, управляющее внешним видом, и бекенд-приложение, управляющее серверной частью, и они взаимодействуют как две отдельные программы."/>
+
+
+
+  
+
+
+  
+  
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "post",
+        "name": "Эпизод 2. Код фронтенда и код бекэнда",
+        "headline": "Эпизод 2. Код фронтенда и код бекэнда",
+        "alternativeHeadline": "",
+        "description": "
+      
+        \u003cp\u003eПриложение Electron – это два приложения в одном. Есть приложение-фронтенд, управляющее внешним видом, и бекенд-приложение, управляющее серверной частью, и они взаимодействуют как две отдельные программы.\u003c\/p\u003e
+
+
+      
+
+
+    ",
+        "inLanguage": "ru",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "\/post\/2-frontend-code-backend-code\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "Ghost Basenji"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "Ghost Basenji"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "Ghost Basenji"
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": "Ghost Basenji"
+        },
+        "copyrightYear" : "2023",
+        "dateCreated": "2023-04-09T00:00:00.00Z",
+        "datePublished": "2023-04-09T00:00:00.00Z",
+        "dateModified": "2023-04-09T00:00:00.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "Ghost Basenji",
+            "url": "/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "\/favicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+      ]
+
+    ,
+        "url" : "\/post\/2-frontend-code-backend-code\/",
+        "wordCount" : "282",
+        "genre" : [ ],
+        "keywords" : [ 
+      
+      "JavaScript"
+
+    
+      
+        ,
+
+      
+      "Electron"
+
+    
+      
+        ,
+
+      
+      "VS Code"
+
+    ]
+    }
+  </script>
+
+
+
+</head>
+<body>
+    <header><div
+  class="page-top 
+    .
+
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+  </a>
+  <nav>
+    <ul class="nav__list" id="navMenu">
+      <div class="nav__links">
+        
+        
+          
+          <li>
+            <a
+              
+              href="/"
+              
+              title=""
+              >Главная</a
+            >
+          </li>
+
+        
+          
+          <li>
+            <a
+              
+              href="/post/"
+              
+              title=""
+              >Статьи</a
+            >
+          </li>
+
+        
+          
+          <li>
+            <a
+              
+              href="/myprojects/"
+              
+              title=""
+              >Мои проекты</a
+            >
+          </li>
+
+        
+          
+          <li>
+            <a
+              
+              href="/about/"
+              
+              title=""
+              >About</a
+            >
+          </li>
+
+        
+        
+      </div>
+      <li>
+        
+      </li>
+    </ul>
+  </nav>
+</div>
+</header>
+    <div class="wrapper">
+      <aside><div
+  class="sidebar
+    .
+
+  "
+>
+  <div class="sidebar__content">
+    <div class="logo-title">
+      <div class="title">
+        <img src="/images/profile.png" alt="profile picture" />
+        <h3 title=""><a href="/">I&#39;m Ghost Basenji</a></h3>
+        <div class="description">
+          <p>Notes of a novice programmer</p>
+        </div>
+      </div>
+    </div>
+    <ul class="social-links">
+      
+        <li>
+          <a href="https://t.me/ghostbasenji" rel="me" aria-label="telegram">
+            <i class="fab fa-telegram fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      
+        <li>
+          <a href="mailto:petr.and.vic@gmail.com" rel="me" aria-label="e-mail">
+            <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      
+    </ul>
+  </div><footer class="footer footer--sidebar">
+  <div class="by_farbox">
+    <ul class="footer__list">
+      <li class="footer__item">
+        &copy;
+        
+          GhostBasenji 2023
+
+        
+      </li>
+      
+    </ul>
+  </div>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.44288fd315b6cda68c1f4743caad56535c0f81a5b5a672f385e82b3896575c1d.js"
+    integrity="sha256-RCiP0xW2zaaMH0dDyq1WU1wPgaW1pnLzhegrOJZXXB0="
+    crossorigin="anonymous"
+  ></script></div>
+</aside>
+      <main>
+        <div class="autopagerize_page_element">
+          <div class="content">
+  <div
+    class="post 
+      .
+
+    "
+  >
+    <div class="post-content">
+      
+      <div class="post-title">
+        <h1>Эпизод 2. Код фронтенда и код бекэнда</h1>
+        
+          <div class="info">
+            <em class="fas fa-calendar-day"></em>
+            <span class="date"
+              >
+                09/04/2023
+
+
+              </span
+            >
+            
+          </div>
+
+        
+      </div><p>Приложение Electron – это два приложения в одном. Есть приложение-фронтенд, управляющее внешним видом, и бекенд-приложение, управляющее серверной частью, и они взаимодействуют как две отдельные программы.</p>
+<p>Мы уже написали небольшое серверное приложение <a href="https://ghostbasenji.github.io/post/1-sozdanie-electron-app/">в предыдущем эпизоде</a>, так что давайте создадим простое фронтенд-приложение.</p>
+<p>Конечно, мы можем использовать модные веб-фреймворки, такие как Svelte, imba или React, но пока собираемся использовать простой добрый-старый Javascript.</p>
+<h4 id="indexhtml"><em><strong>index.html</strong></em></h4>
+<p>Давайте начнем какое-нибудь самый простой интерактив, например кнопка и счетчик того, сколько раз на кнопку нажимали.</p>
+<div class="highlight"><pre tabindex="0" style="color:#fab387;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#89b4fa;font-style:italic">&lt;!DOCTYPE html&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#cdd6f4">&lt;</span><span style="color:#cba6f7">html</span><span style="color:#cdd6f4">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#cdd6f4">&lt;</span><span style="color:#cba6f7">body</span><span style="color:#cdd6f4">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#cdd6f4">&lt;</span><span style="color:#cba6f7">h1</span><span style="color:#cdd6f4">&gt;</span>Welcome to the Internet!<span style="color:#cdd6f4">&lt;/</span><span style="color:#cba6f7">h1</span><span style="color:#cdd6f4">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#cdd6f4">&lt;</span><span style="color:#cba6f7">div</span> <span style="color:#f9e2af">id</span><span style="color:#89dceb">=</span><span style="color:#a6e3a1">&#34;counter&#34;</span><span style="color:#cdd6f4">&gt;&lt;/</span><span style="color:#cba6f7">div</span><span style="color:#cdd6f4">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#cdd6f4">&lt;</span><span style="color:#cba6f7">button</span><span style="color:#cdd6f4">&gt;</span>Click me<span style="color:#cdd6f4">&lt;/</span><span style="color:#cba6f7">button</span><span style="color:#cdd6f4">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#cdd6f4">&lt;</span><span style="color:#cba6f7">script</span> <span style="color:#f9e2af">src</span><span style="color:#89dceb">=</span><span style="color:#a6e3a1">&#34;app.js&#34;</span><span style="color:#cdd6f4">&gt;&lt;/</span><span style="color:#cba6f7">script</span><span style="color:#cdd6f4">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#cdd6f4">&lt;/</span><span style="color:#cba6f7">body</span><span style="color:#cdd6f4">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#cdd6f4">&lt;/</span><span style="color:#cba6f7">html</span><span style="color:#cdd6f4">&gt;</span>
+</span></span></code></pre></div><h4 id="appjs"><em><strong>app.js</strong></em></h4>
+<p>Теперь напишем файл <em>app.js</em> для управления счетчиком.</p>
+<div class="highlight"><pre tabindex="0" style="color:#fab387;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#cba6f7">let</span> <span style="color:#b4befe">counter</span> <span style="color:#89dceb">=</span> 0
+</span></span><span style="display:flex;"><span><span style="color:#cba6f7">let</span> <span style="color:#b4befe">div</span> <span style="color:#89dceb">=</span> <span style="font-style:italic">document</span><span style="color:#cdd6f4">.</span><span style="color:#b4befe">querySelector</span><span style="color:#cdd6f4">(</span><span style="color:#a6e3a1">&#34;#counter&#34;</span><span style="color:#cdd6f4">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#cba6f7">let</span> <span style="color:#b4befe">button</span> <span style="color:#89dceb">=</span> <span style="font-style:italic">document</span><span style="color:#cdd6f4">.</span><span style="color:#b4befe">querySelector</span><span style="color:#cdd6f4">(</span><span style="color:#a6e3a1">&#34;button&#34;</span><span style="color:#cdd6f4">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#cba6f7">let</span> <span style="color:#b4befe">updateCounter</span> <span style="color:#89dceb">=</span> <span style="color:#cdd6f4">()</span> <span style="color:#cdd6f4">=&gt;</span> <span style="color:#cdd6f4">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#b4befe">div</span><span style="color:#cdd6f4">.</span><span style="color:#b4befe">innerHTML</span> <span style="color:#89dceb">=</span> <span style="color:#a6e3a1">`You clicked the button </span><span style="color:#a6e3a1">${</span><span style="color:#b4befe">counter</span><span style="color:#a6e3a1">}</span><span style="color:#a6e3a1"> times`</span>
+</span></span><span style="display:flex;"><span><span style="color:#cdd6f4">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#b4befe">button</span><span style="color:#cdd6f4">.</span><span style="color:#b4befe">addEventListener</span><span style="color:#cdd6f4">(</span><span style="color:#a6e3a1">&#34;click&#34;</span><span style="color:#cdd6f4">,</span> <span style="color:#cdd6f4">()</span> <span style="color:#cdd6f4">=&gt;</span> <span style="color:#cdd6f4">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#b4befe">counter</span><span style="color:#89dceb">++</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#b4befe">updateCounter</span><span style="color:#cdd6f4">()</span>
+</span></span><span style="display:flex;"><span><span style="color:#cdd6f4">})</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#b4befe">updateCounter</span><span style="color:#cdd6f4">()</span>
+</span></span></code></pre></div><h3 id="результат">Результат</h3>
+<p>Вот что у нас получилось:</p>
+<p><img src="https://i.postimg.cc/GpFyrqm5/004.png" alt=""></p>
+<p><a href="https://github.com/GhostBasenji/episodes_electron/tree/main/episode_02">Весь код этого эпизода находится здесь</a></p>
+<p>В следующем эпизоде мы поговорим о том, как мы можем взаимодействовать между фронтендом и бекэндом.</p>
+<h3 id="безопасность">Безопасность</h3>
+<p>Но прежде чем закончить этот эпизод, давайте поговорим о безопасности.</p>
+<p>Код фронтенда и код бекенда имеют очень разные модели безопасности.</p>
+<ul>
+<li>Код бекэнда имеет полный доступ к компьютеру, но предполагается, что мы запускаем только тот код, которому доверяем.</li>
+<li>Код фронтенда просто запускает чей-либо код со случайных сайтов в интернете, но у него (почти) нет доступа ни к чему за пределами браузера и даже в браузере (почти) только к материалам из того же домена.</li>
+</ul>
+<p>При написании приложений Electron нам нужно быть очень осторожным, чтобы не смешивать эти две вещи, иначе мы предоставим незнакомым людям полный доступ к своей машине, а это было бы плохо.</p>
+<p>В любом случае, увидимся в сдедующем эпизоде.</p>
+<p><strong>Оригинал</strong>: <a href="https://dev.to/taw/electron-adventures-episode-2-frontend-code-and-backend-code-dde">Electron Adventures: Episode 2: Frontend Code and Backend Code</a></p></div>
+    <div class="post-footer">
+      <div class="info">
+        
+
+        
+          <span class="separator"><a class="tag" href="/tags/javascript/">JavaScript</a><a class="tag" href="/tags/electron/">Electron</a><a class="tag" href="/tags/vs-code/">VS Code</a></span>
+
+
+
+
+        
+      </div>
+    </div>
+
+    
+  </div>
+
+
+          </div>
+        </div>
+      </main>
+    </div><footer class="footer footer--base">
+  <div class="by_farbox">
+    <ul class="footer__list">
+      <li class="footer__item">
+        &copy;
+        
+          GhostBasenji 2023
+
+        
+      </li>
+      
+    </ul>
+  </div>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.44288fd315b6cda68c1f4743caad56535c0f81a5b5a672f385e82b3896575c1d.js"
+    integrity="sha256-RCiP0xW2zaaMH0dDyq1WU1wPgaW1pnLzhegrOJZXXB0="
+    crossorigin="anonymous"
+  ></script></body>
+</html>
