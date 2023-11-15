@@ -333,33 +333,33 @@
 <h3 id="step-1-включаем-microsoft-ppa">Step 1. Включаем Microsoft PPA</h3>
 <p>Первым делом включаем репозиторий Microsoft Apt в Ubuntu. Команда Microsoft предоставляет пакет Debian для настройки PPA в ОС Ubuntu.
 Запускаем терминал в Ubuntu и настроим Microsoft PPA, введя следующие команды:</p>
-<div class="highlight"><pre tabindex="0" style="color:#fab387;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget https://packages.microsoft.com/config/ubuntu/22.04/packages-microsoft-prod.deb 
+<div class="highlight"><pre tabindex="0" style="color:#ef9f76;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget https://packages.microsoft.com/config/ubuntu/22.04/packages-microsoft-prod.deb 
 </span></span><span style="display:flex;"><span>sudo dpkg -i packages-microsoft-prod.deb
 </span></span></code></pre></div><p>Вышеприведенные команды создадут файл <strong>/etc/apt/sources.list.d/microsoft-prod.list</strong> с необходимой конфигурацией.</p>
 <p>Теперь уже можно начать процесс установки .NET Core в Ubuntu.</p>
 <h3 id="step-2-устанавливаем-net-core-в-ubuntu">Step 2. Устанавливаем .NET Core в Ubuntu</h3>
 <p>Первым делом мы должны обновить все пакеты системы, введя команды в терминале:</p>
-<div class="highlight"><pre tabindex="0" style="color:#fab387;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt update
+<div class="highlight"><pre tabindex="0" style="color:#ef9f76;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt update
 </span></span><span style="display:flex;"><span>sudo apt upgrade
 </span></span></code></pre></div><p>И устанавливаем все необходимые компоненты .NET Core в Ubuntu, выполнив следующие команды:</p>
 <ul>
 <li><strong>Install the .NET Core SDK</strong></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#fab387;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt update
+<div class="highlight"><pre tabindex="0" style="color:#ef9f76;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt update
 </span></span><span style="display:flex;"><span>sudo apt install apt-transport-https
 </span></span><span style="display:flex;"><span>sudo apt update
 </span></span><span style="display:flex;"><span>sudo apt install dotnet-sdk-7.0
 </span></span></code></pre></div><ul>
 <li><strong>Install the ASP.NET Core runtime</strong></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#fab387;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt update
+<div class="highlight"><pre tabindex="0" style="color:#ef9f76;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt update
 </span></span><span style="display:flex;"><span>sudo apt install apt-transport-https
 </span></span><span style="display:flex;"><span>sudo apt update
 </span></span><span style="display:flex;"><span>sudo apt install aspnetcore-runtime-7.0
 </span></span></code></pre></div><ul>
 <li><strong>Install the .NET Core runtime</strong></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#fab387;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt update
+<div class="highlight"><pre tabindex="0" style="color:#ef9f76;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt update
 </span></span><span style="display:flex;"><span>sudo apt install apt-transport-https
 </span></span><span style="display:flex;"><span>sudo apt update
 </span></span><span style="display:flex;"><span>sudo apt install dotnet-runtime-7.0
@@ -367,24 +367,24 @@
 <p>Вот и все, мы успешно установили все необходимые компоненты .NET Core в систему Ubuntu.</p>
 <h3 id="step-3-проверяем-версию-net-core">Step 3. Проверяем версию .NET Core</h3>
 <p>После успешной установки мы можем использовать утилиту командной строки <strong>dotnet</strong> для проверки установленной версии .NET Core в нашей системе. Чтобы проверить версию .NET, введем следующую команду:</p>
-<div class="highlight"><pre tabindex="0" style="color:#fab387;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dotnet --version
+<div class="highlight"><pre tabindex="0" style="color:#ef9f76;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dotnet --version
 </span></span></code></pre></div><p>Вывод:</p>
 <p><img src="https://i.postimg.cc/wT5LP7Dg/001.png" alt=""></p>
 <h3 id="step-4-создаем-простое-приложение-net-core">Step 4. Создаем простое приложение .NET Core</h3>
 <p>Давайте создадим простое консольное приложение .NET Core в Ubuntu, написав следующую команду:</p>
-<div class="highlight"><pre tabindex="0" style="color:#fab387;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dotnet new console -o MyApp
+<div class="highlight"><pre tabindex="0" style="color:#ef9f76;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dotnet new console -o MyApp
 </span></span></code></pre></div><p>Это создаст каталог с именем “<strong>MyApp</strong>”, содержащий консольное приложение .Net Core, в текущем каталоге. Можем перейти в этот каталог и начать работу со своим приложением.</p>
-<div class="highlight"><pre tabindex="0" style="color:#fab387;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="font-style:italic">cd</span>  MyApp
+<div class="highlight"><pre tabindex="0" style="color:#ef9f76;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#c6d0f5;font-style:italic">cd</span>  MyApp
 </span></span></code></pre></div><p>Внеся свои изменения в код приложения, выполним нижеприведенную команду, чтобы запустить наше приложение.</p>
-<div class="highlight"><pre tabindex="0" style="color:#fab387;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dotnet run
+<div class="highlight"><pre tabindex="0" style="color:#ef9f76;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dotnet run
 </span></span></code></pre></div><p>Результат ниже показан</p>
 <p><img src="https://i.postimg.cc/P5tYkTMZ/002.png" alt=""></p>
 <p>Поздравляем! Мы успешно установили и протестировали .Net Core. Спасибо, что воспользовались этим уроком по установке Microsoft .Net Core в ОС Ubuntu 22.04 Jammy Jellyfish. Для получения дополнительной помощи или полезной информации рекомендуется посетить <a href="https://dotnet.microsoft.com/en-us/">официальный сайт .Net Core</a>.</p>
 <h3 id="step-4-удаляем-или-деинсталлируем-net-core">Step 4. Удаляем или деинсталлируем .Net Core</h3>
 <p>В случае, если .Net Core больше нам не нужен, то можем его удалить его из системы с помощью следующих команд.</p>
-<div class="highlight"><pre tabindex="0" style="color:#fab387;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt remove --purge dotnet-sdk-7.0 dotnet-runtime-7.0
+<div class="highlight"><pre tabindex="0" style="color:#ef9f76;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt remove --purge dotnet-sdk-7.0 dotnet-runtime-7.0
 </span></span></code></pre></div><p>А также удаляем неиспользуемые пакеты, установленные в качестве зависимостей:</p>
-<div class="highlight"><pre tabindex="0" style="color:#fab387;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt auto-remove 
+<div class="highlight"><pre tabindex="0" style="color:#ef9f76;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt auto-remove 
 </span></span></code></pre></div><h3 id="заключение">Заключение</h3>
 <p>В этом уроке мы научились устанавливать .Net Core SDK и Runtime в Ubuntu 22.04 LTS (Jammy Jellyfish).</p></div>
     <div class="post-footer">

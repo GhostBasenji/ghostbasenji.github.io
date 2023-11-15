@@ -6,7 +6,19 @@
     <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru</language>
-    <lastBuildDate>Thu, 27 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 15 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Day 1. Первая программа</title>
+      <link>/post/day_1/</link>
+      <pubDate>Wed, 15 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/post/day_1/</guid>
+      
+        <description>&lt;h3 id=&#34;предисловие&#34;&gt;Предисловие&lt;/h3&gt;
+&lt;p&gt;Запускаю цикл конспектов своих занятий “Дни с C#”. Как известно, теорию надо подкреплять практикой. В данном цикле “Дни с C#” рассматриваются более 100 типичных примеров: обработка событий мыши и клавиатуры, чтение/запись файлов, редактирование графических данных, управление буфером обмена, ввод/вывод данных, создание PDF-файлов и многое другое. Все эти примеры выкладываются по мере пополнения в репозиторий “Examples with CSharp” на &lt;a href=&#34;https://github.com/GhostBasenji/Examples-with-Csharp&#34;&gt;github&lt;/a&gt;.&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>Работаем с GitHub Desktop</title>
       <link>/post/github-desktop/</link>

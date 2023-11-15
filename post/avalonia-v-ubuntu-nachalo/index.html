@@ -338,9 +338,9 @@
 <h3 id="установка-avalonia">Установка Avalonia</h3>
 <p>Итак, мы установим шаблоны Avalonia [Avalonia Templates], чтобы команда <strong>dotnet new</strong> могла использовать их при создании новых приложений.</p>
 <p>Для этого мы напишем и запустим следующую команду:</p>
-<div class="highlight"><pre tabindex="0" style="color:#fab387;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>dotnet new install Avalonia.Templates
+<div class="highlight"><pre tabindex="0" style="color:#ef9f76;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>dotnet new install Avalonia.Templates
 </span></span></code></pre></div><p>После чего мы проверим, есть Avalonia у нас или нет:</p>
-<div class="highlight"><pre tabindex="0" style="color:#fab387;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>dotnet new list
+<div class="highlight"><pre tabindex="0" style="color:#ef9f76;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>dotnet new list
 </span></span></code></pre></div><p>Выведет нам в терминале список установленных шаблонов Avalonia</p>
 <h3 id="создание-приложения-avalonia">Создание приложения Avalonia</h3>
 <p>Среди установленных шаблонов Avalonia два шаблона представляют для нас интерес, а именно:</p>
@@ -349,18 +349,18 @@
 <li>avalonia.mvvm – приложение, в котором используется паттерн Model-View-ViewModel с ReactiveUI</li>
 </ul>
 <p>Чтобы создать новое приложение, нам нужно выполнить следующую команду:</p>
-<div class="highlight"><pre tabindex="0" style="color:#fab387;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>dotnet new avalonia.app -o MyApp
+<div class="highlight"><pre tabindex="0" style="color:#ef9f76;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>dotnet new avalonia.app -o MyApp
 </span></span></code></pre></div><p>где <strong>MyApp</strong> - имя проекта, который мы создаем, а <strong>-o</strong> означает путь до папки с проектом.</p>
 <p><img src="https://i.postimg.cc/25FzWN4C/005.png" alt=""></p>
 <p>Запуск приложения Avalonia
 Чтобы запустить приложение, мы переходим в папку MyApp</p>
-<div class="highlight"><pre tabindex="0" style="color:#fab387;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="font-style:italic">cd</span> MyApp
+<div class="highlight"><pre tabindex="0" style="color:#ef9f76;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#c6d0f5;font-style:italic">cd</span> MyApp
 </span></span></code></pre></div><p>и запускаем приложение, написав следующую команду</p>
-<div class="highlight"><pre tabindex="0" style="color:#fab387;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>dotnet run
+<div class="highlight"><pre tabindex="0" style="color:#ef9f76;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>dotnet run
 </span></span></code></pre></div><p>Перед нами появится базовое пустое приложение:</p>
 <p><img src="https://i.postimg.cc/zf1z3GHd/006.png" alt=""></p>
 <p><strong>Примечание.</strong> Для верности нужно указать версию фреймворка, например, написав параметр:</p>
-<div class="highlight"><pre tabindex="0" style="color:#fab387;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>dotnet new avalonia.app -o MyApp -f net7.0
+<div class="highlight"><pre tabindex="0" style="color:#ef9f76;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>dotnet new avalonia.app -o MyApp -f net7.0
 </span></span></code></pre></div><p>В следующих статьях мы продолжим изучение фреймворка UI Avalonia.</p></div>
     <div class="post-footer">
       <div class="info">

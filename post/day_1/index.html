@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html
+  dir="ltr"
+  lang="en"
+  data-theme="light"
+><head>
+  <title>
+    Ghost Basenji
+      |
+      Day 1. Первая программа
+
+
+    
+
+  </title>
+
+  
+  <meta charset="utf-8" /><meta name="generator" content="Hugo 0.112.5"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta
+    name="description"
+    content="
+      Notes of a novice programmer
+
+
+    "
+  />
+  
+  
+  
+  <link
+    rel="stylesheet"
+    href="/css/main.min.deaabf2252003a406691dbf5f79852b7bcb4538e1f3c92348e14f631279e8c5f.css"
+    integrity="sha256-3qq/IlIAOkBmkdv195hSt7y0U44fPJI0jhT2MSeejF8="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.f798cbda9aaa38f89eb38be6414bd082cfd71a6780375cbf67b6d2fb2b96491e.css"
+    integrity="sha256-95jL2pqqOPies4vmQUvQgs/XGmeAN1y/Z7bS&#43;yuWSR4="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous"
+  />
+  
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+  <link rel="canonical" href="/post/day_1/" />
+
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.d0408165d31a17f17bba83038bf54e86121f85021bdf936382e636f0f77a952f.js"
+    integrity="sha256-0ECBZdMaF/F7uoMDi/VOhhIfhQIb35NjguY28Pd6lS8="
+    crossorigin="anonymous"
+  ></script>
+
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Day 1. Первая программа"/>
+<meta name="twitter:description" content="Предисловие
+Запускаю цикл конспектов своих занятий “Дни с C#”. Как известно, теорию надо подкреплять практикой. В данном цикле “Дни с C#” рассматриваются более 100 типичных примеров: обработка событий мыши и клавиатуры, чтение/запись файлов, редактирование графических данных, управление буфером обмена, ввод/вывод данных, создание PDF-файлов и многое другое. Все эти примеры выкладываются по мере пополнения в репозиторий “Examples with CSharp” на github."/>
+
+
+
+  
+
+
+  
+  
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "post",
+        "name": "Day 1. Первая программа",
+        "headline": "Day 1. Первая программа",
+        "alternativeHeadline": "",
+        "description": "
+      
+        \u003ch3 id=\u0022предисловие\u0022\u003eПредисловие\u003c\/h3\u003e\n\u003cp\u003eЗапускаю цикл конспектов своих занятий “Дни с C#”. Как известно, теорию надо подкреплять практикой. В данном цикле “Дни с C#” рассматриваются более 100 типичных примеров: обработка событий мыши и клавиатуры, чтение\/запись файлов, редактирование графических данных, управление буфером обмена, ввод\/вывод данных, создание PDF-файлов и многое другое. Все эти примеры выкладываются по мере пополнения в репозиторий “Examples with CSharp” на \u003ca href=\u0022https:\/\/github.com\/GhostBasenji\/Examples-with-Csharp\u0022\u003egithub\u003c\/a\u003e.\u003c\/p\u003e
+
+
+      
+
+
+    ",
+        "inLanguage": "ru",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "\/post\/day_1\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "Ghost Basenji"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "Ghost Basenji"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "Ghost Basenji"
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": "Ghost Basenji"
+        },
+        "copyrightYear" : "2023",
+        "dateCreated": "2023-11-15T00:00:00.00Z",
+        "datePublished": "2023-11-15T00:00:00.00Z",
+        "dateModified": "2023-11-15T00:00:00.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "Ghost Basenji",
+            "url": "/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "\/favicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+      ]
+
+    ,
+        "url" : "\/post\/day_1\/",
+        "wordCount" : "797",
+        "genre" : [ ],
+        "keywords" : [ 
+      
+      "C#"
+
+    
+      
+        ,
+
+      
+      ".NET6"
+
+    
+      
+        ,
+
+      
+      "Конспекты по C#"
+
+    ]
+    }
+  </script>
+
+
+
+</head>
+<body>
+    <header><div
+  class="page-top 
+    .
+
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+  </a>
+  <nav>
+    <ul class="nav__list" id="navMenu">
+      <div class="nav__links">
+        
+        
+          
+          <li>
+            <a
+              
+              href="/"
+              
+              title=""
+              >Главная</a
+            >
+          </li>
+
+        
+          
+          <li>
+            <a
+              
+              href="/post/"
+              
+              title=""
+              >Статьи</a
+            >
+          </li>
+
+        
+          
+          <li>
+            <a
+              
+              href="/myprojects/"
+              
+              title=""
+              >Мои проекты</a
+            >
+          </li>
+
+        
+          
+          <li>
+            <a
+              
+              href="/about/"
+              
+              title=""
+              >About</a
+            >
+          </li>
+
+        
+        
+      </div>
+      <li>
+        
+      </li>
+    </ul>
+  </nav>
+</div>
+</header>
+    <div class="wrapper">
+      <aside><div
+  class="sidebar
+    .
+
+  "
+>
+  <div class="sidebar__content">
+    <div class="logo-title">
+      <div class="title">
+        <img src="/images/profile.png" alt="profile picture" />
+        <h3 title=""><a href="/">I&#39;m Ghost Basenji</a></h3>
+        <div class="description">
+          <p>Notes of a novice programmer</p>
+        </div>
+      </div>
+    </div>
+    <ul class="social-links">
+      
+        <li>
+          <a href="https://t.me/ghostbasenji" rel="me" aria-label="telegram">
+            <i class="fab fa-telegram fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      
+        <li>
+          <a href="mailto:petr.and.vic@gmail.com" rel="me" aria-label="e-mail">
+            <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      
+    </ul>
+  </div><footer class="footer footer--sidebar">
+  <div class="by_farbox">
+    <ul class="footer__list">
+      <li class="footer__item">
+        &copy;
+        
+          GhostBasenji 2023
+
+        
+      </li>
+      
+    </ul>
+  </div>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.44288fd315b6cda68c1f4743caad56535c0f81a5b5a672f385e82b3896575c1d.js"
+    integrity="sha256-RCiP0xW2zaaMH0dDyq1WU1wPgaW1pnLzhegrOJZXXB0="
+    crossorigin="anonymous"
+  ></script></div>
+</aside>
+      <main>
+        <div class="autopagerize_page_element">
+          <div class="content">
+  <div
+    class="post 
+      .
+
+    "
+  >
+    <div class="post-content">
+      
+      <div class="post-title">
+        <h1>Day 1. Первая программа</h1>
+        
+          <div class="info">
+            <em class="fas fa-calendar-day"></em>
+            <span class="date"
+              >
+                15/11/2023
+
+
+              </span
+            >
+            
+          </div>
+
+        
+      </div><h3 id="предисловие">Предисловие</h3>
+<p>Запускаю цикл конспектов своих занятий “Дни с C#”. Как известно, теорию надо подкреплять практикой. В данном цикле “Дни с C#” рассматриваются более 100 типичных примеров: обработка событий мыши и клавиатуры, чтение/запись файлов, редактирование графических данных, управление буфером обмена, ввод/вывод данных, создание PDF-файлов и многое другое. Все эти примеры выкладываются по мере пополнения в репозиторий “Examples with CSharp” на <a href="https://github.com/GhostBasenji/Examples-with-Csharp">github</a>.</p>
+<p>Чтобы начать писать свои первые примеры, давай запустим Visual Studio 2022 (кратко VS 2022).</p>
+<p>Перед нами появится следующее окно:</p>
+<p><img src="https://i.postimg.cc/RCscNtYk/001.png" alt=""></p>
+<p>в котором выбираем <strong>Create a new project</strong> для создания проекта. Далее появится окно со списком установленных шаблонов проектов. Среди них – шаблоны языков программирования, встроенных в Visual Studio, в т.ч. Visual Basic, Visual C#, Visual C++, Visual F# и др. Выбираем язык <strong>Visual C#</strong>, а потом шаблон <strong>Windows Forms App</strong>.</p>
+<p><img src="https://i.postimg.cc/J4SZQLMK/002.png" alt=""></p>
+<p>В следующем окне введем имя проекта и оставляем предложенную по умолчанию версию .Net Framework.</p>
+<p><img src="https://i.postimg.cc/L6JjfXKn/003.png" alt=""></p>
+<p>В результате увидим окно, представленное ниже:</p>
+<p><img src="https://i.postimg.cc/W4vZQwDk/004.png" alt=""></p>
+<p>В этом окне изображена экранная форма <em><strong>Form1</strong></em>, в которой программисты располагают различные компоненты графического интерфейса пользователя или, как их иначе называют, элементы управления: поля для ввода текста <em><strong>TextBox</strong></em>, кнопки <em><strong>Button</strong></em>, метки <em><strong>Label</strong></em> и проч.</p>
+<p>В нашей первой программе мы создадим форму с надписью, например, “Microsoft Visual C#”. Кроме того, в форме будет размещена кнопка с надписью “Нажми меня”. При нажатии на кнопку появится диалоговое окно с сообщением “Всем привет!”.</p>
+<p>Добавим в форму вышеназванные элементы управления. Для этого нам понадобится панель элементов управления <strong>Toolbox</strong>, которая скрыта в левой части окна. Если в данный момент панель элементов отсутствует, то ее можно добавить с помощью комбинации клавиш Ctrl+Alt+X или выполнив команду меню <strong>View</strong>&gt;<strong>Toolbox</strong>. Итак, добавляем метку <em><strong>Label</strong></em> и кнопку <em><strong>Button</strong></em> в форму, щелкнув двойным щелчком на эти элементах в панели Toolbox. А затем расположим их примерно так, как показано ниже.</p>
+<p><img src="https://i.postimg.cc/8c5MZk7X/005.png" alt=""></p>
+<p>Любой такой объект можно создать самостоятельно, а можно воспользоваться готовым. В данной задаче мы пользуемся готовыми визуальными объектами, которых можно просто перетаскивать мышью из панели элементов управления Toolbox в окно формы.</p>
+<p>При этом нам нужно знать, что каждый объект имеет свойства (<strong>Properties</strong>). Например, свойствами кнопки являются: имя кнопки (Name) – в нашем случае button1, надпись на кнопке (Text), расположение кнопки (Location) в системе координат формы X, Y, размер кнопки (Size) и т.д. Свойств много, их можно увидеть в панели свойств Properties (см. ниже), которая откроется, если щелкнуть правой кнопкой мыши в пределах формы и выбрать в контекстном меню команду <strong>Properties</strong>.</p>
+<p><img src="https://i.postimg.cc/nrP7g87F/006.png" alt=""></p>
+<p>Щелкая мышью на все другие элементы управления в форме, можно просмотреть и их свойства: формы <em><strong>Form1</strong></em> и метки <em><strong>Label1</strong></em>.</p>
+<p>Вернемся к нашей задаче. Для объекта <em><strong>Label1</strong></em> выбираем свойство <strong>Text</strong> и напишем в его поле: Microsoft Visual C# (вместо текста label1). Для объекта <em><strong>Button1</strong></em> также в свойстве <strong>Text</strong> напишем &ldquo;Нажми меня&rdquo;.</p>
+<p>Итак, что объекты имеют свойства, мы уже поняли. Следует также знать, что объекты обрабатываются <strong>событиями</strong>. Например, событием является щелчок на кнопке, щелчок в пределах формы, загрузка (<strong>Load</strong>) формы в оперативную память при старте программы и т.д. Управляют тем или иным событием посредством написания процедуры обработки события в коде. Для этого вначале нужно получить <strong>“пустой” обработчик события</strong> (т.е. заготовки записи кода). В нашей задаче единственным событием является щелчок по кнопке. Для получения пустого обработчика этого события следует в свойствах кнопки Button1 щелкнуть на значке <strong>Events</strong> (События) и в списке всех возможных событий кнопки Button1 выбрать двойным щелчком событие <strong>Click</strong>. После этого перед нами откроется вкладка кода <strong>Form1.cs</strong></p>
+<p><img src="https://i.postimg.cc/YCggnsS7/007.png" alt=""></p>
+<p>На вкладке Form1.cs мы видим, что Visual Studio 2022 создала четыре строки кода. Итак, перед нами только что созданный код, который описывает упомянутый нами “пустой” обработчик события <strong>Button1_Click</strong>. Здесь между фигурными скобками, следующими за оператором <em><strong>private void</strong></em>, можем написать команды, подлежащие выполнению после щелчка пользователем на кнопке button1.</p>
+<p>Как видим, у нас теперь 2 вкладки: вкладка кода Form1.cs и вкладка визуального проекта программы <strong>Form1.cs [Design]</strong> (другое название этой вкладки – дизайнер формы). Переключаться между ними можно мышью или нажатием комбинации клавиш Ctrl+Tab, как это принято для переключения между вкладками в Windows.</p>
+<p>По условию задачи после клика на кнопку Button1 должно появится диалоговое окно с надписью “Всем привет!”. Для этого между фигурными скобками обработчика события напишем:</p>
+<div class="highlight"><pre tabindex="0" style="color:#ef9f76;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#babbf1">MessageBox</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Show</span><span style="color:#c6d0f5">(</span><span style="color:#a6d189">&#34;Всем привет!&#34;</span><span style="color:#c6d0f5">);</span>
+</span></span></code></pre></div><p>Этой строкой вызывается <em>метод</em> (программа) <em><strong>Show</strong></em> объекта MessageBox с текстом “Всем привет!”. Оператор точка (.) указывает системе найти метод Show среди методов объекта MessageBox. Вот и тут узнаем, что объекты, помимо свойств, имеют также и методы, т.е. программы, которые обрабатывают объекты.</p>
+<p><strong>Совет.</strong> В конце каждого оператора в C# ставят точку с запятой (;). И чтобы не задумываться, в каком режиме в данный момент клавиатура: в режиме ввода русских букв или английских – очень удобно, не переключаясь в другой режим, ввести точку с запятой набором на боковой клавиатуре цифр 59, удерживая при этом нажатой клавишу Alt.</p>
+<p>Итак, мы написали процедуру обработки события щелчка Click на кнопке Button1. Теперь нажмем клавишу F5 и проверим работоспособность программы.</p>
+<p><img src="https://i.postimg.cc/gJ43yL26/008.png" alt=""></p>
+<p>Ура! Мы написали свою первую программу на C# в VS 2022.
+Пример нашего первого приложения можно скачать и открыть решение First_Program.sln в папке <a href="https://github.com/GhostBasenji/Examples-with-Csharp/tree/main/Day_1">Day_1</a>.</p></div>
+    <div class="post-footer">
+      <div class="info">
+        
+
+        
+          <span class="separator"><a class="tag" href="/tags/c%23/">C#</a><a class="tag" href="/tags/%2enet6/">.NET6</a><a class="tag" href="/tags/%D0%BA%D0%BE%D0%BD%D1%81%D0%BF%D0%B5%D0%BA%D1%82%D1%8B-%D0%BF%D0%BE-c%23/">Конспекты по C#</a></span>
+
+
+
+
+        
+      </div>
+    </div>
+
+    
+  </div>
+
+
+          </div>
+        </div>
+      </main>
+    </div><footer class="footer footer--base">
+  <div class="by_farbox">
+    <ul class="footer__list">
+      <li class="footer__item">
+        &copy;
+        
+          GhostBasenji 2023
+
+        
+      </li>
+      
+    </ul>
+  </div>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.44288fd315b6cda68c1f4743caad56535c0f81a5b5a672f385e82b3896575c1d.js"
+    integrity="sha256-RCiP0xW2zaaMH0dDyq1WU1wPgaW1pnLzhegrOJZXXB0="
+    crossorigin="anonymous"
+  ></script></body>
+</html>
