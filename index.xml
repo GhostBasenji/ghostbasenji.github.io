@@ -6,7 +6,18 @@
     <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru</language>
-    <lastBuildDate>Wed, 15 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Day 2. Событие MouseHover</title>
+      <link>/post/day_2/</link>
+      <pubDate>Thu, 16 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/post/day_2/</guid>
+      
+        <description>&lt;p&gt;Немного усложним задачу предыдущего примера. Добавим для объекта Label1 обработку еще одного события – &lt;strong&gt;MouseHover&lt;/strong&gt;. Событие MouseHover наступает, когда пользователь курсором мыши “зависает” над каким-либо объектом (от англ. hover – реять, парить), а не просто проводит мышью над объектом. Можно сказать также, что событие MouseHover происходит, когда курсор мыши наведен на элемент.&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>Day 1. Первая программа</title>
       <link>/post/day_1/</link>
