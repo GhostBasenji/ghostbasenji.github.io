@@ -6,7 +6,18 @@
     <description>Recent content in C# on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru</language>
-    <lastBuildDate>Thu, 16 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/c#/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 17 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/c#/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Day 3. Выбор нужной даты</title>
+      <link>/post/day_3/</link>
+      <pubDate>Fri, 17 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/post/day_3/</guid>
+      
+        <description>&lt;p&gt;Условие следующей нашей задачи состоит в том, чтобы, например, при заказе железнодорожных билетов или при регистрации в качестве отдыхающего в санатории при щелчке на соответствующем элементе управления появлялся бы календарь, из которого можно было бы выбрать необходимую дату. Это может быть дата отправления поезда, или дата окончания отдыха в санатории.&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>Day 2. Событие MouseHover</title>
       <link>/post/day_2/</link>
