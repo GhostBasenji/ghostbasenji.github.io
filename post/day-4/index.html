@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html
+  dir="ltr"
+  lang="en"
+  data-theme="light"
+><head>
+  <title>
+    Ghost Basenji
+      |
+      Day 4. Ввод данных через текстовое поле TextBox с проверкой типа методом TryParse
+
+
+    
+
+  </title>
+
+  
+  <meta charset="utf-8" /><meta name="generator" content="Hugo 0.112.5"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta
+    name="description"
+    content="
+      Notes of a novice programmer
+
+
+    "
+  />
+  
+  
+  
+  <link
+    rel="stylesheet"
+    href="/css/main.min.deaabf2252003a406691dbf5f79852b7bcb4538e1f3c92348e14f631279e8c5f.css"
+    integrity="sha256-3qq/IlIAOkBmkdv195hSt7y0U44fPJI0jhT2MSeejF8="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.f798cbda9aaa38f89eb38be6414bd082cfd71a6780375cbf67b6d2fb2b96491e.css"
+    integrity="sha256-95jL2pqqOPies4vmQUvQgs/XGmeAN1y/Z7bS&#43;yuWSR4="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous"
+  />
+  
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+  <link rel="canonical" href="/post/day-4/" />
+
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.d0408165d31a17f17bba83038bf54e86121f85021bdf936382e636f0f77a952f.js"
+    integrity="sha256-0ECBZdMaF/F7uoMDi/VOhhIfhQIb35NjguY28Pd6lS8="
+    crossorigin="anonymous"
+  ></script>
+
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Day 4. Ввод данных через текстовое поле TextBox с проверкой типа методом TryParse"/>
+<meta name="twitter:description" content="При работе с формой очень часто ввод данных организуют через элемент управления TextBox (текстовое поле). Напишем типичную программу, которая вводит через текстовое поле число, при нажатии на кнопку извлекает из него квадратный корень и выводит результат на метку Label. В случае, если введено не число, сообщает об этом пользователю."/>
+
+
+
+  
+
+
+  
+  
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "post",
+        "name": "Day 4. Ввод данных через текстовое поле TextBox с проверкой типа методом TryParse",
+        "headline": "Day 4. Ввод данных через текстовое поле TextBox с проверкой типа методом TryParse",
+        "alternativeHeadline": "",
+        "description": "
+      
+        \u003cp\u003eПри работе с формой очень часто ввод данных организуют через элемент управления TextBox (текстовое поле). Напишем типичную программу, которая вводит через текстовое поле число, при нажатии на кнопку извлекает из него квадратный корень и выводит результат на метку Label. В случае, если введено не число, сообщает об этом пользователю.\u003c\/p\u003e
+
+
+      
+
+
+    ",
+        "inLanguage": "ru",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "\/post\/day-4\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "Ghost Basenji"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "Ghost Basenji"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "Ghost Basenji"
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": "Ghost Basenji"
+        },
+        "copyrightYear" : "2023",
+        "dateCreated": "2023-11-18T00:00:00.00Z",
+        "datePublished": "2023-11-18T00:00:00.00Z",
+        "dateModified": "2023-11-18T00:00:00.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "Ghost Basenji",
+            "url": "/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "\/favicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+      ]
+
+    ,
+        "url" : "\/post\/day-4\/",
+        "wordCount" : "790",
+        "genre" : [ ],
+        "keywords" : [ 
+      
+      "Конспекты по C#"
+
+    
+      
+        ,
+
+      
+      "C#"
+
+    
+      
+        ,
+
+      
+      ".NET6"
+
+    ]
+    }
+  </script>
+
+
+
+</head>
+<body>
+    <header><div
+  class="page-top 
+    .
+
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+  </a>
+  <nav>
+    <ul class="nav__list" id="navMenu">
+      <div class="nav__links">
+        
+        
+          
+          <li>
+            <a
+              
+              href="/"
+              
+              title=""
+              >Главная</a
+            >
+          </li>
+
+        
+          
+          <li>
+            <a
+              
+              href="/post/"
+              
+              title=""
+              >Статьи</a
+            >
+          </li>
+
+        
+          
+          <li>
+            <a
+              
+              href="/myprojects/"
+              
+              title=""
+              >Мои проекты</a
+            >
+          </li>
+
+        
+          
+          <li>
+            <a
+              
+              href="/about/"
+              
+              title=""
+              >About</a
+            >
+          </li>
+
+        
+        
+      </div>
+      <li>
+        
+      </li>
+    </ul>
+  </nav>
+</div>
+</header>
+    <div class="wrapper">
+      <aside><div
+  class="sidebar
+    .
+
+  "
+>
+  <div class="sidebar__content">
+    <div class="logo-title">
+      <div class="title">
+        <img src="/images/profile.png" alt="profile picture" />
+        <h3 title=""><a href="/">I&#39;m Ghost Basenji</a></h3>
+        <div class="description">
+          <p>Notes of a novice programmer</p>
+        </div>
+      </div>
+    </div>
+    <ul class="social-links">
+      
+        <li>
+          <a href="https://t.me/ghostbasenji" rel="me" aria-label="telegram">
+            <i class="fab fa-telegram fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      
+        <li>
+          <a href="mailto:petr.and.vic@gmail.com" rel="me" aria-label="e-mail">
+            <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      
+    </ul>
+  </div><footer class="footer footer--sidebar">
+  <div class="by_farbox">
+    <ul class="footer__list">
+      <li class="footer__item">
+        &copy;
+        
+          GhostBasenji 2023
+
+        
+      </li>
+      
+    </ul>
+  </div>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.44288fd315b6cda68c1f4743caad56535c0f81a5b5a672f385e82b3896575c1d.js"
+    integrity="sha256-RCiP0xW2zaaMH0dDyq1WU1wPgaW1pnLzhegrOJZXXB0="
+    crossorigin="anonymous"
+  ></script></div>
+</aside>
+      <main>
+        <div class="autopagerize_page_element">
+          <div class="content">
+  <div
+    class="post 
+      .
+
+    "
+  >
+    <div class="post-content">
+      
+      <div class="post-title">
+        <h1>Day 4. Ввод данных через текстовое поле TextBox с проверкой типа методом TryParse</h1>
+        
+          <div class="info">
+            <em class="fas fa-calendar-day"></em>
+            <span class="date"
+              >
+                18/11/2023
+
+
+              </span
+            >
+            
+          </div>
+
+        
+      </div><p>При работе с формой очень часто ввод данных организуют через элемент управления TextBox (текстовое поле). Напишем типичную программу, которая вводит через текстовое поле число, при нажатии на кнопку извлекает из него квадратный корень и выводит результат на метку Label. В случае, если введено не число, сообщает об этом пользователю.</p>
+<p>Решая сформулированную задачу, запускаем VS 2022 и создадим проект <strong>Windows Forms App</strong> с именем <em><strong>SquareRoot</strong></em>. Далее из панели элементов управления Toolbox (если в данный момент не видим панель элементов, то ее можно добавить, например, с помощью комбинации клавиш Ctrl+Alt+X или меню <strong>View</strong> &gt; <strong>Toolbox</strong>) в форму добавляем текстовое поле TextBox, метку Label и кнопку Button. Расположим их так, как показано ниже.</p>
+<p><img src="https://i.postimg.cc/J0p8TSr7/011.png" alt=""></p>
+<p>Теперь мы изменим некоторые свойства элементов управления. Это удобно сделать при обработке загрузки формы. Чтобы получить пустой обработчик загрузки формы, двойным щелчком щелкаем по проектируемой форме. Сразу после этого попадаем на вкладку кода <strong>Form1.cs</strong>. Здесь задаем свойствам формы (к форме обращаемся посредством ссылки <em><strong>base</strong></em>), кнопки <strong>Button</strong>, текстового поля <strong>TextBox</strong> и метке <strong>Label</strong> следующие значения:</p>
+<div class="highlight"><pre tabindex="0" style="color:#ef9f76;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#ca9ee6">base</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Text</span> <span style="color:#c6d0f5">=</span> <span style="color:#a6d189">&#34;Извлечение квадратного корня&#34;</span><span style="color:#c6d0f5">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#babbf1">button1</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Text</span> <span style="color:#c6d0f5">=</span> <span style="color:#a6d189">&#34;Извлечь корень&#34;</span><span style="color:#c6d0f5">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#babbf1">textBox1</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Clear</span><span style="color:#c6d0f5">();</span>   <span style="color:#626880;font-style:italic">// Очистка текстового поля</span>
+</span></span><span style="display:flex;"><span><span style="color:#babbf1">label1</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Text</span> <span style="color:#c6d0f5">=</span> <span style="color:#ca9ee6">null</span><span style="color:#c6d0f5">;</span> <span style="color:#626880;font-style:italic">// или = String.Empty</span>
+</span></span></code></pre></div><p>Нажмем <strong>F5</strong> для выявления возможных опечаток (т.е. синтаксических ошибок) и предварительного просмотра дизайна будущей программы.</p>
+<p>Далее программируем событие <strong>Button1_Click</strong> (щелчок мышью по кнопке). Создаем пустой обработчик этого события, дважды щелкая по кнопке на вкладке дизайнера формы. Между двумя появившимися строчками программируем диагностику правильности вводимых данных, конвертирование строковой переменной в переменную типа <em>Single</em> и непосредственное извлечение корня.</p>
+<div class="highlight"><pre tabindex="0" style="color:#ef9f76;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#ca9ee6">private</span> <span style="color:#ca9ee6">void</span> <span style="color:#babbf1">button1_Click</span><span style="color:#c6d0f5">(</span><span style="color:#e5c890">object</span> <span style="color:#babbf1">sender</span><span style="color:#c6d0f5">,</span> <span style="color:#babbf1">EventArgs</span> <span style="color:#babbf1">e</span><span style="color:#c6d0f5">)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c6d0f5">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#babbf1">Single</span> <span style="color:#babbf1">X</span><span style="color:#c6d0f5">;</span>   <span style="color:#626880;font-style:italic">// - из этого числа будем извлекать корень</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#626880;font-style:italic">// Преобразование из строковой переменной в Single:</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#e5c890">bool</span> <span style="color:#babbf1">IsTheNumber</span> <span style="color:#c6d0f5">=</span> <span style="color:#babbf1">Single</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">TryParse</span><span style="color:#c6d0f5">(</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#babbf1">textBox1</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Text</span><span style="color:#c6d0f5">,</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#babbf1">System</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Globalization</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">NumberStyles</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Number</span><span style="color:#c6d0f5">,</span> 
+</span></span><span style="display:flex;"><span>                <span style="color:#babbf1">System</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Globalization</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">NumberFormatInfo</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">CurrentInfo</span><span style="color:#c6d0f5">,</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ca9ee6">out</span> <span style="color:#babbf1">X</span><span style="color:#c6d0f5">);</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#626880;font-style:italic">// Второй параметр – это разрешенный стиль числа (Integer,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#626880;font-style:italic">// шестнадцатеричное число, экспоненциальный вид числа и проч.).</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#626880;font-style:italic">// Третий параметр форматирует значения на основе текущего языка </span>
+</span></span><span style="display:flex;"><span>            <span style="color:#626880;font-style:italic">// и региональных параметров из Панели управления - Язык и </span>
+</span></span><span style="display:flex;"><span>            <span style="color:#626880;font-style:italic">// региональные стандарты числа допустимого формата: метод возвращает значение в переменную X</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ca9ee6">if</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">IsTheNumber</span> <span style="color:#c6d0f5">==</span> <span style="color:#ca9ee6">false</span><span style="color:#c6d0f5">)</span> <span style="color:#c6d0f5">{</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#626880;font-style:italic">// Если пользователь ввел не число:</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#babbf1">label1</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Text</span> <span style="color:#c6d0f5">=</span> <span style="color:#a6d189">&#34;Следует вводить числа!&#34;</span><span style="color:#c6d0f5">;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#babbf1">label1</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">ForeColor</span> <span style="color:#c6d0f5">=</span> <span style="color:#babbf1">Color</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Red</span><span style="color:#c6d0f5">;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ca9ee6">return</span><span style="color:#c6d0f5">;</span> <span style="color:#626880;font-style:italic">// - выход из процедуры или Return</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#c6d0f5">}</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#626880;font-style:italic">// Извлечение корня с преобразованием в тип Single:</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#e5c890">var</span> <span style="color:#babbf1">Y</span> <span style="color:#c6d0f5">=</span> <span style="color:#c6d0f5">(</span><span style="color:#babbf1">Single</span><span style="color:#c6d0f5">)</span><span style="color:#babbf1">Math</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Sqrt</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">X</span><span style="color:#c6d0f5">);</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#626880;font-style:italic">// или var Y = Convert.ToSingle(Math.Sqrt(X));</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#babbf1">label1</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">ForeColor</span> <span style="color:#c6d0f5">=</span> <span style="color:#babbf1">Color</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Black</span><span style="color:#c6d0f5">;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#babbf1">label1</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Text</span> <span style="color:#c6d0f5">=</span> <span style="color:#babbf1">String</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Format</span><span style="color:#c6d0f5">(</span><span style="color:#a6d189">&#34;Корень из {0} равен {1:F5}&#34;</span><span style="color:#c6d0f5">,</span> <span style="color:#babbf1">X</span><span style="color:#c6d0f5">,</span> <span style="color:#babbf1">Y</span><span style="color:#c6d0f5">);</span>
+</span></span><span style="display:flex;"><span>       <span style="color:#c6d0f5">}</span>
+</span></span></code></pre></div><p>Здесь при обработке события “щелчок мышью” на кнопке проводится проверка, число ли введено в текстовом поле. Проверка осуществляется с помощью функции <strong>TryParse</strong>. Первым параметром метода <em>TryParse</em> является анализируемое поле <em>textBox1.Text</em>. Второй параметр – это разрешаемый для преобразования стиль числа, он может быть целого типа (Integer), шестнадцатеричным (HexNumber), представленным в экспоненциальном виде, и т.п. Третий параметр указывает, на какой основе формируется допустимый формат, – в нашем случае мы использовали <em>CurrentInfo</em>, т.е. на основе текущего языка и региональных параметров.</p>
+<p>Четвертый параметр метода <em>TryParse</em> возвращает результат преобразования. Кроме того, функция <em>TryParse</em> возвращает булеву переменную <em>True</em> или <em>False</em>, которая сообшает, успешно ли выполнено преобразование. Как видно из текста программы, если пользователь ввел не число (например, какие-либо буквы), то на метку Label1 выводится красным цветом текст “Следует вводить числа”. Далее, т.к. ввод неправильный, организуется вывод из программы обработки события <strong>Button1_Click</strong> с помощью оператора <em>return</em>.</p>
+<p>Ниже показан пример работы программы.</p>
+<p><img src="https://i.postimg.cc/59gfNQBc/012.png" alt=""></p>
+<p>Из рисунка видно, что функция <em>TryParse</em> не восприняла введенные символы 2.3 как число, поскольку я специально для демонстрации данного примера указал на вкладке Форматы запятую в качестве разделителя целой и дробной частей.</p>
+<p>Если пользователь ввел все-таки число, то будет выполняться следующий оператор извлечения квадратного корня <strong>Math.Sqrt(X)</strong>. Математические функции VS 2022 являются методами класса Math. Их можно увидеть, набрав <strong>Math</strong> и введя т.н. оператор разрешения области действия (.). В раскрывающемся списке увидим множество мат. функций: Abs, Sin, Cos, Min и т.д. и два свойства – две константы E = 2,71… (основание натуральных логарифмов) и PI = 3,14&hellip; (число диаметров, уложенных по длине окружности). Функция Math.Sqrt(X) возвращает значение типа double (двойной точности с плавающей запятой), которое приводим с помощью преобразования CType или Convert.ToSingle к переменной одинарной точности типа Single.</p>
+<p>Последней строчкой обработки события <strong>Button1_Click</strong> является формирование строки Label1.Text с использованием метода <em>String.Format</em>. Использованный формат “Корень из {0} равен {1:F5}” означает – взять нулевой выводимый элемент, т.е. переменную X, и записать эту переменную вместо фигурных скобок, после чего взять первый выводимый элемент, т.е. Y, и записать его вместо вторых фигурных скобок в формате с фиксированной точкой и пятью десятичными знаками после запятой.</p>
+<p>Проверим работу программы, нажав клавишу <strong>F5</strong>.</p>
+<p><img src="https://i.postimg.cc/wTBgtx21/013.png" alt=""></p>
+<p><strong>Заметка</strong>. Если выявились ошибки, то работу программы следует проверить отладчиком – клавишами <strong>F10</strong> или <strong>F11</strong>. В этом случае управление останавливается на каждом операторе, и мы можем проверить значение каждой переменной, наводя указатель мыши на переменные. Можно выполнить программу до определенной программистом точки (точки останова), используя, например, клавишу <strong>F9</strong> или оператор <em>Stop</em>, и в этой точке проверить значения необходимых переменных.</p>
+<p>Исходный код этого примера можно посмотреть, открыв решение Hover.sln в папке <a href="https://github.com/GhostBasenji/Examples-with-Csharp">SquareRoot</a>.</p></div>
+    <div class="post-footer">
+      <div class="info">
+        
+
+        
+          <span class="separator"><a class="tag" href="/tags/%D0%BA%D0%BE%D0%BD%D1%81%D0%BF%D0%B5%D0%BA%D1%82%D1%8B-%D0%BF%D0%BE-c%23/">Конспекты по C#</a><a class="tag" href="/tags/c%23/">C#</a><a class="tag" href="/tags/%2enet6/">.NET6</a></span>
+
+
+
+
+        
+      </div>
+    </div>
+
+    
+  </div>
+
+
+          </div>
+        </div>
+      </main>
+    </div><footer class="footer footer--base">
+  <div class="by_farbox">
+    <ul class="footer__list">
+      <li class="footer__item">
+        &copy;
+        
+          GhostBasenji 2023
+
+        
+      </li>
+      
+    </ul>
+  </div>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.44288fd315b6cda68c1f4743caad56535c0f81a5b5a672f385e82b3896575c1d.js"
+    integrity="sha256-RCiP0xW2zaaMH0dDyq1WU1wPgaW1pnLzhegrOJZXXB0="
+    crossorigin="anonymous"
+  ></script></body>
+</html>
