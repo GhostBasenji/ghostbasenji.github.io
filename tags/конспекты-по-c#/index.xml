@@ -6,7 +6,18 @@
     <description>Recent content in Конспекты по C# on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru</language>
-    <lastBuildDate>Wed, 22 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/%D0%BA%D0%BE%D0%BD%D1%81%D0%BF%D0%B5%D0%BA%D1%82%D1%8B-%D0%BF%D0%BE-c#/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 23 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/%D0%BA%D0%BE%D0%BD%D1%81%D0%BF%D0%B5%D0%BA%D1%82%D1%8B-%D0%BF%D0%BE-c#/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Day 9. Свойство Visible и всплывающая подсказка ToolTip</title>
+      <link>/post/day-9/</link>
+      <pubDate>Thu, 23 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/post/day-9/</guid>
+      
+        <description>&lt;p&gt;Рассмотрим возможности свойства Visible. Программа пишет в метку Label некоторый текст, а пользователь с помощью кнопки делает этот текст невидимым, а затем опять видимым и т.д. При зависании мыши над кнопкой появляется всплывающая подсказка “Нажми меня”.&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>Day 8. Вкладки TabControl и переключатели RadioButton</title>
       <link>/post/day-8/</link>
