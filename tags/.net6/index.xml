@@ -6,9 +6,20 @@
     <description>Recent content in .NET6 on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru</language>
-    <lastBuildDate>Tue, 21 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/.net6/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/.net6/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Day 7. Побитовый оператор “исключающее ИЛИ</title>
+      <title>Day 7. Вкладки TabControl и переключатели RadioButton</title>
+      <link>/post/day-8/</link>
+      <pubDate>Wed, 22 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/post/day-8/</guid>
+      
+        <description>&lt;p&gt;Вкладки программируют для организации управления и оптимального использования экранного пространства. Выразительным примером применения вкладок является окно веб-браузера Chrome или Firefox. То есть, если требуется отобразить большое количество управляемой информации, уместно обратить внимание на вкладки &lt;strong&gt;TabControl&lt;/strong&gt;.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Day 7. Побитовый оператор &#39;исключающее ИЛИ&#39;</title>
       <link>/post/day-7/</link>
       <pubDate>Tue, 21 Nov 2023 00:00:00 +0000</pubDate>
       
