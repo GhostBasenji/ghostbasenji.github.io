@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html
+  dir="ltr"
+  lang="en"
+  data-theme="light"
+><head>
+  <title>
+    Ghost Basenji
+      |
+      Day 10. Калькулятор на основе комбинированного списка ComboBox
+
+
+    
+
+  </title>
+
+  
+  <meta charset="utf-8" /><meta name="generator" content="Hugo 0.112.5"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta
+    name="description"
+    content="
+      Notes of a novice programmer
+
+
+    "
+  />
+  
+  
+  
+  <link
+    rel="stylesheet"
+    href="/css/main.min.deaabf2252003a406691dbf5f79852b7bcb4538e1f3c92348e14f631279e8c5f.css"
+    integrity="sha256-3qq/IlIAOkBmkdv195hSt7y0U44fPJI0jhT2MSeejF8="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.f798cbda9aaa38f89eb38be6414bd082cfd71a6780375cbf67b6d2fb2b96491e.css"
+    integrity="sha256-95jL2pqqOPies4vmQUvQgs/XGmeAN1y/Z7bS&#43;yuWSR4="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous"
+  />
+  
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+  <link rel="canonical" href="/post/day-10/" />
+
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.d0408165d31a17f17bba83038bf54e86121f85021bdf936382e636f0f77a952f.js"
+    integrity="sha256-0ECBZdMaF/F7uoMDi/VOhhIfhQIb35NjguY28Pd6lS8="
+    crossorigin="anonymous"
+  ></script>
+
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Day 10. Калькулятор на основе комбинированного списка ComboBox"/>
+<meta name="twitter:description" content="Элемент управления ComboBox служит для отображения вариантов выбора в раскрывающемся списке. Чтобы увидеть работу этого элемента управления, напишем программу, реализующей функции калькулятора. Здесь для отображения вариантов выбора арифметических операций используется комбинированный список ComboBox."/>
+
+
+
+  
+
+
+  
+  
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "post",
+        "name": "Day 10. Калькулятор на основе комбинированного списка ComboBox",
+        "headline": "Day 10. Калькулятор на основе комбинированного списка ComboBox",
+        "alternativeHeadline": "",
+        "description": "
+      
+        \u003cp\u003eЭлемент управления \u003cstrong\u003eComboBox\u003c\/strong\u003e служит для отображения вариантов выбора в раскрывающемся списке. Чтобы увидеть работу этого элемента управления, напишем программу, реализующей функции калькулятора. Здесь для отображения вариантов выбора арифметических операций используется комбинированный список ComboBox.\u003c\/p\u003e
+
+
+      
+
+
+    ",
+        "inLanguage": "ru",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "\/post\/day-10\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "Ghost Basenji"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "Ghost Basenji"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "Ghost Basenji"
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": "Ghost Basenji"
+        },
+        "copyrightYear" : "2023",
+        "dateCreated": "2023-11-24T00:00:00.00Z",
+        "datePublished": "2023-11-24T00:00:00.00Z",
+        "dateModified": "2023-11-24T00:00:00.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "Ghost Basenji",
+            "url": "/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "\/favicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+      ]
+
+    ,
+        "url" : "\/post\/day-10\/",
+        "wordCount" : "664",
+        "genre" : [ ],
+        "keywords" : [ 
+      
+      "Конспекты по C#"
+
+    
+      
+        ,
+
+      
+      "C#"
+
+    
+      
+        ,
+
+      
+      ".NET6"
+
+    ]
+    }
+  </script>
+
+
+
+</head>
+<body>
+    <header><div
+  class="page-top 
+    .
+
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+  </a>
+  <nav>
+    <ul class="nav__list" id="navMenu">
+      <div class="nav__links">
+        
+        
+          
+          <li>
+            <a
+              
+              href="/"
+              
+              title=""
+              >Главная</a
+            >
+          </li>
+
+        
+          
+          <li>
+            <a
+              
+              href="/post/"
+              
+              title=""
+              >Статьи</a
+            >
+          </li>
+
+        
+          
+          <li>
+            <a
+              
+              href="/myprojects/"
+              
+              title=""
+              >Мои проекты</a
+            >
+          </li>
+
+        
+          
+          <li>
+            <a
+              
+              href="/about/"
+              
+              title=""
+              >About</a
+            >
+          </li>
+
+        
+        
+      </div>
+      <li>
+        
+      </li>
+    </ul>
+  </nav>
+</div>
+</header>
+    <div class="wrapper">
+      <aside><div
+  class="sidebar
+    .
+
+  "
+>
+  <div class="sidebar__content">
+    <div class="logo-title">
+      <div class="title">
+        <img src="/images/profile.png" alt="profile picture" />
+        <h3 title=""><a href="/">I&#39;m Ghost Basenji</a></h3>
+        <div class="description">
+          <p>Notes of a novice programmer</p>
+        </div>
+      </div>
+    </div>
+    <ul class="social-links">
+      
+        <li>
+          <a href="https://t.me/ghostbasenji" rel="me" aria-label="telegram">
+            <i class="fab fa-telegram fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      
+        <li>
+          <a href="mailto:petr.and.vic@gmail.com" rel="me" aria-label="e-mail">
+            <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      
+    </ul>
+  </div><footer class="footer footer--sidebar">
+  <div class="by_farbox">
+    <ul class="footer__list">
+      <li class="footer__item">
+        &copy;
+        
+          GhostBasenji 2023
+
+        
+      </li>
+      
+    </ul>
+  </div>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.44288fd315b6cda68c1f4743caad56535c0f81a5b5a672f385e82b3896575c1d.js"
+    integrity="sha256-RCiP0xW2zaaMH0dDyq1WU1wPgaW1pnLzhegrOJZXXB0="
+    crossorigin="anonymous"
+  ></script></div>
+</aside>
+      <main>
+        <div class="autopagerize_page_element">
+          <div class="content">
+  <div
+    class="post 
+      .
+
+    "
+  >
+    <div class="post-content">
+      
+      <div class="post-title">
+        <h1>Day 10. Калькулятор на основе комбинированного списка ComboBox</h1>
+        
+          <div class="info">
+            <em class="fas fa-calendar-day"></em>
+            <span class="date"
+              >
+                24/11/2023
+
+
+              </span
+            >
+            
+          </div>
+
+        
+      </div><p>Элемент управления <strong>ComboBox</strong> служит для отображения вариантов выбора в раскрывающемся списке. Чтобы увидеть работу этого элемента управления, напишем программу, реализующей функции калькулятора. Здесь для отображения вариантов выбора арифметических операций используется комбинированный список ComboBox.</p>
+<p>Запустим VS 2022, выбираем Windows Forms App. Назовем этот проект Combi. Из панели Toolbox перетащим в форму два текстовых поля TextBox, кнопку Button, метку Label и комбинированный список ComboBox.</p>
+<p>Итак, напишем следующий код:</p>
+<div class="highlight"><pre tabindex="0" style="color:#ef9f76;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#626880;font-style:italic">// Программа, реализующая функции калькулятора. Здесь для отображения</span>
+</span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic">// вариантов выбора арифметических действий используется комбинированный ComboBox</span>
+</span></span><span style="display:flex;"><span><span style="color:#ca9ee6">namespace</span> <span style="color:#e5c890">Combi</span>
+</span></span><span style="display:flex;"><span><span style="color:#c6d0f5">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ca9ee6">public</span> <span style="color:#ca9ee6">partial</span> <span style="color:#ca9ee6">class</span> <span style="color:#e5c890">Form1</span> <span style="color:#c6d0f5">:</span> <span style="color:#babbf1">Form</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c6d0f5">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ca9ee6">public</span> <span style="color:#babbf1">Form1</span><span style="color:#c6d0f5">()</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c6d0f5">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#babbf1">InitializeComponent</span><span style="color:#c6d0f5">();</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c6d0f5">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ca9ee6">private</span> <span style="color:#ca9ee6">void</span> <span style="color:#babbf1">Form1_Load</span><span style="color:#c6d0f5">(</span><span style="color:#e5c890">object</span> <span style="color:#babbf1">sender</span><span style="color:#c6d0f5">,</span> <span style="color:#babbf1">EventArgs</span> <span style="color:#babbf1">e</span><span style="color:#c6d0f5">)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c6d0f5">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ca9ee6">this</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Text</span> <span style="color:#c6d0f5">=</span> <span style="color:#a6d189">&#34;Калькулятор&#34;</span><span style="color:#c6d0f5">;</span> <span style="color:#babbf1">label1</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Text</span> <span style="color:#c6d0f5">=</span> <span style="color:#a6d189">&#34;Равно: &#34;</span><span style="color:#c6d0f5">;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#babbf1">button1</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Text</span> <span style="color:#c6d0f5">=</span> <span style="color:#a6d189">&#34;Выбери операцию&#34;</span><span style="color:#c6d0f5">;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#babbf1">comboBox1</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Text</span> <span style="color:#c6d0f5">=</span> <span style="color:#a6d189">&#34;Выбери операцию&#34;</span><span style="color:#c6d0f5">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#626880;font-style:italic">// Заполняем (инициализируем) раскрывающийся список:</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#e5c890">string</span><span style="color:#c6d0f5">[]</span> <span style="color:#babbf1">Operations</span> <span style="color:#c6d0f5">=</span> <span style="color:#c6d0f5">{</span> <span style="color:#a6d189">&#34;Прибавить&#34;</span><span style="color:#c6d0f5">,</span> <span style="color:#a6d189">&#34;Отнять&#34;</span><span style="color:#c6d0f5">,</span> <span style="color:#a6d189">&#34;Умножить&#34;</span><span style="color:#c6d0f5">,</span> <span style="color:#a6d189">&#34;Разделить&#34;</span><span style="color:#c6d0f5">,</span> <span style="color:#a6d189">&#34;Очистить&#34;</span> <span style="color:#c6d0f5">};</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#babbf1">comboBox1</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Items</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">AddRange</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">Operations</span><span style="color:#c6d0f5">);</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#babbf1">comboBox1</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">TabIndex</span> <span style="color:#c6d0f5">=</span> 2<span style="color:#c6d0f5">;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#babbf1">textBox1</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Clear</span><span style="color:#c6d0f5">();</span> <span style="color:#babbf1">textBox1</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">TabIndex</span> <span style="color:#c6d0f5">=</span> 0<span style="color:#c6d0f5">;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#babbf1">textBox2</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Clear</span><span style="color:#c6d0f5">();</span> <span style="color:#babbf1">textBox2</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">TabIndex</span> <span style="color:#c6d0f5">=</span> 1<span style="color:#c6d0f5">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c6d0f5">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ca9ee6">private</span> <span style="color:#ca9ee6">void</span> <span style="color:#babbf1">comboBox1_SelectedIndexChanged</span><span style="color:#c6d0f5">(</span><span style="color:#e5c890">object</span> <span style="color:#babbf1">sender</span><span style="color:#c6d0f5">,</span> <span style="color:#babbf1">EventArgs</span> <span style="color:#babbf1">e</span><span style="color:#c6d0f5">)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c6d0f5">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#626880;font-style:italic">// Обрабатываем событие изменения индекса выбранного элемента</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#babbf1">label1</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Text</span> <span style="color:#c6d0f5">=</span> <span style="color:#a6d189">&#34;Равно: &#34;</span><span style="color:#c6d0f5">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#626880;font-style:italic">// Преобразование из строковой переменной в Single:</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#babbf1">Single</span> <span style="color:#babbf1">X</span><span style="color:#c6d0f5">,</span> <span style="color:#babbf1">Y</span><span style="color:#c6d0f5">,</span> <span style="color:#babbf1">Z</span><span style="color:#c6d0f5">;</span> <span style="color:#babbf1">Z</span> <span style="color:#c6d0f5">=</span> 0<span style="color:#c6d0f5">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#e5c890">var</span> <span style="color:#babbf1">Chislo_1</span> <span style="color:#c6d0f5">=</span> <span style="color:#babbf1">Single</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">TryParse</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">textBox1</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Text</span><span style="color:#c6d0f5">,</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#babbf1">System</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Globalization</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">NumberStyles</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Number</span><span style="color:#c6d0f5">,</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#babbf1">System</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Globalization</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">NumberFormatInfo</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">CurrentInfo</span><span style="color:#c6d0f5">,</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ca9ee6">out</span> <span style="color:#babbf1">X</span><span style="color:#c6d0f5">);</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#e5c890">var</span> <span style="color:#babbf1">Chislo_2</span> <span style="color:#c6d0f5">=</span> <span style="color:#babbf1">Single</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">TryParse</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">textBox2</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Text</span><span style="color:#c6d0f5">,</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#babbf1">System</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Globalization</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">NumberStyles</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Number</span><span style="color:#c6d0f5">,</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#babbf1">System</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Globalization</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">NumberFormatInfo</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">CurrentInfo</span><span style="color:#c6d0f5">,</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ca9ee6">out</span> <span style="color:#babbf1">Y</span><span style="color:#c6d0f5">);</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ca9ee6">if</span> <span style="color:#c6d0f5">(</span><span style="color:#babbf1">Chislo_1</span> <span style="color:#c6d0f5">==</span> <span style="color:#ca9ee6">false</span> <span style="color:#c6d0f5">||</span> <span style="color:#babbf1">Chislo_2</span> <span style="color:#c6d0f5">==</span> <span style="color:#ca9ee6">false</span><span style="color:#c6d0f5">)</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#c6d0f5">{</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#babbf1">MessageBox</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Show</span><span style="color:#c6d0f5">(</span><span style="color:#a6d189">&#34;Следует вводить числа!&#34;</span><span style="color:#c6d0f5">,</span> <span style="color:#a6d189">&#34;Ошибка&#34;</span><span style="color:#c6d0f5">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#babbf1">MessageBoxButtons</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">OK</span><span style="color:#c6d0f5">,</span> <span style="color:#babbf1">MessageBoxIcon</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Error</span><span style="color:#c6d0f5">);</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ca9ee6">return</span><span style="color:#c6d0f5">;</span> <span style="color:#626880;font-style:italic">// если ошибка, то выходим из процедуры</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#c6d0f5">}</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#626880;font-style:italic">// Оператор множественного выбора</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ca9ee6">switch</span> <span style="color:#c6d0f5">(</span><span style="color:#babbf1">comboBox1</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">SelectedIndex</span><span style="color:#c6d0f5">)</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#c6d0f5">{</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#626880;font-style:italic">// Выбор арифметической операции:</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ca9ee6">case</span> 0<span style="color:#c6d0f5">:</span> <span style="color:#626880;font-style:italic">// Выбрали &#34;Прибавить&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#babbf1">Z</span> <span style="color:#c6d0f5">=</span> <span style="color:#babbf1">X</span> <span style="color:#c6d0f5">+</span> <span style="color:#babbf1">Y</span><span style="color:#c6d0f5">;</span> <span style="color:#ca9ee6">break</span><span style="color:#c6d0f5">;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ca9ee6">case</span> 1<span style="color:#c6d0f5">:</span> <span style="color:#626880;font-style:italic">// Выбрали &#34;Отнять&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#babbf1">Z</span> <span style="color:#c6d0f5">=</span> <span style="color:#babbf1">X</span> <span style="color:#c6d0f5">-</span> <span style="color:#babbf1">Y</span><span style="color:#c6d0f5">;</span> <span style="color:#ca9ee6">break</span><span style="color:#c6d0f5">;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ca9ee6">case</span> 2<span style="color:#c6d0f5">:</span> <span style="color:#626880;font-style:italic">// Выбрали &#34;Умножить&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#babbf1">Z</span> <span style="color:#c6d0f5">=</span> <span style="color:#babbf1">X</span> <span style="color:#c6d0f5">*</span> <span style="color:#babbf1">Y</span><span style="color:#c6d0f5">;</span> <span style="color:#ca9ee6">break</span><span style="color:#c6d0f5">;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ca9ee6">case</span> 3<span style="color:#c6d0f5">:</span> <span style="color:#626880;font-style:italic">// Выбрали &#34;Разделить&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#babbf1">Z</span> <span style="color:#c6d0f5">=</span> <span style="color:#babbf1">X</span> <span style="color:#c6d0f5">/</span> <span style="color:#babbf1">Y</span><span style="color:#c6d0f5">;</span> <span style="color:#ca9ee6">break</span><span style="color:#c6d0f5">;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ca9ee6">case</span> 4<span style="color:#c6d0f5">:</span> <span style="color:#626880;font-style:italic">// // Выбрали &#34;Очистить&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#babbf1">textBox1</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Clear</span><span style="color:#c6d0f5">();</span> <span style="color:#babbf1">textBox2</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Clear</span><span style="color:#c6d0f5">();</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#babbf1">label1</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Text</span> <span style="color:#c6d0f5">=</span> <span style="color:#a6d189">&#34;Равно: &#34;</span><span style="color:#c6d0f5">;</span> <span style="color:#ca9ee6">return</span><span style="color:#c6d0f5">;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#c6d0f5">}</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#babbf1">label1</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Text</span> <span style="color:#c6d0f5">=</span> <span style="color:#babbf1">String</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Format</span><span style="color:#c6d0f5">(</span><span style="color:#a6d189">&#34;Равно: {0:F5}&#34;</span><span style="color:#c6d0f5">,</span> <span style="color:#babbf1">Z</span><span style="color:#c6d0f5">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c6d0f5">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ca9ee6">private</span> <span style="color:#ca9ee6">void</span> <span style="color:#babbf1">button1_Click</span><span style="color:#c6d0f5">(</span><span style="color:#e5c890">object</span> <span style="color:#babbf1">sender</span><span style="color:#c6d0f5">,</span> <span style="color:#babbf1">EventArgs</span> <span style="color:#babbf1">e</span><span style="color:#c6d0f5">)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c6d0f5">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#626880;font-style:italic">// &#34;Принудительно&#34; раскрываем список:</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#babbf1">comboBox1</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">DroppedDown</span> <span style="color:#c6d0f5">=</span> <span style="color:#ca9ee6">true</span><span style="color:#c6d0f5">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c6d0f5">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c6d0f5">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#c6d0f5">}</span>
+</span></span></code></pre></div><p>В данной программе сразу при обработке события загрузки формы присваиваем начальные значения некоторым свойствам, в т.ч. задаем коллекцию элементов комбинированного списка: “Прибавить”, “Отнять” и т.д. Также здесь задаем табличные индексы TabIndex для текстовых полей и комбинированного списка. Табличный индекс определяет порядок обхода элементов. Так, при старте программы фокус будет находиться в первом текстовом поле, т.к. мы назначили textBox1.TabIndex = 0. Далее при нажатии пользователем клавиши Tab будет происходить переход от элемента к элементу соответственно табличным индексам.</p>
+<p><img src="https://i.postimg.cc/xjRWsgQp/019.png" alt=""></p>
+<p>При обработке события “изменение индекса выбранного элемента” comboBox1_SelectedIndexChanged с помощью функции TryParse проверяем, можно ли текстовые поля преобразовать в число. Первым параметром метода TryParse является анализируемое поле. Второй параметр – это разрешаемый для преобразования стиль числа, в данном случае типа Number, т.е. десятичное число, которое имеет целую и дробную части. Третий параметр указывает, на какой основе формируется допустимый формат, в нашем случае мы использовали CurrentInfo, т.е. на основе текущего языка и региональных параметров.</p>
+<p>Четвертый параметр метода TryParse возвращает результат преобразования. Кроме того, функция TryParse возвращает булеву переменную, которая сообщает, успешно ли выполнено преобразование. Как видно из тексто программы, если хотя бы одно поле невозможно преобразовать в число, то программируем сообщение “Следует вводить числа!” и выход из процедуры обработки события с помощью оператора return.
+Далее оператор switch осуществляет множественный выбор арифметической операции в зависимости от индекса выбранного элемента списка SelectedIndex. Оператор switch case передает управление той или иной метке case.</p>
+<p><strong>Внимание!</strong> Оператор множественного выбора в C# “проваливается”. То есть управление, зайдя на какую-либо метку case, переходит на следующую метку, поэтому приходится использовать оператор break.</p>
+<p>Последний оператор в процедуре обработки события изменения индекса выбранного элемента осуществляет формирование строки с помощью метода String.Format для вывода ее на метку label1. Формат “{0:F5}” означает, что значение переменной Z следует выводить по фиксированному формату с пятью знаками после запятой (или точки).</p>
+<p>Заметим, что в нашем примере даже не пришлось программировать событие деления на ноль. Visual Studio сделала это за нас.
+Последняя процедура обработки события “щелчок на кнопке” обеспечивает раскрытие комбинированного списка через нажатие на кнопку, а не на стрелку в элементе ComboBox. Эта возможность реализована с помощью метода DroppedDown объекта ComboBox1.</p>
+<p>Исходный код этого примера можно посмотреть, открыв решение Combi.sln в папке <a href="https://github.com/GhostBasenji/Examples-with-Csharp">Combi</a>.</p></div>
+    <div class="post-footer">
+      <div class="info">
+        
+
+        
+          <span class="separator"><a class="tag" href="/tags/%D0%BA%D0%BE%D0%BD%D1%81%D0%BF%D0%B5%D0%BA%D1%82%D1%8B-%D0%BF%D0%BE-c%23/">Конспекты по C#</a><a class="tag" href="/tags/c%23/">C#</a><a class="tag" href="/tags/%2enet6/">.NET6</a></span>
+
+
+
+
+        
+      </div>
+    </div>
+
+    
+  </div>
+
+
+          </div>
+        </div>
+      </main>
+    </div><footer class="footer footer--base">
+  <div class="by_farbox">
+    <ul class="footer__list">
+      <li class="footer__item">
+        &copy;
+        
+          GhostBasenji 2023
+
+        
+      </li>
+      
+    </ul>
+  </div>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.44288fd315b6cda68c1f4743caad56535c0f81a5b5a672f385e82b3896575c1d.js"
+    integrity="sha256-RCiP0xW2zaaMH0dDyq1WU1wPgaW1pnLzhegrOJZXXB0="
+    crossorigin="anonymous"
+  ></script></body>
+</html>
