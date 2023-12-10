@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html
+  dir="ltr"
+  lang="en"
+  data-theme="light"
+><head>
+  <title>
+    Ghost Basenji
+      |
+      Day 11. Вывод греческих букв, символов мат.операторов. Кодовая таблица Unicode
+
+
+    
+
+  </title>
+
+  
+  <meta charset="utf-8" /><meta name="generator" content="Hugo 0.112.5"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta
+    name="description"
+    content="
+      Notes of a novice programmer
+
+
+    "
+  />
+  
+  
+  
+  <link
+    rel="stylesheet"
+    href="/css/main.min.deaabf2252003a406691dbf5f79852b7bcb4538e1f3c92348e14f631279e8c5f.css"
+    integrity="sha256-3qq/IlIAOkBmkdv195hSt7y0U44fPJI0jhT2MSeejF8="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.f798cbda9aaa38f89eb38be6414bd082cfd71a6780375cbf67b6d2fb2b96491e.css"
+    integrity="sha256-95jL2pqqOPies4vmQUvQgs/XGmeAN1y/Z7bS&#43;yuWSR4="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous"
+  />
+  
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+  <link rel="canonical" href="/post/day-11/" />
+
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.d0408165d31a17f17bba83038bf54e86121f85021bdf936382e636f0f77a952f.js"
+    integrity="sha256-0ECBZdMaF/F7uoMDi/VOhhIfhQIb35NjguY28Pd6lS8="
+    crossorigin="anonymous"
+  ></script>
+
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Day 11. Вывод греческих букв, символов мат.операторов. Кодовая таблица Unicode"/>
+<meta name="twitter:description" content="Немного ликбеза
+Хранение текстовых данных в памяти ЭВМ предполагает кодирование символов по какому-либо принципу. Таких кодировок несколько. Каждой кодировке соответствует своя таблица символов. В таких таблицах каждой ячейке соответствует номер в таблице и символ. Мы упомянем кодовые таблицы: ASCII, ANSI Cyrillic (другое название этой таблицы – Windows 1251), а также Unicode."/>
+
+
+
+  
+
+
+  
+  
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "post",
+        "name": "Day 11. Вывод греческих букв, символов мат.операторов. Кодовая таблица Unicode",
+        "headline": "Day 11. Вывод греческих букв, символов мат.операторов. Кодовая таблица Unicode",
+        "alternativeHeadline": "",
+        "description": "
+      
+        \u003ch3 id=\u0022немного-ликбеза\u0022\u003eНемного ликбеза\u003c\/h3\u003e\n\u003cp\u003eХранение текстовых данных в памяти ЭВМ предполагает кодирование символов по какому-либо принципу. Таких кодировок несколько. Каждой кодировке соответствует своя таблица символов. В таких таблицах каждой ячейке соответствует номер в таблице и символ. Мы упомянем кодовые таблицы: ASCII, ANSI Cyrillic (другое название этой таблицы – Windows 1251), а также Unicode.\u003c\/p\u003e
+
+
+      
+
+
+    ",
+        "inLanguage": "ru",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "\/post\/day-11\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "Ghost Basenji"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "Ghost Basenji"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "Ghost Basenji"
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": "Ghost Basenji"
+        },
+        "copyrightYear" : "2023",
+        "dateCreated": "2023-11-25T00:00:00.00Z",
+        "datePublished": "2023-11-25T00:00:00.00Z",
+        "dateModified": "2023-11-25T00:00:00.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "Ghost Basenji",
+            "url": "/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "\/favicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+      ]
+
+    ,
+        "url" : "\/post\/day-11\/",
+        "wordCount" : "919",
+        "genre" : [ ],
+        "keywords" : [ 
+      
+      "Конспекты по C#"
+
+    
+      
+        ,
+
+      
+      "C#"
+
+    
+      
+        ,
+
+      
+      ".NET6"
+
+    ]
+    }
+  </script>
+
+
+
+</head>
+<body>
+    <header><div
+  class="page-top 
+    .
+
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+  </a>
+  <nav>
+    <ul class="nav__list" id="navMenu">
+      <div class="nav__links">
+        
+        
+          
+          <li>
+            <a
+              
+              href="/"
+              
+              title=""
+              >Главная</a
+            >
+          </li>
+
+        
+          
+          <li>
+            <a
+              
+              href="/post/"
+              
+              title=""
+              >Статьи</a
+            >
+          </li>
+
+        
+          
+          <li>
+            <a
+              
+              href="/myprojects/"
+              
+              title=""
+              >Мои проекты</a
+            >
+          </li>
+
+        
+          
+          <li>
+            <a
+              
+              href="/about/"
+              
+              title=""
+              >About</a
+            >
+          </li>
+
+        
+        
+      </div>
+      <li>
+        
+      </li>
+    </ul>
+  </nav>
+</div>
+</header>
+    <div class="wrapper">
+      <aside><div
+  class="sidebar
+    .
+
+  "
+>
+  <div class="sidebar__content">
+    <div class="logo-title">
+      <div class="title">
+        <img src="/images/profile.png" alt="profile picture" />
+        <h3 title=""><a href="/">I&#39;m Ghost Basenji</a></h3>
+        <div class="description">
+          <p>Notes of a novice programmer</p>
+        </div>
+      </div>
+    </div>
+    <ul class="social-links">
+      
+        <li>
+          <a href="https://t.me/ghostbasenji" rel="me" aria-label="telegram">
+            <i class="fab fa-telegram fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      
+        <li>
+          <a href="mailto:petr.and.vic@gmail.com" rel="me" aria-label="e-mail">
+            <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      
+    </ul>
+  </div><footer class="footer footer--sidebar">
+  <div class="by_farbox">
+    <ul class="footer__list">
+      <li class="footer__item">
+        &copy;
+        
+          GhostBasenji 2023
+
+        
+      </li>
+      
+    </ul>
+  </div>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.44288fd315b6cda68c1f4743caad56535c0f81a5b5a672f385e82b3896575c1d.js"
+    integrity="sha256-RCiP0xW2zaaMH0dDyq1WU1wPgaW1pnLzhegrOJZXXB0="
+    crossorigin="anonymous"
+  ></script></div>
+</aside>
+      <main>
+        <div class="autopagerize_page_element">
+          <div class="content">
+  <div
+    class="post 
+      .
+
+    "
+  >
+    <div class="post-content">
+      
+      <div class="post-title">
+        <h1>Day 11. Вывод греческих букв, символов мат.операторов. Кодовая таблица Unicode</h1>
+        
+          <div class="info">
+            <em class="fas fa-calendar-day"></em>
+            <span class="date"
+              >
+                25/11/2023
+
+
+              </span
+            >
+            
+          </div>
+
+        
+      </div><h3 id="немного-ликбеза">Немного ликбеза</h3>
+<p>Хранение текстовых данных в памяти ЭВМ предполагает кодирование символов по какому-либо принципу. Таких кодировок несколько. Каждой кодировке соответствует своя таблица символов. В таких таблицах каждой ячейке соответствует номер в таблице и символ. Мы упомянем кодовые таблицы: ASCII, ANSI Cyrillic (другое название этой таблицы – Windows 1251), а также Unicode.</p>
+<p>Первые две таблицы являются однобайтовыми, т.е. каждому символу соответствует 1 байт данных. Поскольку в 1 байте – 8 битов, байт может принимать 288 = 256 различных состояний, этим состояниям можно поставить в соответствие 256 различных символов. Так, в таблице ASCII символы от 0 до 127 (базовая таблица) кодируют английские буквы, цифры, знаки препинания, управляющие символы. Символы от 128 до 255 (расширенная таблица) кодируют русские буквы и символы псевдографики.</p>
+<p>В ОС Windows используется преимущественно таблица ANSI (Windows 1251). Базовые символы с кодами от 0 до 127 в таблицах ANSI и ASCII совпадают, а расширение – нет. То есть русские буквы в этих таблицах находятся в разных местах. Из-за этого возникают недоразумения. В ANSI нет символов псевдографики. ANSI Cyrillic – другое название кодовой таблицы Windows 1251.</p>
+<p>Существует также двухбайтовый стандарт Unicode. Здесь один символ кодируется двумя байтами. Размер такой таблицы кодирования – 216 = 65536 символов. Кодовая таблица Unicode включает в себя практически все современные письменности. Когда в текстовом редакторе MS Word выполняем команду <strong>Вставка|Символ</strong>, то вставляем символ из таблицы Unicode. Также в Блокноте можно сохранять файлы в кодировке Unicode: <strong>Сохранить как | Кодировка Unicode</strong>. В этом случае в файлах Блокнота будут присутствовать, например, греческие буквы, мат.операторы ∏, ∆, ∑ и проч. Кстати, греческая буква ∑ и мат.оператор ∑ имеют в Unicode различные коды. Размер файла при сохранении в Блокноте текстов, содержащих символы Unicode, окажется ровно в два раза большим.</p>
+<hr>
+<p>Напишем программу, которая предлагает пользователю ввести радиус R, чтобы вычислить длину окружности. При программировании этой задачи длину окружности в метке Label назовем греческой буквой β, приведем формулу для вычислений с греческой буквой π = 3,14. Результат вычислений выведем в диалоговое окно MessageBox также с греческой буквой.</p>
+<p>После традиционного запуска VS 2022 и выбора шаблона Windows Forms App перетащим в форму две метки Label, текстовое поле TextBox и кнопку Button. Расставим эти элементы управления так, как должна выглядеть форма после программирования этой задачи:</p>
+<p><img src="https://i.postimg.cc/wT9B1R1N/020.png" alt=""></p>
+<p>Вывод греческих букв на метку Label1 и в диалоговое окно MessageBox можно осуществить, например, таким путем. В текст программы через буфер обмена вставляет греческие буквы из текстового редактора MS Word. Поскольку по умолчанию VS 2022 сохраняет файлы .cs в формате Unicode, в принципе таким образом можно программировать вывод греческих букв и других символов на форму и на другие элементы управления.</p>
+<p>Более технологично пойдем другим путем, а именно – вставлять подобные символы с помощью функции Convert.ToChar, а на вход этой функции подавать номер символа в таблице Unicode. В этом случае, даже если файл .cs будет сохранен в традиционной для Блокнота кодировке ANSI, программа отработает корректно.</p>
+<p>Совет. Номер символа в таблице Unicode легко выяснить, выбрав в редакторе MS Word меню Insert &gt; Symbol. В открывшейся таблице следует найти этот символ и соответствующий ему код в шестнадцатеричном представлении.</p>
+<p>Чтобы перевести шестнадцатеричное представление в десятичное, следует перед шестнадцатеричным числом поставить 0x. Например, после выполнения оператора n = 0x3B2 в переменную n будет записано десятичное число 946. На этом месте в таблице Unicode расположена греческая буква β.</p>
+<p>Именно таким образом запрограммируем данную задачу:</p>
+<div class="highlight"><pre tabindex="0" style="color:#ef9f76;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#626880;font-style:italic">// Программа демонстрирует возможность вывода в текстовую метку, а также</span>
+</span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic">// в диалоговое окно MessageBox греческих букв. Программа приглашает</span>
+</span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic">// пользователя ввести радиус R, чтобы вычислить длину окружности</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ca9ee6">namespace</span> <span style="color:#e5c890">Unico</span>
+</span></span><span style="display:flex;"><span><span style="color:#c6d0f5">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ca9ee6">public</span> <span style="color:#ca9ee6">partial</span> <span style="color:#ca9ee6">class</span> <span style="color:#e5c890">Form1</span> <span style="color:#c6d0f5">:</span> <span style="color:#babbf1">Form</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c6d0f5">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ca9ee6">public</span> <span style="color:#babbf1">Form1</span><span style="color:#c6d0f5">()</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c6d0f5">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#babbf1">InitializeComponent</span><span style="color:#c6d0f5">();</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c6d0f5">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ca9ee6">private</span> <span style="color:#ca9ee6">void</span> <span style="color:#babbf1">Form1_Load</span><span style="color:#c6d0f5">(</span><span style="color:#e5c890">object</span> <span style="color:#babbf1">sender</span><span style="color:#c6d0f5">,</span> <span style="color:#babbf1">EventArgs</span> <span style="color:#babbf1">e</span><span style="color:#c6d0f5">)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c6d0f5">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ca9ee6">this</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Font</span> <span style="color:#c6d0f5">=</span> <span style="color:#ca9ee6">new</span> <span style="color:#babbf1">Font</span><span style="color:#c6d0f5">(</span><span style="color:#a6d189">&#34;Times New Roman&#34;</span><span style="color:#c6d0f5">,</span> 12.0F<span style="color:#c6d0f5">);</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ca9ee6">this</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Text</span> <span style="color:#c6d0f5">=</span> <span style="color:#a6d189">&#34;Греческие буквы&#34;</span><span style="color:#c6d0f5">;</span> <span style="color:#babbf1">button1</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Text</span> <span style="color:#c6d0f5">=</span> <span style="color:#a6d189">&#34;Вычислить&#34;</span><span style="color:#c6d0f5">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#626880;font-style:italic">// бета = 2 * Пи * R</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#babbf1">label1</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Text</span> <span style="color:#c6d0f5">=</span> <span style="color:#babbf1">String</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Format</span><span style="color:#c6d0f5">(</span><span style="color:#a6d189">&#34;Найдем длину окружности: \n&#34;</span> <span style="color:#c6d0f5">+</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#a6d189">&#34;{0} = 2{1}{2}{1}R, \n&#34;</span> <span style="color:#c6d0f5">+</span> <span style="color:#a6d189">&#34;где {2} = {3}&#34;</span><span style="color:#c6d0f5">,</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#babbf1">Convert</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">ToChar</span><span style="color:#c6d0f5">(</span>0x3B2<span style="color:#c6d0f5">),</span> <span style="color:#babbf1">Convert</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">ToChar</span><span style="color:#c6d0f5">(</span>0x2219<span style="color:#c6d0f5">),</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#babbf1">Convert</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">ToChar</span><span style="color:#c6d0f5">(</span>0x3C0<span style="color:#c6d0f5">),</span> <span style="color:#babbf1">Math</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">PI</span><span style="color:#c6d0f5">);</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#626880;font-style:italic">// Здесь: 0 - бета, 1 - точка, 2 - Пи, 3 - число Пи</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#babbf1">label2</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Text</span> <span style="color:#c6d0f5">=</span> <span style="color:#a6d189">&#34;Введите радиус R:&#34;</span><span style="color:#c6d0f5">;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#babbf1">textBox1</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Clear</span><span style="color:#c6d0f5">();</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c6d0f5">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ca9ee6">private</span> <span style="color:#ca9ee6">void</span> <span style="color:#babbf1">button1_Click</span><span style="color:#c6d0f5">(</span><span style="color:#e5c890">object</span> <span style="color:#babbf1">sender</span><span style="color:#c6d0f5">,</span> <span style="color:#babbf1">EventArgs</span> <span style="color:#babbf1">e</span><span style="color:#c6d0f5">)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c6d0f5">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#626880;font-style:italic">// Проверяем, число ли введено:</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#babbf1">Single</span> <span style="color:#babbf1">R</span><span style="color:#c6d0f5">;</span> <span style="color:#626880;font-style:italic">// - радиус</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#e5c890">var</span> <span style="color:#babbf1">Chislo_Pi</span> <span style="color:#c6d0f5">=</span> <span style="color:#babbf1">Single</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">TryParse</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">textBox1</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Text</span><span style="color:#c6d0f5">,</span> 
+</span></span><span style="display:flex;"><span>                <span style="color:#babbf1">System</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Globalization</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">NumberStyles</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Number</span><span style="color:#c6d0f5">,</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#babbf1">System</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Globalization</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">NumberFormatInfo</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">CurrentInfo</span><span style="color:#c6d0f5">,</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ca9ee6">out</span> <span style="color:#babbf1">R</span><span style="color:#c6d0f5">);</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ca9ee6">if</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">Chislo_Pi</span> <span style="color:#c6d0f5">==</span> <span style="color:#ca9ee6">false</span><span style="color:#c6d0f5">)</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#c6d0f5">{</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#babbf1">MessageBox</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Show</span><span style="color:#c6d0f5">(</span><span style="color:#a6d189">&#34;Следует вводить числа!&#34;</span><span style="color:#c6d0f5">,</span> <span style="color:#a6d189">&#34;Ошибка&#34;</span><span style="color:#c6d0f5">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#babbf1">MessageBoxButtons</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">OK</span><span style="color:#c6d0f5">,</span> <span style="color:#babbf1">MessageBoxIcon</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Error</span><span style="color:#c6d0f5">);</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ca9ee6">return</span><span style="color:#c6d0f5">;</span> <span style="color:#626880;font-style:italic">// если ошибка, то выход из процедуры</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#c6d0f5">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#e5c890">var</span> <span style="color:#babbf1">beta</span> <span style="color:#c6d0f5">=</span> 2 <span style="color:#c6d0f5">*</span> <span style="color:#babbf1">Math</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">PI</span> <span style="color:#c6d0f5">*</span> <span style="color:#babbf1">R</span><span style="color:#c6d0f5">;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#626880;font-style:italic">//0x3B2 - греческая буква бета</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#babbf1">MessageBox</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Show</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">String</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Format</span><span style="color:#c6d0f5">(</span><span style="color:#a6d189">&#34;Длина окружности {0} = {1:F4}&#34;</span><span style="color:#c6d0f5">,</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#babbf1">Convert</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">ToChar</span><span style="color:#c6d0f5">(</span>0x3B2<span style="color:#c6d0f5">),</span> <span style="color:#babbf1">beta</span><span style="color:#c6d0f5">),</span> <span style="color:#a6d189">&#34;Греческая буква&#34;</span><span style="color:#c6d0f5">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c6d0f5">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c6d0f5">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#c6d0f5">}</span>
+</span></span></code></pre></div><p>Как видно из кода, при обработке события загрузки формы мы задали шрифт Tomes New Roman, 12 пунктов – этот шрифт будет распространяться на все элементы управления на форме, т.е. на текстовое поле, метку и кнопку. Далее, используя метод String.Format, инициализировали свойство Text метки label1. Различные шестнадцатеричные номера соответствуют греческим буквам и арифметической операции “умножить”, в инициализации строки участвует также константа π = 3,14. Ее более точное значение получаем из Math.PI. Escape-последовательность “\n” используется для переноса текста на новую строку.</p>
+<p>Обрабатывая событие button1_Click, мы проверяем с помощью метода TryParse, число ли введено в текстовое поле. Если пользователь ввел число (true), то метода TryParse возвращает значение радиуса R. При вычислении длины окружности beta приводим значение констатнты Math.PI из типа Double к типу Single посредством неявного преобразования.</p>
+<p>После вычисления длины окружности beta выводим ее значение вместе с греческой буквой β – Convert.ToChar(0x3B2) в диалоговое окно MessageBox. Здесть используем метод String.Format. Выражение “{0:F4}” означает, что значение переменной beta следует выводить по фиксированному формату с четырьмя знаками после запятой.</p>
+<p>Наша программа будет корректно отображать греческие буквы, даже если открыть файл Form1.cs текстовым редактором Блокнот и сохранить его в кодировке ANSI.</p>
+<p>Исходный код этого примера можно посмотреть, открыв решение Unico.sln в папке <a href="https://github.com/GhostBasenji/Examples-with-Csharp">Unico</a>.</p></div>
+    <div class="post-footer">
+      <div class="info">
+        
+
+        
+          <span class="separator"><a class="tag" href="/tags/%D0%BA%D0%BE%D0%BD%D1%81%D0%BF%D0%B5%D0%BA%D1%82%D1%8B-%D0%BF%D0%BE-c%23/">Конспекты по C#</a><a class="tag" href="/tags/c%23/">C#</a><a class="tag" href="/tags/%2enet6/">.NET6</a></span>
+
+
+
+
+        
+      </div>
+    </div>
+
+    
+  </div>
+
+
+          </div>
+        </div>
+      </main>
+    </div><footer class="footer footer--base">
+  <div class="by_farbox">
+    <ul class="footer__list">
+      <li class="footer__item">
+        &copy;
+        
+          GhostBasenji 2023
+
+        
+      </li>
+      
+    </ul>
+  </div>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.44288fd315b6cda68c1f4743caad56535c0f81a5b5a672f385e82b3896575c1d.js"
+    integrity="sha256-RCiP0xW2zaaMH0dDyq1WU1wPgaW1pnLzhegrOJZXXB0="
+    crossorigin="anonymous"
+  ></script></body>
+</html>

@@ -6,7 +6,19 @@
     <description>Recent content in C# on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru</language>
-    <lastBuildDate>Fri, 24 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/c#/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 25 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/c#/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Day 11. Вывод греческих букв, символов мат.операторов. Кодовая таблица Unicode</title>
+      <link>/post/day-11/</link>
+      <pubDate>Sat, 25 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/post/day-11/</guid>
+      
+        <description>&lt;h3 id=&#34;немного-ликбеза&#34;&gt;Немного ликбеза&lt;/h3&gt;
+&lt;p&gt;Хранение текстовых данных в памяти ЭВМ предполагает кодирование символов по какому-либо принципу. Таких кодировок несколько. Каждой кодировке соответствует своя таблица символов. В таких таблицах каждой ячейке соответствует номер в таблице и символ. Мы упомянем кодовые таблицы: ASCII, ANSI Cyrillic (другое название этой таблицы – Windows 1251), а также Unicode.&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>Day 10. Калькулятор на основе комбинированного списка ComboBox</title>
       <link>/post/day-10/</link>
