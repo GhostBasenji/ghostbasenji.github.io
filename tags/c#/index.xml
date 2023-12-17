@@ -6,7 +6,18 @@
     <description>Recent content in C# on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru</language>
-    <lastBuildDate>Sat, 25 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/c#/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/c#/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Day 12. Ввод и вывод в консольном приложении</title>
+      <link>/post/day-12/</link>
+      <pubDate>Sun, 26 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/post/day-12/</guid>
+      
+        <description>&lt;p&gt;Иногда, например для научных расчетов, требуется организовать какой-нибудь самый простой ввод данных, выполнить, м.б., весьма сложную математическую обработку введенных данных и оперативно вывести на экран результат вычислений. Такая же ситуация возникает и тогда, когда большая программа отлаживается по частям. И для отладки вычислительной части совершенно не важен сервис при вводе данных.&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>Day 11. Вывод греческих букв, символов мат.операторов. Кодовая таблица Unicode</title>
       <link>/post/day-11/</link>
