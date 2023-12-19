@@ -8,7 +8,7 @@
     <language>ru</language>
     <lastBuildDate>Sun, 26 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Day 12. Ввод и вывод в консольном приложении</title>
+      <title>#12. Ввод и вывод в консольном приложении</title>
       <link>/post/day-12/</link>
       <pubDate>Sun, 26 Nov 2023 00:00:00 +0000</pubDate>
       
@@ -19,7 +19,7 @@
     </item>
     
     <item>
-      <title>Day 11. Вывод греческих букв, символов мат.операторов. Кодовая таблица Unicode</title>
+      <title>#11. Вывод греческих букв, символов мат.операторов. Кодовая таблица Unicode</title>
       <link>/post/day-11/</link>
       <pubDate>Sat, 25 Nov 2023 00:00:00 +0000</pubDate>
       
@@ -31,7 +31,7 @@
     </item>
     
     <item>
-      <title>Day 10. Калькулятор на основе комбинированного списка ComboBox</title>
+      <title>#10. Калькулятор на основе комбинированного списка ComboBox</title>
       <link>/post/day-10/</link>
       <pubDate>Fri, 24 Nov 2023 00:00:00 +0000</pubDate>
       
@@ -42,7 +42,7 @@
     </item>
     
     <item>
-      <title>Day 9. Свойство Visible и всплывающая подсказка ToolTip</title>
+      <title>#9. Свойство Visible и всплывающая подсказка ToolTip</title>
       <link>/post/day-9/</link>
       <pubDate>Thu, 23 Nov 2023 00:00:00 +0000</pubDate>
       
@@ -53,7 +53,7 @@
     </item>
     
     <item>
-      <title>Day 8. Вкладки TabControl и переключатели RadioButton</title>
+      <title>#8. Вкладки TabControl и переключатели RadioButton</title>
       <link>/post/day-8/</link>
       <pubDate>Wed, 22 Nov 2023 00:00:00 +0000</pubDate>
       
@@ -64,7 +64,7 @@
     </item>
     
     <item>
-      <title>Day 7. Побитовый оператор &#39;исключающее ИЛИ&#39;</title>
+      <title>#7. Побитовый оператор &#39;исключающее ИЛИ&#39;</title>
       <link>/post/day-7/</link>
       <pubDate>Tue, 21 Nov 2023 00:00:00 +0000</pubDate>
       
@@ -75,7 +75,7 @@
     </item>
     
     <item>
-      <title>Day 6. Управление стилем шрифта с помощью элемента управления CheckBox</title>
+      <title>#6. Управление стилем шрифта с помощью элемента управления CheckBox</title>
       <link>/post/day-6/</link>
       <pubDate>Mon, 20 Nov 2023 00:00:00 +0000</pubDate>
       
@@ -86,7 +86,7 @@
     </item>
     
     <item>
-      <title>Day 5. Ввод пароля в текстовое поле и изменение шрифта</title>
+      <title>#5. Ввод пароля в текстовое поле и изменение шрифта</title>
       <link>/post/day-5/</link>
       <pubDate>Sun, 19 Nov 2023 00:00:00 +0000</pubDate>
       
@@ -97,7 +97,7 @@
     </item>
     
     <item>
-      <title>Day 4. Ввод данных через текстовое поле TextBox с проверкой типа методом TryParse</title>
+      <title>#4. Ввод данных через текстовое поле TextBox с проверкой типа методом TryParse</title>
       <link>/post/day-4/</link>
       <pubDate>Sat, 18 Nov 2023 00:00:00 +0000</pubDate>
       
@@ -108,7 +108,7 @@
     </item>
     
     <item>
-      <title>Day 3. Выбор нужной даты</title>
+      <title>#3. Выбор нужной даты</title>
       <link>/post/day-3/</link>
       <pubDate>Fri, 17 Nov 2023 00:00:00 +0000</pubDate>
       
@@ -119,7 +119,7 @@
     </item>
     
     <item>
-      <title>Day 2. Событие MouseHover</title>
+      <title>#2. Событие MouseHover</title>
       <link>/post/day-2/</link>
       <pubDate>Thu, 16 Nov 2023 00:00:00 +0000</pubDate>
       
@@ -130,7 +130,7 @@
     </item>
     
     <item>
-      <title>Day 1. Первая программа</title>
+      <title>#1. Первая программа</title>
       <link>/post/day-1/</link>
       <pubDate>Wed, 15 Nov 2023 00:00:00 +0000</pubDate>
       
