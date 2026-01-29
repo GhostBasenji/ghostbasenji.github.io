@@ -1,0 +1,29 @@
+<!doctype html><html lang=ru><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Архитектура Приложений | Ghost Basenji</title><meta name=description content="Записки начинающего программиста"><meta property="og:type" content="article"><meta property="og:title" content="Архитектура Приложений"><meta property="og:description" content="Записки начинающего программиста"><meta property="og:url" content="https://ghostbasenji.github.io/tags/%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0-%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9/"><meta property="og:site_name" content="Ghost Basenji"><meta name=twitter:card content="summary_large_image"><meta name=twitter:title content="Архитектура Приложений"><meta name=twitter:description content="Записки начинающего программиста"><link rel=stylesheet href=/css/main.css><link rel=stylesheet href=/css/monokailight.css><link rel=stylesheet href=/fontawesome/css/all.min.css><link rel=stylesheet href=/css/404.css><link rel=icon href=/images/favicon.ico type=image/x-icon><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js onload=renderMathInElement(document.body)></script></head><body><style>:root{--content-width:1000px;--sidebar-width:340px;--sidebar-padding:32px;--logo-size:120px}</style><div class=layout><main class=content><h1 class=page-title>Архитектура Приложений</h1><section class=post-list><article class=post-item><h2 class=post-title><a href=/post/edutest-theory/>EduTest: проектирование и архитектура проекта</a></h2><div class=post-meta>01 Dec 2025</div><p class=post-summary><p>В этой статье мы подробно рассмотрим <strong>архитектуру проекта</strong>, <strong>структуру базы данных</strong>, <strong>организацию Blazor-проекта</strong> и <strong>подход к работе с Git</strong>, чтобы читатель понял, как проектировать и развивать подобные системы.</p></p><div class=post-taxonomies><div class=post-categories><a class=post-category href=/categories/c%23-development/>C# Development
+</a><a class=post-category href=/categories/pet-projects/>Pet Projects
+</a><a class=post-category href=/categories/blazor/>Blazor
+</a><a class=post-category href=/categories/educational-platforms/>Educational Platforms
+</a><a class=post-category href=/categories/edutest/>EduTest
+</a><a class=post-category href=/categories/c%23/>C#
+</a><a class=post-category href=/categories/mssql/>MSSQL
+</a><a class=post-category href=/categories/%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0/>Архитектура
+</a><a class=post-category href=/categories/.net-backend/>.NET Backend
+</a><a class=post-category href=/categories/asp.net-core/>ASP.NET Core
+</a><a class=post-category href=/categories/node.js/>Node.js</a></div><div class=post-tags><a class=post-tag href=/tags/blazor-server/>#Blazor Server
+</a><a class=post-tag href=/tags/c%23/>#C#
+</a><a class=post-tag href=/tags/mssql/>#MSSQL
+</a><a class=post-tag href=/tags/ef-core/>#EF Core
+</a><a class=post-tag href=/tags/pet-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82/>#Pet-Проект
+</a><a class=post-tag href=/tags/git-workflow/>#Git Workflow
+</a><a class=post-tag href=/tags/%D1%82%D0%B5%D1%81%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B7%D0%BD%D0%B0%D0%BD%D0%B8%D0%B9/>#Тестирование Знаний
+</a><a class=post-tag href=/tags/%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0-%D0%BF%D0%BE/>#Разработка ПО
+</a><a class=post-tag href=/tags/%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0-%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9/>#Архитектура Приложений
+</a><a class=post-tag href=/tags/.net-backend/>#.NET Backend
+</a><a class=post-tag href=/tags/asp.net-core/>#ASP.NET Core
+</a><a class=post-tag href=/tags/node.js/>#Node.js</a></div></div></article></section></main><aside class=sidebar><div class=sidebar-card><div class=sidebar-top><div class=site-logo><img src=/images/logo.png alt=Logo></div><h1 class=site-title>Ghost Basenji</h1><p class=site-description>Записки начинающего программиста</p><div class=sidebar-social><a href=mailto:petr.and.vic@gmail.com title=Email target=_blank rel=noopener><i class="fas fa-envelope"></i>
+</a><a href=https://t.me/ghostbasenji title=Telegram target=_blank rel=noopener><i class="fab fa-telegram-plane"></i>
+</a><a href=https://github.com/GhostBasenji title=GitHub target=_blank rel=noopener><i class="fab fa-github"></i></a></div></div><div class=sidebar-divider></div><nav class=site-nav><ul><li><a href=/>Home</a></li><li><a href=/categories/>Категории</a></li><li><a href=/tags/>Теги</a></li><li><a href=/about/>About</a></li></ul></nav></div></aside></div><footer class=site-footer><div class=footer-divider></div><div class=footer-content><div class=footer-line>©Ghost Basenji, 2026</div><div class=footer-line>Сделано на Hugo
+<span class=footer-heart>❤</span>
+—
+тема
+<a href=https://github.com/GhostBasenji/notepadium-nova target=_blank rel=noopener>notepadium-nova</a></div></div></footer><button id=scrollTopBtn title="Go to top">↑</button>
+<script src=/js/theme-toggle.js></script><script src=/js/scroll-top.js></script></body></html>
