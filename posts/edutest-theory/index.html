@@ -1,0 +1,135 @@
+<!doctype html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>EduTest: проектирование и архитектура проекта · Ghost Basenji</title><meta name=description content="Записки начинающего программиста"><meta name=author content="Ghost Basenji"><meta property="og:title" content="EduTest: проектирование и архитектура проекта"><meta property="og:description" content="Записки начинающего программиста"><meta property="og:image" content="https://ghostbasenji.github.io/og-image.png"><meta property="og:type" content="website"><link rel=icon href=/light.png><link rel=stylesheet href=/css/main.min.6798d4115e705990cc8ed0cd7d8753bef86c425b58403b708f908b5506c3553d.css integrity="sha256-Z5jUEV5wWZDMjtDNfYdTvvhsQltYQDtwj5CLVQbDVT0="><link rel=stylesheet href=/css/syntax.min.1a3c46e4933143110d6e9003fb6d0853789bb8a00925c79947375023bb2571a9.css integrity="sha256-GjxG5JMxQxENbpAD+20IU3ibuKAJJceZRzdQI7slcak="><link rel=stylesheet href=/pagefind/pagefind-ui.css><script src=/pagefind/pagefind-ui.js></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js onload='renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\[",right:"\\]",display:!0},{left:"\\(",right:"\\)",display:!1}]})'></script><script src=https://code.iconify.design/2/2.2.1/iconify.min.js></script><script>(function(){var e=localStorage.getItem("theme"),t=window.matchMedia("(prefers-color-scheme: dark)").matches;(e==="dark"||!e&&t)&&document.documentElement.classList.add("dark")})()</script></head><body><div class=shell><aside class=sidebar><div class=brand><div class=brand__logo><img src=/light.png alt="Site logo" width=100 height=100 loading=eager class=brand__logo-light>
+<img src=/dark.png alt="Site logo" width=100 height=100 loading=eager class=brand__logo-dark></div><div class=brand__text><span class=brand__title>Ghost Basenji</span>
+<span class=brand__desc>Записки начинающего программиста</span></div></div><button class=search-box onclick=openSearch() aria-label=Search>
+<span class=iconify data-icon=mdi:magnify style=font-size:1rem></span>
+<span class=search-box__label>Search...</span>
+<kbd>K</kbd></button><nav class=nav><a href=/ class=nav__item><div class=nav__text><span class=nav__name>Home</span>
+<span class=nav__subtitle>Index</span></div><span class=nav__arrow><span class=iconify data-icon=mdi:arrow-right></span>
+</span></a><a href=/posts class="nav__item is-active"><div class=nav__text><span class=nav__name>Writing</span>
+<span class=nav__subtitle>Blog</span></div><span class=nav__arrow><span class=iconify data-icon=mdi:arrow-right></span>
+</span></a><a href=/projects class=nav__item><div class=nav__text><span class=nav__name>Projects</span>
+<span class=nav__subtitle>Works</span></div><span class=nav__arrow><span class=iconify data-icon=mdi:arrow-right></span>
+</span></a><a href=/about class=nav__item><div class=nav__text><span class=nav__name>About</span>
+<span class=nav__subtitle>Me</span></div><span class=nav__arrow><span class=iconify data-icon=mdi:arrow-right></span></span></a></nav><div class=sidebar__footer><div class=social><a href=mailto:petr.and.vic@gmail.com class=social__link aria-label=Email><span class=social__icon><svg viewBox="0 0 512 512"><path fill="currentColor" d="M48 64C21.5 64 0 85.5.0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4.0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4.0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3.0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8.0L0 176z"/></svg>
+</span></a><a href=https://t.me/ghostbasenji class=social__link aria-label=Telegram><span class=social__icon><svg viewBox="0 0 496 512"><path fill="currentColor" d="M248 8C111 8 0 119 0 256S111 504 248 504 496 393 496 256 385 8 248 8zM363 176.7c-3.7 39.2-19.9 134.4-28.1 178.3-3.5 18.6-10.3 24.8-16.9 25.4-14.4 1.3-25.3-9.5-39.3-18.7-21.8-14.3-34.2-23.2-55.3-37.2-24.5-16.1-8.6-25 5.3-39.5 3.7-3.8 67.1-61.5 68.3-66.7.2-.7.1-3.1-1.2-4.4s-3.2-.8-4.6-.5q-2.9.7-92.2 61c-8.7 6-16.6 8.9-23.7 8.7-7.8-.2-22.8-4.4-34-8-13.7-4.4-24.6-6.7-23.7-14.1q.7-5.8 19.7-11.8 115.6-50.3 153.4-66.5c73.1-30.4 88.3-35.7 98.2-35.9 2.2.0 7 .5 10.1 3.1 2.6 2.2 3.3 5.1 3.7 7.2-.1 1.8.2 5.5-.3 8.5z"/></svg>
+</span></a><a href=https://github.com/GhostBasenji class=social__link aria-label=GitHub><span class=social__icon><svg viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6.0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6.0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3.0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1.0-6.2-.3-40.4-.3-61.4.0.0-70 15-84.7-29.8.0.0-11.4-29.1-27.8-36.6.0.0-22.9-15.7 1.6-15.4.0.0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5.0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9.0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4.0 33.7-.3 75.4-.3 83.6.0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 389.5 8 244.8 8z"/></svg></span></a></div><button class=theme-toggle onclick=toggleTheme() aria-label="Toggle theme">
+<span class="icon-sun iconify" data-icon=mdi:weather-sunny></span>
+<span class="icon-moon iconify" data-icon=mdi:weather-night></span></button></div></aside><div class=main-content><article class=page><header class=post-header><div class=post-breadcrumb><a href=/posts>Writing</a>
+<span class=post-breadcrumb__sep>/</span>
+<span>Detail</span></div><h1 class=post-title>EduTest: проектирование и архитектура проекта</h1><div class=post-meta><div class=post-meta__pill><span class="post-meta__icon iconify" data-icon=mdi:calendar-blank></span>
+<span>2025.12.01</span>
+<span class=post-meta__sep></span>
+<span class="post-meta__icon iconify" data-icon=mdi:tag-outline></span>
+<a href=/categories/csharp-development>C# Development</a></div><div class="post-meta__pill post-meta__pill--dim"><span>755 Words</span></div></div></header><details class=toc><summary>Содержание</summary><div class=toc__inner><nav id=TableOfContents><ul><li><a href=#архитектура-системы>Архитектура системы</a><ul><li><a href=#роли-пользователей>Роли пользователей</a></li></ul></li><li><a href=#структура-базы-данных-mssql>Структура базы данных MSSQL</a><ul><li><a href=#таблица-users>Таблица Users</a></li><li><a href=#таблицы-teachers-и-students>Таблицы Teachers и Students</a></li><li><a href=#таблица-subjects-и-categories>Таблица Subjects и Categories</a></li><li><a href=#таблицы-questions-и-answers>Таблицы Questions и Answers</a></li><li><a href=#таблица-tests>Таблица Tests</a></li><li><a href=#таблица-testassignments>Таблица TestAssignments</a></li><li><a href=#таблица-testattempts>Таблица TestAttempts</a></li><li><a href=#таблица-auditlog>Таблица AuditLog</a></li></ul></li></ul><ul><li><ul><li><a href=#схема-интерфейса-ролей>Схема интерфейса ролей</a></li></ul></li><li><a href=#работа-с-git-и-ветками>Работа с Git и ветками</a><ul><li><a href=#основные-ветки>Основные ветки</a></li><li><a href=#пример-рабочего-процесса>Пример рабочего процесса</a></li></ul></li><li><a href=#заключение>Заключение</a><ul><li><a href=#серия-постов>Серия постов</a></li></ul></li></ul></nav></div></details><div class=prose><p>В этой статье мы подробно рассмотрим <strong>архитектуру проекта</strong>, <strong>структуру базы данных</strong>, <strong>организацию Blazor-проекта</strong> и <strong>подход к работе с Git</strong>, чтобы читатель понял, как проектировать и развивать подобные системы.</p><p>Современные образовательные системы всё чаще используют цифровые платформы для тестирования знаний учащихся. <strong>EduTest</strong> — учебный проект на стеке <strong>C#</strong>+<strong>Blazor Server</strong>+<strong>MSSQL</strong>, который позволяет:</p><ul><li>создавать и проходить тесты с разными уровнями сложности,</li><li>прикреплять к вопросам изображения и видео,</li><li>назначать тесты ученикам и группам,</li><li>вести аудит действий пользователей,</li><li>гибко управлять ролями: администратор, учитель и ученик.</li></ul><p>Система построена так, что после единого окна входа каждый пользователь видит интерфейс своей роли. Администратор управляет всей платформой, учитель создаёт тесты и следит за результатами, а ученик получает доступ к заданиям и статистике своих попыток.</p><hr><h2 id=архитектура-системы>Архитектура системы</h2><p>Проект построен по слоистой архитектуре:</p><pre tabindex=0><code>┌──────────────────────┐
+│        Pages         │  ← UI: Razor Components
+└──────────┬───────────┘
+           │
+┌──────────▼───────────┐
+│       Services       │  ← бизнес-логика приложения
+└──────────┬───────────┘
+           │
+┌──────────▼───────────┐
+│         Data         │  ← EF Core, DbContext, сущности
+└──────────┬───────────┘
+           │
+┌──────────▼───────────┐
+│       MSSQL DB       │  ← хранилище данных
+└──────────────────────┘
+</code></pre><p>Такое разделение позволяет:</p><ul><li>легко масштабировать проект,</li><li>расширять функциональность,</li><li>добавлять новые поля и таблицы без нарушения логики.</li></ul><hr><h3 id=роли-пользователей>Роли пользователей</h3><p>🛠 <strong>Администратор</strong></p><ul><li>Управляет пользователями (учителя, ученики)</li><li>Настраивает глобальные параметры системы</li><li>Управляет предметами, категориями, сложностями</li><li>Полный доступ к данным и функционалу</li><li>Может добавлять новые таблицы и поля</li><li>Просматривает аудит-логи</li></ul><p>📘 <strong>Учитель</strong></p><ul><li>Создаёт и редактирует тесты</li><li>Загружает изображения и видео к вопросам/ответам</li><li>Управляет предметами и учебными группами</li><li>Назначает тесты ученикам</li><li>Включает таймер (экзаменационный режим), рандомизацию и уровни сложности</li><li>Просматривает результаты учеников</li></ul><p>👨‍🎓 <strong>Ученик</strong></p><ul><li>Проходит тесты, доступные в системе</li><li>Может завершить тест досрочно</li><li>Получает результаты и статистику</li><li>Видит историю попыток</li><li>При желании видит свои ошибки (по настройкам учителя)</li></ul><hr><h2 id=структура-базы-данных-mssql>Структура базы данных MSSQL</h2><h3 id=таблица-users>Таблица Users</h3><table><thead><tr><th>Поле</th><th>Тип</th><th>Описание</th></tr></thead><tbody><tr><td>UserId</td><td>INT PK IDENTITY</td><td>Пользователь</td></tr><tr><td>Username</td><td>NVARCHAR(100)</td><td>Логин</td></tr><tr><td>PasswordHash</td><td>VARBINARY(256)</td><td>Хеш пароля</td></tr><tr><td>Role</td><td>NVARCHAR(20)</td><td>Admin / Teacher / Student</td></tr><tr><td>CreatedAt</td><td>DATETIME2</td><td>Дата создания</td></tr></tbody></table><hr><h3 id=таблицы-teachers-и-students>Таблицы Teachers и Students</h3><p><em><strong>Teachers</strong></em></p><table><thead><tr><th>Поле</th><th>Тип</th></tr></thead><tbody><tr><td>TeacherId</td><td>INT PK</td></tr><tr><td>UserId</td><td>INT FK</td></tr><tr><td>SubjectId</td><td>INT FK</td></tr><tr><td>IsClassTeacher</td><td>BIT</td></tr></tbody></table><p><em><strong>Students</strong></em></p><table><thead><tr><th>Поле</th><th>Тип</th></tr></thead><tbody><tr><td>StudentId</td><td>INT PK</td></tr><tr><td>UserId</td><td>INT FK</td></tr><tr><td>ClassName</td><td>NVARCHAR(50)</td></tr></tbody></table><hr><h3 id=таблица-subjects-и-categories>Таблица Subjects и Categories</h3><table><thead><tr><th>Таблица</th><th>Поля</th></tr></thead><tbody><tr><td>Subjects</td><td>SubjectId, Name</td></tr><tr><td>Categories</td><td>CategoryId, Name</td></tr></tbody></table><hr><h3 id=таблицы-questions-и-answers>Таблицы Questions и Answers</h3><p><em><strong>Questions</strong></em></p><table><thead><tr><th>Поле</th><th>Тип</th></tr></thead><tbody><tr><td>QuestionId</td><td>INT PK</td></tr><tr><td>TestId</td><td>INT FK</td></tr><tr><td>Text</td><td>NVARCHAR(MAX)</td></tr><tr><td>ImagePath</td><td>NVARCHAR(300) NULL</td></tr><tr><td>Difficulty</td><td>INT</td></tr><tr><td>CategoryId</td><td>INT FK</td></tr></tbody></table><p><em><strong>Answers</strong></em></p><table><thead><tr><th>Поле</th><th>Тип</th></tr></thead><tbody><tr><td>AnswerId</td><td>INT PK</td></tr><tr><td>QuestionId</td><td>INT FK</td></tr><tr><td>Text</td><td>NVARCHAR(MAX)</td></tr><tr><td>ImagePath</td><td>NVARCHAR(300) NULL</td></tr><tr><td>IsCorrect</td><td>BIT</td></tr></tbody></table><hr><h3 id=таблица-tests>Таблица Tests</h3><table><thead><tr><th>Поле</th><th>Тип</th></tr></thead><tbody><tr><td>TestId</td><td>INT PK</td></tr><tr><td>TeacherId</td><td>INT FK</td></tr><tr><td>SubjectId</td><td>INT FK</td></tr><tr><td>Title</td><td>NVARCHAR(200)</td></tr><tr><td>Description</td><td>NVARCHAR(MAX)</td></tr><tr><td>QuestionCount</td><td>INT</td></tr><tr><td>PassingScore</td><td>INT</td></tr><tr><td>IsExam</td><td>BIT</td></tr><tr><td>EnableTimeLimit</td><td>BIT</td></tr><tr><td>TimeLimitMinutes</td><td>INT NULL (30–60)</td></tr><tr><td>EnableRandomization</td><td>BIT</td></tr><tr><td>EnableDifficulty</td><td>BIT</td></tr><tr><td>CreatedAt</td><td>DATETIME2</td></tr><tr><td>UpdatedAt</td><td>DATETIME2</td></tr></tbody></table><hr><h3 id=таблица-testassignments>Таблица TestAssignments</h3><table><thead><tr><th>Поле</th><th>Тип</th></tr></thead><tbody><tr><td>AssignmentId</td><td>INT PK</td></tr><tr><td>TestId</td><td>INT FK</td></tr><tr><td>GroupId</td><td>INT FK</td></tr><tr><td>AssignedAt</td><td>DATETIME2</td></tr></tbody></table><hr><h3 id=таблица-testattempts>Таблица TestAttempts</h3><table><thead><tr><th>Поле</th><th>Тип</th></tr></thead><tbody><tr><td>AttemptId</td><td>INT PK</td></tr><tr><td>AssignmentId</td><td>INT FK</td></tr><tr><td>StudentId</td><td>INT FK</td></tr><tr><td>StartedAt</td><td>DATETIME2</td></tr><tr><td>FinishedAt</td><td>DATETIME2</td></tr><tr><td>FinishedEarly</td><td>BIT</td></tr><tr><td>RemainingSeconds</td><td>INT NULL</td></tr><tr><td>Score</td><td>INT</td></tr><tr><td>CorrectAnswers</td><td>INT</td></tr><tr><td>WrongAnswers</td><td>INT</td></tr></tbody></table><hr><h3 id=таблица-auditlog>Таблица AuditLog</h3><table><thead><tr><th>Поле</th><th>Тип</th></tr></thead><tbody><tr><td>LogId</td><td>INT PK</td></tr><tr><td>UserId</td><td>INT FK</td></tr><tr><td>Action</td><td>NVARCHAR(300)</td></tr><tr><td>Entity</td><td>NVARCHAR(100)</td></tr><tr><td>Timestamp</td><td>DATETIME2</td></tr></tbody></table><hr><h1 id=-структура-проекта-blazor-edutest>💻 Структура проекта Blazor (EduTest)</h1><pre tabindex=0><code>EduTest/
+│
+├── Data/
+│   ├── EduTestDbContext.cs
+│   ├── Entities/
+│   └── Migrations/
+│
+├── Services/
+│   ├── AuthService.cs
+│   ├── UserService.cs
+│   ├── TestService.cs
+│   ├── QuestionService.cs
+│   ├── AssignmentService.cs
+│   ├── StudentService.cs
+│   └── AuditLogService.cs
+│
+├── Pages/
+│   ├── Login.razor
+│   ├── Admin/
+│   ├── Teacher/
+│   └── Student/
+│
+├── Components/
+│   ├── TimerComponent.razor
+│   ├── QuestionCard.razor
+│   ├── AnswerOption.razor
+│   └── LoadingIndicator.razor
+│
+├── wwwroot/
+│   ├── uploads/
+│   ├── css/
+│   ├── js/
+│   └── images/
+│
+├── App.razor
+├── Program.cs
+└── appsettings.json
+</code></pre><h3 id=схема-интерфейса-ролей>Схема интерфейса ролей</h3><pre tabindex=0><code>Login.razor
+      │
+      ├── Admin/     → управление системой
+      ├── Teacher/   → тесты, вопросы, группы
+      └── Student/   → прохождение тестов
+</code></pre><hr><h2 id=работа-с-git-и-ветками>Работа с Git и ветками</h2><h3 id=основные-ветки>Основные ветки</h3><pre tabindex=0><code>master        → стабильные релизы
+dev           → основная ветка разработки
+feature/*     → новые фичи (feature/auth, feature/tests)
+hotfix/*      → экстренные исправления
+release/*     → подготовка релизов
+</code></pre><hr><h3 id=пример-рабочего-процесса>Пример рабочего процесса</h3><p><strong>1. Разработка новой функции</strong></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>git checkout dev
+</span></span><span class=line><span class=cl>git checkout -b feature/tests
+</span></span></code></pre></div><p>Разработка → коммит:</p><pre tabindex=0><code>git add .
+git commit -m &#34;Added basic test editor&#34;
+</code></pre><p><strong>2. Завершение работы над функцией</strong></p><pre tabindex=0><code>git checkout dev
+git merge feature/tests
+</code></pre><p><strong>3. Подготовка релиза</strong></p><pre tabindex=0><code>git checkout -b release/v1.0
+</code></pre><p><strong>4. Выпуск стабильной версии</strong></p><pre tabindex=0><code>git checkout master
+git merge release/v1.0
+git tag v1.0
+</code></pre><p><strong>5. Экстренный hotfix</strong></p><pre tabindex=0><code>git checkout master
+git checkout -b hotfix/login-bug
+git add .
+git commit -m &#34;Fix NullReferenceException&#34;
+git checkout master
+git merge hotfix/login-bug
+git checkout dev
+git merge hotfix/login-bug
+</code></pre><hr><h2 id=заключение>Заключение</h2><p>EduTest — современная система тестирования знаний с:</p><ul><li>продуманной архитектурой,</li><li>разграничением ролей,</li><li>расширяемой базой данных,</li><li>гибким Git-workflow,</li><li>единым окном входа.</li></ul><p>Проект подходит как учебный пет-проект и фундамент для реальных образовательных платформ.</p><hr><h3 id=серия-постов>Серия постов</h3><ul><li><a href=https://ghostbasenji.github.io/post/edutest-intro/>EduTest: создаём систему тестирования на Blazor + C# + MSSQL (вводная статья)</a></li><li><a href=https://ghostbasenji.github.io/post/edutest-theory/>EduTest: проектирование и архитектура проекта</a></li></ul></div><div class=tags><a href=/tags/Blazor%20Server class=tag><span class=tag__hash>#</span>
+<span class=tag__name>Blazor Server</span>
+</a><a href=/tags/csharp class=tag><span class=tag__hash>#</span>
+<span class=tag__name>C#</span>
+</a><a href=/tags/MSSQL class=tag><span class=tag__hash>#</span>
+<span class=tag__name>MSSQL</span>
+</a><a href=/tags/EF%20Core class=tag><span class=tag__hash>#</span>
+<span class=tag__name>EF Core</span>
+</a><a href=/tags/pet-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82 class=tag><span class=tag__hash>#</span>
+<span class=tag__name>pet-проект</span>
+</a><a href=/tags/Git%20workflow class=tag><span class=tag__hash>#</span>
+<span class=tag__name>Git workflow</span>
+</a><a href=/tags/%d0%a2%d0%b5%d1%81%d1%82%d0%b8%d1%80%d0%be%d0%b2%d0%b0%d0%bd%d0%b8%d0%b5%20%d0%b7%d0%bd%d0%b0%d0%bd%d0%b8%d0%b9 class=tag><span class=tag__hash>#</span>
+<span class=tag__name>Тестирование знаний</span>
+</a><a href=/tags/%d0%a0%d0%b0%d0%b7%d1%80%d0%b0%d0%b1%d0%be%d1%82%d0%ba%d0%b0%20%d0%9f%d0%9e class=tag><span class=tag__hash>#</span>
+<span class=tag__name>Разработка ПО</span>
+</a><a href=/tags/%d0%90%d1%80%d1%85%d0%b8%d1%82%d0%b5%d0%ba%d1%82%d1%83%d1%80%d0%b0%20%d0%bf%d1%80%d0%b8%d0%bb%d0%be%d0%b6%d0%b5%d0%bd%d0%b8%d0%b9 class=tag><span class=tag__hash>#</span>
+<span class=tag__name>Архитектура приложений</span>
+</a><a href=/tags/.NET%20Backend class=tag><span class=tag__hash>#</span>
+<span class=tag__name>.NET Backend</span>
+</a><a href=/tags/ASP.NET%20Core class=tag><span class=tag__hash>#</span>
+<span class=tag__name>ASP.NET Core</span>
+</a><a href=/tags/Node.js class=tag><span class=tag__hash>#</span>
+<span class=tag__name>Node.js</span></a></div></article><footer class=post-footer><div class=post-footer__bar><a href=/posts class=back-link><span class="back-link__icon iconify" data-icon=mdi:arrow-left></span>
+Back to posts
+</a><span class=end-of-post>End of Post</span></div></footer></div></div><div id=search-modal class=search-modal><div id=modal-overlay class=search-modal__overlay></div><div class=search-modal__content><div class=search-modal__input-wrap><span class="iconify search-modal__icon" data-icon=mdi:magnify></span>
+<input id=search-input type=text class=search-modal__input placeholder=Search... autocomplete=off>
+<kbd class=search-modal__esc>Esc</kbd></div><div id=search-results class=search-modal__results></div><div class=search-modal__navigate><p class=search-modal__navigate-label>Navigate</p><div class=search-modal__navigate-links><a href=/categories class=search-modal__nav-link>categories</a>
+<a href=/tags class=search-modal__nav-link>tags</a>
+<a href=/tools class=search-modal__nav-link>tools</a></div></div></div></div><div id=lightbox class=lightbox><button class=lightbox__close id=lightbox-close aria-label=Закрыть>
+<span class=iconify data-icon=mdi:close></span>
+</button>
+<img id=lightbox-img class=lightbox__img src alt></div><script>function toggleTheme(){var e=document.documentElement.classList.toggle("dark");localStorage.setItem("theme",e?"dark":"light")}</script><script>document.querySelectorAll(".highlight").forEach(function(e){var t,s,o,n=e.querySelector("code");if(!n)return;s=Array.from(n.classList),t=s.find(function(e){return e.startsWith("language-")}),t&&(o=t.replace("language-",""),e.setAttribute("data-lang",o))})</script><script>var overlay,searchInput,pagefindLoaded=!1;function openSearch(){var e=document.getElementById("search-modal");if(!e)return;e.classList.add("is-open"),!pagefindLoaded&&typeof PagefindUI!="undefined"&&(new PagefindUI({element:"#search-results",showSubResults:!0,resetStyles:!1,translations:{placeholder:""}}),setTimeout(function(){var e,t=document.querySelector("#search-results .pagefind-ui__search-input");t&&(e=t.closest(".pagefind-ui__form"),e&&(e.style.display="none"))},50),pagefindLoaded=!0),setTimeout(function(){var e=document.getElementById("search-input");e&&e.focus()},50)}function closeSearch(){var e=document.getElementById("search-modal");e&&e.classList.remove("is-open")}overlay=document.getElementById("modal-overlay"),overlay&&overlay.addEventListener("click",closeSearch),searchInput=document.getElementById("search-input"),searchInput&&searchInput.addEventListener("input",function(){if(!pagefindLoaded)return;var e=document.querySelector("#search-results .pagefind-ui__search-input");e&&(e.value=this.value,e.dispatchEvent(new Event("input",{bubbles:!0})))}),document.addEventListener("keydown",function(e){(e.metaKey||e.ctrlKey)&&e.key==="k"&&(e.preventDefault(),openSearch()),e.key==="Escape"&&closeSearch()})</script><script>(function(){var e=document.getElementById("lightbox"),n=document.getElementById("lightbox-img"),s=document.getElementById("lightbox-close");function o(t,s){n.src=t,n.alt=s||"",e.classList.add("is-open"),document.body.style.overflow="hidden"}function t(){e.classList.remove("is-open"),document.body.style.overflow=""}document.querySelectorAll(".prose img").forEach(function(e){e.addEventListener("click",function(){o(this.src,this.alt)})}),s.addEventListener("click",function(e){e.stopPropagation(),t()}),e.addEventListener("click",function(n){n.target===e&&t()}),document.addEventListener("keydown",function(n){n.key==="Escape"&&e.classList.contains("is-open")&&t()})})()</script></body></html>
