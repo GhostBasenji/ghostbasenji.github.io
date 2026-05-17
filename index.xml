@@ -1,4 +1,27 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ghost Basenji</title><link>https://ghostbasenji.github.io/</link><description>Recent content on Ghost Basenji</description><generator>Hugo</generator><language>ru</language><lastBuildDate>Thu, 01 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://ghostbasenji.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Hello World</title><link>https://ghostbasenji.github.io/posts/hello-world/</link><pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate><guid>https://ghostbasenji.github.io/posts/hello-world/</guid><description>&lt;p&gt;Привет, это тестовый пост. Test
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ghost Basenji</title><link>https://ghostbasenji.github.io/</link><description>Recent content on Ghost Basenji</description><generator>Hugo</generator><language>ru</language><lastBuildDate>Sun, 17 May 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://ghostbasenji.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Отображение и обработка изображений в WPF (XAML + C#)</title><link>https://ghostbasenji.github.io/posts/wpf-imageviewer/</link><pubDate>Sun, 17 May 2026 00:00:00 +0000</pubDate><guid>https://ghostbasenji.github.io/posts/wpf-imageviewer/</guid><description>&lt;hr&gt;
+&lt;h2 id="введение"&gt;Введение&lt;/h2&gt;
+&lt;p&gt;В этой статье рассмотрим простой WPF‑проект &lt;strong&gt;ImageViewer&lt;/strong&gt;, который демонстрирует базовую работу с изображениями: загрузку, отображение и простую обработку без использования сторонних библиотек.&lt;/p&gt;
+&lt;p&gt;Несмотря на кажущуюся простоту задачи, работа с изображениями в WPF построена на отдельной графической модели. Поэтому важно понимать не только &lt;em&gt;как&lt;/em&gt; загрузить картинку, но и &lt;em&gt;что именно происходит внутри WPF&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Поддерживаемые форматы:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;BMP&lt;/li&gt;
+&lt;li&gt;GIF&lt;/li&gt;
+&lt;li&gt;ICO&lt;/li&gt;
+&lt;li&gt;JPG / JPEG&lt;/li&gt;
+&lt;li&gt;PNG&lt;/li&gt;
+&lt;li&gt;TIFF&lt;/li&gt;
+&lt;li&gt;WDP&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;В статье реализуем:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;загрузку изображения;&lt;/li&gt;
+&lt;li&gt;отображение в интерфейсе;&lt;/li&gt;
+&lt;li&gt;поворот;&lt;/li&gt;
+&lt;li&gt;масштабирование;&lt;/li&gt;
+&lt;li&gt;преобразование в оттенки серого;&lt;/li&gt;
+&lt;li&gt;обрезку изображения.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Кроме того, разберём, зачем в WPF используется &lt;code&gt;BitmapImage&lt;/code&gt; и почему без него нельзя просто взять и отобразить файл.&lt;/p&gt;</description></item><item><title>Hello World</title><link>https://ghostbasenji.github.io/posts/hello-world/</link><pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate><guid>https://ghostbasenji.github.io/posts/hello-world/</guid><description>&lt;p&gt;Привет, это тестовый пост. Test
 Все хорошо.&lt;/p&gt;
 &lt;p&gt;lbgdlasbgjaodkgbad&amp;rsquo;lbvga&amp;rsquo;lv&amp;rsquo;asdlvalbfrvsdbojksd;ofbkbvgklarevgrevg&lt;/p&gt;</description></item><item><title>EduTest: проектирование и архитектура проекта</title><link>https://ghostbasenji.github.io/posts/edutest-theory/</link><pubDate>Mon, 01 Dec 2025 04:00:00 +0000</pubDate><guid>https://ghostbasenji.github.io/posts/edutest-theory/</guid><description>&lt;p&gt;В этой статье мы подробно рассмотрим &lt;strong&gt;архитектуру проекта&lt;/strong&gt;, &lt;strong&gt;структуру базы данных&lt;/strong&gt;, &lt;strong&gt;организацию Blazor-проекта&lt;/strong&gt; и &lt;strong&gt;подход к работе с Git&lt;/strong&gt;, чтобы читатель понял, как проектировать и развивать подобные системы.&lt;/p&gt;
 &lt;p&gt;Современные образовательные системы всё чаще используют цифровые платформы для тестирования знаний учащихся. &lt;strong&gt;EduTest&lt;/strong&gt; — учебный проект на стеке &lt;strong&gt;C#&lt;/strong&gt;+&lt;strong&gt;Blazor Server&lt;/strong&gt;+&lt;strong&gt;MSSQL&lt;/strong&gt;, который позволяет:&lt;/p&gt;
