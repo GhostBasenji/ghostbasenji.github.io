@@ -24,8 +24,7 @@
 </span></span><span class=line><span class=cl><span class=nb>cd</span> TaskHub
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>dotnet new sln -n TaskHub
-</span></span></code></pre></div><p>После этого создастся solution:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-txt data-lang=txt><span class=line><span class=cl>TaskHub.sln
-</span></span></code></pre></div><hr><h3 id=создаём-структуру-проекта>Создаём структуру проекта</h3><p>Сразу будем придерживаться структуры, близкой к реальным проектам.</p><p>Создадим папку <code>src</code>:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>mkdir src
+</span></span></code></pre></div><p>После этого создастся solution: <code>TaskHub.sln</code></p><hr><h3 id=создаём-структуру-проекта>Создаём структуру проекта</h3><p>Сразу будем придерживаться структуры, близкой к реальным проектам.</p><p>Создадим папку <code>src</code>:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>mkdir src
 </span></span><span class=line><span class=cl><span class=nb>cd</span> src
 </span></span></code></pre></div><p>Теперь создадим Web API проект:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>dotnet new webapi -n TaskHub.Api
 </span></span></code></pre></div><p>Переходим обратно в корень solution:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=nb>cd</span> ..
