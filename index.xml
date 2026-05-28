@@ -29,7 +29,17 @@
 &lt;h2 id="основная-часть"&gt;Основная часть&lt;/h2&gt;
 &lt;h3 id="создаём-solution"&gt;Создаём solution&lt;/h3&gt;
 &lt;p&gt;Для начала создадим solution.&lt;/p&gt;
-&lt;p&gt;Откройте терминал и выполните команду:&lt;/p&gt;</description></item><item><title>Отображение и обработка изображений в WPF (XAML + C#)</title><link>https://ghostbasenji.github.io/posts/wpf-imageviewer/</link><pubDate>Sun, 17 May 2026 00:00:00 +0000</pubDate><guid>https://ghostbasenji.github.io/posts/wpf-imageviewer/</guid><description>&lt;hr&gt;
+&lt;p&gt;Откройте терминал и выполните команду:&lt;/p&gt;</description></item><item><title>Часть 2. Атрибутный роутинг, HTTP-методы и сервисный слой</title><link>https://ghostbasenji.github.io/posts/part-02-routing-services/</link><pubDate>Sun, 24 May 2026 00:00:00 +0000</pubDate><guid>https://ghostbasenji.github.io/posts/part-02-routing-services/</guid><description>&lt;p&gt;В прошлой части мы создал проект и получили первый JSON-ответ. Сейчас разберемся с тем, как правильно строить маршруты, как работают HTTP-методы и зачем выносить логику из контроллера в отдельный сервис.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="добавление-список-персонажей"&gt;Добавление список персонажей&lt;/h2&gt;
+&lt;p&gt;До сих пор в контроллере был один-единственный персонаж. Заменяем его на список — это нужно, чтобы было удобно демонстрировать разные методы.&lt;/p&gt;
+&lt;p&gt;Открываем &lt;code&gt;Controllers/CharacterController.cs&lt;/code&gt; в VS Code и меняем поле &lt;code&gt;knight&lt;/code&gt; на:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-csharp" data-lang="csharp"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="kd"&gt;static&lt;/span&gt; &lt;span class="n"&gt;List&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;Character&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;characters&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="na"&gt;[
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="na"&gt; new Character(),
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="na"&gt; new Character { Id = 1, Name = &amp;#34;Sam&amp;#34; }
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="na"&gt;]&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;List&amp;lt;Character&amp;gt;&lt;/code&gt; — типизированный список. Он хранит только объекты типа &lt;code&gt;Character&lt;/code&gt; и не даст добавить туда что-то другое. Компилятор проверит это за нас.&lt;/p&gt;</description></item><item><title>Отображение и обработка изображений в WPF (XAML + C#)</title><link>https://ghostbasenji.github.io/posts/wpf-imageviewer/</link><pubDate>Sun, 17 May 2026 00:00:00 +0000</pubDate><guid>https://ghostbasenji.github.io/posts/wpf-imageviewer/</guid><description>&lt;hr&gt;
 &lt;h2 id="введение"&gt;Введение&lt;/h2&gt;
 &lt;p&gt;В этой статье рассмотрим простой WPF‑проект &lt;strong&gt;ImageViewer&lt;/strong&gt;, который демонстрирует базовую работу с изображениями: загрузку, отображение и простую обработку без использования сторонних библиотек.&lt;/p&gt;
 &lt;p&gt;Несмотря на кажущуюся простоту задачи, работа с изображениями в WPF построена на отдельной графической модели. Поэтому важно понимать не только &lt;em&gt;как&lt;/em&gt; загрузить картинку, но и &lt;em&gt;что именно происходит внутри WPF&lt;/em&gt;.&lt;/p&gt;
