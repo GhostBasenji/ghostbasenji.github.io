@@ -46,10 +46,7 @@ namespace dotnet_rpg.Models; public class User { public int Id { get; set; } pub
 <a class=tag href=/tags/web-api/>#Web API</a>
 <a class=tag href=/tags/vs-code/>#VS Code</a>
 <a class=tag href=/tags/entityframework/>#Entity Framework</a>
-<a class=tag href=/tags/ef-core/>#EF Core</a></div></div></article><article class=post-summary><h2><a href=/posts/part-06-ef-core-crud/>Часть 6. Полный CRUD через Entity Framework Core</a></h2><time datetime=2026-06-05>5 июня 2026</time><p class=post-excerpt>В прошлой части я подключил базу данных и создал таблицу Characters через миграцию. Теперь обновляю сервис — вместо хранения данных в памяти все операции будут идти через Entity Framework в настоящую базу данных.
-Внедряем DataContext в сервис Открываю Services/CharacterService/CharacterService.cs. Сейчас там статический список characters — его нужно убрать и вместо него использовать DataContext.
-Внедряю DataContext через конструктор:
-using AutoMapper; using dotnet_rpg.Data; using dotnet_rpg.Dtos.Character; using dotnet_rpg.Models; using Microsoft.EntityFrameworkCore; namespace dotnet_rpg.Services.CharacterService; public class CharacterService : ICharacterService { private readonly IMapper _mapper; private readonly DataContext _context; public CharacterService(IMapper mapper, DataContext context) { _mapper = mapper; _context = context; } // методы будем обновлять дальше } Теперь _context доступен во всех методах сервиса. Статический список characters удаляю — он больше не нужен.</p><div class=card-meta-row><div class=categories><a class=category href=/categories/backend/>Backend на C# & .NET</a></div><div class=tags><a class=tag href=/tags/aspnet-core/>#ASP.NET Core</a>
+<a class=tag href=/tags/ef-core/>#EF Core</a></div></div></article><article class=post-summary><h2><a href=/posts/part-06-ef-core-crud/>Часть 6. Полный CRUD через Entity Framework Core</a></h2><time datetime=2026-06-05>5 июня 2026</time><p class=post-excerpt>В прошлой части я подключил базу данных и создал таблицу Characters через миграцию. Теперь обновляю сервис — вместо хранения данных в памяти все операции будут идти через Entity Framework в настоящую базу данных.</p><div class=card-meta-row><div class=categories><a class=category href=/categories/backend/>Backend на C# & .NET</a></div><div class=tags><a class=tag href=/tags/aspnet-core/>#ASP.NET Core</a>
 <a class=tag href=/tags/csharp/>#C#</a>
 <a class=tag href=/tags/dotnet-backend/>#.NET Backend</a>
 <a class=tag href=/tags/web-api/>#Web API</a>
@@ -65,6 +62,7 @@ using AutoMapper; using dotnet_rpg.Data; using dotnet_rpg.Dtos.Character; using 
 <a class=tag href=/tags/ef-core/>#EF Core</a>
 <a class=tag href=/tags/mssql/>#MSSQL</a></div></div></article><nav class=pagination><span class="page-num page-current">1</span>
 <a href=/page/2/ class=page-num>2</a>
+<a href=/page/3/ class=page-num>3</a>
 <a href=/page/2/ class=page-arrow>»</a></nav></div></main><footer class=site-footer><p class=footer-copy>© 2026 Блог призрака Басенджи
 <span class=footer-heart aria-hidden=true>♥</span>
 Блог сделан на Hugo с использованием
