@@ -1,0 +1,195 @@
+<!doctype html><html lang=ru><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Отображение и обработка изображений в WPF (XAML + C#) · Блог призрака Басенджи</title><script>(function(){var e=localStorage.getItem("theme"),t=e||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.setAttribute("data-theme",t)})()</script><link rel=stylesheet href=/css/main.min.css><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Kelly+Slab&display=swap" rel=stylesheet><link rel=stylesheet href=/css/chroma-light.min.css><link rel=stylesheet href=/css/chroma-dark.min.css><style>:root{--content-width:900px;--article-width:900px}</style></head><body><header class=site-header><div class=site-header-inner><input type=checkbox id=nav-toggle class=nav-toggle-checkbox>
+<label for=nav-toggle class=nav-toggle-label aria-label="Открыть меню"><span></span>
+<span></span>
+<span></span>
+</label><a class=site-brand href=/><span class=site-brand-text><span class=site-title>Блог призрака Басенджи</span>
+<span class=site-slogan>Мысли, код и заметки</span></span></a><nav class=nav><a href=/categories/>Категории</a>
+<a href=/tags/>Теги</a>
+<a href=/series/>Серии</a>
+<a href=/projects/>Мои проекты</a>
+<a href=/about/>About</a></nav></div></header><main class=content><div class=article-card><article><header class=article-header><h1>Отображение и обработка изображений в WPF (XAML + C#)</h1><time datetime=2026-05-17>17 мая 2026</time></header><div class=article-content><hr><h2 id=введение>Введение</h2><p>В этой статье рассмотрим простой WPF‑проект <strong>ImageViewer</strong>, который демонстрирует базовую работу с изображениями: загрузку, отображение и простую обработку без использования сторонних библиотек.</p><p>Несмотря на кажущуюся простоту задачи, работа с изображениями в WPF построена на отдельной графической модели. Поэтому важно понимать не только <em>как</em> загрузить картинку, но и <em>что именно происходит внутри WPF</em>.</p><p>Поддерживаемые форматы:</p><ul><li>BMP</li><li>GIF</li><li>ICO</li><li>JPG / JPEG</li><li>PNG</li><li>TIFF</li><li>WDP</li></ul><p>В статье реализуем:</p><ul><li>загрузку изображения;</li><li>отображение в интерфейсе;</li><li>поворот;</li><li>масштабирование;</li><li>преобразование в оттенки серого;</li><li>обрезку изображения.</li></ul><p>Кроме того, разберём, зачем в WPF используется <code>BitmapImage</code> и почему без него нельзя просто взять и отобразить файл.</p><hr><h2 id=базовый-элемент-image-в-wpf>Базовый элемент <code>Image</code> в WPF</h2><p>В WPF элемент <code>Image</code> используется для отображения графики в интерфейсе.</p><p>Однако здесь есть важный нюанс:</p><blockquote><p>WPF не работает с файлами изображений напрямую.</p></blockquote><p>На первый взгляд кажется, что изображение — это просто файл (<code>.jpg</code>, <code>.png</code>). Но WPF работает не с файлами, а с объектами изображений (<code>ImageSource</code>), содержащими уже декодированные пиксели.</p><p>Упрощённая модель выглядит так:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>Файл изображения
+</span></span><span class=line><span class=cl>      ↓
+</span></span><span class=line><span class=cl>BitmapImage (декодирование)
+</span></span><span class=line><span class=cl>      ↓
+</span></span><span class=line><span class=cl>BitmapSource (пиксели)
+</span></span><span class=line><span class=cl>      ↓
+</span></span><span class=line><span class=cl>Image.Source (отображение)
+</span></span></code></pre></div><h2 id=что-такое-bitmapimage>Что такое <code>BitmapImage</code></h2><p><code>BitmapImage</code> — это специальный класс WPF для загрузки изображения из файла, URI или потока.</p><p>Проще говоря:</p><blockquote><p><code>BitmapImage</code> — это загрузчик и декодер изображений для WPF.</p></blockquote><p>Он:</p><ul><li>читает файл;</li><li>декодирует формат изображения;</li><li>преобразует данные в пиксели;</li><li>делает изображение пригодным для отображения в интерфейсе.</li></ul><p>Важно понимать:</p><blockquote><p><code>Image</code> сам по себе ничего не знает о файлах на диске.</p></blockquote><p>Он умеет только отображать <code>ImageSource</code>, а <code>BitmapImage</code> помогает создать такой объект.</p><p>Внутри <code>BitmapImage</code> используется системный механизм Windows — <strong>Windows Imaging Component (WIC)</strong>, отвечающий за декодирование популярных графических форматов.</p><hr><h2 id=интерфейс-приложения-xaml>Интерфейс приложения (XAML)</h2><p>Ниже приведён базовый интерфейс приложения.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-xml data-lang=xml><span class=line><span class=cl><span class=nt>&lt;Window</span> <span class=na>x:Class=</span><span class=s>&#34;ImageViewer.MainWindow&#34;</span>
+</span></span><span class=line><span class=cl>        <span class=na>xmlns=</span><span class=s>&#34;http://schemas.microsoft.com/winfx/2006/xaml/presentation&#34;</span>
+</span></span><span class=line><span class=cl>        <span class=na>xmlns:x=</span><span class=s>&#34;http://schemas.microsoft.com/winfx/2006/xaml&#34;</span>
+</span></span><span class=line><span class=cl>        <span class=na>Title=</span><span class=s>&#34;Image Viewer&#34;</span>
+</span></span><span class=line><span class=cl>        <span class=na>Height=</span><span class=s>&#34;450&#34;</span>
+</span></span><span class=line><span class=cl>        <span class=na>Width=</span><span class=s>&#34;800&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;Grid</span> <span class=na>Margin=</span><span class=s>&#34;10&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!-- Выбор файла --&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;Button</span> <span class=na>x:Name=</span><span class=s>&#34;BrowseButton&#34;</span>
+</span></span><span class=line><span class=cl>                <span class=na>Content=</span><span class=s>&#34;Обзор&#34;</span>
+</span></span><span class=line><span class=cl>                <span class=na>Width=</span><span class=s>&#34;120&#34;</span>
+</span></span><span class=line><span class=cl>                <span class=na>Height=</span><span class=s>&#34;30&#34;</span>
+</span></span><span class=line><span class=cl>                <span class=na>HorizontalAlignment=</span><span class=s>&#34;Left&#34;</span>
+</span></span><span class=line><span class=cl>                <span class=na>VerticalAlignment=</span><span class=s>&#34;Top&#34;</span>
+</span></span><span class=line><span class=cl>                <span class=na>Click=</span><span class=s>&#34;BrowseButton_Click&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!-- Отображение пути --&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;Label</span> <span class=na>x:Name=</span><span class=s>&#34;FileNameLabel&#34;</span>
+</span></span><span class=line><span class=cl>               <span class=na>Content=</span><span class=s>&#34;Файл не выбран&#34;</span>
+</span></span><span class=line><span class=cl>               <span class=na>Margin=</span><span class=s>&#34;130,0,0,0&#34;</span>
+</span></span><span class=line><span class=cl>               <span class=na>Height=</span><span class=s>&#34;30&#34;</span>
+</span></span><span class=line><span class=cl>               <span class=na>VerticalAlignment=</span><span class=s>&#34;Top&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!-- Отображение изображения --&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;Image</span> <span class=na>x:Name=</span><span class=s>&#34;ImageViewer&#34;</span>
+</span></span><span class=line><span class=cl>               <span class=na>Margin=</span><span class=s>&#34;0,40,0,0&#34;</span>
+</span></span><span class=line><span class=cl>               <span class=na>Stretch=</span><span class=s>&#34;Uniform&#34;</span>
+</span></span><span class=line><span class=cl>               <span class=na>StretchDirection=</span><span class=s>&#34;Both&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;/Grid&gt;</span>
+</span></span><span class=line><span class=cl><span class=nt>&lt;/Window&gt;</span>
+</span></span></code></pre></div><h2 id=загрузка-изображения>Загрузка изображения</h2><p>Для выбора файла используется <code>OpenFileDialog</code>, а для загрузки — <code>BitmapImage</code>.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-csharp data-lang=csharp><span class=line><span class=cl><span class=kd>private</span> <span class=k>void</span> <span class=n>BrowseButton_Click</span><span class=p>(</span><span class=kt>object</span> <span class=n>sender</span><span class=p>,</span> <span class=n>RoutedEventArgs</span> <span class=n>e</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=kt>var</span> <span class=n>dlg</span> <span class=p>=</span> <span class=k>new</span> <span class=n>OpenFileDialog</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>InitialDirectory</span> <span class=p>=</span> <span class=s>@&#34;C:\&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=n>Filter</span> <span class=p>=</span> <span class=s>&#34;Images|*.jpg;*.jpeg;*.png;*.bmp;*.gif;*.tiff;*.ico&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=n>RestoreDirectory</span> <span class=p>=</span> <span class=kc>true</span>
+</span></span><span class=line><span class=cl>    <span class=p>};</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=p>(</span><span class=n>dlg</span><span class=p>.</span><span class=n>ShowDialog</span><span class=p>()</span> <span class=p>!=</span> <span class=kc>true</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=n>_selectedFilePath</span> <span class=p>=</span> <span class=n>dlg</span><span class=p>.</span><span class=n>FileName</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=n>FileNameLabel</span><span class=p>.</span><span class=n>Content</span> <span class=p>=</span> <span class=n>_selectedFilePath</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1>// Создаём BitmapImage</span>
+</span></span><span class=line><span class=cl>    <span class=kt>var</span> <span class=n>bitmap</span> <span class=p>=</span> <span class=k>new</span> <span class=n>BitmapImage</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=n>bitmap</span><span class=p>.</span><span class=n>BeginInit</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1>// Указываем путь к изображению</span>
+</span></span><span class=line><span class=cl>    <span class=n>bitmap</span><span class=p>.</span><span class=n>UriSource</span> <span class=p>=</span>
+</span></span><span class=line><span class=cl>        <span class=k>new</span> <span class=n>Uri</span><span class=p>(</span><span class=n>_selectedFilePath</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>                <span class=n>UriKind</span><span class=p>.</span><span class=n>Absolute</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1>// Загружаем изображение в память</span>
+</span></span><span class=line><span class=cl>    <span class=n>bitmap</span><span class=p>.</span><span class=n>CacheOption</span> <span class=p>=</span>
+</span></span><span class=line><span class=cl>        <span class=n>BitmapCacheOption</span><span class=p>.</span><span class=n>OnLoad</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=n>bitmap</span><span class=p>.</span><span class=n>EndInit</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1>// Оптимизация WPF</span>
+</span></span><span class=line><span class=cl>    <span class=n>bitmap</span><span class=p>.</span><span class=n>Freeze</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=n>ImageViewer</span><span class=p>.</span><span class=n>Source</span> <span class=p>=</span> <span class=n>bitmap</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><h2 id=поворот-изображения>Поворот изображения</h2><p>WPF поддерживает поворот через свойство <code>BitmapImage.Rotation</code>.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-csharp data-lang=csharp><span class=line><span class=cl><span class=kd>private</span> <span class=k>void</span> <span class=n>RotateButton_Click</span><span class=p>(</span><span class=kt>object</span> <span class=n>sender</span><span class=p>,</span> <span class=n>RoutedEventArgs</span> <span class=n>e</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=p>(</span><span class=kt>string</span><span class=p>.</span><span class=n>IsNullOrEmpty</span><span class=p>(</span><span class=n>_selectedFilePath</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=n>Rotation</span><span class=p>[]</span> <span class=n>rotations</span> <span class=p>=</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>Rotation</span><span class=p>.</span><span class=n>Rotate0</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=n>Rotation</span><span class=p>.</span><span class=n>Rotate90</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=n>Rotation</span><span class=p>.</span><span class=n>Rotate180</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=n>Rotation</span><span class=p>.</span><span class=n>Rotate270</span>
+</span></span><span class=line><span class=cl>    <span class=p>};</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kt>int</span> <span class=n>index</span> <span class=p>=</span> <span class=n>RotationComboBox</span><span class=p>.</span><span class=n>SelectedIndex</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kt>var</span> <span class=n>bitmap</span> <span class=p>=</span> <span class=k>new</span> <span class=n>BitmapImage</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=n>bitmap</span><span class=p>.</span><span class=n>BeginInit</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>    <span class=n>bitmap</span><span class=p>.</span><span class=n>UriSource</span> <span class=p>=</span>
+</span></span><span class=line><span class=cl>        <span class=k>new</span> <span class=n>Uri</span><span class=p>(</span><span class=n>_selectedFilePath</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>                <span class=n>UriKind</span><span class=p>.</span><span class=n>Absolute</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=n>bitmap</span><span class=p>.</span><span class=n>CacheOption</span> <span class=p>=</span>
+</span></span><span class=line><span class=cl>        <span class=n>BitmapCacheOption</span><span class=p>.</span><span class=n>OnLoad</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1>// Применяем выбранный угол</span>
+</span></span><span class=line><span class=cl>    <span class=n>bitmap</span><span class=p>.</span><span class=n>Rotation</span> <span class=p>=</span> <span class=n>rotations</span><span class=p>[</span><span class=n>index</span><span class=p>];</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=n>bitmap</span><span class=p>.</span><span class=n>EndInit</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>    <span class=n>bitmap</span><span class=p>.</span><span class=n>Freeze</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=n>ImageViewer</span><span class=p>.</span><span class=n>Source</span> <span class=p>=</span> <span class=n>bitmap</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><h2 id=масштабирование-изображения-stretch>Масштабирование изображения (<code>Stretch</code>)</h2><p>WPF позволяет управлять отображением изображения без изменения его исходных данных.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-xml data-lang=xml><span class=line><span class=cl><span class=nt>&lt;Image</span> <span class=na>x:Name=</span><span class=s>&#34;ImageViewer&#34;</span>
+</span></span><span class=line><span class=cl>       <span class=na>Stretch=</span><span class=s>&#34;Uniform&#34;</span>
+</span></span><span class=line><span class=cl>       <span class=na>StretchDirection=</span><span class=s>&#34;Both&#34;</span><span class=nt>/&gt;</span>
+</span></span></code></pre></div><p>Основные режимы:</p><ul><li><code>Uniform</code> — сохраняет пропорции;</li><li><code>Fill</code> — растягивает изображение;</li><li><code>UniformToFill</code> — заполняет область с возможной обрезкой.</li></ul><p>В большинстве случаев рекомендуется использовать <code>Uniform</code>, чтобы избежать искажений.</p><h2 id=оттенки-серого-grayscale>Оттенки серого (Grayscale)</h2><p>Для преобразования используется <code>FormatConvertedBitmap</code>.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-csharp data-lang=csharp><span class=line><span class=cl><span class=kd>private</span> <span class=k>void</span> <span class=n>GrayscaleButton_Click</span><span class=p>(</span><span class=kt>object</span> <span class=n>sender</span><span class=p>,</span> <span class=n>RoutedEventArgs</span> <span class=n>e</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=p>(</span><span class=kt>string</span><span class=p>.</span><span class=n>IsNullOrEmpty</span><span class=p>(</span><span class=n>_selectedFilePath</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kt>var</span> <span class=n>source</span> <span class=p>=</span> <span class=k>new</span> <span class=n>BitmapImage</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>        <span class=k>new</span> <span class=n>Uri</span><span class=p>(</span><span class=n>_selectedFilePath</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>                <span class=n>UriKind</span><span class=p>.</span><span class=n>Absolute</span><span class=p>));</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kt>var</span> <span class=n>gray</span> <span class=p>=</span>
+</span></span><span class=line><span class=cl>        <span class=k>new</span> <span class=n>FormatConvertedBitmap</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=n>gray</span><span class=p>.</span><span class=n>BeginInit</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1>// Исходное изображение</span>
+</span></span><span class=line><span class=cl>    <span class=n>gray</span><span class=p>.</span><span class=n>Source</span> <span class=p>=</span> <span class=n>source</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1>// Преобразование в grayscale</span>
+</span></span><span class=line><span class=cl>    <span class=n>gray</span><span class=p>.</span><span class=n>DestinationFormat</span> <span class=p>=</span>
+</span></span><span class=line><span class=cl>        <span class=n>System</span><span class=p>.</span><span class=n>Windows</span><span class=p>.</span><span class=n>Media</span>
+</span></span><span class=line><span class=cl>            <span class=p>.</span><span class=n>PixelFormats</span><span class=p>.</span><span class=n>Gray32Float</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=n>gray</span><span class=p>.</span><span class=n>EndInit</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>    <span class=n>gray</span><span class=p>.</span><span class=n>Freeze</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=n>ImageViewer</span><span class=p>.</span><span class=n>Source</span> <span class=p>=</span> <span class=n>gray</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><h2 id=обрезка-изображения>Обрезка изображения</h2><p>Для обрезки используется <code>CroppedBitmap</code>.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-csharp data-lang=csharp><span class=line><span class=cl><span class=kd>private</span> <span class=k>void</span> <span class=n>CropButton_Click</span><span class=p>(</span><span class=kt>object</span> <span class=n>sender</span><span class=p>,</span> <span class=n>RoutedEventArgs</span> <span class=n>e</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=p>(</span><span class=kt>string</span><span class=p>.</span><span class=n>IsNullOrEmpty</span><span class=p>(</span><span class=n>_selectedFilePath</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kt>var</span> <span class=n>bitmap</span> <span class=p>=</span> <span class=k>new</span> <span class=n>BitmapImage</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=n>bitmap</span><span class=p>.</span><span class=n>BeginInit</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>    <span class=n>bitmap</span><span class=p>.</span><span class=n>UriSource</span> <span class=p>=</span>
+</span></span><span class=line><span class=cl>        <span class=k>new</span> <span class=n>Uri</span><span class=p>(</span><span class=n>_selectedFilePath</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>                <span class=n>UriKind</span><span class=p>.</span><span class=n>Absolute</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=n>bitmap</span><span class=p>.</span><span class=n>CacheOption</span> <span class=p>=</span>
+</span></span><span class=line><span class=cl>        <span class=n>BitmapCacheOption</span><span class=p>.</span><span class=n>OnLoad</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=n>bitmap</span><span class=p>.</span><span class=n>EndInit</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>    <span class=n>bitmap</span><span class=p>.</span><span class=n>Freeze</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1>// Область обрезки</span>
+</span></span><span class=line><span class=cl>    <span class=kt>var</span> <span class=n>rect</span> <span class=p>=</span>
+</span></span><span class=line><span class=cl>        <span class=k>new</span> <span class=n>Int32Rect</span><span class=p>(</span><span class=m>50</span><span class=p>,</span> <span class=m>50</span><span class=p>,</span> <span class=m>200</span><span class=p>,</span> <span class=m>200</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kt>var</span> <span class=n>cropped</span> <span class=p>=</span>
+</span></span><span class=line><span class=cl>        <span class=k>new</span> <span class=n>CroppedBitmap</span><span class=p>(</span><span class=n>bitmap</span><span class=p>,</span> <span class=n>rect</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=n>cropped</span><span class=p>.</span><span class=n>Freeze</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=n>ImageViewer</span><span class=p>.</span><span class=n>Source</span> <span class=p>=</span> <span class=n>cropped</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><p><code>Int32Rect</code> задаёт прямоугольную область:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>X, Y, Width, Height
+</span></span></code></pre></div><h2 id=архитектурная-модель-обработки-изображений-в-wpf>Архитектурная модель обработки изображений в WPF</h2><p>Практически все операции строятся вокруг одной идеи:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>BitmapSource
+</span></span><span class=line><span class=cl>      ↓
+</span></span><span class=line><span class=cl>трансформация
+</span></span><span class=line><span class=cl>      ↓
+</span></span><span class=line><span class=cl>новый BitmapSource
+</span></span></code></pre></div><p>Это означает:</p><ul><li>исходное изображение не изменяется;</li><li>каждая операция создаёт новый объект;</li><li>цепочки преобразований легко комбинируются.</li></ul><h2 id=итог>Итог</h2><p>WPF предоставляет встроенные инструменты для обработки изображений:</p><ul><li><code>BitmapImage</code>;</li><li><code>Rotation</code>;</li><li><code>Stretch</code>;</li><li><code>FormatConvertedBitmap</code>;</li><li><code>CroppedBitmap</code>.</li></ul><p>Этого достаточно для создания простого image viewer или основы будущего редактора изображений.</p></div><div class=meta-row><div class=categories><a class=category href=/categories/wpf/>WPF</a></div><div class=tags><a class=tag href=/tags/wpf/>#WPF</a>
+<a class=tag href=/tags/csharp/>#C#</a>
+<a class=tag href=/tags/xaml/>#XAML</a>
+<a class=tag href=/tags/dotnet/>#.NET</a></div></div></article></div></main><footer class=site-footer><p class=footer-copy>© 2026 Блог призрака Басенджи
+<span class=footer-heart aria-hidden=true>♥</span>
+Блог сделан на Hugo с использованием
+<a href=https://github.com/GhostBasenji/hugo-drewx target=_blank rel="noopener noreferrer">drewX</a></p><div class=footer-actions><div class=social-icons><a href=mailto:you@example.com aria-label=Email><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+</a><a href=https://t.me/yourusername target=_blank rel="noopener noreferrer" aria-label=Telegram><svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor"><path d="M9.036 15.803 8.64 21.36c.567.0.813-.244 1.11-.537l2.663-2.545 5.518 4.019c1.012.557 1.73.264 1.986-.933l3.6-16.873c.328-1.497-.542-2.083-1.53-1.72L1.117 9.977C-.35 10.54-.328 11.34.87 11.71l5.517 1.72L18.72 5.99c.55-.36 1.052-.16.64.2z"/></svg>
+</a><a href=https://github.com/yourusername target=_blank rel="noopener noreferrer" aria-label=GitHub><svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56.0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.69.0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05.0.0.97-.31 3.18 1.18a11 11 0 015.79.0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09.0 4.42-2.69 5.4-5.25 5.68.41.36.78 1.06.78 2.15.0 1.55-.01 2.8-.01 3.18.0.31.21.68.8.56A10.51 10.51.0 0023.5 12C23.5 5.73 18.27.5 12 .5z"/></svg></a></div><button id=theme-toggle class=theme-toggle aria-label="Переключить тему">
+<svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+<svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button></div></footer><script src=/js/theme-toggle.min.js></script></body></html>

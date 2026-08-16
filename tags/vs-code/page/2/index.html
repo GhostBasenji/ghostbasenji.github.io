@@ -1,0 +1,45 @@
+<!doctype html><html lang=ru><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>VS Code · Блог призрака Басенджи</title><script>(function(){var e=localStorage.getItem("theme"),t=e||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.setAttribute("data-theme",t)})()</script><link rel=stylesheet href=/css/main.min.css><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Kelly+Slab&display=swap" rel=stylesheet><link rel=stylesheet href=/css/chroma-light.min.css><link rel=stylesheet href=/css/chroma-dark.min.css><style>:root{--content-width:900px;--article-width:900px}</style></head><body><header class=site-header><div class=site-header-inner><input type=checkbox id=nav-toggle class=nav-toggle-checkbox>
+<label for=nav-toggle class=nav-toggle-label aria-label="Открыть меню"><span></span>
+<span></span>
+<span></span>
+</label><a class=site-brand href=/><span class=site-brand-text><span class=site-title>Блог призрака Басенджи</span>
+<span class=site-slogan>Мысли, код и заметки</span></span></a><nav class=nav><a href=/categories/>Категории</a>
+<a href=/tags/>Теги</a>
+<a href=/series/>Серии</a>
+<a href=/projects/>Мои проекты</a>
+<a href=/about/>About</a></nav></div></header><main class=content><h1 class=term-title>VS Code</h1><div class=home-list><article class=post-summary><h2><a href=/posts/part-04-put-delete/>Часть 4. Обновление и удаление персонажей — PUT, DELETE и обработка ошибок</a></h2><time datetime=2026-05-31>31 мая 2026</time><p class=post-excerpt>В предыдущих частях мы научились создавать и получать персонажей. Теперь добавим оставшиеся две операции — обновление (PUT) и удаление (DELETE). Заодно разберемся с тем, как правильно обрабатывать ошибки и возвращать осмысленные HTTP-статусы.
+ServiceResponse — единый формат ответа Пока что из сервиса возвращаются просто данные: List&lt;GetCharacterDto>, GetCharacterDto?. Это работает, но у такого подхода есть слабое место — если что-то пошло не так (персонаж не найден, ошибка), у нас нет стандартного способа передать эту информацию контроллеру.</p><div class=card-meta-row><div class=categories><a class=category href=/categories/backend/>Backend на C# & .NET</a></div><div class=tags><a class=tag href=/tags/aspnet-core/>#ASP.NET Core</a>
+<a class=tag href=/tags/csharp/>#C#</a>
+<a class=tag href=/tags/dotnet-backend/>#.NET Backend</a>
+<a class=tag href=/tags/web-api/>#Web API</a>
+<a class=tag href=/tags/vs-code/>#VS Code</a></div></div></article><article class=post-summary><h2><a href=/posts/part-03-async-dto-automapper/>Часть 3. Асинхронные вызовы, DTO и AutoMapper</a></h2><time datetime=2026-05-29>29 мая 2026</time><p class=post-excerpt>В прошлой части я вынес логику в сервис и научился работать с несколькими HTTP-методами. Сейчас разберу три важные темы: почему методы должны быть асинхронными, что такое DTO и зачем нужен AutoMapper.
+Зачем нужен async/await Пока что все мои методы работают синхронно. Это значит: пришёл запрос — поток (thread) занят, обрабатывает его, и всё это время не может взять другой запрос. Пока данных мало и всё хранится в памяти, это незаметно. Но как только появится база данных, картина изменится.</p><div class=card-meta-row><div class=categories><a class=category href=/categories/backend/>Backend на C# & .NET</a></div><div class=tags><a class=tag href=/tags/aspnet-core/>#ASP.NET Core</a>
+<a class=tag href=/tags/csharp/>#C#</a>
+<a class=tag href=/tags/dotnet-backend/>#.NET Backend</a>
+<a class=tag href=/tags/web-api/>#Web API</a>
+<a class=tag href=/tags/vs-code/>#VS Code</a>
+<a class=tag href=/tags/ef-core/>#EF Core</a></div></div></article><article class=post-summary><h2><a href=/posts/part-02-routing-services/>Часть 2. Атрибутный роутинг, HTTP-методы и сервисный слой</a></h2><time datetime=2026-05-28>28 мая 2026</time><p class=post-excerpt>В прошлой части мы создал проект и получили первый JSON-ответ. Сейчас разберемся с тем, как правильно строить маршруты, как работают HTTP-методы и зачем выносить логику из контроллера в отдельный сервис.
+Добавление списка персонажей До сих пор в контроллере был один-единственный персонаж. Заменяем его на список — это нужно, чтобы было удобно демонстрировать разные методы.
+Открываем Controllers/CharacterController.cs в VS Code и меняем поле knight на:
+private static List&lt;Character> characters = [ new Character(), new Character { Id = 1, Name = "Sam" } ]; List&lt;Character> — типизированный список. Он хранит только объекты типа Character и не даст добавить туда что-то другое. Компилятор проверит это за нас.</p><div class=card-meta-row><div class=categories><a class=category href=/categories/backend/>Backend на C# & .NET</a></div><div class=tags><a class=tag href=/tags/aspnet-core/>#ASP.NET Core</a>
+<a class=tag href=/tags/csharp/>#C#</a>
+<a class=tag href=/tags/dotnet-backend/>#.NET Backend</a>
+<a class=tag href=/tags/web-api/>#Web API</a>
+<a class=tag href=/tags/vs-code/>#VS Code</a>
+<a class=tag href=/tags/net9/>#.NET 9</a></div></div></article><article class=post-summary><h2><a href=/posts/part-01-webapi-intro/>Часть 1. Создаём проект и первый контроллер в ASP.NET Core Web API (.NET 9)</a></h2><time datetime=2026-05-24>24 мая 2026</time><p class=post-excerpt>Это мой конспект по освоению ASP.NET Core Web API. Начинаю с нуля — буду фиксировать всё, что кажется важным или неочевидным.
+Цель серии &ldquo;Быстрый старт: ASP.NET Web API + Entity Framework&rdquo; — построить небольшой бэкенд для текстовой RPG: персонажи, боёвка, аутентификация, база данных. Небольшой, но достаточно реальный, чтобы разобраться со стеком.
+Что такое Web API и зачем это нужно Прежде чем запускать VS Code, нужно понять, что именно мы строим и как оно работает.</p><div class=card-meta-row><div class=categories><a class=category href=/categories/backend/>Backend на C# & .NET</a></div><div class=tags><a class=tag href=/tags/aspnet-core/>#ASP.NET Core</a>
+<a class=tag href=/tags/csharp/>#C#</a>
+<a class=tag href=/tags/dotnet-backend/>#.NET Backend</a>
+<a class=tag href=/tags/web-api/>#Web API</a>
+<a class=tag href=/tags/vs-code/>#VS Code</a>
+<a class=tag href=/tags/net9/>#.NET 9</a></div></div></article><nav class=pagination><a href=/tags/vs-code/ class=page-arrow>«</a>
+<a href=/tags/vs-code/ class=page-num>1</a>
+<span class="page-num page-current">2</span></nav></div></main><footer class=site-footer><p class=footer-copy>© 2026 Блог призрака Басенджи
+<span class=footer-heart aria-hidden=true>♥</span>
+Блог сделан на Hugo с использованием
+<a href=https://github.com/GhostBasenji/hugo-drewx target=_blank rel="noopener noreferrer">drewX</a></p><div class=footer-actions><div class=social-icons><a href=mailto:you@example.com aria-label=Email><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+</a><a href=https://t.me/yourusername target=_blank rel="noopener noreferrer" aria-label=Telegram><svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor"><path d="M9.036 15.803 8.64 21.36c.567.0.813-.244 1.11-.537l2.663-2.545 5.518 4.019c1.012.557 1.73.264 1.986-.933l3.6-16.873c.328-1.497-.542-2.083-1.53-1.72L1.117 9.977C-.35 10.54-.328 11.34.87 11.71l5.517 1.72L18.72 5.99c.55-.36 1.052-.16.64.2z"/></svg>
+</a><a href=https://github.com/yourusername target=_blank rel="noopener noreferrer" aria-label=GitHub><svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56.0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.69.0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05.0.0.97-.31 3.18 1.18a11 11 0 015.79.0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09.0 4.42-2.69 5.4-5.25 5.68.41.36.78 1.06.78 2.15.0 1.55-.01 2.8-.01 3.18.0.31.21.68.8.56A10.51 10.51.0 0023.5 12C23.5 5.73 18.27.5 12 .5z"/></svg></a></div><button id=theme-toggle class=theme-toggle aria-label="Переключить тему">
+<svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+<svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button></div></footer><script src=/js/theme-toggle.min.js></script></body></html>

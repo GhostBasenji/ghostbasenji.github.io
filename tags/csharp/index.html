@@ -1,0 +1,75 @@
+<!doctype html><html lang=ru><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>C# · Блог призрака Басенджи</title><script>(function(){var e=localStorage.getItem("theme"),t=e||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.setAttribute("data-theme",t)})()</script><link rel=stylesheet href=/css/main.min.css><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Kelly+Slab&display=swap" rel=stylesheet><link rel=stylesheet href=/css/chroma-light.min.css><link rel=stylesheet href=/css/chroma-dark.min.css><style>:root{--content-width:900px;--article-width:900px}</style></head><body><header class=site-header><div class=site-header-inner><input type=checkbox id=nav-toggle class=nav-toggle-checkbox>
+<label for=nav-toggle class=nav-toggle-label aria-label="Открыть меню"><span></span>
+<span></span>
+<span></span>
+</label><a class=site-brand href=/><span class=site-brand-text><span class=site-title>Блог призрака Басенджи</span>
+<span class=site-slogan>Мысли, код и заметки</span></span></a><nav class=nav><a href=/categories/>Категории</a>
+<a href=/tags/>Теги</a>
+<a href=/series/>Серии</a>
+<a href=/projects/>Мои проекты</a>
+<a href=/about/>About</a></nav></div></header><main class=content><h1 class=term-title>C#</h1><div class=home-list><article class=post-summary><h2><a href=/posts/part-11-many-to-many/>Часть 11. Связь многие-ко-многим: умения персонажей и ThenInclude</a></h2><time datetime=2026-06-18>18 июня 2026</time><p class=post-excerpt>Мы уже разобрали два вида связей: один-ко-многим (пользователь → персонажи) и один-к-одному (персонаж → оружие). Остался третий и самый интересный — многие-ко-многим. Один персонаж может знать несколько умений, и одно умение может быть у нескольких персонажей. Добавим к нашим персонажам пул умений — Fireball, Frenzy, Blizzard.
+Почему многие-ко-многим — особый случай При связи один-ко-многим внешний ключ живёт в таблице «многих» (UserId в Characters). При один-к-одному — в зависимой таблице (CharacterId в Weapons).</p><div class=card-meta-row><div class=categories><a class=category href=/categories/backend/>Backend на C# & .NET</a></div><div class=tags><a class=tag href=/tags/aspnet-core/>#ASP.NET Core</a>
+<a class=tag href=/tags/csharp/>#C#</a>
+<a class=tag href=/tags/dotnet-backend/>#.NET Backend</a>
+<a class=tag href=/tags/web-api/>#Web API</a>
+<a class=tag href=/tags/vs-code/>#VS Code</a>
+<a class=tag href=/tags/entityframework/>#Entity Framework</a>
+<a class=tag href=/tags/ef-core/>#EF Core</a></div></div></article><article class=post-summary><h2><a href=/posts/part-10-one-to-one/>Часть 10. Связь один-к-одному: добавляем оружие персонажу</a></h2><time datetime=2026-06-15>15 июня 2026</time><p class=post-excerpt>В девятой части построил связь один-ко-многим между пользователями и персонажами. Теперь построю связь один-к-одному: у каждого персонажа может быть ровно одно оружие, и у каждого оружия — ровно один владелец. Также наткнусь на ту же ловушку с Include, что и в прошлый раз, но в новом контексте.
+Модель Weapon Создаю Models/Weapon.cs:
+namespace dotnet_rpg.Models; public class Weapon { public int Id { get; set; } public string Name { get; set; } = string.Empty; public int Damage { get; set; } public int CharacterId { get; set; } public Character? Character { get; set; } } Добавляю обратную ссылку в Character.cs:
+public Weapon? Weapon { get; set; } Обратите внимание на Character? Weapon и Weapon? Character — оба свойства nullable. Это логично: персонаж может существовать без оружия, оружие не может существовать без персонажа (но пока EF об этом не знает).</p><div class=card-meta-row><div class=categories><a class=category href=/categories/backend/>Backend на C# & .NET</a></div><div class=tags><a class=tag href=/tags/aspnet-core/>#ASP.NET Core</a>
+<a class=tag href=/tags/csharp/>#C#</a>
+<a class=tag href=/tags/dotnet-backend/>#.NET Backend</a>
+<a class=tag href=/tags/web-api/>#Web API</a>
+<a class=tag href=/tags/vs-code/>#VS Code</a>
+<a class=tag href=/tags/entityframework/>#Entity Framework</a>
+<a class=tag href=/tags/ef-core/>#EF Core</a></div></div></article><article class=post-summary><h2><a href=/posts/part-09-advanced-relationships/>Часть 9. Привязка персонажей к пользователям и Include в EF Core</a></h2><time datetime=2026-06-12>12 июня 2026</time><p class=post-excerpt>В прошлой части настроил JWT и фильтрацию персонажей по userId, который передавался параметром в каждый метод сервиса. Это работает, но неудобно — параметр приходится тащить через весь стек вызовов. Сейчас уберу его и получу текущего пользователя прямо внутри сервиса. Также свяжу создаваемых персонажей с их владельцем и разберусь с важной особенностью EF Core — почему связанные данные иногда не подгружаются.
+Проблема: userId передаётся повсюду Сейчас в GetAllCharacters(int userId) параметр прилетает из контроллера, который вычисляет его из Claims токена. Но, а что, если мне нужен userId и в AddCharacter, и в UpdateCharacter, и в DeleteCharacter? Придётся в контроллере вычислять его четыре раза и передавать в каждый метод.</p><div class=card-meta-row><div class=categories><a class=category href=/categories/backend/>Backend на C# & .NET</a></div><div class=tags><a class=tag href=/tags/aspnet-core/>#ASP.NET Core</a>
+<a class=tag href=/tags/csharp/>#C#</a>
+<a class=tag href=/tags/dotnet-backend/>#.NET Backend</a>
+<a class=tag href=/tags/web-api/>#Web API</a>
+<a class=tag href=/tags/vs-code/>#VS Code</a>
+<a class=tag href=/tags/entityframework/>#Entity Framework</a>
+<a class=tag href=/tags/ef-core/>#EF Core</a></div></div></article><article class=post-summary><h2><a href=/posts/part-08-jwt/>Часть 8. JWT-аутентификация — токены, Authorize и Claims</a></h2><time datetime=2026-06-10>10 июня 2026</time><p class=post-excerpt>В прошлой части реализовал регистрацию и вход, но после входа возвращался просто Id пользователя. Это не защищает API — любой может обращаться к нашим эндпоинтам. Сейчас добавим JSON Web Tokens: при входе пользователь получит токен, и только с этим токеном сможет обращаться к защищённым методам.
+Что такое JWT и зачем он нужен После того как пользователь вошёл, серверу нужно как-то «помнить» его при каждом следующем запросе. HTTP — протокол без состояния (stateless): каждый запрос независим, сервер не знает, кто его отправил.</p><div class=card-meta-row><div class=categories><a class=category href=/categories/backend/>Backend на C# & .NET</a></div><div class=tags><a class=tag href=/tags/aspnet-core/>#ASP.NET Core</a>
+<a class=tag href=/tags/csharp/>#C#</a>
+<a class=tag href=/tags/dotnet-backend/>#.NET Backend</a>
+<a class=tag href=/tags/web-api/>#Web API</a>
+<a class=tag href=/tags/vs-code/>#VS Code</a>
+<a class=tag href=/tags/entityframework/>#Entity Framework</a>
+<a class=tag href=/tags/ef-core/>#EF Core</a>
+<a class=tag href=/tags/jwt/>#JWT</a></div></div></article><article class=post-summary><h2><a href=/posts/part-07-auth-registration/>Часть 7. Регистрация и вход пользователей — хэширование паролей и связи в БД</a></h2><time datetime=2026-06-08>8 июня 2026</time><p class=post-excerpt>До сих пор любой мог обращаться к нашему API и видеть всех персонажей. Настало время добавить пользователей — чтобы каждый видел только своих персонажей. В этой части создадим модель User, добавим первую связь между таблицами и реализуем регистрацию с безопасным хранением пароля.
+Модель User Создаю Models/User.cs:
+namespace dotnet_rpg.Models; public class User { public int Id { get; set; } public string Username { get; set; } = string.Empty; public byte[] PasswordHash { get; set; } = []; public byte[] PasswordSalt { get; set; } = []; public List&lt;Character> Characters { get; set; } = []; } Пароль не хранится в открытом виде — только PasswordHash и PasswordSalt в виде байтовых массивов. Зачем это нужно — объясню ниже.</p><div class=card-meta-row><div class=categories><a class=category href=/categories/backend/>Backend на C# & .NET</a></div><div class=tags><a class=tag href=/tags/aspnet-core/>#ASP.NET Core</a>
+<a class=tag href=/tags/csharp/>#C#</a>
+<a class=tag href=/tags/dotnet-backend/>#.NET Backend</a>
+<a class=tag href=/tags/web-api/>#Web API</a>
+<a class=tag href=/tags/vs-code/>#VS Code</a>
+<a class=tag href=/tags/entityframework/>#Entity Framework</a>
+<a class=tag href=/tags/ef-core/>#EF Core</a></div></div></article><article class=post-summary><h2><a href=/posts/part-06-ef-core-crud/>Часть 6. Полный CRUD через Entity Framework Core</a></h2><time datetime=2026-06-05>5 июня 2026</time><p class=post-excerpt>В прошлой части я подключил базу данных и создал таблицу Characters через миграцию. Теперь обновляю сервис — вместо хранения данных в памяти все операции будут идти через Entity Framework в настоящую базу данных.
+Внедряем DataContext в сервис Открываю Services/CharacterService/CharacterService.cs. Сейчас там статический список characters — его нужно убрать и вместо него использовать DataContext.
+Внедряю DataContext через конструктор:
+using AutoMapper; using dotnet_rpg.Data; using dotnet_rpg.Dtos.Character; using dotnet_rpg.Models; using Microsoft.EntityFrameworkCore; namespace dotnet_rpg.Services.CharacterService; public class CharacterService : ICharacterService { private readonly IMapper _mapper; private readonly DataContext _context; public CharacterService(IMapper mapper, DataContext context) { _mapper = mapper; _context = context; } // методы будем обновлять дальше } Теперь _context доступен во всех методах сервиса. Статический список characters удаляю — он больше не нужен.</p><div class=card-meta-row><div class=categories><a class=category href=/categories/backend/>Backend на C# & .NET</a></div><div class=tags><a class=tag href=/tags/aspnet-core/>#ASP.NET Core</a>
+<a class=tag href=/tags/csharp/>#C#</a>
+<a class=tag href=/tags/dotnet-backend/>#.NET Backend</a>
+<a class=tag href=/tags/web-api/>#Web API</a>
+<a class=tag href=/tags/vs-code/>#VS Code</a>
+<a class=tag href=/tags/entityframework/>#Entity Framework</a>
+<a class=tag href=/tags/ef-core/>#EF Core</a></div></div></article><article class=post-summary><h2><a href=/posts/part-05-ef-core-migration/>Часть 5. Entity Framework Core: ORM, DbContext и первая миграция</a></h2><time datetime=2026-06-03>3 июня 2026</time><p class=post-excerpt>До сих пор персонажи хранились в памяти — при каждом перезапуске приложения они исчезали. Пришло время подключить настоящую базу данных. В этой части разберемся с тем, что такое ORM, как работает Code First Migration и как создать первую таблицу в базе данных через Entity Framework Core.
+Что такое ORM и зачем он нужен ORM (Object-Relational Mapping, объектно-реляционное отображение) — это технология, которая связывает объекты в коде с таблицами в базе данных.</p><div class=card-meta-row><div class=categories><a class=category href=/categories/backend/>Backend на C# & .NET</a></div><div class=tags><a class=tag href=/tags/aspnet-core/>#ASP.NET Core</a>
+<a class=tag href=/tags/csharp/>#C#</a>
+<a class=tag href=/tags/dotnet-backend/>#.NET Backend</a>
+<a class=tag href=/tags/web-api/>#Web API</a>
+<a class=tag href=/tags/vs-code/>#VS Code</a>
+<a class=tag href=/tags/entityframework/>#Entity Framework</a>
+<a class=tag href=/tags/ef-core/>#EF Core</a>
+<a class=tag href=/tags/mssql/>#MSSQL</a></div></div></article><nav class=pagination><span class="page-num page-current">1</span>
+<a href=/tags/csharp/page/2/ class=page-num>2</a>
+<a href=/tags/csharp/page/2/ class=page-arrow>»</a></nav></div></main><footer class=site-footer><p class=footer-copy>© 2026 Блог призрака Басенджи
+<span class=footer-heart aria-hidden=true>♥</span>
+Блог сделан на Hugo с использованием
+<a href=https://github.com/GhostBasenji/hugo-drewx target=_blank rel="noopener noreferrer">drewX</a></p><div class=footer-actions><div class=social-icons><a href=mailto:you@example.com aria-label=Email><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+</a><a href=https://t.me/yourusername target=_blank rel="noopener noreferrer" aria-label=Telegram><svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor"><path d="M9.036 15.803 8.64 21.36c.567.0.813-.244 1.11-.537l2.663-2.545 5.518 4.019c1.012.557 1.73.264 1.986-.933l3.6-16.873c.328-1.497-.542-2.083-1.53-1.72L1.117 9.977C-.35 10.54-.328 11.34.87 11.71l5.517 1.72L18.72 5.99c.55-.36 1.052-.16.64.2z"/></svg>
+</a><a href=https://github.com/yourusername target=_blank rel="noopener noreferrer" aria-label=GitHub><svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56.0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.69.0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05.0.0.97-.31 3.18 1.18a11 11 0 015.79.0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09.0 4.42-2.69 5.4-5.25 5.68.41.36.78 1.06.78 2.15.0 1.55-.01 2.8-.01 3.18.0.31.21.68.8.56A10.51 10.51.0 0023.5 12C23.5 5.73 18.27.5 12 .5z"/></svg></a></div><button id=theme-toggle class=theme-toggle aria-label="Переключить тему">
+<svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+<svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button></div></footer><script src=/js/theme-toggle.min.js></script></body></html>

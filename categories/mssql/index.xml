@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>MSSQL on Блог призрака Басенджи</title><link>https://ghostbasenji.github.io/categories/mssql/</link><description>Recent content in MSSQL on Блог призрака Басенджи</description><generator>Hugo</generator><language>ru-RU</language><copyright>© 2026</copyright><lastBuildDate>Mon, 01 Dec 2025 04:00:00 +0000</lastBuildDate><atom:link href="https://ghostbasenji.github.io/categories/mssql/index.xml" rel="self" type="application/rss+xml"/><item><title>EduTest: проектирование и архитектура проекта</title><link>https://ghostbasenji.github.io/posts/edutest-theory/</link><pubDate>Mon, 01 Dec 2025 04:00:00 +0000</pubDate><guid>https://ghostbasenji.github.io/posts/edutest-theory/</guid><description>&lt;p&gt;В этой статье мы подробно рассмотрим &lt;strong&gt;архитектуру проекта&lt;/strong&gt;, &lt;strong&gt;структуру базы данных&lt;/strong&gt;, &lt;strong&gt;организацию Blazor-проекта&lt;/strong&gt; и &lt;strong&gt;подход к работе с Git&lt;/strong&gt;, чтобы читатель понял, как проектировать и развивать подобные системы.&lt;/p&gt;
+&lt;p&gt;Современные образовательные системы всё чаще используют цифровые платформы для тестирования знаний учащихся. &lt;strong&gt;EduTest&lt;/strong&gt; — учебный проект на стеке &lt;strong&gt;C#&lt;/strong&gt;+&lt;strong&gt;Blazor Server&lt;/strong&gt;+&lt;strong&gt;MSSQL&lt;/strong&gt;, который позволяет:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;создавать и проходить тесты с разными уровнями сложности,&lt;/li&gt;
+&lt;li&gt;прикреплять к вопросам изображения и видео,&lt;/li&gt;
+&lt;li&gt;назначать тесты ученикам и группам,&lt;/li&gt;
+&lt;li&gt;вести аудит действий пользователей,&lt;/li&gt;
+&lt;li&gt;гибко управлять ролями: администратор, учитель и ученик.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Система построена так, что после единого окна входа каждый пользователь видит интерфейс своей роли. Администратор управляет всей платформой, учитель создаёт тесты и следит за результатами, а ученик получает доступ к заданиям и статистике своих попыток.&lt;/p&gt;</description></item></channel></rss>
