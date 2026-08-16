@@ -7,35 +7,32 @@
 <a href=/tags/>Теги</a>
 <a href=/series/>Серии</a>
 <a href=/projects/>Мои проекты</a>
-<a href=/about/>About</a></nav></div></header><main class=content><h1 class=term-title>C#</h1><div class=home-list><article class=post-summary><h2><a href=/posts/part-04-put-delete/>Часть 4. Обновление и удаление персонажей — PUT, DELETE и обработка ошибок</a></h2><time datetime=2026-05-31>31 мая 2026</time><p class=post-excerpt>В предыдущих частях мы научились создавать и получать персонажей. Теперь добавим оставшиеся две операции — обновление (PUT) и удаление (DELETE). Заодно разберемся с тем, как правильно обрабатывать ошибки и возвращать осмысленные HTTP-статусы.</p><div class=card-meta-row><div class=categories><a class=category href=/categories/backend/>Backend на C# & .NET</a></div><div class=tags><a class=tag href=/tags/aspnet-core/>#ASP.NET Core</a>
+<a href=/about/>About</a></nav></div></header><main class=content><h1 class=term-title>C#</h1><div class=home-list><article class=post-summary><h2><a href=/posts/part-04-put-delete/>Часть 4. Обновление и удаление персонажей — PUT, DELETE и обработка ошибок</a></h2><time datetime=2026-05-31>31 мая 2026</time><p class=post-excerpt>В предыдущих частях мы научились создавать и получать персонажей. Теперь добавим оставшиеся две операции — обновление (PUT) и удаление (DELETE). Заодно разберемся с тем, как правильно обрабатывать ошибки и возвращать осмысленные HTTP-статусы.</p><div class=card-meta-row><div class=categories><a class=category href=/categories/backend/>Backend на C# & .NET
+</a><a class=category href=/categories/csharp-development/>C# Development</a></div><div class=tags><a class=tag href=/tags/aspnet-core/>#ASP.NET Core</a>
 <a class=tag href=/tags/csharp/>#C#</a>
 <a class=tag href=/tags/dotnet-backend/>#.NET Backend</a>
 <a class=tag href=/tags/web-api/>#Web API</a>
-<a class=tag href=/tags/vs-code/>#VS Code</a></div></div></article><article class=post-summary><h2><a href=/posts/part-03-async-dto-automapper/>Часть 3. Асинхронные вызовы, DTO и AutoMapper</a></h2><time datetime=2026-05-29>29 мая 2026</time><p class=post-excerpt>В прошлой части я вынес логику в сервис и научился работать с несколькими HTTP-методами. Сейчас разберу три важные темы: почему методы должны быть асинхронными, что такое DTO и зачем нужен AutoMapper.</p><div class=card-meta-row><div class=categories><a class=category href=/categories/backend/>Backend на C# & .NET</a></div><div class=tags><a class=tag href=/tags/aspnet-core/>#ASP.NET Core</a>
+<a class=tag href=/tags/vs-code/>#VS Code</a></div></div></article><article class=post-summary><h2><a href=/posts/part-03-async-dto-automapper/>Часть 3. Асинхронные вызовы, DTO и AutoMapper</a></h2><time datetime=2026-05-29>29 мая 2026</time><p class=post-excerpt>В прошлой части я вынес логику в сервис и научился работать с несколькими HTTP-методами. Сейчас разберу три важные темы: почему методы должны быть асинхронными, что такое DTO и зачем нужен AutoMapper.</p><div class=card-meta-row><div class=categories><a class=category href=/categories/backend/>Backend на C# & .NET
+</a><a class=category href=/categories/csharp-development/>C# Development</a></div><div class=tags><a class=tag href=/tags/aspnet-core/>#ASP.NET Core</a>
 <a class=tag href=/tags/csharp/>#C#</a>
 <a class=tag href=/tags/dotnet-backend/>#.NET Backend</a>
 <a class=tag href=/tags/web-api/>#Web API</a>
 <a class=tag href=/tags/vs-code/>#VS Code</a>
-<a class=tag href=/tags/ef-core/>#EF Core</a></div></div></article><article class=post-summary><h2><a href=/posts/part-02-routing-services/>Часть 2. Атрибутный роутинг, HTTP-методы и сервисный слой</a></h2><time datetime=2026-05-28>28 мая 2026</time><p class=post-excerpt>В прошлой части мы создал проект и получили первый JSON-ответ. Сейчас разберемся с тем, как правильно строить маршруты, как работают HTTP-методы и зачем выносить логику из контроллера в отдельный сервис.
-Добавление списка персонажей До сих пор в контроллере был один-единственный персонаж. Заменяем его на список — это нужно, чтобы было удобно демонстрировать разные методы.
-Открываем Controllers/CharacterController.cs в VS Code и меняем поле knight на:
-private static List&lt;Character> characters = [ new Character(), new Character { Id = 1, Name = "Sam" } ]; List&lt;Character> — типизированный список. Он хранит только объекты типа Character и не даст добавить туда что-то другое. Компилятор проверит это за нас.</p><div class=card-meta-row><div class=categories><a class=category href=/categories/backend/>Backend на C# & .NET</a></div><div class=tags><a class=tag href=/tags/aspnet-core/>#ASP.NET Core</a>
+<a class=tag href=/tags/ef-core/>#EF Core</a></div></div></article><article class=post-summary><h2><a href=/posts/part-02-routing-services/>Часть 2. Атрибутный роутинг, HTTP-методы и сервисный слой</a></h2><time datetime=2026-05-28>28 мая 2026</time><p class=post-excerpt>В прошлой части мы создал проект и получили первый JSON-ответ. Сейчас разберемся с тем, как правильно строить маршруты, как работают HTTP-методы и зачем выносить логику из контроллера в отдельный сервис.</p><div class=card-meta-row><div class=categories><a class=category href=/categories/backend/>Backend на C# & .NET
+</a><a class=category href=/categories/csharp-development/>C# Development</a></div><div class=tags><a class=tag href=/tags/aspnet-core/>#ASP.NET Core</a>
 <a class=tag href=/tags/csharp/>#C#</a>
 <a class=tag href=/tags/dotnet-backend/>#.NET Backend</a>
 <a class=tag href=/tags/web-api/>#Web API</a>
 <a class=tag href=/tags/vs-code/>#VS Code</a>
 <a class=tag href=/tags/net9/>#.NET 9</a></div></div></article><article class=post-summary><h2><a href=/posts/part-01-webapi-intro/>Часть 1. Создаём проект и первый контроллер в ASP.NET Core Web API (.NET 9)</a></h2><time datetime=2026-05-24>24 мая 2026</time><p class=post-excerpt>Это мой конспект по освоению ASP.NET Core Web API. Начинаю с нуля — буду фиксировать всё, что кажется важным или неочевидным.
-Цель серии &ldquo;Быстрый старт: ASP.NET Web API + Entity Framework&rdquo; — построить небольшой бэкенд для текстовой RPG: персонажи, боёвка, аутентификация, база данных. Небольшой, но достаточно реальный, чтобы разобраться со стеком.
-Что такое Web API и зачем это нужно Прежде чем запускать VS Code, нужно понять, что именно мы строим и как оно работает.</p><div class=card-meta-row><div class=categories><a class=category href=/categories/backend/>Backend на C# & .NET</a></div><div class=tags><a class=tag href=/tags/aspnet-core/>#ASP.NET Core</a>
+Цель серии &ldquo;Быстрый старт: ASP.NET Web API + Entity Framework&rdquo; — построить небольшой бэкенд для текстовой RPG: персонажи, боёвка, аутентификация, база данных. Небольшой, но достаточно реальный, чтобы разобраться со стеком.</p><div class=card-meta-row><div class=categories><a class=category href=/categories/backend/>Backend на C# & .NET
+</a><a class=category href=/categories/csharp-development/>C# Development</a></div><div class=tags><a class=tag href=/tags/aspnet-core/>#ASP.NET Core</a>
 <a class=tag href=/tags/csharp/>#C#</a>
 <a class=tag href=/tags/dotnet-backend/>#.NET Backend</a>
 <a class=tag href=/tags/web-api/>#Web API</a>
 <a class=tag href=/tags/vs-code/>#VS Code</a>
-<a class=tag href=/tags/net9/>#.NET 9</a></div></div></article><article class=post-summary><h2><a href=/posts/wpf-imageviewer/>Отображение и обработка изображений в WPF (XAML + C#)</a></h2><time datetime=2026-05-17>17 мая 2026</time><p class=post-excerpt>Введение В этой статье рассмотрим простой WPF‑проект ImageViewer, который демонстрирует базовую работу с изображениями: загрузку, отображение и простую обработку без использования сторонних библиотек.
-Несмотря на кажущуюся простоту задачи, работа с изображениями в WPF построена на отдельной графической модели. Поэтому важно понимать не только как загрузить картинку, но и что именно происходит внутри WPF.
-Поддерживаемые форматы:
-BMP GIF ICO JPG / JPEG PNG TIFF WDP В статье реализуем:
-загрузку изображения; отображение в интерфейсе; поворот; масштабирование; преобразование в оттенки серого; обрезку изображения. Кроме того, разберём, зачем в WPF используется BitmapImage и почему без него нельзя просто взять и отобразить файл.</p><div class=card-meta-row><div class=categories><a class=category href=/categories/wpf/>WPF</a></div><div class=tags><a class=tag href=/tags/wpf/>#WPF</a>
+<a class=tag href=/tags/net9/>#.NET 9</a></div></div></article><article class=post-summary><h2><a href=/posts/wpf-imageviewer/>Отображение и обработка изображений в WPF (XAML + C#)</a></h2><time datetime=2026-05-17>17 мая 2026</time><p class=post-excerpt>В этой статье рассматривается простой WPF‑проект ImageViewer, который демонстрирует базовую работу с изображениями: загрузку, отображение и простую обработку без использования сторонних библиотек.</p><div class=card-meta-row><div class=categories><a class=category href=/categories/csharp-development/>C# Development
+</a><a class=category href=/categories/wpf/>WPF</a></div><div class=tags><a class=tag href=/tags/wpf/>#WPF</a>
 <a class=tag href=/tags/csharp/>#C#</a>
 <a class=tag href=/tags/xaml/>#XAML</a>
 <a class=tag href=/tags/dotnet/>#.NET</a></div></div></article><article class=post-summary><h2><a href=/posts/edutest-theory/>EduTest: проектирование и архитектура проекта</a></h2><time datetime=2025-12-01>1 декабря 2025</time><p class=post-excerpt>В этой статье мы подробно рассмотрим архитектуру проекта, структуру базы данных, организацию Blazor-проекта и подход к работе с Git, чтобы читатель понял, как проектировать и развивать подобные системы.
@@ -67,9 +64,7 @@ BMP GIF ICO JPG / JPEG PNG TIFF WDP В статье реализуем:
 <a class=tag href=/tags/ui/>#UI</a>
 <a class=tag href=/tags/csharp/>#C#</a></div></div></article><nav class=pagination><a href=/tags/csharp/ class=page-arrow>«</a>
 <a href=/tags/csharp/ class=page-num>1</a>
-<span class="page-num page-current">2</span>
-<a href=/tags/csharp/page/3/ class=page-num>3</a>
-<a href=/tags/csharp/page/3/ class=page-arrow>»</a></nav></div></main><footer class=site-footer><p class=footer-copy>© 2026 Блог призрака Басенджи
+<span class="page-num page-current">2</span></nav></div></main><footer class=site-footer><p class=footer-copy>© 2026 Блог призрака Басенджи
 <span class=footer-heart aria-hidden=true>♥</span>
 Блог сделан на Hugo с использованием темы
 <a href=https://github.com/GhostBasenji/hugo-drewx target=_blank rel="noopener noreferrer">drewX</a></p><div class=footer-actions><div class=social-icons><a href=mailto:petr.and.vic@gmail.com aria-label=Email><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
