@@ -197,13 +197,10 @@
 </span></span><span class=line><span class=cl>    <span class=nt>&#34;username&#34;</span><span class=p>:</span> <span class=s2>&#34;alice&#34;</span><span class=p>,</span>
 </span></span><span class=line><span class=cl>    <span class=nt>&#34;password&#34;</span><span class=p>:</span> <span class=s2>&#34;securepass123&#34;</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></div><p><img src=https://i.postimg.cc/2ygVc9dz/gb031.png alt></p><p>Пока возвращается Id пользователя. В следующей части здесь будет JWT-токен.</p><h2 id=итог>Итог</h2><p>Добавил модель <code>User</code> с безопасным хранением пароля через HMACSHA512, соль и хэш. Создал первую связь один-ко-многим между пользователями и персонажами. Реализовал регистрацию с проверкой дубликатов и вход с проверкой пароля.</p><p>В следующей части: заменю Id на JWT-токен в ответе на вход и защищу контроллер персонажей атрибутом <code>[Authorize]</code>.</p><hr><p><a href=https://ghostbasenji.github.io/posts/part-08-jwt/><em>Следующая часть: JSON Web Tokens — генерируем токен, защищаем эндпоинты, читаем Claims.</em></a></p></div><div class=meta-row><div class=categories><a class=category href=/categories/backend/>Backend на C# & .NET
-</a><a class=category href=/categories/csharp-development/>C# Development</a></div><div class=tags><a class=tag href=/tags/aspnet-core/>#ASP.NET Core</a>
+</span></span></code></pre></div><p><img src=https://i.postimg.cc/2ygVc9dz/gb031.png alt></p><p>Пока возвращается Id пользователя. В следующей части здесь будет JWT-токен.</p><h2 id=итог>Итог</h2><p>Добавил модель <code>User</code> с безопасным хранением пароля через HMACSHA512, соль и хэш. Создал первую связь один-ко-многим между пользователями и персонажами. Реализовал регистрацию с проверкой дубликатов и вход с проверкой пароля.</p><p>В следующей части: заменю Id на JWT-токен в ответе на вход и защищу контроллер персонажей атрибутом <code>[Authorize]</code>.</p><hr><p><a href=https://ghostbasenji.github.io/posts/part-08-jwt/><em>Следующая часть: JSON Web Tokens — генерируем токен, защищаем эндпоинты, читаем Claims.</em></a></p></div><div class=meta-row><div class=categories><a class=category href=/categories/backend/>Backend на C# & .NET</a></div><div class=tags><a class=tag href=/tags/aspnet-core/>#ASP.NET Core</a>
 <a class=tag href=/tags/csharp/>#C#</a>
-<a class=tag href=/tags/dotnet-backend/>#.NET Backend</a>
 <a class=tag href=/tags/web-api/>#Web API</a>
 <a class=tag href=/tags/vs-code/>#VS Code</a>
-<a class=tag href=/tags/entityframework/>#Entity Framework</a>
 <a class=tag href=/tags/ef-core/>#EF Core</a></div></div></article></div></main><footer class=site-footer><p class=footer-copy>© 2026 Блог призрака Басенджи
 <span class=footer-heart aria-hidden=true>♥</span>
 Блог сделан на Hugo с использованием темы
