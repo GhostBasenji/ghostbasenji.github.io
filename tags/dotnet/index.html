@@ -7,7 +7,11 @@
 <a href=/tags/>Теги</a>
 <a href=/series/>Серии</a>
 <a href=/projects/>Мои проекты</a>
-<a href=/about/>About</a></nav></div></header><main class=content><h1 class=term-title>.NET</h1><div class=home-list><article class=post-summary><h2><a href=/posts/part-11-many-to-many/>Часть 11. Связь многие-ко-многим: умения персонажей и ThenInclude</a></h2><time datetime=2026-06-18>18 июня 2026</time><p class=post-excerpt>Мы уже разобрали два вида связей: один-ко-многим (пользователь → персонажи) и один-к-одному (персонаж → оружие). Остался третий и самый интересный — многие-ко-многим. Один персонаж может знать несколько умений, и одно умение может быть у нескольких персонажей. Добавим к нашим персонажам пул умений — Fireball, Frenzy, Blizzard.</p><div class=card-meta-row><div class=categories><a class=category href=/categories/backend/>Backend на C# & .NET</a></div><div class=tags><a class=tag href=/tags/dotnet/>.NET</a>
+<a href=/about/>About</a></nav></div></header><main class=content><h1 class=term-title>.NET</h1><div class=home-list><article class=post-summary><h2><a href=/posts/part-12-fight-service/>Часть 12. Боевая система - атака оружием и умениями</a></h2><time datetime=2026-06-21>21 июня 2026</time><p class=post-excerpt>Мы построили всю необходимую структуру: персонажи, оружие, умения, пользователи. Пришло время выйти за рамки CRUD и реализовать что-то настоящее — боевую систему. Персонажи будут атаковать друг друга оружием и умениями, получать урон, и в конце кто-то будет повержен.</p><div class=card-meta-row><div class=categories><a class=category href=/categories/backend/>Backend на C# & .NET</a></div><div class=tags><a class=tag href=/tags/dotnet/>.NET</a>
+<a class=tag href=/tags/aspnet-core/>ASP.NET Core</a>
+<a class=tag href=/tags/csharp/>C#</a>
+<a class=tag href=/tags/web-api/>Web API</a>
+<a class=tag href=/tags/ef-core/>EF Core</a></div></div></article><article class=post-summary><h2><a href=/posts/part-11-many-to-many/>Часть 11. Связь многие-ко-многим: умения персонажей и ThenInclude</a></h2><time datetime=2026-06-18>18 июня 2026</time><p class=post-excerpt>Мы уже разобрали два вида связей: один-ко-многим (пользователь → персонажи) и один-к-одному (персонаж → оружие). Остался третий и самый интересный — многие-ко-многим. Один персонаж может знать несколько умений, и одно умение может быть у нескольких персонажей. Добавим к нашим персонажам пул умений — Fireball, Frenzy, Blizzard.</p><div class=card-meta-row><div class=categories><a class=category href=/categories/backend/>Backend на C# & .NET</a></div><div class=tags><a class=tag href=/tags/dotnet/>.NET</a>
 <a class=tag href=/tags/aspnet-core/>ASP.NET Core</a>
 <a class=tag href=/tags/csharp/>C#</a>
 <a class=tag href=/tags/web-api/>Web API</a>
@@ -32,12 +36,7 @@
 <a class=tag href=/tags/aspnet-core/>ASP.NET Core</a>
 <a class=tag href=/tags/csharp/>C#</a>
 <a class=tag href=/tags/web-api/>Web API</a>
-<a class=tag href=/tags/ef-core/>EF Core</a></div></div></article><article class=post-summary><h2><a href=/posts/part-05-ef-core-migration/>Часть 5. Entity Framework Core: ORM, DbContext и первая миграция</a></h2><time datetime=2026-06-03>3 июня 2026</time><p class=post-excerpt>До сих пор персонажи хранились в памяти — при каждом перезапуске приложения они исчезали. Пришло время подключить настоящую базу данных. В этой части разберемся с тем, что такое ORM, как работает Code First Migration и как создать первую таблицу в базе данных через Entity Framework Core.</p><div class=card-meta-row><div class=categories><a class=category href=/categories/backend/>Backend на C# & .NET</a></div><div class=tags><a class=tag href=/tags/dotnet/>.NET</a>
-<a class=tag href=/tags/aspnet-core/>ASP.NET Core</a>
-<a class=tag href=/tags/csharp/>C#</a>
-<a class=tag href=/tags/web-api/>Web API</a>
-<a class=tag href=/tags/ef-core/>EF Core</a>
-<a class=tag href=/tags/mssql/>MSSQL</a></div></div></article><nav class=pagination><span class="page-num page-current">1</span>
+<a class=tag href=/tags/ef-core/>EF Core</a></div></div></article><nav class=pagination><span class="page-num page-current">1</span>
 <a href=/tags/dotnet/page/2/ class=page-num>2</a>
 <a href=/tags/dotnet/page/2/ class=page-arrow>»</a></nav></div></main><footer class=site-footer><p class=footer-copy>© 2026 Блог призрака Басенджи
 <span class=footer-heart aria-hidden=true>♥</span>
